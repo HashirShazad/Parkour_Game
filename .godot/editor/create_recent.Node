@@ -1,0 +1,9 @@
+Node
+CanvasModulate
+CPUParticles2D
+Camera2D
+CharacterBody2D
+TileMap
+TextureRect
+AnimatedSprite2D
+CollisionShape2D
