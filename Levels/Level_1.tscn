@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://dc1kk5y1wr6u4"]
+[gd_scene load_steps=9 format=3 uid="uid://dc1kk5y1wr6u4"]
 
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2D.gd" id="1_60dik"]
 [ext_resource type="Texture2D" uid="uid://df70hrxevtro8" path="res://Sprites/Background/Blue.png" id="1_sm4y5"]
 [ext_resource type="Texture2D" uid="uid://dqgm4rmmi5c3j" path="res://Sprites/Terrain/Terrain (16x16).png" id="2_sansl"]
 [ext_resource type="PackedScene" uid="uid://cjmv5s0f1p6hx" path="res://Character/Players.tscn" id="3_m6gtg"]
@@ -627,5 +628,27 @@ layer_0/tile_data = PackedInt32Array(1441795, 0, 4, 1507331, 0, 5, 1572867, 0, 5
 [node name="Player1" parent="." instance=ExtResource("3_m6gtg")]
 unique_name_in_owner = true
 position = Vector2(550, 886)
+
+[node name="PhantomCamera2D" type="Node2D" parent="."]
+position = Vector2(550, 886)
+script = ExtResource("1_60dik")
+priority_override = false
+priority = 0
+zoom = Vector2(1, 1)
+follow_mode = 1
+follow_target = NodePath("../Player1")
+follow_parameters/damping = false
+frame_preview = true
+pixel_perfect = false
+limit/draw_limits = true
+limit/left = -10000000
+limit/top = -10000000
+limit/right = 10000000
+limit/bottom = 10000000
+limit/limit_node_target = NodePath("")
+limit/smoothed = false
+tween_parameters = null
+tween_on_load = true
+inactive_update_mode = 0
 
 [editable path="Player1"]

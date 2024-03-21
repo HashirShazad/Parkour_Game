@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 project/assembly_name="Parkour Game"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/phantom_camera/plugin.cfg")
+
 [input]
 
 P1_Right={

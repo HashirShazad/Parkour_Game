@@ -294,8 +294,3 @@ texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_idra0")
 animation = &"Idle"
 autoplay = "Idle"
-
-[node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2(200, 0)
-position_smoothing_enabled = true
-position_smoothing_speed = 10.0

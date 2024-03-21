@@ -7,9 +7,9 @@ var def_jump_velocity = -800
 var sprint_speed = 600
 var sprint_jump_velocity = -400
 
-@export btns{
-	 var Right = 1
-}
+#@export btns{
+	# var Right:Button
+#}
 
 var speed = 400.0
 var minimum_speed = 8
@@ -28,19 +28,19 @@ func _physics_process(delta):
 		velocity.y += gravity  * delta
 
 	# Handle jump.
-	if Input.is_action_just_pressed("Jump") and is_on_floor():
+	if Input.is_action_just_pressed("P1_Jump") and is_on_floor():
 		velocity.y = jump_velocity
-	if Input.is_action_pressed("Sprint"):
+	if Input.is_action_pressed("P1_Sprint"):
 		$CPUParticles2D.emitting = 1
 		speed = sprint_speed
 		jump_velocity = sprint_jump_velocity
-	elif Input.is_action_just_released("Sprint"):
+	elif Input.is_action_just_released("P1_Sprint"):
 		$CPUParticles2D.emitting = 0
 		speed = def_speed
 		jump_velocity = def_jump_velocity
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction = Input.get_axis("Left", "Right")
+	var direction = Input.get_axis("P1_Left", "P1_Right")
 	if direction:
 		velocity.x = direction * speed
 	else:

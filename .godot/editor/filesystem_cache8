@@ -1,22 +1,22 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1711017709
+::res://::1711018144
 icon.svg::CompressedTexture2D::8286680479429612557::1710941968::1710942101::1::::<><>::
 README.md::TextFile::-1::1710941968::0::1::::<><>::
 ::res://addons/::1711017673
 ::res://addons/phantom_camera/::1711017675
 plugin.cfg::TextFile::-1::1711017675::0::1::::<><>::
 plugin.gd::GDScript::-1::1711017675::0::1::::<>EditorPlugin<>::
-::res://addons/phantom_camera/assets/::1711017673
+::res://addons/phantom_camera/assets/::1711017710
 PhantomCameraBtnPrimaryDefault.png::CompressedTexture2D::5081567352117042767::1711017673::1711017710::1::::<><>::
 PhantomCameraBtnPrimaryHover.png::CompressedTexture2D::1097276340276520798::1711017673::1711017710::1::::<><>::
 ::res://addons/phantom_camera/examples/::1711017674
 credits.txt::TextFile::-1::1711017673::0::1::::<><>::
 ::res://addons/phantom_camera/examples/example_scenes/::1711017673
-::res://addons/phantom_camera/examples/example_scenes/2D/::1711017673
+::res://addons/phantom_camera/examples/example_scenes/2D/::1711017841
 2DExampleScene.tscn::PackedScene::8396109236837500942::1711017673::0::1::::<><>::uid://c77npili4pel4::::res://addons/phantom_camera/examples/textures/2D/level_spritesheet.png<>res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd<>res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2D.gd<>res://addons/phantom_camera/examples/scripts/2D/PlayerCharacterBody2D.gd<>uid://cwep0on2tthn7::::res://addons/phantom_camera/examples/textures/2D/PhantomCamera2DSprite.png<>uid://euybd2w0bax::::res://addons/phantom_camera/examples/resources/tween/PlayerPhantomCamera2DTween.tres<>uid://iq5xd1ob1res::::res://addons/phantom_camera/examples/ui/UISign.tscn<>uid://dg7rhrymsrrrm::::res://addons/phantom_camera/examples/ui/UIInventory.tscn<>uid://cecrnq0wnkexh::::res://addons/phantom_camera/examples/resources/tween/ItemFocusPhantomCamera2DTween.tres<>uid://cllveybboaqk5::::res://addons/phantom_camera/examples/resources/tween/InventoryPhantomCamera2DTween.tres<>uid://c4mm3of2mc8o5::::res://addons/phantom_camera/fonts/Nunito-Black.ttf
 2DFollowFramedExampleScene.tscn::PackedScene::4041101467758950601::1711017673::0::1::::<><>::uid://c77npili4pel4::::res://addons/phantom_camera/examples/textures/2D/level_spritesheet.png<>uid://dg7rhrymsrrrm::::res://addons/phantom_camera/examples/ui/UIInventory.tscn<>uid://iq5xd1ob1res::::res://addons/phantom_camera/examples/ui/UISign.tscn<>res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd<>res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2D.gd<>uid://euybd2w0bax::::res://addons/phantom_camera/examples/resources/tween/PlayerPhantomCamera2DTween.tres<>res://addons/phantom_camera/examples/scripts/2D/PlayerCharacterBody2D.gd<>uid://c4mm3of2mc8o5::::res://addons/phantom_camera/fonts/Nunito-Black.ttf<>uid://cwep0on2tthn7::::res://addons/phantom_camera/examples/textures/2D/PhantomCamera2DSprite.png<>uid://cecrnq0wnkexh::::res://addons/phantom_camera/examples/resources/tween/ItemFocusPhantomCamera2DTween.tres<>uid://cllveybboaqk5::::res://addons/phantom_camera/examples/resources/tween/InventoryPhantomCamera2DTween.tres
 2DFollowGroupExampleScene.tscn::PackedScene::3615519047096694654::1711017673::0::1::::<><>::uid://c77npili4pel4::::res://addons/phantom_camera/examples/textures/2D/level_spritesheet.png<>uid://dg7rhrymsrrrm::::res://addons/phantom_camera/examples/ui/UIInventory.tscn<>uid://iq5xd1ob1res::::res://addons/phantom_camera/examples/ui/UISign.tscn<>res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd<>uid://cwep0on2tthn7::::res://addons/phantom_camera/examples/textures/2D/PhantomCamera2DSprite.png<>res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2D.gd<>res://addons/phantom_camera/examples/scripts/2D/PlayerCharacterBody2D.gd<>uid://euybd2w0bax::::res://addons/phantom_camera/examples/resources/tween/PlayerPhantomCamera2DTween.tres<>uid://cecrnq0wnkexh::::res://addons/phantom_camera/examples/resources/tween/ItemFocusPhantomCamera2DTween.tres<>uid://cllveybboaqk5::::res://addons/phantom_camera/examples/resources/tween/InventoryPhantomCamera2DTween.tres<>uid://c4mm3of2mc8o5::::res://addons/phantom_camera/fonts/Nunito-Black.ttf
-2DFollowPathExampleScene.tscn::PackedScene::1090052207262972448::1711017673::0::1::::<><>::uid://c77npili4pel4::::res://addons/phantom_camera/examples/textures/2D/level_spritesheet.png<>uid://dg7rhrymsrrrm::::res://addons/phantom_camera/examples/ui/UIInventory.tscn<>uid://iq5xd1ob1res::::res://addons/phantom_camera/examples/ui/UISign.tscn<>res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd<>res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2D.gd<>uid://euybd2w0bax::::res://addons/phantom_camera/examples/resources/tween/PlayerPhantomCamera2DTween.tres<>res://addons/phantom_camera/examples/scripts/2D/PlayerCharacterBody2D.gd<>uid://c4mm3of2mc8o5::::res://addons/phantom_camera/fonts/Nunito-Black.ttf<>uid://cwep0on2tthn7::::res://addons/phantom_camera/examples/textures/2D/PhantomCamera2DSprite.png<>uid://cecrnq0wnkexh::::res://addons/phantom_camera/examples/resources/tween/ItemFocusPhantomCamera2DTween.tres<>uid://cllveybboaqk5::::res://addons/phantom_camera/examples/resources/tween/InventoryPhantomCamera2DTween.tres
+2DFollowPathExampleScene.tscn::PackedScene::1090052207262972448::1711017841::0::1::::<><>::uid://c77npili4pel4::::res://addons/phantom_camera/examples/textures/2D/level_spritesheet.png<>uid://dg7rhrymsrrrm::::res://addons/phantom_camera/examples/ui/UIInventory.tscn<>uid://iq5xd1ob1res::::res://addons/phantom_camera/examples/ui/UISign.tscn<>res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd<>res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2D.gd<>uid://euybd2w0bax::::res://addons/phantom_camera/examples/resources/tween/PlayerPhantomCamera2DTween.tres<>res://addons/phantom_camera/examples/scripts/2D/PlayerCharacterBody2D.gd<>uid://c4mm3of2mc8o5::::res://addons/phantom_camera/fonts/Nunito-Black.ttf<>uid://cwep0on2tthn7::::res://addons/phantom_camera/examples/textures/2D/PhantomCamera2DSprite.png<>uid://cecrnq0wnkexh::::res://addons/phantom_camera/examples/resources/tween/ItemFocusPhantomCamera2DTween.tres<>uid://cllveybboaqk5::::res://addons/phantom_camera/examples/resources/tween/InventoryPhantomCamera2DTween.tres
 2DLimitExampleScene.tscn::PackedScene::1601450723493897600::1711017673::0::1::::<><>::res://addons/phantom_camera/examples/scripts/2D/2d_room_limit_tween.gd<>uid://c77npili4pel4::::res://addons/phantom_camera/examples/textures/2D/level_spritesheet.png<>uid://dg7rhrymsrrrm::::res://addons/phantom_camera/examples/ui/UIInventory.tscn<>uid://iq5xd1ob1res::::res://addons/phantom_camera/examples/ui/UISign.tscn<>res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2D.gd<>res://addons/phantom_camera/scripts/resources/tween_resource.gd<>res://addons/phantom_camera/examples/scripts/2D/PlayerCharacterBody2D.gd<>uid://c4mm3of2mc8o5::::res://addons/phantom_camera/fonts/Nunito-Black.ttf<>uid://cwep0on2tthn7::::res://addons/phantom_camera/examples/textures/2D/PhantomCamera2DSprite.png<>res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd
 2DTweeningExampleScene.tscn::PackedScene::5875330861835730161::1711017673::0::1::::<><>::uid://c77npili4pel4::::res://addons/phantom_camera/examples/textures/2D/level_spritesheet.png<>uid://dg7rhrymsrrrm::::res://addons/phantom_camera/examples/ui/UIInventory.tscn<>uid://iq5xd1ob1res::::res://addons/phantom_camera/examples/ui/UISign.tscn<>res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd<>res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2D.gd<>res://addons/phantom_camera/scripts/resources/tween_resource.gd<>uid://euybd2w0bax::::res://addons/phantom_camera/examples/resources/tween/PlayerPhantomCamera2DTween.tres<>res://addons/phantom_camera/examples/scripts/2D/PlayerCharacterBody2D.gd<>uid://cwep0on2tthn7::::res://addons/phantom_camera/examples/textures/2D/PhantomCamera2DSprite.png<>res://addons/phantom_camera/examples/scripts/2D/2D_trigger_area.gd<>uid://c4mm3of2mc8o5::::res://addons/phantom_camera/fonts/Nunito-Black.ttf
 ::res://addons/phantom_camera/examples/example_scenes/3D/::1711017673
@@ -33,11 +33,11 @@ credits.txt::TextFile::-1::1711017673::0::1::::<><>::
 3DPrototypeCubeDark.tscn::PackedScene::5382540856779240661::1711017673::0::1::::<><>::uid://c7ja4woxol8yc::::res://addons/phantom_camera/examples/textures/3D/CheckerPatternDark.png
 ::res://addons/phantom_camera/examples/resources/::1711017673
 ::res://addons/phantom_camera/examples/resources/tween/::1711017674
-FixedCameraTween.tres::Resource/PhantomCameraTween::6643106748633668090::1711017673::0::1::::<><>::res://addons/phantom_camera/scripts/resources/tween_resource.gd
-InventoryPhantomCamera2DTween.tres::Resource/PhantomCameraTweenResource::5568910264892302066::1711017673::0::1::::<><>::res://addons/phantom_camera/scripts/resources/tween_resource.gd
-ItemFocusPhantomCamera2DTween.tres::Resource/PhantomCameraTweenResource::5058781781655307589::1711017673::0::1::::<><>::res://addons/phantom_camera/scripts/resources/tween_resource.gd
-PlayerPhantomCamera2DTween.tres::Resource/PhantomCameraTween::9514768340188899::1711017673::0::1::::<><>::res://addons/phantom_camera/scripts/resources/tween_resource.gd
-PlayerPhantomCamera3DTween.tres::Resource/PhantomCameraTween::5865226110262250054::1711017674::0::1::::<><>::res://addons/phantom_camera/scripts/resources/tween_resource.gd
+FixedCameraTween.tres::Resource/Resource::6643106748633668090::1711017673::0::1::::<><>::res://addons/phantom_camera/scripts/resources/tween_resource.gd
+InventoryPhantomCamera2DTween.tres::Resource/Resource::5568910264892302066::1711017673::0::1::::<><>::res://addons/phantom_camera/scripts/resources/tween_resource.gd
+ItemFocusPhantomCamera2DTween.tres::Resource/Resource::5058781781655307589::1711017673::0::1::::<><>::res://addons/phantom_camera/scripts/resources/tween_resource.gd
+PlayerPhantomCamera2DTween.tres::Resource/Resource::9514768340188899::1711017673::0::1::::<><>::res://addons/phantom_camera/scripts/resources/tween_resource.gd
+PlayerPhantomCamera3DTween.tres::Resource/Resource::5865226110262250054::1711017674::0::1::::<><>::res://addons/phantom_camera/scripts/resources/tween_resource.gd
 ::res://addons/phantom_camera/examples/scripts/::1711017674
 ::res://addons/phantom_camera/examples/scripts/2D/::1711017674
 2d_room_limit_tween.gd::GDScript::-1::1711017674::0::1::::<>Node2D<>::
@@ -50,23 +50,23 @@ path_follow.gd::GDScript::-1::1711017674::0::1::::<>Node<>::
 player_controller.gd::GDScript::-1::1711017674::0::1::::<>CharacterBody3D<>::
 player_controller_third_person.gd::GDScript::-1::1711017674::0::1::::<><>::
 ::res://addons/phantom_camera/examples/textures/::1711017674
-::res://addons/phantom_camera/examples/textures/2D/::1711017674
+::res://addons/phantom_camera/examples/textures/2D/::1711017710
 inventory_container.png::CompressedTexture2D::4637741338914361246::1711017674::1711017710::1::::<><>::
 level_spritesheet.png::CompressedTexture2D::7085760997330170155::1711017674::1711017710::1::::<><>::
 PhantomCamera2DSprite.png::CompressedTexture2D::6326209594840534622::1711017674::1711017710::1::::<><>::
 sign_prompt.png::CompressedTexture2D::3188285415853117228::1711017674::1711017710::1::::<><>::
-::res://addons/phantom_camera/examples/textures/3D/::1711017674
+::res://addons/phantom_camera/examples/textures/3D/::1711017710
 CheckerPatternDark.png::CompressedTexture2D::7037516729818178126::1711017674::1711017710::1::::<><>::
 ::res://addons/phantom_camera/examples/ui/::1711017674
 UIInventory.tscn::PackedScene::7647500821014000442::1711017674::0::1::::<><>::uid://b7cs6me43ufh3::::res://addons/phantom_camera/examples/textures/2D/inventory_container.png<>uid://c4mm3of2mc8o5::::res://addons/phantom_camera/fonts/Nunito-Black.ttf
 UISign.tscn::PackedScene::596403574585461246::1711017674::0::1::::<><>::uid://bloouh2jtndx1::::res://addons/phantom_camera/examples/textures/2D/sign_prompt.png<>uid://c4mm3of2mc8o5::::res://addons/phantom_camera/fonts/Nunito-Black.ttf
-::res://addons/phantom_camera/fonts/::1711017675
+::res://addons/phantom_camera/fonts/::1711017710
 Nunito-Black.ttf::FontFile::6833869716374227054::1711017674::1711017675::1::::<><>::
 Nunito-Regular.ttf::FontFile::8643449995156224464::1711017674::1711017710::1::::<><>::
 ::res://addons/phantom_camera/gizmos/::1711017674
 CustomGizmo.gd::GDScript::-1::1711017674::0::1::::CustomPluginGizmo<>EditorNode3DGizmoPlugin<>::
 phantom_camera_gizmo_plugin_3D.gd::GDScript::-1::1711017674::0::1::::<>CustomPluginGizmo<>::
-::res://addons/phantom_camera/icons/::1711017674
+::res://addons/phantom_camera/icons/::1711017710
 Chevron.svg::CompressedTexture2D::1745133219077516325::1711017674::1711017710::1::::<><>::
 PhantomCameraGizmoIcon2D.svg::CompressedTexture2D::4629927649471389476::1711017674::1711017710::1::::<><>::
 PhantomCameraGizmoIcon3D.svg::CompressedTexture2D::1466881276638961705::1711017674::1711017710::1::::<><>::
@@ -78,9 +78,9 @@ PhantomCameraIcon3D.svg::CompressedTexture2D::5118178094743450707::1711017674::1
 PhantomCameraIcon.svg::CompressedTexture2D::4500271091572974045::1711017674::1711017710::1::::<><>::
 phantom_camera_logo.png::CompressedTexture2D::4966186125554950581::1711017674::1711017710::1::::<><>::
 Pin.svg::CompressedTexture2D::3711434493768362550::1711017674::1711017710::1::::<><>::
-::res://addons/phantom_camera/icons/misc/::1711017674
+::res://addons/phantom_camera/icons/misc/::1711017710
 PriorityOverride.svg::CompressedTexture2D::8912176182624502929::1711017674::1711017710::1::::<><>::
-::res://addons/phantom_camera/icons/viewfinder/::1711017674
+::res://addons/phantom_camera/icons/viewfinder/::1711017710
 Camera2DIcon.svg::CompressedTexture2D::4941179596290591277::1711017674::1711017710::1::::<><>::
 Camera3DIcon.svg::CompressedTexture2D::7877918109027130005::1711017674::1711017710::1::::<><>::
 SceneTypesIcon.svg::CompressedTexture2D::7928082713000371025::1711017674::1711017710::1::::<><>::
@@ -114,11 +114,11 @@ phantom_camera_host.gd::GDScript::-1::1711017675::0::1::::PhantomCameraHost<>Nod
 ::res://addons/phantom_camera/scripts/resources/::1711017675
 camera_3D_resource.gd::GDScript::-1::1711017675::0::1::::Camera3DResource<>Resource<>::
 tween_resource.gd::GDScript::-1::1711017675::0::1::::PhantomCameraTween<>Resource<>::
-::res://Character/::1711017657
-Players.tscn::PackedScene::5430643108145414009::1711017657::0::1::::<><>::res://Character/Players_Code.gd<>uid://dt3srkugkr4w::::res://Sprites/Main Characters/Ninja Frog/Hit (32x32).png<>uid://dj48bttltoec2::::res://Sprites/Main Characters/Ninja Frog/Fall (32x32).png<>uid://db1rmhuju51vx::::res://Sprites/Main Characters/Ninja Frog/Idle (32x32).png<>uid://7a6uq3guxtyh::::res://Sprites/Main Characters/Ninja Frog/Jump (32x32).png<>uid://obsipy1jftil::::res://Sprites/Main Characters/Ninja Frog/Run (32x32).png
-Players_Code.gd::GDScript::-1::1711017657::0::1::::Player<>CharacterBody2D<>::
-::res://Levels/::1711017546
-Level_1.tscn::PackedScene::7353940201814871145::1711017546::0::1::::<><>::uid://df70hrxevtro8::::res://Sprites/Background/Blue.png<>uid://dqgm4rmmi5c3j::::res://Sprites/Terrain/Terrain (16x16).png<>uid://cjmv5s0f1p6hx::::res://Character/Players.tscn
+::res://Character/::1711018109
+Players.tscn::PackedScene::5430643108145414009::1711018109::0::1::::<><>::res://Character/Players_Code.gd<>uid://dt3srkugkr4w::::res://Sprites/Main Characters/Ninja Frog/Hit (32x32).png<>uid://dj48bttltoec2::::res://Sprites/Main Characters/Ninja Frog/Fall (32x32).png<>uid://db1rmhuju51vx::::res://Sprites/Main Characters/Ninja Frog/Idle (32x32).png<>uid://7a6uq3guxtyh::::res://Sprites/Main Characters/Ninja Frog/Jump (32x32).png<>uid://obsipy1jftil::::res://Sprites/Main Characters/Ninja Frog/Run (32x32).png
+Players_Code.gd::GDScript::-1::1711018067::0::1::::Player<>CharacterBody2D<>::
+::res://Levels/::1711018109
+Level_1.tscn::PackedScene::7353940201814871145::1711018109::0::1::::<><>::res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2D.gd<>uid://df70hrxevtro8::::res://Sprites/Background/Blue.png<>uid://dqgm4rmmi5c3j::::res://Sprites/Terrain/Terrain (16x16).png<>uid://cjmv5s0f1p6hx::::res://Character/Players.tscn
 ::res://Sprites/::1710942454
 20 Enemies.png::CompressedTexture2D::2317658047322682366::1569851842::1710942454::1::::<><>::
 Hello.png::CompressedTexture2D::4966580026841303236::1569850842::1710942454::1::::<><>::

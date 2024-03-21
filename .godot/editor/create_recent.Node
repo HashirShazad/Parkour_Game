@@ -1,8 +1,9 @@
+Camera2D
+PhantomCamera2D
 CanvasGroup
 Node
 CanvasModulate
 CPUParticles2D
-Camera2D
 CharacterBody2D
 TileMap
 TextureRect
