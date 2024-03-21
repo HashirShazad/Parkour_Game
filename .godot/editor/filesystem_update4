@@ -1,1 +1,5 @@
 res://Levels/Level_1.tscn
+res://Character/Players_Code.gd
+res://Character/Players.tscn
+res://Collectables/Fruits.tscn
+res://addons/phantom_camera/examples/example_scenes/2D/2DExampleScene.tscn
