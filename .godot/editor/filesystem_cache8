@@ -1,11 +1,12 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1710942675
+::res://::1711017195
 icon.svg::CompressedTexture2D::8286680479429612557::1710941968::1710942101::1::::<><>::
 README.md::TextFile::-1::1710941968::0::1::::<><>::
-::res://Character/::1710942816
-Player_1.tscn::PackedScene::5430643108145414009::1710942984::0::1::::<><>::uid://dt3srkugkr4w::::res://Sprites/Main Characters/Ninja Frog/Hit (32x32).png<>uid://db1rmhuju51vx::::res://Sprites/Main Characters/Ninja Frog/Idle (32x32).png<>uid://dj48bttltoec2::::res://Sprites/Main Characters/Ninja Frog/Fall (32x32).png<>uid://7a6uq3guxtyh::::res://Sprites/Main Characters/Ninja Frog/Jump (32x32).png<>uid://obsipy1jftil::::res://Sprites/Main Characters/Ninja Frog/Run (32x32).png
-::res://Levels/::1710942661
-Level_1.tscn::PackedScene::7353940201814871145::1710942976::0::1::::<><>::uid://df70hrxevtro8::::res://Sprites/Background/Blue.png
+::res://Character/::1710945938
+Players.tscn::PackedScene::5430643108145414009::1710945938::0::1::::<><>::res://Character/Players_Code.gd<>uid://dt3srkugkr4w::::res://Sprites/Main Characters/Ninja Frog/Hit (32x32).png<>uid://dj48bttltoec2::::res://Sprites/Main Characters/Ninja Frog/Fall (32x32).png<>uid://db1rmhuju51vx::::res://Sprites/Main Characters/Ninja Frog/Idle (32x32).png<>uid://7a6uq3guxtyh::::res://Sprites/Main Characters/Ninja Frog/Jump (32x32).png<>uid://obsipy1jftil::::res://Sprites/Main Characters/Ninja Frog/Run (32x32).png
+Players_Code.gd::GDScript::-1::1710945497::0::1::::Player<>CharacterBody2D<>::
+::res://Levels/::1710945938
+Level_1.tscn::PackedScene::7353940201814871145::1710945938::0::1::::<><>::uid://df70hrxevtro8::::res://Sprites/Background/Blue.png<>uid://dqgm4rmmi5c3j::::res://Sprites/Terrain/Terrain (16x16).png<>uid://cjmv5s0f1p6hx::::res://Character/Players.tscn
 ::res://Sprites/::1710942454
 20 Enemies.png::CompressedTexture2D::2317658047322682366::1569851842::1710942454::1::::<><>::
 Hello.png::CompressedTexture2D::4966580026841303236::1569850842::1710942454::1::::<><>::
