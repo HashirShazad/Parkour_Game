@@ -8,7 +8,7 @@ var sprint_speed = 600
 var sprint_jump_velocity = -400
 
 @export btns{
-	 Right:Button = P
+	 var Right = 1
 }
 
 var speed = 400.0
