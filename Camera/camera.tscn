@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3 uid="uid://lqeurs1jy57v"]
+
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2D.gd" id="1_47ree"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="2_07nmk"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="3_ykp2f"]
+
+[sub_resource type="Resource" id="Resource_7s2eb"]
+script = ExtResource("2_07nmk")
+duration = 0.1
+transition = 3
+ease = 1
+
+[node name="Camera" type="Node2D"]
+
+[node name="PhantomCamera2D" type="Node2D" parent="."]
+position = Vector2(750, 886)
+script = ExtResource("1_47ree")
+priority_override = false
+priority = 0
+zoom = Vector2(1, 1)
+follow_mode = 3
+follow_group = Array[NodePath]([NodePath("../../Player1"), NodePath("../../Player2")])
+follow_parameters/auto_zoom = true
+follow_parameters/min_zoom = 0.5
+follow_parameters/max_zoom = 1.0
+follow_parameters/zoom_margin = Vector4(200, 0, 400, 0)
+follow_parameters/target_offset = Vector2(0, 0)
+follow_parameters/damping = true
+follow_parameters/damping_value = 10.0
+frame_preview = true
+pixel_perfect = false
+limit/draw_limits = true
+limit/left = -10000000
+limit/top = -10000000
+limit/right = 10000000
+limit/bottom = 10000000
+limit/limit_node_target = NodePath("")
+limit/smoothed = false
+tween_parameters = SubResource("Resource_7s2eb")
+tween_on_load = true
+inactive_update_mode = 0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(750, 886)
+
+[node name="PhantomCameraHost" type="Node" parent="Camera2D"]
+script = ExtResource("3_ykp2f")

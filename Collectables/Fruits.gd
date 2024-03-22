@@ -1,12 +1,13 @@
 extends Area2D
 
 
-@onready var game_manager = $"../../Game_Manager"
+@onready var game_manager = $"../../../Game_Manager"
 
 @export var fruit_name:StringName 
 @export var collected_ani:StringName = "Collected"
 @export var value:int = 1
 @export var delay:int = 1
+
 func _ready():
 	$AnimatedSprite2D.play(fruit_name)
 

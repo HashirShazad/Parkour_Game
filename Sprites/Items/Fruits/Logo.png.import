@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ccneog2mc6rcg"
-path="res://.godot/imported/End (Pressed) (64x64).png-4ce3e6b94af433160d86cad54bc31e6a.ctex"
+uid="uid://d32bxk1j63fcb"
+path="res://.godot/imported/Logo.png-792b9787f0f43e0a0d08173c65160c39.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Items/Checkpoints/End/End (Pressed) (64x64).png"
-dest_files=["res://.godot/imported/End (Pressed) (64x64).png-4ce3e6b94af433160d86cad54bc31e6a.ctex"]
+source_file="res://Sprites/Items/Fruits/Logo.png"
+dest_files=["res://.godot/imported/Logo.png-792b9787f0f43e0a0d08173c65160c39.ctex"]
 
 [params]
 
