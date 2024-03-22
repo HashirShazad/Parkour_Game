@@ -1,11 +1,3 @@
 res://Levels/Level_1.tscn
-res://Character/Players.tscn
-res://Collectables/Fruits.tscn
-res://Game_Manager/Game_Manger.tscn
-res://Collectables/Check_Point.tscn
-res://Collectables/Check_Point.gd
-res://UI/ui.tscn
-res://UI/ui.gd
-res://Game_Manager/Game_Manger.gd
-res://Collectables/Fruits.gd
+res://Levels/Level_2.tscn
 res://Camera/camera.tscn
