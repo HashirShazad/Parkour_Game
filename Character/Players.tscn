@@ -1,15 +1,17 @@
-[gd_scene load_steps=70 format=3 uid="uid://cjmv5s0f1p6hx"]
+[gd_scene load_steps=84 format=3 uid="uid://cjmv5s0f1p6hx"]
 
 [ext_resource type="Script" path="res://Character/Players_Code.gd" id="1_kpwhk"]
 [ext_resource type="Texture2D" uid="uid://dt3srkugkr4w" path="res://Sprites/Main Characters/Ninja Frog/Hit (32x32).png" id="1_u4h0n"]
 [ext_resource type="Texture2D" uid="uid://dj48bttltoec2" path="res://Sprites/Main Characters/Ninja Frog/Fall (32x32).png" id="2_7impj"]
 [ext_resource type="Texture2D" uid="uid://db1rmhuju51vx" path="res://Sprites/Main Characters/Ninja Frog/Idle (32x32).png" id="3_vbo1p"]
+[ext_resource type="Texture2D" uid="uid://cqxuvul2spimh" path="res://Sprites/Main Characters/Ninja Frog/Double Jump (32x32).png" id="4_5hive"]
 [ext_resource type="Texture2D" uid="uid://7a6uq3guxtyh" path="res://Sprites/Main Characters/Ninja Frog/Jump (32x32).png" id="4_nhtvo"]
 [ext_resource type="Texture2D" uid="uid://obsipy1jftil" path="res://Sprites/Main Characters/Ninja Frog/Run (32x32).png" id="5_rvcq3"]
 [ext_resource type="Texture2D" uid="uid://dskujhm002lgn" path="res://Sprites/Main Characters/Pink Man/Idle (32x32).png" id="7_b1cy3"]
 [ext_resource type="Texture2D" uid="uid://dy3iatg1pcke" path="res://Sprites/Main Characters/Pink Man/Fall (32x32).png" id="7_uwy0x"]
 [ext_resource type="Texture2D" uid="uid://dmxg8o7l4qkcb" path="res://Sprites/Main Characters/Pink Man/Jump (32x32).png" id="8_eunri"]
 [ext_resource type="Texture2D" uid="uid://4ouuntssu1yv" path="res://Sprites/Main Characters/Pink Man/Run (32x32).png" id="8_n0cs1"]
+[ext_resource type="Texture2D" uid="uid://bnstrc55mnvdc" path="res://Sprites/Main Characters/Pink Man/Double Jump (32x32).png" id="8_s0ixg"]
 
 [sub_resource type="Curve" id="Curve_2b0m0"]
 _data = [Vector2(0, 1), 0.0, -0.241378, 0, 1, Vector2(0.849693, 0.794903), 0.0, 0.0, 0, 0, Vector2(1, 0.00606799), -5.24816, 0.0, 1, 0]
@@ -22,6 +24,7 @@ colors = PackedColorArray(0, 0.476484, 3.85046e-07, 1, 1, 1, 1, 1)
 colors = PackedColorArray(0, 0.462745, 0, 1, 0, 1, 0, 1)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yidtu"]
+height = 26.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w1qah"]
 atlas = ExtResource("1_u4h0n")
@@ -50,6 +53,30 @@ region = Rect2(160, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_qurxx"]
 atlas = ExtResource("1_u4h0n")
 region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ctg7u"]
+atlas = ExtResource("4_5hive")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s0dcb"]
+atlas = ExtResource("4_5hive")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ghpor"]
+atlas = ExtResource("4_5hive")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_583vm"]
+atlas = ExtResource("4_5hive")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dgwww"]
+atlas = ExtResource("4_5hive")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v83pb"]
+atlas = ExtResource("4_5hive")
+region = Rect2(160, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j1ii4"]
 atlas = ExtResource("3_vbo1p")
@@ -146,6 +173,30 @@ region = Rect2(320, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_xoo8i"]
 atlas = ExtResource("5_rvcq3")
 region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u0t60"]
+atlas = ExtResource("8_s0ixg")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_weeo8"]
+atlas = ExtResource("8_s0ixg")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lrjq4"]
+atlas = ExtResource("8_s0ixg")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i7c0i"]
+atlas = ExtResource("8_s0ixg")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ush56"]
+atlas = ExtResource("8_s0ixg")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kupid"]
+atlas = ExtResource("8_s0ixg")
+region = Rect2(160, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k1g3f"]
 atlas = ExtResource("7_b1cy3")
@@ -269,6 +320,29 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_ctg7u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s0dcb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ghpor")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_583vm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dgwww")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v83pb")
+}],
+"loop": true,
+"name": &"Frog_Double_Jump",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("2_7impj")
 }],
 "loop": true,
@@ -360,6 +434,29 @@ animations = [{
 }],
 "loop": true,
 "name": &"Frog_Walking",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u0t60")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_weeo8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lrjq4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i7c0i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ush56")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kupid")
+}],
+"loop": true,
+"name": &"Pink_Double_Jump",
 "speed": 20.0
 }, {
 "frames": [{
@@ -478,10 +575,11 @@ anim_speed_min = 0.25
 anim_speed_max = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2.66667)
 shape = SubResource("CapsuleShape2D_yidtu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_idra0")
-animation = &"Pink_Walking"
+animation = &"Frog_Idle"
 autoplay = "Frog_Idle"

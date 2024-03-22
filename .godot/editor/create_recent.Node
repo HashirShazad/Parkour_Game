@@ -1,12 +1,12 @@
-TextureRect
+Node
 Node2D
+TextureRect
 AnimatedSprite2D
 CollisionShape2D
 Area2D
 Camera2D
 PhantomCamera2D
 CanvasGroup
-Node
 CanvasModulate
 CPUParticles2D
 CharacterBody2D

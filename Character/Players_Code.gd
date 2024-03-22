@@ -2,30 +2,32 @@ extends CharacterBody2D
 class_name Player
 
 
-var def_speed = 400
-var def_jump_velocity = -800
-var def_minimum_speed = 8
+var def_speed:int = 400
+var def_jump_velocity:int = -800
+var def_minimum_speed:int = 8
 
-var sprint_speed = 600
-var sprint_minimum_speed = 12
-var sprint_jump_velocity = -400
+var sprint_speed:int = 600
+var sprint_minimum_speed:int = 12
+var sprint_jump_velocity:int = -600
 
-var crouch_speed = 200
-var crouch_minimum_speed = 2
-var crouch_jump_velocity = -900
+var crouch_speed:int = 200
+var crouch_minimum_speed:int = 2
+var crouch_jump_velocity:int = -900
 
+var jump_count:int = 0
 @export var btns = {
 	 Right = "P1_Right",
 	 Left = "P1_Left",
 	 Jump = "P1_Jump",
 	 Sprint = "P1_Sprint",
-	Crouch = "P1_Crouch"
 }
+
 @export var animations = {
 	 Idle = "Frog_Idle",
 	 Jumping = "Frog_Jumping",
 	 Falling = "Frog_Falling",
-	 Walking = "Frog_Walking"
+	 Walking = "Frog_Walking",
+	 Double_Jump = "Frog_Double_Jump"
 }
 
 var speed = 400.0
@@ -43,9 +45,11 @@ func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity  * delta
-
+	elif jump_count != 0:
+		jump_count = 0
 	# Handle jump.
-	if Input.is_action_just_pressed(btns.Jump) and is_on_floor():
+	if Input.is_action_just_pressed(btns.Jump) and jump_count < 2:
+		jump_count = jump_count + 1
 		velocity.y = jump_velocity
 		
 	if Input.is_action_pressed(btns.Sprint):
@@ -59,14 +63,7 @@ func _physics_process(delta):
 		jump_velocity = def_jump_velocity
 		minimum_speed = def_minimum_speed
 	
-		speed = crouch_speed
-		jump_velocity = crouch_jump_velocity
-		minimum_speed = crouch_minimum_speed
 		
-	#elif Input.is_action_just_released(btns.Crouch):
-		speed = def_speed
-		jump_velocity = def_jump_velocity
-		minimum_speed = def_minimum_speed
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis(btns.Left, btns.Right)
@@ -80,9 +77,15 @@ func _physics_process(delta):
 	
 func update_animation():
 	if velocity.y < -1:
-		sprite_2d.play(animations.Jumping)
+		if jump_count < 2:
+			sprite_2d.play(animations.Jumping)
+		else:
+			sprite_2d.play(animations.Double_Jump)
 	elif velocity.y > 1:
-		sprite_2d.play(animations.Falling)
+		if jump_count < 2:
+			sprite_2d.play(animations.Falling)
+		else:
+			sprite_2d.play(animations.Double_Jump)
 	elif velocity.x != 0:
 		sprite_2d.play(animations.Walking)
 	elif velocity.x == 0:
