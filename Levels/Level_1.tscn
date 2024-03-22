@@ -903,7 +903,7 @@ animations = {
 }
 
 [node name="PhantomCamera2D" type="Node2D" parent="."]
-position = Vector2(749.997, 886)
+position = Vector2(750, 886)
 script = ExtResource("1_60dik")
 priority_override = false
 priority = 0
@@ -931,8 +931,7 @@ tween_on_load = true
 inactive_update_mode = 0
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(749.997, 886)
-zoom = Vector2(0.999997, 0.999997)
+position = Vector2(750, 886)
 
 [node name="PhantomCameraHost" type="Node" parent="Camera2D"]
 script = ExtResource("5_b7adg")
