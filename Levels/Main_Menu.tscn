@@ -3,7 +3,7 @@
 [ext_resource type="FontFile" uid="uid://vpy38kvl0qsd" path="res://Sprites/Menu/Text/Minecraft.ttf" id="1_1q238"]
 [ext_resource type="PackedScene" uid="uid://dtajtyl1bbh6e" path="res://Game_Manager/Game_Manger.tscn" id="1_js8mo"]
 [ext_resource type="Texture2D" uid="uid://cp5i8wjruxkt4" path="res://Sprites/Menu/Buttons/Play.png" id="2_lwvx8"]
-[ext_resource type="Texture2D" uid="uid://croy1xhacb6we" path="res://Sprites/Menu/Buttons/Back.png" id="3_ywx6x"]
+[ext_resource type="Texture2D" uid="uid://dhowsw4q3bgoo" path="res://Sprites/Menu/Buttons/Close.png" id="4_6ovoc"]
 [ext_resource type="Texture2D" uid="uid://bandv15rq2680" path="res://Sprites/Menu/Buttons/Settings.png" id="4_gruxj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pbmc6"]
@@ -161,7 +161,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_lwvx8")
 
-[node name="Back_Panel" type="Panel" parent="CanvasLayer/BG/Buttons"]
+[node name="Close_Panel" type="Panel" parent="CanvasLayer/BG/Buttons"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -172,7 +172,7 @@ offset_bottom = 63.0
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_tjoiu")
 
-[node name="Back" type="Panel" parent="CanvasLayer/BG/Buttons/Back_Panel"]
+[node name="Back" type="Panel" parent="CanvasLayer/BG/Buttons/Close_Panel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -181,7 +181,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_iswgc")
 
-[node name="Back_Button" type="Button" parent="CanvasLayer/BG/Buttons/Back_Panel/Back"]
+[node name="Close_Button" type="Button" parent="CanvasLayer/BG/Buttons/Close_Panel/Back"]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
@@ -198,14 +198,14 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_tpsx3")
 text = "
 "
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/BG/Buttons/Back_Panel/Back/Back_Button"]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/BG/Buttons/Close_Panel/Back/Close_Button"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_ywx6x")
+texture = ExtResource("4_6ovoc")
 
 [node name="Settings_Panel" type="Panel" parent="CanvasLayer/BG/Buttons"]
 layout_mode = 1
@@ -261,4 +261,4 @@ grow_vertical = 2
 texture = ExtResource("4_gruxj")
 
 [connection signal="pressed" from="CanvasLayer/BG/Buttons/Play_Panel/Play/Play_Button" to="Game_Manager" method="_on_play_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/BG/Buttons/Back_Panel/Back/Back_Button" to="Game_Manager" method="_on_back_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/BG/Buttons/Close_Panel/Back/Close_Button" to="Game_Manager" method="_on_close_button_pressed"]

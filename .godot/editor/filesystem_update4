@@ -1,6 +1,8 @@
-res://Levels/Main_Menu.tscn
+res://UI/pause_menu.tscn
 res://Game_Manager/Game_Manger.gd
 res://Levels/Level_1.tscn
-res://Levels/Level_2.tscn
-res://Camera/camera.tscn
-res://UI/hud.tscn
+res://Character/Players_Code.gd
+res://Levels/Main_Menu.tscn
+res://Character/Players.tscn
+res://Game_Manager/Game_Manger.tscn
+res://UI/pause_menu.gdshader

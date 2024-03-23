@@ -14,6 +14,7 @@ var crouch_speed:int = 200
 var crouch_minimum_speed:int = 2
 var crouch_jump_velocity:int = -900
 
+
 var jump_count:int = 0
 @export var btns = {
 	 Right = "P1_Right",
@@ -33,12 +34,15 @@ var jump_count:int = 0
 var speed = 400.0
 var minimum_speed = 8
 var jump_velocity = -800.0
+
 @onready var sprite_2d = $AnimatedSprite2D
+
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 
+		
 func _physics_process(delta):
 	flip_sprite()
 	update_animation()
@@ -91,10 +95,12 @@ func update_animation():
 	elif velocity.x == 0:
 		sprite_2d.play(animations.Idle)
 	
-	
 func flip_sprite():
 	if velocity.x != 0:
 		if velocity.x > 1:
 			sprite_2d.flip_h = 0
 		if velocity.x < -1:
 			sprite_2d.flip_h = 1
+
+
+		

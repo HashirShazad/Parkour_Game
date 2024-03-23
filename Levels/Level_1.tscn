@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dc1kk5y1wr6u4"]
+[gd_scene load_steps=13 format=3 uid="uid://dc1kk5y1wr6u4"]
 
 [ext_resource type="Texture2D" uid="uid://bdlua5a7mavuv" path="res://Sprites/Background/Brown.png" id="1_gulau"]
 [ext_resource type="Texture2D" uid="uid://dqgm4rmmi5c3j" path="res://Sprites/Terrain/Terrain (16x16).png" id="2_sansl"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://d1c7cnegraofw" path="res://Levels/Level_2.tscn" id="4_puv6c"]
 [ext_resource type="PackedScene" uid="uid://kxusrwxus326" path="res://Collectables/Fruits.tscn" id="5_4ou61"]
 [ext_resource type="PackedScene" uid="uid://lqeurs1jy57v" path="res://Camera/camera.tscn" id="6_jt3lk"]
-[ext_resource type="PackedScene" uid="uid://cp2ytcs60oa2h" path="res://UI/hud.tscn" id="7_ogx00"]
 [ext_resource type="PackedScene" uid="uid://dtajtyl1bbh6e" path="res://Game_Manager/Game_Manger.tscn" id="8_7t5ur"]
 [ext_resource type="PackedScene" uid="uid://blknjycqdvppw" path="res://Collectables/Check_Point.tscn" id="8_mlbo3"]
 
@@ -857,20 +856,6 @@ sources/0 = SubResource("TileSetAtlasSource_nxo6y")
 pattern_0 = SubResource("TileMapPattern_6ei6o")
 pattern_1 = SubResource("TileMapPattern_3g8fx")
 
-[sub_resource type="GDScript" id="GDScript_8wes7"]
-script/source = "extends CanvasLayer
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-"
-
 [node name="Level1" type="Node2D"]
 
 [node name="Game_Manager" parent="." instance=ExtResource("8_7t5ur")]
@@ -966,8 +951,4 @@ animations = {
 "Walking": "Pink_Walking"
 }
 
-[node name="UI" parent="." instance=ExtResource("7_ogx00")]
-script = SubResource("GDScript_8wes7")
-
 [editable path="Scene_Objects/Camera"]
-[editable path="UI"]

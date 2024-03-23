@@ -1,12 +1,13 @@
+ColorRect
+CanvasLayer
+Node2D
+Label
 Panel
 TextureRect
 Button
-Label
-CanvasLayer
 ProgressBar
 Node
 Sprite2D
-Node2D
 AnimatedSprite2D
 CollisionShape2D
 Area2D
