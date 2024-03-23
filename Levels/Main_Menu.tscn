@@ -1,0 +1,264 @@
+[gd_scene load_steps=18 format=3 uid="uid://bh5qn80j1csvu"]
+
+[ext_resource type="FontFile" uid="uid://vpy38kvl0qsd" path="res://Sprites/Menu/Text/Minecraft.ttf" id="1_1q238"]
+[ext_resource type="PackedScene" uid="uid://dtajtyl1bbh6e" path="res://Game_Manager/Game_Manger.tscn" id="1_js8mo"]
+[ext_resource type="Texture2D" uid="uid://cp5i8wjruxkt4" path="res://Sprites/Menu/Buttons/Play.png" id="2_lwvx8"]
+[ext_resource type="Texture2D" uid="uid://croy1xhacb6we" path="res://Sprites/Menu/Buttons/Back.png" id="3_ywx6x"]
+[ext_resource type="Texture2D" uid="uid://bandv15rq2680" path="res://Sprites/Menu/Buttons/Settings.png" id="4_gruxj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pbmc6"]
+bg_color = Color(0, 0.705882, 0.537255, 1)
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_76hny"]
+bg_color = Color(0, 0.694118, 0.615686, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v8lbd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dp222"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_18nkm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wcpxs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tjoiu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iswgc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tpsx3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_457ln"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ifu6j"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gk3ag"]
+
+[node name="MainMenu" type="Node2D"]
+
+[node name="Game_Manager" parent="." instance=ExtResource("1_js8mo")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="BG" type="Panel" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_pbmc6")
+
+[node name="LOGO" type="Panel" parent="CanvasLayer/BG"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -213.0
+offset_top = 100.0
+offset_right = 231.0
+offset_bottom = 226.0
+grow_horizontal = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_76hny")
+
+[node name="Label" type="Label" parent="CanvasLayer/BG/LOGO"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_1q238")
+theme_override_font_sizes/font_size = 70
+text = "Pono & Mina"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Buttons" type="Panel" parent="CanvasLayer/BG"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -213.0
+offset_top = -24.0
+offset_right = 231.0
+offset_bottom = 102.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_v8lbd")
+
+[node name="Play_Panel" type="Panel" parent="CanvasLayer/BG/Buttons"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -62.0
+offset_top = -63.0
+offset_right = -62.0
+offset_bottom = -63.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_dp222")
+
+[node name="Play" type="Panel" parent="CanvasLayer/BG/Buttons/Play_Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 126.0
+offset_bottom = 126.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_18nkm")
+
+[node name="Play_Button" type="Button" parent="CanvasLayer/BG/Buttons/Play_Panel/Play"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_1q238")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxEmpty_wcpxs")
+text = "
+"
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/BG/Buttons/Play_Panel/Play/Play_Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_lwvx8")
+
+[node name="Back_Panel" type="Panel" parent="CanvasLayer/BG/Buttons"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -63.0
+offset_right = 126.0
+offset_bottom = 63.0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_tjoiu")
+
+[node name="Back" type="Panel" parent="CanvasLayer/BG/Buttons/Back_Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_iswgc")
+
+[node name="Back_Button" type="Button" parent="CanvasLayer/BG/Buttons/Back_Panel/Back"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.227451, 0.227451, 0.227451, 1)
+theme_override_colors/font_hover_color = Color(0.776471, 0.776471, 0.776471, 1)
+theme_override_fonts/font = ExtResource("1_1q238")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tpsx3")
+text = "
+"
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/BG/Buttons/Back_Panel/Back/Back_Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_ywx6x")
+
+[node name="Settings_Panel" type="Panel" parent="CanvasLayer/BG/Buttons"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -126.0
+offset_top = -63.0
+offset_right = -126.0
+offset_bottom = -63.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_457ln")
+
+[node name="Settings" type="Panel" parent="CanvasLayer/BG/Buttons/Settings_Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 126.0
+offset_bottom = 126.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ifu6j")
+
+[node name="Settings_Button" type="Button" parent="CanvasLayer/BG/Buttons/Settings_Panel/Settings"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_1q238")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gk3ag")
+text = "
+"
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/BG/Buttons/Settings_Panel/Settings/Settings_Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_gruxj")
+
+[connection signal="pressed" from="CanvasLayer/BG/Buttons/Play_Panel/Play/Play_Button" to="Game_Manager" method="_on_play_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/BG/Buttons/Back_Panel/Back/Back_Button" to="Game_Manager" method="_on_back_button_pressed"]

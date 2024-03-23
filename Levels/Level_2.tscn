@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dqgm4rmmi5c3j" path="res://Sprites/Terrain/Terrain (16x16).png" id="5_co64u"]
 [ext_resource type="PackedScene" uid="uid://kxusrwxus326" path="res://Collectables/Fruits.tscn" id="6_e5p2v"]
 [ext_resource type="PackedScene" uid="uid://lqeurs1jy57v" path="res://Camera/camera.tscn" id="7_n6bwa"]
-[ext_resource type="PackedScene" uid="uid://cp2ytcs60oa2h" path="res://UI/ui.tscn" id="8_qt6f5"]
+[ext_resource type="PackedScene" uid="uid://cp2ytcs60oa2h" path="res://UI/hud.tscn" id="8_qt6f5"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_6ei6o"]
 tile_data = PackedInt32Array(0, 0, 4, 65536, 0, 5, 131072, 0, 5, 196608, 0, 5, 262144, 0, 6, 1, 65536, 4, 65537, 65536, 5, 131073, 65536, 5, 196609, 65536, 5, 262145, 65536, 6, 2, 65536, 4, 65538, 65536, 5, 131074, 65536, 5, 196610, 65536, 5, 262146, 65536, 6, 3, 65536, 4, 65539, 65536, 5, 131075, 65536, 5, 196611, 65536, 5, 262147, 65536, 6, 4, 65536, 4, 65540, 65536, 5, 131076, 65536, 5, 196612, 65536, 5, 262148, 65536, 6, 5, 65536, 4, 65541, 65536, 5, 131077, 65536, 5, 196613, 65536, 5, 262149, 65536, 6, 6, 65536, 4, 65542, 65536, 5, 131078, 65536, 5, 196614, 65536, 5, 262150, 65536, 6, 7, 65536, 4, 65543, 65536, 5, 131079, 65536, 5, 196615, 65536, 5, 262151, 65536, 6, 8, 65536, 4, 65544, 65536, 5, 131080, 65536, 5, 196616, 65536, 5, 262152, 65536, 6, 9, 65536, 4, 65545, 65536, 5, 131081, 65536, 5, 196617, 65536, 5, 262153, 65536, 6, 10, 65536, 4, 65546, 65536, 5, 131082, 65536, 5, 196618, 65536, 5, 262154, 65536, 6, 11, 65536, 4, 65547, 65536, 5, 131083, 65536, 5, 196619, 65536, 5, 262155, 65536, 6, 12, 65536, 4, 65548, 65536, 5, 131084, 65536, 5, 196620, 65536, 5, 262156, 65536, 6, 13, 65536, 4, 65549, 65536, 5, 131085, 65536, 5, 196621, 65536, 5, 262157, 65536, 6, 14, 65536, 4, 65550, 65536, 5, 131086, 65536, 5, 196622, 65536, 5, 262158, 65536, 6, 15, 65536, 4, 65551, 65536, 5, 131087, 65536, 5, 196623, 65536, 5, 262159, 65536, 6, 16, 65536, 4, 65552, 65536, 5, 131088, 65536, 5, 196624, 65536, 5, 262160, 65536, 6, 17, 65536, 4, 65553, 65536, 5, 131089, 65536, 5, 196625, 65536, 5, 262161, 65536, 6, 18, 131072, 4, 65554, 131072, 5, 131090, 131072, 5, 196626, 131072, 5, 262162, 131072, 6)
@@ -919,7 +919,7 @@ scale = Vector2(3, 3)
 fruit_name = &"Banana"
 
 [node name="Kiwi" parent="Scene_Objects/Fruits" instance=ExtResource("6_e5p2v")]
-position = Vector2(5213, 972)
+position = Vector2(5523, 1535)
 scale = Vector2(3, 3)
 fruit_name = &"Kiwi"
 
@@ -936,13 +936,13 @@ fruit_name = &"Melon"
 [node name="Camera" parent="Scene_Objects" instance=ExtResource("7_n6bwa")]
 
 [node name="PhantomCamera2D" parent="Scene_Objects/Camera" index="0"]
-position = Vector2(750, 1086)
-zoom = Vector2(0.503333, 0.503333)
+position = Vector2(550, 886)
+zoom = Vector2(0.755, 0.755)
 follow_group = Array[NodePath]([NodePath("../../Players/Player1"), NodePath("../../Players/Player2")])
 
 [node name="Camera2D" parent="Scene_Objects/Camera" index="1"]
-position = Vector2(750, 1086)
-zoom = Vector2(0.503333, 0.503333)
+position = Vector2(550, 886)
+zoom = Vector2(0.755, 0.755)
 
 [node name="Players" type="Node" parent="Scene_Objects"]
 
@@ -967,11 +967,6 @@ animations = {
 
 [node name="UI" parent="." instance=ExtResource("8_qt6f5")]
 script = SubResource("GDScript_8wes7")
-
-[node name="TextureRect" parent="UI/Panel" index="1"]
-layout_mode = 0
-offset_top = 0.0
-offset_bottom = 40.0
 
 [editable path="Scene_Objects/Camera"]
 [editable path="UI"]

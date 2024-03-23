@@ -1,0 +1,274 @@
+[gd_scene load_steps=12 format=3 uid="uid://cp2ytcs60oa2h"]
+
+[ext_resource type="Texture2D" uid="uid://d32bxk1j63fcb" path="res://Sprites/Items/Fruits/Logo.png" id="1_ccv1o"]
+[ext_resource type="FontFile" uid="uid://vpy38kvl0qsd" path="res://Sprites/Menu/Text/Minecraft.ttf" id="1_g1jbi"]
+[ext_resource type="Texture2D" uid="uid://dj48bttltoec2" path="res://Sprites/Main Characters/Ninja Frog/Fall (32x32).png" id="3_iy57m"]
+[ext_resource type="Texture2D" uid="uid://dy3iatg1pcke" path="res://Sprites/Main Characters/Pink Man/Fall (32x32).png" id="4_s8py3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5tgq1"]
+bg_color = Color(0, 0.698039, 0.254902, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qy3m5"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_340mb"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xl6ds"]
+bg_color = Color(1, 0, 0, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r1qsn"]
+bg_color = Color(1, 0.171776, 0.596011, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xtif2"]
+bg_color = Color(0, 0.65098, 0.737255, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2pxr3"]
+bg_color = Color(1, 1, 1, 0)
+
+[node name="UI" type="CanvasLayer"]
+
+[node name="Node" type="Node" parent="."]
+
+[node name="Player_Info_Box" type="Panel" parent="Node"]
+texture_filter = 1
+offset_right = 255.0
+offset_bottom = 72.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_5tgq1")
+
+[node name="Avatar_Frame" type="Panel" parent="Node/Player_Info_Box"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 8.0
+offset_top = -20.0
+offset_right = 48.0
+offset_bottom = 20.0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qy3m5")
+
+[node name="TextureRect" type="TextureRect" parent="Node/Player_Info_Box/Avatar_Frame"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_iy57m")
+
+[node name="Panel" type="Panel" parent="Node/Player_Info_Box"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.5
+offset_top = -15.0
+offset_right = 104.5
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.0017, 1)
+theme_override_styles/panel = SubResource("StyleBoxFlat_340mb")
+
+[node name="ProgressBar" type="ProgressBar" parent="Node/Player_Info_Box/Panel"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -83.5068
+offset_top = -13.5
+offset_right = 84.4932
+offset_bottom = 13.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("1_g1jbi")
+theme_override_styles/fill = SubResource("StyleBoxFlat_xl6ds")
+value = 100.0
+
+[node name="Player2_Info_Box" type="Panel" parent="Node"]
+texture_filter = 1
+offset_top = 81.0
+offset_right = 255.0
+offset_bottom = 153.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_r1qsn")
+
+[node name="Avatar_Frame" type="Panel" parent="Node/Player2_Info_Box"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 8.0
+offset_top = -20.0
+offset_right = 48.0
+offset_bottom = 20.0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qy3m5")
+
+[node name="TextureRect" type="TextureRect" parent="Node/Player2_Info_Box/Avatar_Frame"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_s8py3")
+
+[node name="Panel" type="Panel" parent="Node/Player2_Info_Box"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.5
+offset_top = -15.0
+offset_right = 104.5
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.0017, 1)
+theme_override_styles/panel = SubResource("StyleBoxFlat_340mb")
+
+[node name="ProgressBar" type="ProgressBar" parent="Node/Player2_Info_Box/Panel"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -83.5068
+offset_top = -13.5
+offset_right = 84.4932
+offset_bottom = 13.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("1_g1jbi")
+theme_override_styles/fill = SubResource("StyleBoxFlat_xl6ds")
+value = 100.0
+
+[node name="Coin_Info_Box" type="Panel" parent="Node"]
+texture_filter = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -157.0
+offset_bottom = 58.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_xtif2")
+
+[node name="Avatar_Frame" type="Panel" parent="Node/Coin_Info_Box"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 8.0
+offset_top = -20.0
+offset_right = 48.0
+offset_bottom = 20.0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2pxr3")
+
+[node name="TextureRect" type="TextureRect" parent="Node/Coin_Info_Box/Avatar_Frame"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.0
+offset_top = -23.0
+offset_right = 23.0
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ccv1o")
+
+[node name="PointsLabel" type="Label" parent="Node/Coin_Info_Box"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -17.5
+offset_top = -8.0
+offset_right = 47.5
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_g1jbi")
+theme_override_font_sizes/font_size = 0
+text = "Points: 0"
+horizontal_alignment = 2
+vertical_alignment = 1
