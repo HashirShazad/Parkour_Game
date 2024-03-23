@@ -1,8 +1,5 @@
 res://UI/pause_menu.tscn
-res://Game_Manager/Game_Manger.gd
-res://Levels/Level_1.tscn
-res://Character/Players_Code.gd
-res://Levels/Main_Menu.tscn
-res://Character/Players.tscn
-res://Game_Manager/Game_Manger.tscn
 res://UI/pause_menu.gdshader
+res://Levels/Level_1.tscn
+res://Game_Manager/Game_Manger.tscn
+res://Game_Manager/Game_Manger.gd

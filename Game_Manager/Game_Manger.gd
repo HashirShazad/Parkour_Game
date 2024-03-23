@@ -8,6 +8,7 @@ var points = 0
 var paused:bool = false
 
 func _process(delta):
+	print(paused)
 	if Input.is_action_just_pressed("Pause"):
 		pause()
 		
@@ -40,9 +41,10 @@ func _on_resume_button_pressed():
 
 
 func _on_back_button_pressed():
+	pause()
 	get_tree().change_scene_to_file("res://Levels/Main_Menu.tscn")
 
 
 func _on_restart_button_pressed():
-	get_tree().change_scene_to_file(get_tree().current_scene.scene_file_path)
 	pause()
+	get_tree().change_scene_to_file(get_tree().current_scene.scene_file_path)
