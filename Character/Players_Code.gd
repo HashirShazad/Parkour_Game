@@ -1,18 +1,21 @@
 extends CharacterBody2D
 class_name Player
 
+var push_force = 80.0
+var health:int = 100
+var max_health:int = 100
+var is_pushing:bool = 0
 
 var def_speed:int = 400
 var def_jump_velocity:int = -800
 var def_minimum_speed:int = 8
+var def_push_force = 80.0
 
 var sprint_speed:int = 600
 var sprint_minimum_speed:int = 12
 var sprint_jump_velocity:int = -600
+var sprint_push_force = 160.0
 
-var crouch_speed:int = 200
-var crouch_minimum_speed:int = 2
-var crouch_jump_velocity:int = -900
 
 
 var jump_count:int = 0
@@ -41,7 +44,6 @@ var jump_velocity = -800.0
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
-
 		
 func _physics_process(delta):
 	flip_sprite()
@@ -61,12 +63,13 @@ func _physics_process(delta):
 		speed = sprint_speed
 		jump_velocity = sprint_jump_velocity
 		minimum_speed = sprint_minimum_speed
+		push_force = sprint_push_force
 	elif Input.is_action_just_released(btns.Sprint):
 		$CPUParticles2D.emitting = 0
 		speed = def_speed
 		jump_velocity = def_jump_velocity
 		minimum_speed = def_minimum_speed
-	
+		push_force = def_push_force
 		
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -79,18 +82,26 @@ func _physics_process(delta):
 
 	move_and_slide()
 	
+	for i in get_slide_collision_count():
+		var c = get_slide_collision(i)
+		if c.get_collider() is RigidBody2D:
+			is_pushing = 1
+			c.get_collider().apply_central_impulse(-c.get_normal() * push_force)
+		else:
+			is_pushing = 0
+			
 func update_animation():
-	if velocity.y < -1:
+	if velocity.y < 0:
 		if jump_count < 2:
 			sprite_2d.play(animations.Jumping)
 		else:
 			sprite_2d.play(animations.Double_Jump)
-	elif velocity.y > 1:
+	elif velocity.y > 0:
 		if jump_count < 2:
 			sprite_2d.play(animations.Falling)
 		else:
 			sprite_2d.play(animations.Double_Jump)
-	elif velocity.x != 0:
+	elif velocity.x != 0 || is_pushing:
 		sprite_2d.play(animations.Walking)
 	elif velocity.x == 0:
 		sprite_2d.play(animations.Idle)
@@ -103,4 +114,3 @@ func flip_sprite():
 			sprite_2d.flip_h = 1
 
 
-		

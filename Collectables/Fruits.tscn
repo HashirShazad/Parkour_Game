@@ -1,6 +1,6 @@
 [gd_scene load_steps=155 format=3 uid="uid://kxusrwxus326"]
 
-[ext_resource type="Script" path="res://Collectables/Fruits.gd" id="1_d6i51"]
+[ext_resource type="Script" path="res://Collectables/Fruits.gd" id="1_0qct4"]
 [ext_resource type="Texture2D" uid="uid://b8eodl0c071ls" path="res://Sprites/Items/Fruits/Pineapple.png" id="1_kwgb3"]
 [ext_resource type="Texture2D" uid="uid://malscbblgk01" path="res://Sprites/Items/Fruits/Apple.png" id="2_kqttc"]
 [ext_resource type="Texture2D" uid="uid://b4kympskchaxf" path="res://Sprites/Items/Fruits/Cherries.png" id="2_wvh4u"]
@@ -1056,7 +1056,7 @@ animations = [{
 }]
 
 [node name="Fruits" type="Area2D"]
-script = ExtResource("1_d6i51")
+script = ExtResource("1_0qct4")
 fruit_name = &"Pineapple"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
