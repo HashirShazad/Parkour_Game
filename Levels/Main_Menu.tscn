@@ -262,3 +262,4 @@ texture = ExtResource("4_gruxj")
 
 [connection signal="pressed" from="CanvasLayer/BG/Buttons/Play_Panel/Play/Play_Button" to="Game_Manager" method="_on_play_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/BG/Buttons/Close_Panel/Back/Close_Button" to="Game_Manager" method="_on_close_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/BG/Buttons/Settings_Panel/Settings/Settings_Button" to="Game_Manager" method="_on_settings_button_pressed"]

@@ -89,7 +89,7 @@ func _physics_process(delta):
 			c.get_collider().apply_central_impulse(-c.get_normal() * push_force)
 		else:
 			is_pushing = 0
-			
+				
 func update_animation():
 	if velocity.y < 0:
 		if jump_count < 2:

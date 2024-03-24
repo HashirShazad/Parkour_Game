@@ -3,11 +3,15 @@ extends Node
 @onready var points_label = $Hud/Node/Coin_Info_Box/PointsLabel
 @onready var pause_menu = $Pause_Menu
 
-@export var action_items: Array[String]
+
+
+
 
 var points = 0
 var paused:bool = false
 
+
+	
 func _process(delta):
 	if Input.is_action_just_pressed("Pause"):
 		pause()
@@ -49,3 +53,7 @@ func update_health():
 
 func _on_back_to_main_menu_button_pressed():
 	get_tree().change_scene_to_file("res://Levels/Main_Menu.tscn")
+
+
+func _on_settings_button_pressed():
+	get_tree().change_scene_to_file("res://UI/Settings_Menu.tscn")

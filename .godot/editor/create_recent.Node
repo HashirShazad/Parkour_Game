@@ -1,3 +1,7 @@
+VBoxContainer
+HBoxContainer
+Panel
+Remap_Button
 OptionButton
 Label
 GridContainer
@@ -7,9 +11,4 @@ RigidBody2D
 ColorRect
 CanvasLayer
 Node2D
-Panel
 TextureRect
-Button
-ProgressBar
-Node
-Sprite2D
