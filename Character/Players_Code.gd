@@ -4,7 +4,11 @@ class_name Player
 var push_force = 80.0
 var health:int = 100
 var max_health:int = 100
+
+var direction:float
 var is_pushing:bool = 0
+var is_dead:bool = 0
+var is_stunned:bool = 0
 
 var def_speed:int = 400
 var def_jump_velocity:int = -800
@@ -15,8 +19,6 @@ var sprint_speed:int = 600
 var sprint_minimum_speed:int = 12
 var sprint_jump_velocity:int = -600
 var sprint_push_force = 160.0
-
-
 
 var jump_count:int = 0
 @export var btns = {
@@ -31,7 +33,9 @@ var jump_count:int = 0
 	 Jumping = "Frog_Jumping",
 	 Falling = "Frog_Falling",
 	 Walking = "Frog_Walking",
-	 Double_Jump = "Frog_Double_Jump"
+	 Double_Jump = "Frog_Double_Jump",
+	 Damaged = "Frog_Damaged",
+	 Dead = "Dead"
 }
 
 var speed = 400.0
@@ -39,6 +43,7 @@ var minimum_speed = 8
 var jump_velocity = -800.0
 
 @onready var sprite_2d = $AnimatedSprite2D
+@onready var game_manager = $"../../../Game_Manager"
 
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -46,8 +51,11 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 		
 func _physics_process(delta):
+	
 	flip_sprite()
 	update_animation()
+	if is_dead:
+		return
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity  * delta
@@ -57,7 +65,6 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed(btns.Jump) and jump_count < 2:
 		jump_count = jump_count + 1
 		velocity.y = jump_velocity
-		
 	if Input.is_action_pressed(btns.Sprint):
 		$CPUParticles2D.emitting = 1
 		speed = sprint_speed
@@ -73,7 +80,7 @@ func _physics_process(delta):
 		
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction = Input.get_axis(btns.Left, btns.Right)
+	direction = Input.get_axis(btns.Left, btns.Right)
 	if direction:
 		velocity.x = direction * speed
 	else:
@@ -91,7 +98,11 @@ func _physics_process(delta):
 			is_pushing = 0
 				
 func update_animation():
-	if velocity.y < 0:
+	if is_dead:
+		sprite_2d.play(animations.Dead)
+	elif is_stunned:
+		sprite_2d.play(animations.Damaged)
+	elif velocity.y < 0:
 		if jump_count < 2:
 			sprite_2d.play(animations.Jumping)
 		else:
@@ -107,10 +118,39 @@ func update_animation():
 		sprite_2d.play(animations.Idle)
 	
 func flip_sprite():
+	if is_stunned || is_dead:
+		return
 	if velocity.x != 0:
 		if velocity.x > 1:
 			sprite_2d.flip_h = 0
 		if velocity.x < -1:
 			sprite_2d.flip_h = 1
 
+func take_damage(damage:int, stun_duration:float):
+	if is_dead:
+		print("Already_DEAd")
+		return
+	if is_stunned:
+		return
+	health -= damage
+	is_stunned = 1
+	game_manager.update_health()
+	if health <= 0:
+		is_dead = 1
+		$CollisionShape2D.disabled = 1
+		$Hurt_Box/CollisionShape2D.disabled = 1
+	await get_tree().create_timer(stun_duration).timeout
+	is_stunned = 0
 
+func take_knockback(kb_direction: Vector2, strength:Vector2):
+	if is_dead:
+		return
+	if is_stunned:
+		return
+	pass
+	velocity.x = 0
+	velocity.x = kb_direction.x * strength.x
+	velocity.y = kb_direction.y * strength.y
+	move_toward(velocity.x, 0, minimum_speed)
+	move_toward(velocity.y, 0, minimum_speed)
+	move_and_slide()

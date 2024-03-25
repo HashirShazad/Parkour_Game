@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://bq8l8hs3fwqug"]
+
+[ext_resource type="PackedScene" uid="uid://cjmv5s0f1p6hx" path="res://Character/Players.tscn" id="1_1sgb2"]
+
+[node name="Players" type="Node2D"]
+
+[node name="Player1" parent="." instance=ExtResource("1_1sgb2")]
+position = Vector2(-93, -11)
+
+[node name="Player2" parent="." instance=ExtResource("1_1sgb2")]
+position = Vector2(1, -8)
+btns = {
+"Jump": "P2_Jump",
+"Left": "P2_Left",
+"Right": "P2_Right",
+"Sprint": "P2_Sprint"
+}
+animations = {
+"Damaged": "Pink_Damaged",
+"Dead": "Dead",
+"Double_Jump": "Pink_Double_Jump",
+"Falling": "Pink_Falling",
+"Idle": "Pink_Idle",
+"Jumping": "Pink_Jumping",
+"Walking": "Pink_Walking"
+}

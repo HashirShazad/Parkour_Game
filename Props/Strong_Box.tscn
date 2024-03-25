@@ -4,8 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://kx3plpuvxafc" path="res://Sprites/Items/Boxes/Box2/Idle.png" id="2_fjtoa"]
 [ext_resource type="Texture2D" uid="uid://ctnwr6167yfjw" path="res://Sprites/Items/Boxes/Box3/Idle.png" id="3_yi7pt"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_edmfm"]
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_2ofit"]
 animations = [{
 "frames": [{
@@ -33,13 +31,11 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_edmfm"]
+
 [node name="Strong_Box" type="RigidBody2D"]
 mass = 2.0
 lock_rotation = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(3, 3)
-shape = SubResource("RectangleShape2D_edmfm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -47,3 +43,7 @@ scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_2ofit")
 animation = &"Box_2"
 autoplay = "Box_2"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_edmfm")

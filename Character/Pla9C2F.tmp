@@ -727,6 +727,8 @@ height = 25.3333
 [node name="CharacterBody2D" type="CharacterBody2D"]
 scale = Vector2(3, 3)
 script = ExtResource("1_kpwhk")
+btns = null
+animations = null
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 visible = false
