@@ -14,6 +14,7 @@ func _ready():
 func _on_body_entered(body):
 	$AnimatedSprite2D.play(collected_ani)
 	game_manager.add_points(value)
+	print(value)
 	
 
 

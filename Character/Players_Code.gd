@@ -44,6 +44,8 @@ var jump_velocity = -800.0
 
 @onready var sprite_2d = $AnimatedSprite2D
 @onready var game_manager = $"../../../Game_Manager"
+@onready var hurt_box = $Hurt_Box/CollisionShape2D
+@onready var collision_shape_2d = $CollisionShape2D
 
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -59,6 +61,7 @@ func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity  * delta
+		
 	elif jump_count != 0:
 		jump_count = 0
 	# Handle jump.
@@ -135,10 +138,16 @@ func take_damage(damage:int, stun_duration:float):
 	health -= damage
 	is_stunned = 1
 	game_manager.update_health()
+	
 	if health <= 0:
-		is_dead = 1
-		$CollisionShape2D.disabled = 1
-		$Hurt_Box/CollisionShape2D.disabled = 1
+		is_dead = true
+		hurt_box.set_deferred("disabled", true)
+		collision_shape_2d.set_deferred("disabled", true)
+		await get_tree().create_timer(.25).timeout
+		
+		sprite_2d.hide()
+		
+		
 	await get_tree().create_timer(stun_duration).timeout
 	is_stunned = 0
 

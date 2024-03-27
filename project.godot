@@ -28,7 +28,7 @@ project/assembly_name="Parkour Game"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/phantom_camera/plugin.cfg")
+enabled=PackedStringArray("res://addons/SimpleTODO/plugin.cfg", "res://addons/phantom_camera/plugin.cfg", "res://addons/script-ide/plugin.cfg")
 
 [input]
 
@@ -96,6 +96,7 @@ Restart={
 [layer_names]
 
 2d_physics/layer_1="Basic_Collision"
+2d_physics/layer_2="Hit_Box"
 
 [physics]
 

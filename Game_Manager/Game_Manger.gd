@@ -2,6 +2,7 @@ extends Node
 
 @onready var points_label = $Hud/Node/Coin_Info_Box/PointsLabel
 @onready var pause_menu = $Pause_Menu
+@onready var death_screen = $Death_Screen
 
 @onready var player_1 = $"../Scene_Objects/Players/Player1"
 @onready var player_2 = $"../Scene_Objects/Players/Player2"
@@ -19,10 +20,14 @@ func _process(delta):
 	if Input.is_action_just_pressed("Restart") && paused:
 		pause()
 		get_tree().change_scene_to_file(get_tree().current_scene.scene_file_path)
-	#if player_1:
-		#if player_1.is_dead:
-			#player_1.position = player_2.position
-		
+	if player_1 && player_2:
+		if player_1.is_dead:
+			player_1.position = player_2.position
+		if player_2.is_dead:
+			player_2.position = player_1.position
+		if player_1.is_dead && player_2.is_dead:
+			death_screen.show()
+			
 func pause():
 	if paused:
 		pause_menu.hide()
@@ -58,7 +63,7 @@ func _on_restart_button_pressed():
 func update_health():
 	hp_bar_P1.value = player_1.health
 	hp_bar_P2.value = player_2.health
-
+	
 
 func _on_back_to_main_menu_button_pressed():
 	get_tree().change_scene_to_file("res://Levels/Main_Menu.tscn")
@@ -66,4 +71,6 @@ func _on_back_to_main_menu_button_pressed():
 func _on_settings_button_pressed():
 	get_tree().change_scene_to_file("res://UI/Settings_Menu.tscn")
 
+func _on_retry_button_pressed():
+	get_tree().change_scene_to_file(get_tree().current_scene.scene_file_path)
 

@@ -726,6 +726,7 @@ height = 25.3333
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 scale = Vector2(3, 3)
+platform_floor_layers = 4278190081
 script = ExtResource("1_kpwhk")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
@@ -750,7 +751,7 @@ shape = SubResource("CapsuleShape2D_yidtu")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_idra0")
-animation = &"Frog_Idle"
+animation = &"Dead"
 
 [node name="Hurt_Box" type="Area2D" parent="."]
 collision_layer = 2
@@ -760,6 +761,6 @@ script = ExtResource("14_ol218")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurt_Box"]
 position = Vector2(0, 3)
 shape = SubResource("CapsuleShape2D_o1v4y")
-debug_color = Color(0.392157, 0.611765, 0, 0.419608)
+debug_color = Color(0.976471, 0, 0.423529, 0)
 
 [connection signal="area_entered" from="Hurt_Box" to="Hurt_Box" method="_on_area_entered"]

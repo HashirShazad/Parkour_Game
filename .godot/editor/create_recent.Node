@@ -1,6 +1,7 @@
 CollisionShape2D
-Hit_Box
 Node2D
+AnimationPlayer
+Hit_Box
 Hurt_Box
 Sprite2D
 RigidBody2D
@@ -8,7 +9,6 @@ Area2D
 CPUParticles2D
 GPUParticles2D
 CanvasModulate
-AnimationPlayer
 VBoxContainer
 HBoxContainer
 Panel
