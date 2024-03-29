@@ -9,15 +9,16 @@ size = Vector2(7.5, 7)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tumcf"]
 size = Vector2(7.5, 7)
 
-[node name="Death_Spike" type="Sprite2D"]
+[node name="Spike" type="Sprite2D"]
 texture_filter = 1
+position = Vector2(1.5, -24)
+scale = Vector2(3, 3)
 texture = ExtResource("1_gbpxh")
 
 [node name="Hit_Box2" type="Area2D" parent="."]
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_fxnms")
-damage = 100.0
 knock_back_direction = Vector2(-1, -1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hit_Box2"]
@@ -29,7 +30,6 @@ debug_color = Color(1, 0, 0.0784314, 0.419608)
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_fxnms")
-damage = 100.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hit_Box"]
 position = Vector2(3.25, 4.5)

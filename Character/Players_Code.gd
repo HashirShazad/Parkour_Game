@@ -162,6 +162,3 @@ func take_knockback(kb_direction: Vector2, strength:Vector2):
 	velocity.x = 0
 	velocity.x = kb_direction.x * strength.x
 	velocity.y = kb_direction.y * strength.y
-	move_toward(velocity.x, 0, minimum_speed)
-	move_toward(velocity.y, 0, minimum_speed)
-	move_and_slide()

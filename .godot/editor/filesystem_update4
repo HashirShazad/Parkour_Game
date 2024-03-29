@@ -9,3 +9,5 @@ res://Levels/Level_2.tscn
 res://Camera/camera.tscn
 res://Game_Manager/Game_Manger.gd
 res://Character/Players_Code.gd
+res://Enemies/Spike.tscn
+res://Levels/Main_Menu.tscn

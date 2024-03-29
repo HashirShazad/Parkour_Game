@@ -751,7 +751,7 @@ shape = SubResource("CapsuleShape2D_yidtu")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_idra0")
-animation = &"Dead"
+animation = &"Frog_Idle"
 
 [node name="Hurt_Box" type="Area2D" parent="."]
 collision_layer = 2

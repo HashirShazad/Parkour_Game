@@ -21,6 +21,8 @@ func _process(delta):
 	if Input.is_action_just_pressed("Restart") && paused:
 		pause()
 		get_tree().change_scene_to_file(get_tree().current_scene.scene_file_path)
+	if Input.is_action_just_pressed("Restart") && death_screen_shown:
+		get_tree().change_scene_to_file(get_tree().current_scene.scene_file_path)
 	if player_1 && player_2:
 		if player_1.is_dead:
 			player_1.position = player_2.position
