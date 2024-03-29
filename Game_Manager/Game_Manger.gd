@@ -11,11 +11,12 @@ extends Node
 
 var points = 0
 var paused:bool = false
+var death_screen_shown:bool = false
 
 
 	
 func _process(delta):
-	if Input.is_action_just_pressed("Pause"):
+	if Input.is_action_just_pressed("Pause") && !death_screen_shown:
 		pause()
 	if Input.is_action_just_pressed("Restart") && paused:
 		pause()
@@ -27,6 +28,7 @@ func _process(delta):
 			player_2.position = player_1.position
 		if player_1.is_dead && player_2.is_dead:
 			death_screen.show()
+			death_screen_shown = true
 			
 func pause():
 	if paused:

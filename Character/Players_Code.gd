@@ -65,9 +65,7 @@ func _physics_process(delta):
 	elif jump_count != 0:
 		jump_count = 0
 	# Handle jump.
-	if Input.is_action_just_pressed(btns.Jump) and jump_count < 2:
-		jump_count = jump_count + 1
-		velocity.y = jump_velocity
+
 	if Input.is_action_pressed(btns.Sprint):
 		$CPUParticles2D.emitting = 1
 		speed = sprint_speed
@@ -84,11 +82,15 @@ func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	direction = Input.get_axis(btns.Left, btns.Right)
-	if direction:
-		velocity.x = direction * speed
-	else:
+	if !is_stunned:
+		if Input.is_action_just_pressed(btns.Jump) and jump_count < 2:
+			jump_count = jump_count + 1
+			velocity.y = jump_velocity
+		if direction:
+			velocity.x = direction * speed
+		else:
 		# move_toward(speed
-		velocity.x = move_toward(velocity.x, 0, minimum_speed)
+			velocity.x = move_toward(velocity.x, 0, minimum_speed)
 
 	move_and_slide()
 	
