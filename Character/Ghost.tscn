@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://drvnwu1l0gsdq"]
+
+[ext_resource type="Texture2D" uid="uid://dj48bttltoec2" path="res://Sprites/Main Characters/Ninja Frog/Fall (32x32).png" id="1_jju7r"]
+
+[node name="Ghost" type="Sprite2D"]
+texture_filter = 1
+texture = ExtResource("1_jju7r")

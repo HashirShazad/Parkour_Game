@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bq8l8hs3fwqug"]
+[gd_scene load_steps=3 format=3 uid="uid://bq8l8hs3fwqug"]
 
 [ext_resource type="PackedScene" uid="uid://cjmv5s0f1p6hx" path="res://Character/Players.tscn" id="1_1sgb2"]
+[ext_resource type="Texture2D" uid="uid://dy3iatg1pcke" path="res://Sprites/Main Characters/Pink Man/Fall (32x32).png" id="2_b6nco"]
 
 [node name="Players" type="Node2D"]
 
@@ -24,3 +25,8 @@ animations = {
 "Jumping": "Pink_Jumping",
 "Walking": "Pink_Walking"
 }
+
+[node name="CPUParticles2D" parent="Player2" index="0"]
+texture = ExtResource("2_b6nco")
+
+[editable path="Player2"]

@@ -1,7 +1,8 @@
+res://Sprites/Main Characters/Pink Man
+res://Sprites/Main Characters/Ninja Frog
 res://addons
 res://Character
 res://Sprites/Main Characters
-res://Sprites/Main Characters/Pink Man
 res://Enemies
 res://Collision
 res://Sprites/Items/Boxes/Box3
@@ -14,7 +15,6 @@ res://UI
 res://Camera
 res://Game_Manager
 res://Levels
-res://Sprites/Main Characters/Ninja Frog
 res://Sprites/Items/Fruits
 res://Collectables
 res://

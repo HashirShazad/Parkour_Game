@@ -37,7 +37,6 @@ var jump_count:int = 0
 	 Damaged = "Frog_Damaged",
 	 Dead = "Dead"
 }
-
 var speed = 400.0
 var minimum_speed = 8
 var jump_velocity = -800.0
@@ -46,12 +45,12 @@ var jump_velocity = -800.0
 @onready var game_manager = $"../../../Game_Manager"
 @onready var hurt_box = $Hurt_Box/CollisionShape2D
 @onready var collision_shape_2d = $CollisionShape2D
+@onready var sprint_vfx = $CPUParticles2D
 
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
-		
 func _physics_process(delta):
 	
 	flip_sprite()
@@ -67,13 +66,13 @@ func _physics_process(delta):
 	# Handle jump.
 
 	if Input.is_action_pressed(btns.Sprint):
-		$CPUParticles2D.emitting = 1
+		sprint_vfx.emitting = 1
 		speed = sprint_speed
 		jump_velocity = sprint_jump_velocity
 		minimum_speed = sprint_minimum_speed
 		push_force = sprint_push_force
 	elif Input.is_action_just_released(btns.Sprint):
-		$CPUParticles2D.emitting = 0
+		sprint_vfx.emitting = 0
 		speed = def_speed
 		jump_velocity = def_jump_velocity
 		minimum_speed = def_minimum_speed
@@ -82,7 +81,7 @@ func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	direction = Input.get_axis(btns.Left, btns.Right)
-	if !is_stunned:
+	if !is_stunned && Engine.time_scale != 0:
 		if Input.is_action_just_pressed(btns.Jump) and jump_count < 2:
 			jump_count = jump_count + 1
 			velocity.y = jump_velocity

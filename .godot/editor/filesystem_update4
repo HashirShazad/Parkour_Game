@@ -1,2 +1,7 @@
-res://Character/Players.tscn
+res://Levels/Level_2.tscn
 res://UI/pause_menu.gdshader
+res://Character/Players.tscn
+res://Levels/Level_1.tscn
+res://Character/Players_Code.gd
+res://Character/Ghost.tscn
+res://Character/Both_Players.tscn
