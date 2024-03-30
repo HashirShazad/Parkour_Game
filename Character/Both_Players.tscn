@@ -34,6 +34,7 @@ animations = {
 }
 
 [node name="CPUParticles2D" parent="Player2" index="0"]
+z_index = -1
 texture = ExtResource("2_b6nco")
 color_ramp = SubResource("Gradient_ej2xp")
 color_initial_ramp = SubResource("Gradient_bfxff")

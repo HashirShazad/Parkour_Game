@@ -1,3 +1,5 @@
+res://Sprites/Background
+res://Sprites/Traps/Spiked Ball
 res://Sprites/Main Characters/Pink Man
 res://Sprites/Main Characters/Ninja Frog
 res://addons
@@ -10,7 +12,6 @@ res://Sprites/Items/Boxes/Box2
 res://Sprites/Items/Boxes/Box1
 res://Props
 res://Sprites/Menu/Text
-res://Sprites/Background
 res://UI
 res://Camera
 res://Game_Manager

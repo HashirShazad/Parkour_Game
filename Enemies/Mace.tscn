@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://du65if58r2lup"]
+
+[ext_resource type="Texture2D" uid="uid://ca8uh6v3txgi5" path="res://Sprites/Traps/Spiked Ball/Spiked Ball.png" id="1_8s2k3"]
+[ext_resource type="Script" path="res://Collision/Hit_Box.gd" id="1_jd1yl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_krben"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_38sy5"]
+
+[node name="Mace" type="Sprite2D"]
+texture_filter = 1
+texture = ExtResource("1_8s2k3")
+
+[node name="Hit_Box" type="Area2D" parent="."]
+script = ExtResource("1_jd1yl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hit_Box"]
+shape = SubResource("CircleShape2D_krben")
+debug_color = Color(0.976471, 0, 0.403922, 0.419608)
+
+[node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="."]
+node_a = NodePath("../RigidBody2D")
+node_b = NodePath("../RigidBody2D2")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource("CircleShape2D_38sy5")
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D2"]
+shape = SubResource("CircleShape2D_38sy5")

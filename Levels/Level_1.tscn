@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bdlua5a7mavuv" path="res://Sprites/Background/Brown.png" id="1_gulau"]
 [ext_resource type="Texture2D" uid="uid://dqgm4rmmi5c3j" path="res://Sprites/Terrain/Terrain (16x16).png" id="2_sansl"]
-[ext_resource type="PackedScene" uid="uid://d1c7cnegraofw" path="res://Levels/Level_2.tscn" id="4_puv6c"]
+[ext_resource type="PackedScene" uid="uid://d1c7cnegraofw" path="res://Levels/Level_3.tscn" id="4_puv6c"]
 [ext_resource type="PackedScene" uid="uid://kxusrwxus326" path="res://Collectables/Fruits.tscn" id="5_4ou61"]
 [ext_resource type="PackedScene" uid="uid://lqeurs1jy57v" path="res://Camera/camera.tscn" id="6_jt3lk"]
 [ext_resource type="PackedScene" uid="uid://dyi8g30o5iifp" path="res://Props/Iron_Box.tscn" id="7_nlo0w"]
@@ -874,6 +874,7 @@ pattern_1 = SubResource("TileMapPattern_3g8fx")
 [node name="Scene_Objects" type="Node" parent="."]
 
 [node name="Background_Image" type="TextureRect" parent="Scene_Objects"]
+z_index = -2
 texture_filter = 1
 anchors_preset = -1
 anchor_right = 4.31163

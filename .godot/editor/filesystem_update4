@@ -6,3 +6,7 @@ res://Character/Ghost.tscn
 res://Character/Both_Players.tscn
 res://Character/Players_Code.gd
 res://Enemies/Spear_Spike.tscn
+res://Enemies/Mace.tscn
+res://Enemies/Vertical_Spike.tscn
+res://Enemies/Vertical_Spike_Left.tscn
+res://Levels/Level_3.tscn
