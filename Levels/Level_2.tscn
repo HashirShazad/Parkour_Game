@@ -1,6 +1,5 @@
-[gd_scene load_steps=15 format=3 uid="uid://cafmeyndfm7ml"]
+[gd_scene load_steps=14 format=3 uid="uid://cafmeyndfm7ml"]
 
-[ext_resource type="PackedScene" uid="uid://dtajtyl1bbh6e" path="res://Game_Manager/Game_Manger.tscn" id="1_wornx"]
 [ext_resource type="Texture2D" uid="uid://e8qk3dt180th" path="res://Sprites/Background/Green.png" id="2_e6h7s"]
 [ext_resource type="PackedScene" uid="uid://blknjycqdvppw" path="res://Collectables/Check_Point.tscn" id="3_mjh7c"]
 [ext_resource type="PackedScene" uid="uid://d1c7cnegraofw" path="res://Levels/Level_3.tscn" id="4_rw2ln"]
@@ -869,8 +868,6 @@ pattern_1 = SubResource("TileMapPattern_3g8fx")
 
 [node name="Level1" type="Node2D"]
 
-[node name="Game_Manager" parent="." instance=ExtResource("1_wornx")]
-
 [node name="Scene_Objects" type="Node" parent="."]
 
 [node name="Background_Image" type="TextureRect" parent="Scene_Objects"]
@@ -1032,10 +1029,6 @@ scale = Vector2(100, 100)
 position = Vector2(10356, 1279)
 scale = Vector2(100, 100)
 
-[editable path="Game_Manager"]
-[editable path="Game_Manager/Hud"]
-[editable path="Game_Manager/Pause_Menu"]
-[editable path="Game_Manager/Death_Screen"]
 [editable path="Scene_Objects/Camera"]
 [editable path="Scene_Objects/Players"]
 [editable path="Scene_Objects/Players/Player2"]

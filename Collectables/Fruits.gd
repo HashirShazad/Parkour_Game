@@ -1,7 +1,7 @@
 extends Area2D
 
 
-@onready var game_manager = $"../../../Game_Manager"
+
 
 @export var fruit_name:StringName 
 @export var collected_ani:StringName = "Collected"
@@ -13,8 +13,7 @@ func _ready():
 
 func _on_body_entered(body):
 	$AnimatedSprite2D.play(collected_ani)
-	game_manager.add_points(value)
-	print(value)
+	GameManger.add_points(value)
 	
 
 

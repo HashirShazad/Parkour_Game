@@ -4,8 +4,8 @@ extends Node
 @onready var pause_menu = $Pause_Menu
 @onready var death_screen = $Death_Screen
 
-@onready var player_1 = $"../Scene_Objects/Players/Player1"
-@onready var player_2 = $"../Scene_Objects/Players/Player2"
+var player_1
+var player_2
 @onready var hp_bar_P1 = $Hud/Node/Player_Info_Box/Panel/ProgressBar
 @onready var hp_bar_P2 = $Hud/Node/Player2_Info_Box/Panel/ProgressBar
 
@@ -16,15 +16,23 @@ var death_screen_shown:bool = false
 
 	
 func _process(delta):
-
+	if Input.is_action_just_pressed("Pause") && !death_screen_shown:
+		pause()
 	if Input.is_action_just_pressed("Restart") && paused:
 		pause()
+		update_health()
 		get_tree().change_scene_to_file(get_tree().current_scene.scene_file_path)
 	if Input.is_action_just_pressed("Restart") && death_screen_shown:
+		death_screen.hide()
+		update_health()
+		death_screen_shown = false
 		get_tree().change_scene_to_file(get_tree().current_scene.scene_file_path)
+		death_screen.hide()
+		update_health()
+		death_screen_shown = false
+		
+		
 	if player_1 && player_2:
-		if Input.is_action_just_pressed("Pause") && !death_screen_shown:
-			pause()
 		if player_1.is_dead:
 			player_1.position = player_2.position
 		if player_2.is_dead:
@@ -77,5 +85,9 @@ func _on_settings_button_pressed():
 	get_tree().change_scene_to_file("res://UI/Settings_Menu.tscn")
 
 func _on_retry_button_pressed():
+	death_screen.hide()
+	update_health()
+	death_screen_shown = false
 	get_tree().change_scene_to_file(get_tree().current_scene.scene_file_path)
+	
 

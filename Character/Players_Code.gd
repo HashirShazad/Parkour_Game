@@ -42,7 +42,6 @@ var minimum_speed = 8
 var jump_velocity = -800.0
 
 @onready var sprite_2d = $AnimatedSprite2D
-@onready var game_manager = $"../../../Game_Manager"
 @onready var hurt_box = $Hurt_Box/CollisionShape2D
 @onready var collision_shape_2d = $CollisionShape2D
 @onready var sprint_vfx = $CPUParticles2D
@@ -50,7 +49,12 @@ var jump_velocity = -800.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-
+func _ready():
+	if self.name == "Player1":
+		GameManger.player_1 = self
+	elif self.name == "Player2":
+		GameManger.player_2 = self
+	
 func _physics_process(delta):
 	
 	flip_sprite()
@@ -139,7 +143,7 @@ func take_damage(damage:int, stun_duration:float):
 		return
 	health -= damage
 	is_stunned = 1
-	game_manager.update_health()
+	GameManger.update_health()
 	
 	if health <= 0:
 		is_dead = true
