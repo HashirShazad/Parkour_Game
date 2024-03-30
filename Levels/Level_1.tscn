@@ -922,11 +922,6 @@ position = Vector2(3907, 791)
 scale = Vector2(3, 3)
 fruit_name = &"Banana"
 
-[node name="Banana2" parent="Scene_Objects/Fruits" instance=ExtResource("5_4ou61")]
-position = Vector2(2857, -214)
-scale = Vector2(3, 3)
-fruit_name = &"Banana"
-
 [node name="Kiwi" parent="Scene_Objects/Fruits" instance=ExtResource("5_4ou61")]
 position = Vector2(5213, 972)
 scale = Vector2(3, 3)
@@ -946,10 +941,12 @@ fruit_name = &"Melon"
 
 [node name="PhantomCamera2D" parent="Scene_Objects/Camera" index="0"]
 position = Vector2(515, 995)
+zoom = Vector2(0.7725, 0.7725)
 follow_group = Array[NodePath]([NodePath("../../Players/Player1"), NodePath("../../Players/Player2")])
 
 [node name="Camera2D" parent="Scene_Objects/Camera" index="1"]
 position = Vector2(515, 995)
+zoom = Vector2(0.7725, 0.7725)
 
 [node name="Players" parent="Scene_Objects" instance=ExtResource("12_toesn")]
 position = Vector2(608, 1006)
