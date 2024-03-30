@@ -107,3 +107,4 @@ Restart={
 
 renderer/rendering_method="mobile"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.160784, 0, 0.160784, 1)
