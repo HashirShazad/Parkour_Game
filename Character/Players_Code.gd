@@ -56,6 +56,7 @@ func _physics_process(delta):
 	flip_sprite()
 	update_animation()
 	if is_dead:
+		sprint_vfx.emitting = 0
 		return
 	# Add the gravity.
 	if not is_on_floor():

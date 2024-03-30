@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://b5wrtti3qd2xs"]
+
+[ext_resource type="Texture2D" uid="uid://dnhcqh1ajym3g" path="res://Sprites/Traps/Spikes/Idle.png" id="1_q0qi5"]
+[ext_resource type="Script" path="res://Collision/Hit_Box.gd" id="2_muvgf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_euhqq"]
+size = Vector2(7.5, 7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tumcf"]
+size = Vector2(7.5, 7)
+
+[node name="Spike" type="Sprite2D"]
+texture_filter = 1
+position = Vector2(1.5, -24)
+scale = Vector2(3, 3)
+texture = ExtResource("1_q0qi5")
+
+[node name="Hit_Box2" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("2_muvgf")
+knock_back_direction = Vector2(-1, -1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hit_Box2"]
+position = Vector2(-4.25, 4.5)
+shape = SubResource("RectangleShape2D_euhqq")
+debug_color = Color(1, 0, 0.0784314, 0.419608)
+
+[node name="Hit_Box" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("2_muvgf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hit_Box"]
+position = Vector2(3.25, 4.5)
+shape = SubResource("RectangleShape2D_tumcf")
+debug_color = Color(1, 0, 0.0784314, 0.419608)

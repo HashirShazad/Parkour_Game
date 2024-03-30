@@ -1037,3 +1037,4 @@ scale = Vector2(100, 100)
 [editable path="Game_Manager/Death_Screen"]
 [editable path="Scene_Objects/Camera"]
 [editable path="Scene_Objects/Players"]
+[editable path="Scene_Objects/Players/Player2"]
