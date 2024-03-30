@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dtajtyl1bbh6e" path="res://Game_Manager/Game_Manger.tscn" id="1_wornx"]
 [ext_resource type="Texture2D" uid="uid://e8qk3dt180th" path="res://Sprites/Background/Green.png" id="2_e6h7s"]
 [ext_resource type="PackedScene" uid="uid://blknjycqdvppw" path="res://Collectables/Check_Point.tscn" id="3_mjh7c"]
-[ext_resource type="PackedScene" uid="uid://cjmv5s0f1p6hx" path="res://Character/Players.tscn" id="4_ko0g6"]
+[ext_resource type="PackedScene" uid="uid://d1c7cnegraofw" path="res://Levels/Level_3.tscn" id="4_rw2ln"]
 [ext_resource type="Texture2D" uid="uid://dqgm4rmmi5c3j" path="res://Sprites/Terrain/Terrain (16x16).png" id="5_co64u"]
 [ext_resource type="PackedScene" uid="uid://kxusrwxus326" path="res://Collectables/Fruits.tscn" id="6_e5p2v"]
 [ext_resource type="PackedScene" uid="uid://lqeurs1jy57v" path="res://Camera/camera.tscn" id="7_n6bwa"]
@@ -890,7 +890,7 @@ metadata/_edit_use_anchors_ = true
 [node name="CheckPoint" parent="Scene_Objects" instance=ExtResource("3_mjh7c")]
 position = Vector2(7197, 191)
 scale = Vector2(3, 3)
-target_scene = ExtResource("4_ko0g6")
+target_scene = ExtResource("4_rw2ln")
 
 [node name="Tilemap" type="TileMap" parent="Scene_Objects"]
 texture_filter = 1
@@ -905,7 +905,7 @@ layer_0/tile_data = PackedInt32Array(2555933, 131072, 10, 2490397, 131072, 9, 24
 [node name="Pineapple" parent="Scene_Objects/Fruits" instance=ExtResource("6_e5p2v")]
 position = Vector2(6650, 303)
 scale = Vector2(3, 3)
-value = 3
+value = 9
 
 [node name="Strawberry" parent="Scene_Objects/Fruits" instance=ExtResource("6_e5p2v")]
 position = Vector2(4600, 1201)
