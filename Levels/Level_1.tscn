@@ -938,12 +938,12 @@ fruit_name = &"Melon"
 
 [node name="PhantomCamera2D" parent="Scene_Objects/Camera" index="0"]
 position = Vector2(515, 995)
-zoom = Vector2(0.7725, 0.7725)
+zoom = Vector2(0.3, 0.3)
 follow_group = Array[NodePath]([NodePath("../../Players/Player1"), NodePath("../../Players/Player2")])
 
 [node name="Camera2D" parent="Scene_Objects/Camera" index="1"]
 position = Vector2(515, 995)
-zoom = Vector2(0.7725, 0.7725)
+zoom = Vector2(0.300002, 0.300002)
 
 [node name="Players" parent="Scene_Objects" instance=ExtResource("12_toesn")]
 position = Vector2(608, 1006)
