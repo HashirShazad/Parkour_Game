@@ -14,6 +14,7 @@ script = ExtResource("1_tb1wt")
 visible = false
 
 [node name="Death_Screen" parent="." instance=ExtResource("4_eq1kn")]
+process_priority = 10
 visible = false
 
 [connection signal="pressed" from="Pause_Menu/Panel/Buttons/Play_Panel/Play/Resume_Button" to="." method="_on_resume_button_pressed"]

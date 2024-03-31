@@ -1,10 +1,11 @@
-[gd_scene load_steps=18 format=3 uid="uid://bh5qn80j1csvu"]
+[gd_scene load_steps=19 format=3 uid="uid://bh5qn80j1csvu"]
 
 [ext_resource type="FontFile" uid="uid://vpy38kvl0qsd" path="res://Sprites/Menu/Text/Minecraft.ttf" id="1_1q238"]
 [ext_resource type="PackedScene" uid="uid://dtajtyl1bbh6e" path="res://Game_Manager/Game_Manger.tscn" id="1_js8mo"]
 [ext_resource type="Texture2D" uid="uid://cp5i8wjruxkt4" path="res://Sprites/Menu/Buttons/Play.png" id="2_lwvx8"]
 [ext_resource type="Texture2D" uid="uid://dhowsw4q3bgoo" path="res://Sprites/Menu/Buttons/Close.png" id="4_6ovoc"]
 [ext_resource type="Texture2D" uid="uid://bandv15rq2680" path="res://Sprites/Menu/Buttons/Settings.png" id="4_gruxj"]
+[ext_resource type="PackedScene" uid="uid://bq8l8hs3fwqug" path="res://Character/Both_Players.tscn" id="6_fdobc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pbmc6"]
 bg_color = Color(0, 0.705882, 0.537255, 1)
@@ -260,6 +261,12 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_gruxj")
 
+[node name="Players" parent="." instance=ExtResource("6_fdobc")]
+position = Vector2(655, 495)
+
 [connection signal="pressed" from="CanvasLayer/BG/Buttons/Play_Panel/Play/Play_Button" to="Game_Manager" method="_on_play_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/BG/Buttons/Close_Panel/Back/Close_Button" to="Game_Manager" method="_on_close_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/BG/Buttons/Settings_Panel/Settings/Settings_Button" to="Game_Manager" method="_on_settings_button_pressed"]
+
+[editable path="Players"]
+[editable path="Players/Player2"]

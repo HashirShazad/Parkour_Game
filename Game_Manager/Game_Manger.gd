@@ -13,26 +13,15 @@ var points = 0
 var paused:bool = false
 var death_screen_shown:bool = false
 
-
 	
 func _process(delta):
-	if Input.is_action_just_pressed("Pause") && !death_screen_shown:
-		pause()
-	if Input.is_action_just_pressed("Restart") && paused:
-		pause()
-		update_health()
-		get_tree().change_scene_to_file(get_tree().current_scene.scene_file_path)
-	if Input.is_action_just_pressed("Restart") && death_screen_shown:
-		death_screen.hide()
-		update_health()
-		death_screen_shown = false
-		get_tree().change_scene_to_file(get_tree().current_scene.scene_file_path)
-		death_screen.hide()
-		update_health()
-		death_screen_shown = false
-		
-		
 	if player_1 && player_2:
+		if Input.is_action_just_pressed("Pause") && !death_screen_shown:
+			pause()
+		if Input.is_action_just_pressed("Restart") && paused:
+			_on_restart_button_pressed()
+		if Input.is_action_just_pressed("Restart") && death_screen_shown:
+			_on_retry_button_pressed()
 		if player_1.is_dead:
 			player_1.position = player_2.position
 		if player_2.is_dead:
@@ -51,9 +40,8 @@ func pause():
 		
 	paused = !paused
 	
-func add_points(collected_points:int) -> void:
+func add_points(collected_points:int) -> void:	
 	points = points + collected_points
-	print(points)
 	points_label.text = "Points: " + str(points)
 
 func _on_play_button_pressed():
@@ -70,14 +58,21 @@ func _on_back_button_pressed():
 	get_tree().change_scene_to_file("res://Levels/Main_Menu.tscn")
 
 func _on_restart_button_pressed():
+	# Pause menu button
+	points_label.text = "Points: 0"
+	points = 0
 	pause()
+	player_1.health = 100
+	player_2.health = 100
+	death_screen_shown = false
+	update_health()
 	get_tree().change_scene_to_file(get_tree().current_scene.scene_file_path)
 
 func update_health():
-	hp_bar_P1.value = player_1.health
-	hp_bar_P2.value = player_2.health
+	var tween = get_tree().create_tween()
+	tween.tween_property(hp_bar_P1, "value", player_1.health, .1).set_trans(Tween.TRANS_LINEAR)
+	tween.tween_property(hp_bar_P2, "value", player_2.health, .1).set_trans(Tween.TRANS_LINEAR)
 	
-
 func _on_back_to_main_menu_button_pressed():
 	get_tree().change_scene_to_file("res://Levels/Main_Menu.tscn")
 
@@ -85,9 +80,15 @@ func _on_settings_button_pressed():
 	get_tree().change_scene_to_file("res://UI/Settings_Menu.tscn")
 
 func _on_retry_button_pressed():
+	#Death_Screen button
+	points_label.text = "Points: 0"
+	points = 0
+	player_1.health = 100
+	player_2.health = 100
+	death_screen_shown = false
+	paused = false
 	death_screen.hide()
 	update_health()
-	death_screen_shown = false
 	get_tree().change_scene_to_file(get_tree().current_scene.scene_file_path)
 	
 

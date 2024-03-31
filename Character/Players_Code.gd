@@ -21,6 +21,8 @@ var sprint_jump_velocity:int = -600
 var sprint_push_force = 160.0
 
 var jump_count:int = 0
+
+var ghost_scene = preload("res://Character/Ghost.tscn")
 @export var btns = {
 	 Right = "P1_Right",
 	 Left = "P1_Left",
@@ -54,6 +56,7 @@ func _ready():
 		GameManger.player_1 = self
 	elif self.name == "Player2":
 		GameManger.player_2 = self
+	GameManger.death_screen.hide()
 	
 func _physics_process(delta):
 	
@@ -76,6 +79,7 @@ func _physics_process(delta):
 		jump_velocity = sprint_jump_velocity
 		minimum_speed = sprint_minimum_speed
 		push_force = sprint_push_force
+		add_ghost()
 	elif Input.is_action_just_released(btns.Sprint):
 		sprint_vfx.emitting = 0
 		speed = def_speed
@@ -166,3 +170,7 @@ func take_knockback(kb_direction: Vector2, strength:Vector2):
 	velocity.x = 0
 	velocity.x = kb_direction.x * strength.x
 	velocity.y = kb_direction.y * strength.y
+	
+func add_ghost():
+	var ghost = ghost_scene.instantiate()
+	add_child(ghost)
