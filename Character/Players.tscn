@@ -1,4 +1,4 @@
-[gd_scene load_steps=111 format=3 uid="uid://cjmv5s0f1p6hx"]
+[gd_scene load_steps=108 format=3 uid="uid://cjmv5s0f1p6hx"]
 
 [ext_resource type="Script" path="res://Character/Players_Code.gd" id="1_kpwhk"]
 [ext_resource type="Texture2D" uid="uid://dt3srkugkr4w" path="res://Sprites/Main Characters/Ninja Frog/Hit (32x32).png" id="1_u4h0n"]
@@ -22,16 +22,6 @@ particles_animation = true
 particles_anim_h_frames = 1
 particles_anim_v_frames = 1
 particles_anim_loop = false
-
-[sub_resource type="Curve" id="Curve_2b0m0"]
-_data = [Vector2(0, 1), 0.0, -0.241378, 0, 1, Vector2(0.849693, 0.794903), 0.0, 0.0, 0, 0, Vector2(1, 0.00606799), -5.24816, 0.0, 1, 0]
-point_count = 3
-
-[sub_resource type="Gradient" id="Gradient_3itsl"]
-colors = PackedColorArray(0, 0.47198, 0.182536, 1, 1, 1, 1, 1)
-
-[sub_resource type="Gradient" id="Gradient_uxn35"]
-colors = PackedColorArray(0, 0.451656, 0.283644, 1, 0, 0.992922, 0.373104, 1)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yidtu"]
 height = 26.0
@@ -739,17 +729,13 @@ script = ExtResource("1_kpwhk")
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_3ld2l")
 emitting = false
-amount = 100
+amount = 1
+one_shot = true
 texture = ExtResource("2_7impj")
-emission_shape = 1
-emission_sphere_radius = 15.4
-gravity = Vector2(0, -300)
-scale_amount_min = 0.5
-scale_amount_curve = SubResource("Curve_2b0m0")
-color_ramp = SubResource("Gradient_3itsl")
-color_initial_ramp = SubResource("Gradient_uxn35")
-anim_speed_min = 0.25
-anim_speed_max = 1.0
+gravity = Vector2(0, 3000)
+initial_velocity_max = 100.0
+scale_amount_min = 3.0
+scale_amount_max = 3.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 3)

@@ -46,7 +46,7 @@ var jump_velocity = -800.0
 @onready var sprite_2d = $AnimatedSprite2D
 @onready var hurt_box = $Hurt_Box/CollisionShape2D
 @onready var collision_shape_2d = $CollisionShape2D
-@onready var sprint_vfx = $CPUParticles2D
+@onready var death_vfx = $CPUParticles2D
 
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -63,7 +63,6 @@ func _physics_process(delta):
 	flip_sprite()
 	update_animation()
 	if is_dead:
-		sprint_vfx.emitting = 0
 		return
 	# Add the gravity.
 	if not is_on_floor():
@@ -74,14 +73,12 @@ func _physics_process(delta):
 	# Handle jump.
 
 	if Input.is_action_pressed(btns.Sprint):
-		sprint_vfx.emitting = 1
 		speed = sprint_speed
 		jump_velocity = sprint_jump_velocity
 		minimum_speed = sprint_minimum_speed
 		push_force = sprint_push_force
 		add_ghost()
 	elif Input.is_action_just_released(btns.Sprint):
-		sprint_vfx.emitting = 0
 		speed = def_speed
 		jump_velocity = def_jump_velocity
 		minimum_speed = def_minimum_speed
@@ -173,4 +170,8 @@ func take_knockback(kb_direction: Vector2, strength:Vector2):
 	
 func add_ghost():
 	var ghost = ghost_scene.instantiate()
-	add_child(ghost)
+	get_parent().get_parent().add_child(ghost)
+	ghost.global_position = global_position
+	ghost.play(sprite_2d.animation)
+	ghost.flip_h = sprite_2d.flip_h
+	
