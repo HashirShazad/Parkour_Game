@@ -84,8 +84,6 @@ func _on_back_to_main_menu_button_pressed():
 	get_tree().change_scene_to_file("res://Levels/Main_Menu.tscn")
 
 func _on_settings_button_pressed():
-	Transitioner.start_transition()
-	await Transitioner.transiton_finsihed
 	get_tree().change_scene_to_file("res://UI/Settings_Menu.tscn")
 
 func _on_retry_button_pressed():

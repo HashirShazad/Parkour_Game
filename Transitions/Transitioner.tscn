@@ -57,7 +57,7 @@ _data = {
 }
 
 [node name="Transitioner" type="CanvasLayer"]
-process_priority = 10
+process_priority = -10
 script = ExtResource("1_vjfui")
 
 [node name="ColorRect" type="ColorRect" parent="."]

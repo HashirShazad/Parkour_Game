@@ -1,3 +1,4 @@
+Entity
 AnimationPlayer
 ColorRect
 CanvasLayer
@@ -11,4 +12,3 @@ Hit_Box
 DampedSpringJoint2D
 CanvasModulate
 Node
-PointLight2D
