@@ -20,6 +20,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 GameManger="*res://Game_Manager/Game_Manger.tscn"
+AudioPlayer="*res://Sounds/Audio_Player/Audio_Player.tscn"
+Transitioner="*res://Transitions/Transitioner.tscn"
 
 [display]
 

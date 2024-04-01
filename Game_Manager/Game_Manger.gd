@@ -45,9 +45,12 @@ func add_points(collected_points:int) -> void:
 	points_label.text = "Points: " + str(points)
 
 func _on_play_button_pressed():
+	Transitioner.start_transition()
+	await Transitioner.transiton_finsihed
 	get_tree().change_scene_to_file("res://Levels/Level_1.tscn")
 
 func _on_close_button_pressed():
+	
 	get_tree().quit()
 
 func _on_resume_button_pressed():
@@ -55,6 +58,8 @@ func _on_resume_button_pressed():
 
 func _on_back_button_pressed():
 	pause()
+	Transitioner.start_transition()
+	await Transitioner.transiton_finsihed
 	get_tree().change_scene_to_file("res://Levels/Main_Menu.tscn")
 
 func _on_restart_button_pressed():
@@ -66,17 +71,21 @@ func _on_restart_button_pressed():
 	player_2.health = 100
 	death_screen_shown = false
 	update_health()
+	Transitioner.start_transition()
+	await Transitioner.transiton_finsihed
 	get_tree().change_scene_to_file(get_tree().current_scene.scene_file_path)
 
 func update_health():
 	var tween = get_tree().create_tween()
-	tween.tween_property(hp_bar_P1, "value", player_1.health, .1).set_trans(Tween.TRANS_LINEAR)
-	tween.tween_property(hp_bar_P2, "value", player_2.health, .1).set_trans(Tween.TRANS_LINEAR)
+	tween.tween_property(hp_bar_P1, "value", player_1.health, .1).set_trans(Tween.TRANS_QUAD)
+	tween.tween_property(hp_bar_P2, "value", player_2.health, .1).set_trans(Tween.TRANS_QUAD)
 	
 func _on_back_to_main_menu_button_pressed():
 	get_tree().change_scene_to_file("res://Levels/Main_Menu.tscn")
 
 func _on_settings_button_pressed():
+	Transitioner.start_transition()
+	await Transitioner.transiton_finsihed
 	get_tree().change_scene_to_file("res://UI/Settings_Menu.tscn")
 
 func _on_retry_button_pressed():
@@ -89,6 +98,8 @@ func _on_retry_button_pressed():
 	paused = false
 	death_screen.hide()
 	update_health()
+	Transitioner.start_transition()
+	await Transitioner.transiton_finsihed
 	get_tree().change_scene_to_file(get_tree().current_scene.scene_file_path)
 	
 

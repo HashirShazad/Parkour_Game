@@ -23,6 +23,8 @@ var sprint_push_force = 160.0
 var jump_count:int = 0
 
 var ghost_scene = preload("res://Character/Ghost.tscn")
+var jump_sound = preload("res://Sounds/Sound/Jump.wav")
+
 @export var btns = {
 	 Right = "P1_Right",
 	 Left = "P1_Left",
@@ -57,6 +59,7 @@ func _ready():
 	elif self.name == "Player2":
 		GameManger.player_2 = self
 	GameManger.death_screen.hide()
+	AudioPlayer.play_music(AudioPlayer.LEVEL_MUSIC)
 	
 func _physics_process(delta):
 	
@@ -89,6 +92,9 @@ func _physics_process(delta):
 	direction = Input.get_axis(btns.Left, btns.Right)
 	if !is_stunned && Engine.time_scale != 0:
 		if Input.is_action_just_pressed(btns.Jump) and jump_count < 2:
+			
+			# AUDIO  (sound, volume, lower_limit, upper_limit)
+			AudioPlayer.play_FX(jump_sound, 0, 1, 1.5)
 			jump_count = jump_count + 1
 			velocity.y = jump_velocity
 		if direction:
@@ -174,4 +180,5 @@ func add_ghost():
 	ghost.global_position = global_position
 	ghost.play(sprite_2d.animation)
 	ghost.flip_h = sprite_2d.flip_h
+	ghost.sprite_2d.frame = sprite_2d.frame
 	

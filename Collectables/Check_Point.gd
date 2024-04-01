@@ -4,4 +4,7 @@ extends Area2D
 
 func _on_body_entered(body):
 	if(body.name == "Player1" || body.name == "Player2"):
+		
+		Transitioner.start_transition()
+		await Transitioner.transiton_finsihed
 		get_tree().change_scene_to_packed(target_scene)

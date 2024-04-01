@@ -2105,25 +2105,17 @@ scale = Vector2(3, 3)
 position = Vector2(15.6667, 32.6667)
 scale = Vector2(1, 1)
 
+[node name="Spike5" parent="Spikes" instance=ExtResource("9_xmdn7")]
+position = Vector2(-960.333, 64.3333)
+scale = Vector2(1, 1)
+
+[node name="Spike3" parent="Spikes" instance=ExtResource("9_xmdn7")]
+position = Vector2(-1120.33, 80.3333)
+scale = Vector2(1, 1)
+
 [node name="Spike" parent="Spikes" instance=ExtResource("9_xmdn7")]
 position = Vector2(-0.333252, 14.6667)
 scale = Vector2(1, 1)
-
-[node name="Spike" parent="Spikes/Spike" instance=ExtResource("9_xmdn7")]
-position = Vector2(-686.333, 58.3333)
-scale = Vector2(1.11458, 1.5625)
-
-[node name="Spike" parent="Spikes/Spike/Spike" instance=ExtResource("9_xmdn7")]
-position = Vector2(-387.888, 0.213336)
-scale = Vector2(1.1028, 1.23458)
-
-[node name="Spike" parent="Spikes/Spike/Spike/Spike" instance=ExtResource("9_xmdn7")]
-position = Vector2(128.718, -9.33108)
-scale = Vector2(0.910283, 1.05605)
-
-[node name="Spike" parent="Spikes/Spike/Spike/Spike/Spike" instance=ExtResource("9_xmdn7")]
-position = Vector2(-398.653, -30.4345)
-scale = Vector2(0.995115, 1.05605)
 
 [editable path="Scene_Objects/Camera"]
 [editable path="Scene_Objects/Players"]

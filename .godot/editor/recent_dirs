@@ -1,3 +1,5 @@
+res://Transitions
+res://Sounds/Audio_Player
 res://Game_Manager
 res://Sprites/Background
 res://Sprites/Traps/Spiked Ball
@@ -18,5 +20,3 @@ res://Camera
 res://Levels
 res://Sprites/Items/Fruits
 res://Collectables
-res://
-res://Sprites/Terrain
