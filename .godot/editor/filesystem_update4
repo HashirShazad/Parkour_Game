@@ -7,3 +7,11 @@ res://Character/Players.tscn
 res://Enemies/Spikes/Spike.tscn
 res://Character/Both_Players.tscn
 res://Enemies/Chicken/Chicken.tscn
+res://Enemies/Duck/Duck.tscn
+res://Enemies/Duck/Duck.gd
+res://Enemies/Kill_Zone/Kill_Zone.tscn
+res://Enemies/Spikes/Death_Spike.tscn
+res://UI/pause_menu.tscn
+res://Levels/Level_1.tscn
+res://Character/Players_Code.gd
+res://Game_Manager/Game_Manger.gd

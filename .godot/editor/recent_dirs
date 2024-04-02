@@ -1,3 +1,6 @@
+res://
+res://Sprites/Other
+res://Sprites/Enemies/Duck
 res://Sprites/Enemies/Chicken
 res://Transitions
 res://Sounds/Audio_Player
@@ -17,6 +20,3 @@ res://Sprites/Items/Boxes/Box1
 res://Props
 res://Sprites/Menu/Text
 res://UI
-res://Camera
-res://Levels
-res://Sprites/Items/Fruits

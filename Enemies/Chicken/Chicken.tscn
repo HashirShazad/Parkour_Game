@@ -283,7 +283,6 @@ size = Vector2(14, 23)
 scale = Vector2(3, 3)
 platform_floor_layers = 4278190081
 script = ExtResource("1_g0gco")
-enemy_speed = 400
 animations = {
 "Damaged": "Chicken_Damaged",
 "Dead": "Dead",

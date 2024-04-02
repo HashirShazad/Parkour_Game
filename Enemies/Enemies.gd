@@ -6,16 +6,13 @@ var ghost_scene = preload("res://Character/Ghost.tscn")
 var jump_sound = preload("res://Sounds/Sound/Jump.wav")
 @onready var edge_check_right = $Edge_Check_Right
 @onready var edge_check_left = $Edge_Check_Left
-@export var enemy_speed:int = 200
 
-	
 func _ready():
 	health = max_health
 	if randf_range(-1, 1) > 0:
 		direction = 1
 	else:
 		direction = -1
-	speed = enemy_speed
 		
 func _physics_process(delta):
 	flip_sprite()

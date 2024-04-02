@@ -88,7 +88,8 @@ func take_damage(damage:int, stun_duration:float):
 		
 		sprite_2d.hide()
 		
-		
+	jump_count = 1
+	
 	await get_tree().create_timer(stun_duration).timeout
 	is_stunned = 0
 

@@ -1,0 +1,56 @@
+[gd_scene load_steps=2 format=3 uid="uid://cp83cm1x2hdep"]
+
+[ext_resource type="PackedScene" uid="uid://pa8e0cvnbkvd" path="res://Enemies/Spikes/Death_Spike.tscn" id="1_m41n8"]
+
+[node name="Kill_Zone" type="Node2D"]
+texture_filter = 1
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Death_Spike" parent="Node2D" instance=ExtResource("1_m41n8")]
+position = Vector2(20, -315)
+scale = Vector2(40, 40)
+
+[node name="Death_Spike2" parent="Node2D" instance=ExtResource("1_m41n8")]
+position = Vector2(-582, -315)
+scale = Vector2(40, 40)
+
+[node name="Death_Spike3" parent="Node2D" instance=ExtResource("1_m41n8")]
+position = Vector2(622, -311)
+scale = Vector2(40, 40)
+
+[node name="Death_Spike4" parent="Node2D" instance=ExtResource("1_m41n8")]
+position = Vector2(-1784, -320)
+scale = Vector2(40, 40)
+
+[node name="Death_Spike5" parent="Node2D" instance=ExtResource("1_m41n8")]
+position = Vector2(-2386, -320)
+scale = Vector2(40, 40)
+
+[node name="Death_Spike6" parent="Node2D" instance=ExtResource("1_m41n8")]
+position = Vector2(-1182, -316)
+scale = Vector2(40, 40)
+
+[node name="Death_Spike7" parent="Node2D" instance=ExtResource("1_m41n8")]
+position = Vector2(3628, -305)
+scale = Vector2(40, 40)
+
+[node name="Death_Spike8" parent="Node2D" instance=ExtResource("1_m41n8")]
+position = Vector2(3026, -305)
+scale = Vector2(40, 40)
+
+[node name="Death_Spike9" parent="Node2D" instance=ExtResource("1_m41n8")]
+position = Vector2(4230, -301)
+scale = Vector2(40, 40)
+
+[node name="Death_Spike10" parent="Node2D" instance=ExtResource("1_m41n8")]
+position = Vector2(1824, -310)
+scale = Vector2(40, 40)
+
+[node name="Death_Spike11" parent="Node2D" instance=ExtResource("1_m41n8")]
+position = Vector2(1222, -310)
+scale = Vector2(40, 40)
+
+[node name="Death_Spike12" parent="Node2D" instance=ExtResource("1_m41n8")]
+position = Vector2(2426, -306)
+scale = Vector2(40, 40)

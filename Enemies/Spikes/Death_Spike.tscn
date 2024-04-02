@@ -1,15 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://pa8e0cvnbkvd"]
+[gd_scene load_steps=3 format=3 uid="uid://pa8e0cvnbkvd"]
 
 [ext_resource type="Texture2D" uid="uid://dnhcqh1ajym3g" path="res://Sprites/Traps/Spikes/Idle.png" id="1_w5yfe"]
 [ext_resource type="Script" path="res://Collision/Hit_Box.gd" id="2_v8i64"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_euhqq"]
-size = Vector2(7.5, 7)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tumcf"]
-size = Vector2(7.5, 7)
-
 [node name="Death_Spike" type="Sprite2D"]
+self_modulate = Color(1, 0, 0, 1)
 texture_filter = 1
 texture = ExtResource("1_w5yfe")
 
@@ -20,10 +15,8 @@ script = ExtResource("2_v8i64")
 damage = 100.0
 knock_back_direction = Vector2(-1, -1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hit_Box2"]
-position = Vector2(-4.25, 4.5)
-shape = SubResource("RectangleShape2D_euhqq")
-debug_color = Color(1, 0, 0.0784314, 0.419608)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hit_Box2"]
+polygon = PackedVector2Array(-5, 1, -4, 1, -4, 2, -3, 2, -3, 4, -2, 4, -2, 6, -1, 6, -1, 8, -8, 8, -8, 6, -7, 6, -7, 4, -6, 4, -6, 2, -5, 2)
 
 [node name="Hit_Box" type="Area2D" parent="."]
 collision_layer = 2
@@ -31,7 +24,6 @@ collision_mask = 2
 script = ExtResource("2_v8i64")
 damage = 100.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hit_Box"]
-position = Vector2(3.25, 4.5)
-shape = SubResource("RectangleShape2D_tumcf")
-debug_color = Color(1, 0, 0.0784314, 0.419608)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hit_Box"]
+position = Vector2(8, 0)
+polygon = PackedVector2Array(-5, 1, -4, 1, -4, 2, -3, 2, -3, 4, -2, 4, -2, 4.96479, -2, 6, -1, 6, -1, 8, -8, 8, -8, 6, -7, 6, -7, 4, -6, 4, -6, 2, -5, 2)

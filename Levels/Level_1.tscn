@@ -950,4 +950,5 @@ position = Vector2(608, 1006)
 
 [editable path="Scene_Objects/Camera"]
 [editable path="Scene_Objects/Players"]
+[editable path="Scene_Objects/Players/Player1"]
 [editable path="Scene_Objects/Players/Player2"]
