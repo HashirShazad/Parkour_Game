@@ -1,139 +1,139 @@
-[gd_scene load_steps=49 format=3 uid="uid://c127fssclensi"]
+[gd_scene load_steps=49 format=3 uid="uid://da70y2ydtwdiu"]
 
-[ext_resource type="Script" path="res://Enemies/Enemies.gd" id="1_fbvbm"]
-[ext_resource type="Texture2D" uid="uid://16bj1yhsvyja" path="res://Sprites/Enemies/Chicken/Hit (32x34).png" id="2_5rgl2"]
-[ext_resource type="Texture2D" uid="uid://5io4gfwbuoip" path="res://Sprites/Enemies/Chicken/Idle (32x34).png" id="2_7yf5p"]
-[ext_resource type="Texture2D" uid="uid://5kd1fml7oru8" path="res://Sprites/Other/Dust Particle.png" id="2_hb5gr"]
-[ext_resource type="Texture2D" uid="uid://rgqx7mey51pw" path="res://Sprites/Enemies/Chicken/Run (32x34).png" id="3_rulx5"]
-[ext_resource type="Script" path="res://Collision/Hit_Box.gd" id="7_lkyp5"]
-[ext_resource type="Script" path="res://Collision/Hurt_Box.gd" id="16_407lf"]
+[ext_resource type="Script" path="res://Enemies/Enemies.gd" id="1_g0gco"]
+[ext_resource type="Texture2D" uid="uid://16bj1yhsvyja" path="res://Sprites/Enemies/Chicken/Hit (32x34).png" id="2_qffrc"]
+[ext_resource type="Texture2D" uid="uid://5io4gfwbuoip" path="res://Sprites/Enemies/Chicken/Idle (32x34).png" id="3_nxlq8"]
+[ext_resource type="Texture2D" uid="uid://rgqx7mey51pw" path="res://Sprites/Enemies/Chicken/Run (32x34).png" id="4_02kxg"]
+[ext_resource type="Texture2D" uid="uid://5kd1fml7oru8" path="res://Sprites/Other/Dust Particle.png" id="5_s4gie"]
+[ext_resource type="Script" path="res://Collision/Hurt_Box.gd" id="6_86uj5"]
+[ext_resource type="Script" path="res://Collision/Hit_Box.gd" id="7_up32u"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sbusj"]
-atlas = ExtResource("2_5rgl2")
+atlas = ExtResource("2_qffrc")
 region = Rect2(0, 0, 32, 34)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jhsi6"]
-atlas = ExtResource("2_5rgl2")
+atlas = ExtResource("2_qffrc")
 region = Rect2(32, 0, 32, 34)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kx0o3"]
-atlas = ExtResource("2_5rgl2")
+atlas = ExtResource("2_qffrc")
 region = Rect2(64, 0, 32, 34)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oc11i"]
-atlas = ExtResource("2_5rgl2")
+atlas = ExtResource("2_qffrc")
 region = Rect2(96, 0, 32, 34)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2tayg"]
-atlas = ExtResource("2_5rgl2")
+atlas = ExtResource("2_qffrc")
 region = Rect2(128, 0, 32, 34)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xva3b"]
-atlas = ExtResource("2_7yf5p")
+atlas = ExtResource("3_nxlq8")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0nalw"]
-atlas = ExtResource("2_7yf5p")
+atlas = ExtResource("3_nxlq8")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_70oeo"]
-atlas = ExtResource("2_7yf5p")
+atlas = ExtResource("3_nxlq8")
 region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7sts3"]
-atlas = ExtResource("2_7yf5p")
+atlas = ExtResource("3_nxlq8")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x3ym8"]
-atlas = ExtResource("2_7yf5p")
+atlas = ExtResource("3_nxlq8")
 region = Rect2(128, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rwkn6"]
-atlas = ExtResource("2_7yf5p")
+atlas = ExtResource("3_nxlq8")
 region = Rect2(160, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5cqha"]
-atlas = ExtResource("2_7yf5p")
+atlas = ExtResource("3_nxlq8")
 region = Rect2(192, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8nr8y"]
-atlas = ExtResource("2_7yf5p")
+atlas = ExtResource("3_nxlq8")
 region = Rect2(224, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6yd2p"]
-atlas = ExtResource("2_7yf5p")
+atlas = ExtResource("3_nxlq8")
 region = Rect2(256, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nd1q3"]
-atlas = ExtResource("2_7yf5p")
+atlas = ExtResource("3_nxlq8")
 region = Rect2(288, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jixun"]
-atlas = ExtResource("2_7yf5p")
+atlas = ExtResource("3_nxlq8")
 region = Rect2(320, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ylial"]
-atlas = ExtResource("2_7yf5p")
+atlas = ExtResource("3_nxlq8")
 region = Rect2(352, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y5trd"]
-atlas = ExtResource("2_7yf5p")
+atlas = ExtResource("3_nxlq8")
 region = Rect2(384, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c544b"]
-atlas = ExtResource("3_rulx5")
+atlas = ExtResource("4_02kxg")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pexvf"]
-atlas = ExtResource("3_rulx5")
+atlas = ExtResource("4_02kxg")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2xa3d"]
-atlas = ExtResource("3_rulx5")
+atlas = ExtResource("4_02kxg")
 region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2xm8t"]
-atlas = ExtResource("3_rulx5")
+atlas = ExtResource("4_02kxg")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_28goi"]
-atlas = ExtResource("3_rulx5")
+atlas = ExtResource("4_02kxg")
 region = Rect2(128, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y8t8g"]
-atlas = ExtResource("3_rulx5")
+atlas = ExtResource("4_02kxg")
 region = Rect2(160, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rex8h"]
-atlas = ExtResource("3_rulx5")
+atlas = ExtResource("4_02kxg")
 region = Rect2(192, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_156if"]
-atlas = ExtResource("3_rulx5")
+atlas = ExtResource("4_02kxg")
 region = Rect2(224, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lsskk"]
-atlas = ExtResource("3_rulx5")
+atlas = ExtResource("4_02kxg")
 region = Rect2(256, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_66dug"]
-atlas = ExtResource("3_rulx5")
+atlas = ExtResource("4_02kxg")
 region = Rect2(288, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5jwg1"]
-atlas = ExtResource("3_rulx5")
+atlas = ExtResource("4_02kxg")
 region = Rect2(320, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ylikv"]
-atlas = ExtResource("3_rulx5")
+atlas = ExtResource("4_02kxg")
 region = Rect2(352, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7i8wy"]
-atlas = ExtResource("3_rulx5")
+atlas = ExtResource("4_02kxg")
 region = Rect2(384, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tml1y"]
-atlas = ExtResource("3_rulx5")
+atlas = ExtResource("4_02kxg")
 region = Rect2(416, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_idhum"]
@@ -279,10 +279,11 @@ size = Vector2(14.5, 23.3333)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4qr4f"]
 size = Vector2(14, 23)
 
-[node name="Enemy" type="CharacterBody2D"]
+[node name="Chicken" type="CharacterBody2D"]
 scale = Vector2(3, 3)
 platform_floor_layers = 4278190081
-script = ExtResource("1_fbvbm")
+script = ExtResource("1_g0gco")
+enemy_speed = 400
 animations = {
 "Damaged": "Chicken_Damaged",
 "Dead": "Dead",
@@ -307,7 +308,7 @@ emitting = false
 amount = 2
 one_shot = true
 explosiveness = 1.0
-texture = ExtResource("2_hb5gr")
+texture = ExtResource("5_s4gie")
 gravity = Vector2(100, 0)
 initial_velocity_max = 200.0
 scale_amount_max = 3.0
@@ -324,7 +325,7 @@ debug_color = Color(0, 0.6, 0.701961, 0.419608)
 position = Vector2(-1, -16)
 collision_layer = 2
 collision_mask = 2
-script = ExtResource("16_407lf")
+script = ExtResource("6_86uj5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurt_Box"]
 position = Vector2(0.333334, 2.66667)
@@ -333,7 +334,7 @@ debug_color = Color(0.976471, 0, 0.423529, 0.556863)
 
 [node name="Hit_Box" type="Area2D" parent="."]
 position = Vector2(-0.333333, 0)
-script = ExtResource("7_lkyp5")
+script = ExtResource("7_up32u")
 damage = 20.0
 knock_back_direction = Vector2(-1, -1)
 knock_back_strength = Vector2(800, 200)
@@ -345,7 +346,7 @@ debug_color = Color(0.768627, 0.447059, 0, 0.419608)
 
 [node name="Hit_Box2" type="Area2D" parent="."]
 position = Vector2(-0.333333, 0)
-script = ExtResource("7_lkyp5")
+script = ExtResource("7_up32u")
 damage = 20.0
 knock_back_strength = Vector2(800, 200)
 

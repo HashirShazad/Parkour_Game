@@ -4,11 +4,27 @@ class_name Enemy
 
 var ghost_scene = preload("res://Character/Ghost.tscn")
 var jump_sound = preload("res://Sounds/Sound/Jump.wav")
+@onready var edge_check_right = $Edge_Check_Right
+@onready var edge_check_left = $Edge_Check_Left
+@export var enemy_speed:int = 200
 
 	
+func _ready():
+	health = max_health
+	if randf_range(-1, 1) > 0:
+		direction = 1
+	else:
+		direction = -1
+	speed = enemy_speed
+		
 func _physics_process(delta):
 	flip_sprite()
 	update_animation()
+	var found_wall = is_on_wall()
+	var found_edge = not edge_check_right.is_colliding() or not  edge_check_left.is_colliding()
+	if found_wall or found_edge:
+		direction *= -1
+
 	if is_dead:
 		return
 	# Add the gravity.
@@ -17,24 +33,12 @@ func _physics_process(delta):
 		
 	elif jump_count != 0:
 		jump_count = 0
-	# Handle jump.
-
-		
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	direction 
 	if !is_stunned && Engine.time_scale != 0:
-			velocity.x = move_toward(velocity.x, 0, minimum_speed)
+		if direction:
+			velocity.x = direction * speed
 
 	move_and_slide()
-	
-	for i in get_slide_collision_count():
-		var c = get_slide_collision(i)
-		if c.get_collider() is RigidBody2D:
-			is_pushing = 1
-			c.get_collider().apply_central_impulse(-c.get_normal() * push_force)
-		else:
-			is_pushing = 0
+	check_collisions()
 				
 func add_ghost():
 	var ghost = ghost_scene.instantiate()
@@ -43,4 +47,12 @@ func add_ghost():
 	ghost.play(sprite_2d.animation)
 	ghost.flip_h = sprite_2d.flip_h
 	ghost.sprite_2d.frame = sprite_2d.frame
-	
+
+func flip_sprite():
+	if is_stunned || is_dead:
+		return
+	if velocity.x != 0:
+		if velocity.x > 1:
+			sprite_2d.flip_h = 1
+		if velocity.x < -1:
+			sprite_2d.flip_h = 0

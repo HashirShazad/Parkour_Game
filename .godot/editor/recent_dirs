@@ -1,3 +1,4 @@
+res://Sprites/Enemies/Chicken
 res://Transitions
 res://Sounds/Audio_Player
 res://Game_Manager
@@ -19,4 +20,3 @@ res://UI
 res://Camera
 res://Levels
 res://Sprites/Items/Fruits
-res://Collectables
