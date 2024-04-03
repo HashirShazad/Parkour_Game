@@ -766,6 +766,7 @@ sprite_frames = SubResource("SpriteFrames_idra0")
 animation = &"Frog_Idle"
 
 [node name="Hurt_Box" type="Area2D" parent="."]
+show_behind_parent = true
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("14_ol218")

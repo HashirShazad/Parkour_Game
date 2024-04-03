@@ -1,5 +1,6 @@
 extends CanvasLayer
 signal transiton_finsihed
+signal transition_fully_finished
 @onready var color_rect = $ColorRect
 @onready var animation_player = $AnimationPlayer
 
@@ -19,3 +20,4 @@ func _on_animation_player_animation_finished(anim_name):
 		animation_player.play("fade_out")
 	elif anim_name == "fade_out":
 		color_rect.hide()
+		transition_fully_finished.emit()

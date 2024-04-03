@@ -6,6 +6,7 @@ extends Node
 
 var player_1
 var player_2
+var input_disabled:bool = false
 @onready var hp_bar_P1 = $Hud/Node/Player_Info_Box/Panel/ProgressBar
 @onready var hp_bar_P2 = $Hud/Node/Player2_Info_Box/Panel/ProgressBar
 
@@ -15,6 +16,9 @@ var death_screen_shown:bool = false
 
 	
 func _process(delta):
+	
+	if input_disabled:
+		return
 	if player_1 && player_2:
 		if Input.is_action_just_pressed("Pause") && !death_screen_shown:
 			pause()
@@ -64,16 +68,19 @@ func _on_back_button_pressed():
 
 func _on_restart_button_pressed():
 	# Pause menu button
+	input_disabled = true
 	points_label.text = "Points: 0"
 	points = 0
-	pause()
 	player_1.health = 100
 	player_2.health = 100
 	death_screen_shown = false
 	update_health()
+	pause()
 	Transitioner.start_transition()
 	await Transitioner.transiton_finsihed
 	get_tree().change_scene_to_file(get_tree().current_scene.scene_file_path)
+	await Transitioner.transition_fully_finished
+	input_disabled = false
 
 func update_health():
 	var tween = get_tree().create_tween()
@@ -88,16 +95,19 @@ func _on_settings_button_pressed():
 
 func _on_retry_button_pressed():
 	#Death_Screen button
+	input_disabled = true
 	points_label.text = "Points: 0"
 	points = 0
 	player_1.health = 100
 	player_2.health = 100
-	death_screen_shown = false
-	paused = false
-	death_screen.hide()
 	update_health()
 	Transitioner.start_transition()
 	await Transitioner.transiton_finsihed
 	get_tree().change_scene_to_file(get_tree().current_scene.scene_file_path)
+	death_screen.hide()
+	await Transitioner.transition_fully_finished
+	death_screen_shown = false
+	input_disabled = false
+	
 	
 

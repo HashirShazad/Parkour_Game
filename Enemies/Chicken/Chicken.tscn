@@ -1,11 +1,10 @@
-[gd_scene load_steps=49 format=3 uid="uid://da70y2ydtwdiu"]
+[gd_scene load_steps=46 format=3 uid="uid://da70y2ydtwdiu"]
 
 [ext_resource type="Script" path="res://Enemies/Enemies.gd" id="1_g0gco"]
 [ext_resource type="Texture2D" uid="uid://16bj1yhsvyja" path="res://Sprites/Enemies/Chicken/Hit (32x34).png" id="2_qffrc"]
 [ext_resource type="Texture2D" uid="uid://5io4gfwbuoip" path="res://Sprites/Enemies/Chicken/Idle (32x34).png" id="3_nxlq8"]
 [ext_resource type="Texture2D" uid="uid://rgqx7mey51pw" path="res://Sprites/Enemies/Chicken/Run (32x34).png" id="4_02kxg"]
 [ext_resource type="Texture2D" uid="uid://5kd1fml7oru8" path="res://Sprites/Other/Dust Particle.png" id="5_s4gie"]
-[ext_resource type="Script" path="res://Collision/Hurt_Box.gd" id="6_86uj5"]
 [ext_resource type="Script" path="res://Collision/Hit_Box.gd" id="7_up32u"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sbusj"]
@@ -270,14 +269,8 @@ colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yidtu"]
 height = 26.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8xpef"]
-size = Vector2(28.6667, 5.33333)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dwh65"]
-size = Vector2(14.5, 23.3333)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4qr4f"]
-size = Vector2(14, 23)
+[sub_resource type="CircleShape2D" id="CircleShape2D_585re"]
+radius = 12.1712
 
 [node name="Chicken" type="CharacterBody2D"]
 scale = Vector2(3, 3)
@@ -316,42 +309,20 @@ color_ramp = SubResource("Gradient_qnfyl")
 color_initial_ramp = SubResource("Gradient_kn7vb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+show_behind_parent = true
 position = Vector2(0, 3)
 shape = SubResource("CapsuleShape2D_yidtu")
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
-
-[node name="Hurt_Box" type="Area2D" parent="."]
-position = Vector2(-1, -16)
-collision_layer = 2
-collision_mask = 2
-script = ExtResource("6_86uj5")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurt_Box"]
-position = Vector2(0.333334, 2.66667)
-shape = SubResource("RectangleShape2D_8xpef")
-debug_color = Color(0.976471, 0, 0.423529, 0.556863)
 
 [node name="Hit_Box" type="Area2D" parent="."]
 position = Vector2(-0.333333, 0)
 script = ExtResource("7_up32u")
 damage = 20.0
-knock_back_direction = Vector2(-1, -1)
 knock_back_strength = Vector2(800, 200)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hit_Box"]
-position = Vector2(-7.25, 1)
-shape = SubResource("RectangleShape2D_dwh65")
-debug_color = Color(0.768627, 0.447059, 0, 0.419608)
-
-[node name="Hit_Box2" type="Area2D" parent="."]
-position = Vector2(-0.333333, 0)
-script = ExtResource("7_up32u")
-damage = 20.0
-knock_back_strength = Vector2(800, 200)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hit_Box2"]
-position = Vector2(7, 0.833334)
-shape = SubResource("RectangleShape2D_4qr4f")
+position = Vector2(-0.166667, 1)
+shape = SubResource("CircleShape2D_585re")
 debug_color = Color(0.768627, 0.447059, 0, 0.419608)
 
 [node name="Edge_Check_Right" type="RayCast2D" parent="."]
@@ -361,5 +332,3 @@ target_position = Vector2(0, 20)
 [node name="Edge_Check_Left" type="RayCast2D" parent="."]
 position = Vector2(-10.6667, -0.333333)
 target_position = Vector2(0, 20)
-
-[connection signal="area_entered" from="Hurt_Box" to="Hurt_Box" method="_on_area_entered"]

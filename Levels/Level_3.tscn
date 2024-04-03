@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://d1c7cnegraofw"]
+[gd_scene load_steps=18 format=3 uid="uid://d1c7cnegraofw"]
 
 [ext_resource type="Texture2D" uid="uid://bh07d18uqp68w" path="res://Sprites/Background/Yellow.png" id="2_qx71t"]
 [ext_resource type="PackedScene" uid="uid://blknjycqdvppw" path="res://Collectables/Check_Point.tscn" id="3_mjh7c"]
@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://b0qlu341sr3x4" path="res://Sprites/Additional/Treasure Hunters/Pirate Ship/Sprites/Tilesets/Platforms (32x32).png" id="7_n6y68"]
 [ext_resource type="PackedScene" uid="uid://bq8l8hs3fwqug" path="res://Character/Both_Players.tscn" id="8_ytky0"]
 [ext_resource type="PackedScene" uid="uid://drl6q0tnh0apb" path="res://Enemies/Spikes/Spike.tscn" id="9_xmdn7"]
-[ext_resource type="PackedScene" uid="uid://cx64y1k63wqr3" path="res://Enemies/Spikes/Vertical_Spike_Left.tscn" id="10_oh2hm"]
 [ext_resource type="PackedScene" uid="uid://c127fssclensi" path="res://Enemies/Enemies.tscn" id="11_le5rl"]
 [ext_resource type="PackedScene" uid="uid://cp83cm1x2hdep" path="res://Enemies/Kill_Zone/Kill_Zone.tscn" id="12_ej1go"]
 
@@ -2074,10 +2073,6 @@ metadata/_edit_use_anchors_ = true
 [node name="Spikes" type="Node2D" parent="Scene_Objects"]
 position = Vector2(8186, 168)
 scale = Vector2(3, 3)
-
-[node name="Vertical_Spike" parent="Scene_Objects/Spikes" instance=ExtResource("10_oh2hm")]
-position = Vector2(15.6667, 32.6667)
-scale = Vector2(1, 1)
 
 [node name="Spike5" parent="Scene_Objects/Spikes" instance=ExtResource("9_xmdn7")]
 position = Vector2(-960.333, 64.3333)

@@ -4,7 +4,7 @@ class_name Player
 
 var ghost_scene = preload("res://Character/Ghost.tscn")
 var jump_sound = preload("res://Sounds/Sound/Jump.wav")
-
+const WALL_JUMP_PUSHBACK = 1000
 @export var btns = {
 	 Right = "P1_Right",
 	 Left = "P1_Left",
@@ -34,40 +34,8 @@ func _physics_process(delta):
 		velocity.y += gravity  * delta
 	if is_dead:
 		return
-
-		
-	# Handle jump.
-
-	if Input.is_action_pressed(btns.Sprint):
-		speed = sprint_speed
-		jump_velocity = sprint_jump_velocity
-		minimum_speed = sprint_minimum_speed
-		push_force = sprint_push_force
-		add_ghost()
-	elif Input.is_action_just_released(btns.Sprint):
-		speed = def_speed
-		jump_velocity = def_jump_velocity
-		minimum_speed = def_minimum_speed
-		push_force = def_push_force
-		
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	direction = Input.get_axis(btns.Left, btns.Right)
-	if !is_stunned && Engine.time_scale != 0:
-		if Input.is_action_just_pressed(btns.Jump) and jump_count < 2:
-			
-			# AUDIO  (sound, volume, lower_limit, upper_limit)
-			AudioPlayer.play_FX(jump_sound, 0, 1, 1.5)
-			jump_count = jump_count + 1
-			velocity.y = jump_velocity
-		if direction:
-			velocity.x = direction * speed
-		else:
-		# move_toward(speed
-			velocity.x = move_toward(velocity.x, 0, minimum_speed)
-
+	handle_input()
 	move_and_slide()
-	
 	check_collisions()
 				
 
@@ -101,3 +69,39 @@ func add_ghost():
 	ghost.flip_h = sprite_2d.flip_h
 	ghost.sprite_2d.frame = sprite_2d.frame
 	
+func handle_input():
+	if Input.is_action_pressed(btns.Sprint):
+		speed = sprint_speed
+		jump_velocity = sprint_jump_velocity
+		minimum_speed = sprint_minimum_speed
+		push_force = sprint_push_force
+		add_ghost()
+	elif Input.is_action_just_released(btns.Sprint):
+		speed = def_speed
+		jump_velocity = def_jump_velocity
+		minimum_speed = def_minimum_speed
+		push_force = def_push_force
+	
+	direction = Input.get_axis(btns.Left, btns.Right)
+	
+	if !is_stunned && Engine.time_scale != 0:
+		if direction:
+			kb_direction.x = direction
+			velocity.x = direction * speed
+		else:
+			velocity.x = move_toward(velocity.x, 0, minimum_speed)
+			
+		if Input.is_action_just_pressed(btns.Jump):
+			#if is_on_wall() and Input.is_action_pressed(btns.Right):
+				#velocity.y = jump_velocity
+				#AudioPlayer.play_FX(jump_sound, 0, 1, 1.5)
+				#velocity.x = WALL_JUMP_PUSHBACK
+			#elif is_on_wall() and Input.is_action_pressed(btns.Left):
+				#velocity.y = jump_velocity
+				#AudioPlayer.play_FX(jump_sound, 0, 1, 1.5)
+				#velocity.x = WALL_JUMP_PUSHBACK
+			if jump_count < 2:
+				# AUDIO  (sound, volume, lower_limit, upper_limit)
+				AudioPlayer.play_FX(jump_sound, 0, 1, 1.5)
+				jump_count = jump_count + 1
+				velocity.y = jump_velocity

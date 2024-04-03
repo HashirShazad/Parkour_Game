@@ -7,7 +7,7 @@ var health:int = 100
 var max_health:int = 100
 
 var direction:float
-
+var kb_direction:Vector2
 
 var is_pushing:bool = 0
 var is_dead:bool = 0
@@ -71,11 +71,13 @@ func update_animation():
 	elif is_stunned:
 		sprite_2d.play(animations.Damaged)
 	elif velocity.y < 0:
+		kb_direction.y = -1
 		if jump_count < 2:
 			sprite_2d.play(animations.Jumping)
 		else:
 			sprite_2d.play(animations.Double_Jump)
 	elif velocity.y > 0:
+		kb_direction.y = 1
 		if jump_count < 2:
 			sprite_2d.play(animations.Falling)
 		else:
@@ -113,15 +115,18 @@ func take_damage(damage:int, stun_duration:float):
 	await get_tree().create_timer(stun_duration).timeout
 	is_stunned = 0
 
-func take_knockback(kb_direction: Vector2, strength:Vector2):
+func take_knockback(strength:Vector2):
 	if is_dead:
 		return
 	if is_stunned:
 		return
 	pass
 	velocity.x = 0
-	velocity.x = kb_direction.x * strength.x
-	velocity.y = kb_direction.y * strength.y
+	velocity.x = strength.x * -kb_direction.x
+	if is_on_floor():
+		velocity.y = -1 * strength.y 
+	else:
+		velocity.y = -kb_direction.y * strength.y 
 	
 func check_collisions():
 	for i in get_slide_collision_count():

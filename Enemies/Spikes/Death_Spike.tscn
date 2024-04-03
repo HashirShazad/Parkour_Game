@@ -9,16 +9,17 @@ texture_filter = 1
 texture = ExtResource("1_w5yfe")
 
 [node name="Hit_Box2" type="Area2D" parent="."]
+show_behind_parent = true
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("2_v8i64")
 damage = 100.0
-knock_back_direction = Vector2(-1, -1)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hit_Box2"]
 polygon = PackedVector2Array(-5, 1, -4, 1, -4, 2, -3, 2, -3, 4, -2, 4, -2, 6, -1, 6, -1, 8, -8, 8, -8, 6, -7, 6, -7, 4, -6, 4, -6, 2, -5, 2)
 
 [node name="Hit_Box" type="Area2D" parent="."]
+show_behind_parent = true
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("2_v8i64")
