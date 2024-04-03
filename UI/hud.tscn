@@ -272,6 +272,7 @@ horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="Timer_Info_Box" type="Panel" parent="Node"]
+visible = false
 texture_filter = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -310,6 +311,68 @@ offset_bottom = 23.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="MsecLabel" type="Label" parent="Node/Timer_Info_Box"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -57.5
+offset_top = -8.0
+offset_right = 57.5
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_g1jbi")
+theme_override_font_sizes/font_size = 0
+text = "00
+"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="MinLabel" type="Label" parent="Node/Timer_Info_Box"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -57.5
+offset_top = -8.0
+offset_right = 57.5
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_g1jbi")
+theme_override_font_sizes/font_size = 0
+text = "00
+"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SecLabel" type="Label" parent="Node/Timer_Info_Box"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -57.5
+offset_top = -8.0
+offset_right = 57.5
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_g1jbi")
+theme_override_font_sizes/font_size = 0
+text = "00"
+horizontal_alignment = 2
+vertical_alignment = 1
+
 [node name="TimerLabel" type="Label" parent="Node/Timer_Info_Box"]
 texture_filter = 1
 layout_mode = 1
@@ -326,6 +389,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_g1jbi")
 theme_override_font_sizes/font_size = 0
-text = "Timer: 00"
+text = "Timer:"
 horizontal_alignment = 2
 vertical_alignment = 1

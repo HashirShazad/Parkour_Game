@@ -6,3 +6,5 @@ res://Enemies/Spikes/Spike.tscn
 res://Character/Both_Players.tscn
 res://Levels/TEST.tscn
 res://Enemies/Chicken/Chicken.tscn
+res://Game_Manager/Game_Manger.gd
+res://Game_Manager/Game_Manger.tscn

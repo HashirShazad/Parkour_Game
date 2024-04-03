@@ -1,5 +1,8 @@
 extends Node
 
+
+
+@onready var timer_label = $Hud/Node/Timer_Info_Box/TimerLabel
 @onready var points_label = $Hud/Node/Coin_Info_Box/PointsLabel
 @onready var pause_menu = $Pause_Menu
 @onready var death_screen = $Death_Screen
@@ -10,13 +13,19 @@ var input_disabled:bool = false
 @onready var hp_bar_P1 = $Hud/Node/Player_Info_Box/Panel/ProgressBar
 @onready var hp_bar_P2 = $Hud/Node/Player2_Info_Box/Panel/ProgressBar
 
+
+var time:float
+var time_sec:int
+var time_msec:int
+var time_min:int
+
 var points = 0
 var paused:bool = false
 var death_screen_shown:bool = false
 
 	
 func _process(delta):
-	
+	update_time(delta)
 	if input_disabled:
 		return
 	if player_1 && player_2:
@@ -111,3 +120,9 @@ func _on_retry_button_pressed():
 	
 	
 
+func update_time(delta):
+	time += delta
+	time_msec = fmod(time, 1) * 100
+	time_sec = fmod(time, 60)
+	time_min = fmod(time, 3600) / 60
+	timer_label.text = "Timer: " + str(time_min) + "." + str(time_sec) + "."+ str(time_msec) 
