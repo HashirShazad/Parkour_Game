@@ -28,6 +28,7 @@ Transitioner="*res://Transitions/Transitioner.tscn"
 window/size/mode=3
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+mouse_cursor/custom_image="res://Sprites/Other/Mouse_Cursor_Thick.png"
 
 [dotnet]
 

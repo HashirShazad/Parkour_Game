@@ -20,12 +20,11 @@ var time_msec:int
 var time_min:int
 
 var points = 0
-var paused:bool = false
+var paused:bool = true
 var death_screen_shown:bool = false
 
-	
 func _process(delta):
-	update_time(delta)
+	#update_time(delta)
 	if input_disabled:
 		return
 	if player_1 && player_2:
@@ -58,12 +57,21 @@ func add_points(collected_points:int) -> void:
 	points_label.text = "Points: " + str(points)
 
 func _on_play_button_pressed():
+	if input_disabled:
+		return
 	Transitioner.start_transition()
+	input_disabled = true
 	await Transitioner.transiton_finsihed
 	get_tree().change_scene_to_file("res://Levels/Level_1.tscn")
+	await  Transitioner.transition_fully_finished
+	input_disabled = false
+
 
 func _on_close_button_pressed():
-	
+	if input_disabled:
+		return
+	Transitioner.start_transition()
+	input_disabled = true
 	get_tree().quit()
 
 func _on_resume_button_pressed():
@@ -118,8 +126,6 @@ func _on_retry_button_pressed():
 	death_screen_shown = false
 	input_disabled = false
 	
-	
-
 func update_time(delta):
 	time += delta
 	time_msec = fmod(time, 1) * 100

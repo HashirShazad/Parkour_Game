@@ -1,10 +1,11 @@
-res://UI/hud.tscn
+res://Collectables/Check_Point.tscn
 res://UI/pause_menu.gdshader
+res://Game_Manager/Game_Manger.tscn
+res://Game_Manager/Game_Manger.gd
 res://Levels/Level_3.tscn
 res://Levels/Level_2.tscn
 res://Enemies/Spikes/Spike.tscn
 res://Character/Both_Players.tscn
 res://Levels/TEST.tscn
 res://Enemies/Chicken/Chicken.tscn
-res://Game_Manager/Game_Manger.gd
-res://Game_Manager/Game_Manger.tscn
+res://UI/hud.tscn
