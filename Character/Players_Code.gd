@@ -18,7 +18,6 @@ func _ready():
 	elif self.name == "Player2":
 		GameManger.player_2 = self
 	GameManger.death_screen.hide()
-	AudioPlayer.play_music(AudioPlayer.LEVEL_MUSIC)
 	
 func _physics_process(delta):
 	flip_sprite()

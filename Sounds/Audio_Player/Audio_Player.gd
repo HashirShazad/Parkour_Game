@@ -1,7 +1,5 @@
 extends AudioStreamPlayer2D
 
-const LEVEL_MUSIC = preload("res://Sounds/BG_Music/Crumbling Dreams (Ballora's Theme).wav")
-
 
 func play_music(music:AudioStream, volume = 0.0):
 	if stream == music:

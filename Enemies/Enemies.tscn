@@ -276,7 +276,7 @@ size = Vector2(28.6667, 5.33333)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dwh65"]
 size = Vector2(28.5, 23.3333)
 
-[node name="Enemy" type="CharacterBody2D"]
+[node name="Enemy" type="CharacterBody2D" groups=["Enemy"]]
 scale = Vector2(3, 3)
 platform_floor_layers = 4278190081
 script = ExtResource("1_fbvbm")

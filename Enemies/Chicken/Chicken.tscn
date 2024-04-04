@@ -272,7 +272,7 @@ height = 26.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_585re"]
 radius = 12.1712
 
-[node name="Chicken" type="CharacterBody2D"]
+[node name="Chicken" type="CharacterBody2D" groups=["Enemy"]]
 scale = Vector2(3, 3)
 platform_floor_layers = 4278190081
 script = ExtResource("1_g0gco")

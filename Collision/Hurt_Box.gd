@@ -16,6 +16,8 @@ func _on_area_entered(hitbox: Hit_Box) -> void:
 		#print(owner)
 		#if owner == to_ignore:
 			#return
+	if hitbox.has_method("destroy"):
+		hitbox.destroy()
 	if owner.has_method("take_knockback"):
 		owner.take_knockback(hitbox.knock_back_strength)
 	if owner.has_method("take_damage"):

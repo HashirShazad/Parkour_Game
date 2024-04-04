@@ -1,6 +1,7 @@
-[gd_scene load_steps=19 format=3 uid="uid://bh5qn80j1csvu"]
+[gd_scene load_steps=20 format=3 uid="uid://bh5qn80j1csvu"]
 
 [ext_resource type="FontFile" uid="uid://vpy38kvl0qsd" path="res://Sprites/Menu/Text/Minecraft.ttf" id="1_1q238"]
+[ext_resource type="Script" path="res://Levels/Levels.gd" id="1_66per"]
 [ext_resource type="PackedScene" uid="uid://dtajtyl1bbh6e" path="res://Game_Manager/Game_Manger.tscn" id="1_js8mo"]
 [ext_resource type="Texture2D" uid="uid://cp5i8wjruxkt4" path="res://Sprites/Menu/Buttons/Play.png" id="2_lwvx8"]
 [ext_resource type="Texture2D" uid="uid://dhowsw4q3bgoo" path="res://Sprites/Menu/Buttons/Close.png" id="4_6ovoc"]
@@ -52,6 +53,7 @@ corner_radius_bottom_left = 10
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gk3ag"]
 
 [node name="MainMenu" type="Node2D"]
+script = ExtResource("1_66per")
 
 [node name="Game_Manager" parent="." instance=ExtResource("1_js8mo")]
 
@@ -269,4 +271,5 @@ position = Vector2(655, 495)
 [connection signal="pressed" from="CanvasLayer/BG/Buttons/Settings_Panel/Settings/Settings_Button" to="Game_Manager" method="_on_settings_button_pressed"]
 
 [editable path="Players"]
+[editable path="Players/Player1"]
 [editable path="Players/Player2"]

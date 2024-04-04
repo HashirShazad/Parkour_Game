@@ -1,3 +1,8 @@
+res://Sprites/Enemies/Plant
+res://Sprites/Enemies/Chameleon
+res://Sprites/Traps/Spiked Ball
+res://Sprites/Terrain
+res://Levels
 res://Sprites/Other
 res://Sprites/Items/Fruits
 res://Sprites/Main Characters/Ninja Frog
@@ -8,7 +13,6 @@ res://Transitions
 res://Sounds/Audio_Player
 res://Game_Manager
 res://Sprites/Background
-res://Sprites/Traps/Spiked Ball
 res://Sprites/Main Characters/Pink Man
 res://addons
 res://Character
@@ -16,7 +20,3 @@ res://Sprites/Main Characters
 res://Enemies
 res://Collision
 res://Sprites/Items/Boxes/Box3
-res://Sprites/Items/Boxes/Box2
-res://Sprites/Items/Boxes/Box1
-res://Props
-res://Sprites/Menu/Text

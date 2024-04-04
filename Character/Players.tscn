@@ -732,7 +732,7 @@ animations = [{
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o1v4y"]
 height = 25.3333
 
-[node name="EntityBody2D" type="CharacterBody2D"]
+[node name="EntityBody2D" type="CharacterBody2D" groups=["Players"]]
 scale = Vector2(3, 3)
 platform_floor_layers = 4278190081
 script = ExtResource("1_kpwhk")

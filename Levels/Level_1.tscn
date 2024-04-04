@@ -1,6 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://dc1kk5y1wr6u4"]
+[gd_scene load_steps=14 format=3 uid="uid://dc1kk5y1wr6u4"]
 
+[ext_resource type="Script" path="res://Levels/Levels.gd" id="1_ceb3v"]
 [ext_resource type="Texture2D" uid="uid://bdlua5a7mavuv" path="res://Sprites/Background/Brown.png" id="1_gulau"]
+[ext_resource type="AudioStream" uid="uid://bbk6nmgptokv5" path="res://Sounds/BG_Music/SDUPER MARIO RUN OFFICIAL TRAP REMIX -T_WUvxO0lnk-128k-1687929240.wav" id="2_gn5te"]
 [ext_resource type="Texture2D" uid="uid://dqgm4rmmi5c3j" path="res://Sprites/Terrain/Terrain (16x16).png" id="2_sansl"]
 [ext_resource type="PackedScene" uid="uid://cafmeyndfm7ml" path="res://Levels/Level_2.tscn" id="4_puv6c"]
 [ext_resource type="PackedScene" uid="uid://kxusrwxus326" path="res://Collectables/Fruits.tscn" id="5_4ou61"]
@@ -865,6 +867,8 @@ pattern_0 = SubResource("TileMapPattern_6ei6o")
 pattern_1 = SubResource("TileMapPattern_3g8fx")
 
 [node name="Level1" type="Node2D"]
+script = ExtResource("1_ceb3v")
+music = ExtResource("2_gn5te")
 
 [node name="Scene_Objects" type="Node" parent="."]
 
@@ -930,10 +934,12 @@ fruit_name = &"Melon"
 
 [node name="PhantomCamera2D" parent="Scene_Objects/Camera" index="0"]
 position = Vector2(515, 995)
+zoom = Vector2(0.7725, 0.7725)
 follow_group = Array[NodePath]([NodePath("../../Players/Player1"), NodePath("../../Players/Player2")])
 
 [node name="Camera2D" parent="Scene_Objects/Camera" index="1"]
 position = Vector2(515, 995)
+zoom = Vector2(0.7725, 0.7725)
 
 [node name="Players" parent="Scene_Objects" instance=ExtResource("12_toesn")]
 position = Vector2(608, 1006)

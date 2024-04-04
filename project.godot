@@ -38,6 +38,20 @@ project/assembly_name="Parkour Game"
 
 enabled=PackedStringArray("res://addons/phantom_camera/plugin.cfg", "res://addons/script-ide/plugin.cfg")
 
+[file_customization]
+
+folder_colors={
+"res://Character/": "green",
+"res://Collectables/": "orange",
+"res://Collision/": "teal",
+"res://Game_Manager/": "blue",
+"res://Levels/": "purple",
+"res://Props/": "teal",
+"res://Sounds/": "red",
+"res://Sprites/": "yellow",
+"res://addons/": "gray"
+}
+
 [input]
 
 P1_Right={
