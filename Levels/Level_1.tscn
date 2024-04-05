@@ -870,9 +870,7 @@ pattern_1 = SubResource("TileMapPattern_3g8fx")
 script = ExtResource("1_ceb3v")
 music = ExtResource("2_gn5te")
 
-[node name="Scene_Objects" type="Node" parent="."]
-
-[node name="Background_Image" type="TextureRect" parent="Scene_Objects"]
+[node name="Background_Image" type="TextureRect" parent="."]
 z_index = -2
 texture_filter = 1
 anchors_preset = -1
@@ -885,6 +883,8 @@ offset_bottom = 8451.0
 texture = ExtResource("1_gulau")
 stretch_mode = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="Scene_Objects" type="Node" parent="."]
 
 [node name="CheckPoint" parent="Scene_Objects" instance=ExtResource("8_mlbo3")]
 position = Vector2(7262, 194)
