@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bh07d18uqp68w" path="res://Sprites/Background/Yellow.png" id="2_qx71t"]
 [ext_resource type="PackedScene" uid="uid://blknjycqdvppw" path="res://Collectables/Check_Point.tscn" id="3_mjh7c"]
-[ext_resource type="PackedScene" uid="uid://cjmv5s0f1p6hx" path="res://Character/Players.tscn" id="4_ko0g6"]
+[ext_resource type="PackedScene" uid="uid://b2ip34x13hcrf" path="res://Levels/Level_4.tscn" id="4_xfv0q"]
 [ext_resource type="Texture2D" uid="uid://dqgm4rmmi5c3j" path="res://Sprites/Terrain/Terrain (16x16).png" id="5_co64u"]
 [ext_resource type="Texture2D" uid="uid://bbrcmwtrfyap2" path="res://Sprites/Additional/Treasure Hunters/Pirate Ship/Sprites/Tilesets/Terrain and Back Wall (32x32).png" id="6_dpwpj"]
 [ext_resource type="PackedScene" uid="uid://lqeurs1jy57v" path="res://Camera/camera.tscn" id="7_n6bwa"]
@@ -2089,7 +2089,7 @@ scale = Vector2(1, 1)
 [node name="CheckPoint" parent="Scene_Objects" instance=ExtResource("3_mjh7c")]
 position = Vector2(289, -89)
 scale = Vector2(3, 3)
-target_scene = ExtResource("4_ko0g6")
+target_scene = ExtResource("4_xfv0q")
 
 [node name="Tilemap" type="TileMap" parent="Scene_Objects"]
 texture_filter = 1
@@ -2104,12 +2104,10 @@ position = Vector2(-166, -51)
 
 [node name="PhantomCamera2D" parent="Scene_Objects/Camera" index="0"]
 position = Vector2(8993, 368)
-zoom = Vector2(0.7725, 0.7725)
 follow_group = Array[NodePath]([NodePath("../../Players/Player1"), NodePath("../../Players/Player2")])
 
 [node name="Camera2D" parent="Scene_Objects/Camera" index="1"]
 position = Vector2(8993, 368)
-zoom = Vector2(0.7725, 0.7725)
 
 [node name="Players" parent="Scene_Objects" instance=ExtResource("8_ytky0")]
 position = Vector2(8920, 328)

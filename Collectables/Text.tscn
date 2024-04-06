@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://bvus6eiup368o"]
+
+[ext_resource type="Script" path="res://Collectables/Text.gd" id="1_qn7pg"]
+[ext_resource type="FontFile" uid="uid://vpy38kvl0qsd" path="res://Sprites/Menu/Text/Minecraft.ttf" id="1_xm6gy"]
+[ext_resource type="Script" path="res://Collectables/Button_Label.gd" id="3_1sgjd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yl0gk"]
+radius = 110.0
+
+[node name="Text" type="Area2D"]
+script = ExtResource("1_qn7pg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_yl0gk")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = -54.0
+offset_top = -42.0
+offset_right = 48.0
+offset_bottom = -2.0
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("1_xm6gy")
+text = "Try to move by pressing"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button_Label" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "A"
+script = ExtResource("3_1sgjd")
+action = "P1_Right"
+
+[node name="Button_Label2" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "B"
+script = ExtResource("3_1sgjd")
+action = "P1_Left"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

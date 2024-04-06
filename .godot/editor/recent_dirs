@@ -1,3 +1,6 @@
+res://Sprites/Background
+res://Themes
+res://
 res://Sprites/Enemies/AngryPig
 res://Sprites/Traps/Saw
 res://Sprites/Enemies/Plant
@@ -8,15 +11,12 @@ res://Levels
 res://Sprites/Other
 res://Sprites/Items/Fruits
 res://Sprites/Main Characters/Ninja Frog
-res://
 res://Sprites/Enemies/Duck
 res://Sprites/Enemies/Chicken
 res://Transitions
 res://Sounds/Audio_Player
 res://Game_Manager
-res://Sprites/Background
 res://Sprites/Main Characters/Pink Man
 res://addons
 res://Character
 res://Sprites/Main Characters
-res://Enemies

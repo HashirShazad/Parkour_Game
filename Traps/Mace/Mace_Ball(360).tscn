@@ -96,4 +96,4 @@ scale = Vector2(3, 3)
 texture = ExtResource("2_nkwaa")
 
 [node name="Mace" parent="." instance=ExtResource("2_071va")]
-position = Vector2(0, 185)
+position = Vector2(-2, 179)

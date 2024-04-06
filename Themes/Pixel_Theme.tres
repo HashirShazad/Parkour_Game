@@ -1,0 +1,20 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://fg7dva5ufoat"]
+
+[ext_resource type="FontFile" uid="uid://vpy38kvl0qsd" path="res://Sprites/Menu/Text/Minecraft.ttf" id="1_6bt4u"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f1y28"]
+resource_name = "Pixel_Style_Box"
+bg_color = Color(0.517647, 0.419608, 1, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[resource]
+default_font = ExtResource("1_6bt4u")
+/styles/Style_Box = SubResource("StyleBoxFlat_f1y28")
