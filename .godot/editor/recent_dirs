@@ -1,8 +1,10 @@
+D:/
+res://Sprites/Other
+F:/Softwares/Godot
+C:/Program Files/Java/jdk-21/bin
 res://Sprites/Kaizo_Poyo/512x512
 res://Sprites/Kaizo_Poyo/1024x1024
 res://Sprites/Background
-D:/
-res://Sprites/Other
 res://Themes
 res://
 res://Sprites/Enemies/AngryPig
@@ -18,5 +20,3 @@ res://Sprites/Enemies/Duck
 res://Sprites/Enemies/Chicken
 res://Transitions
 res://Sounds/Audio_Player
-res://Game_Manager
-res://Sprites/Main Characters/Pink Man
