@@ -12,6 +12,4 @@ func _on_body_entered(body):
 		await Transitioner.transiton_finsihed
 		get_tree().change_scene_to_packed(target_scene)
 		GameManger.update_health()
-		
-		await Transitioner.transition_fully_finished
 		GameManger.input_disabled = false

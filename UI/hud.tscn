@@ -1,9 +1,12 @@
-[gd_scene load_steps=13 format=3 uid="uid://cp2ytcs60oa2h"]
+[gd_scene load_steps=14 format=3 uid="uid://cp2ytcs60oa2h"]
 
 [ext_resource type="FontFile" uid="uid://vpy38kvl0qsd" path="res://Sprites/Menu/Text/Minecraft.ttf" id="1_g1jbi"]
 [ext_resource type="Texture2D" uid="uid://dj48bttltoec2" path="res://Sprites/Main Characters/Ninja Frog/Fall (32x32).png" id="3_iy57m"]
 [ext_resource type="Texture2D" uid="uid://d32bxk1j63fcb" path="res://Sprites/Items/Fruits/Logo.png" id="4_5ie0f"]
 [ext_resource type="Texture2D" uid="uid://dy3iatg1pcke" path="res://Sprites/Main Characters/Pink Man/Fall (32x32).png" id="4_s8py3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ws8d"]
+size = Vector2(1152, 163)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5tgq1"]
 bg_color = Color(0, 0.698039, 0.254902, 1)
@@ -80,6 +83,14 @@ corner_radius_bottom_left = 6
 [node name="UI" type="CanvasLayer"]
 
 [node name="Node" type="Node" parent="."]
+
+[node name="Area2D" type="Area2D" parent="Node"]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Area2D"]
+position = Vector2(576, 79.5)
+shape = SubResource("RectangleShape2D_2ws8d")
 
 [node name="Player_Info_Box" type="Panel" parent="Node"]
 texture_filter = 1

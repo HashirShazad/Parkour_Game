@@ -2099,6 +2099,7 @@ target_scene = ExtResource("4_yjfe4")
 
 [node name="Saw" parent="Scene_Objects/Traps" instance=ExtResource("9_qmu3k")]
 position = Vector2(1886, 3058)
+speed = 0.5
 
 [node name="Path2D" parent="Scene_Objects/Traps/Saw" index="0"]
 curve = SubResource("Curve2D_072pj")
@@ -2125,10 +2126,12 @@ position = Vector2(-166, -51)
 
 [node name="PhantomCamera2D" parent="Scene_Objects/Camera" index="0"]
 position = Vector2(1199, 3206)
+zoom = Vector2(0.7725, 0.7725)
 follow_group = Array[NodePath]([NodePath("../../Players/Player1"), NodePath("../../Players/Player2")])
 
 [node name="Camera2D" parent="Scene_Objects/Camera" index="1"]
 position = Vector2(1199, 3206)
+zoom = Vector2(0.7725, 0.7725)
 
 [node name="Players" parent="Scene_Objects" instance=ExtResource("9_qrw0p")]
 position = Vector2(1126, 3166)

@@ -4,3 +4,5 @@ extends Node
 
 func _ready():
 	AudioPlayer.play_music(music)
+	if self.name == "MainMenu":
+		DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_VISIBLE)

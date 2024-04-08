@@ -10,6 +10,10 @@ script = ExtResource("1_tb1wt")
 
 [node name="Hud" parent="." instance=ExtResource("3_aux3r")]
 
+[node name="Area2D" parent="Hud/Node" index="0"]
+collision_layer = 6
+collision_mask = 6
+
 [node name="Pause_Menu" parent="." instance=ExtResource("2_2te14")]
 visible = false
 
@@ -17,6 +21,8 @@ visible = false
 process_priority = 10
 visible = false
 
+[connection signal="body_entered" from="Hud/Node/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Hud/Node/Area2D" to="." method="_on_area_2d_body_exited"]
 [connection signal="pressed" from="Pause_Menu/Panel/Buttons/Play_Panel/Play/Resume_Button" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="Pause_Menu/Panel/Buttons/Close_Panel/Back/Back_Button" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="Pause_Menu/Panel/Buttons/Settings_Panel/Settings/Restart_Button" to="." method="_on_restart_button_pressed"]

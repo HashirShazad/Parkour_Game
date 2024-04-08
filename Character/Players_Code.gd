@@ -13,11 +13,7 @@ const WALL_JUMP_PUSHBACK = 1000
 }
 
 func _ready():
-	if self.name == "Player1":
-		GameManger.player_1 = self
-	elif self.name == "Player2":
-		GameManger.player_2 = self
-	GameManger.death_screen.hide()
+	update_game_manager()
 	
 func _physics_process(delta):
 	flip_sprite()
@@ -104,3 +100,11 @@ func handle_input():
 				AudioPlayer.play_FX(jump_sound, 0, 1, 1.5)
 				jump_count = jump_count + 1
 				velocity.y = jump_velocity
+
+func update_game_manager():
+	if self.name == "Player1":
+		GameManger.player_1 = self
+	elif self.name == "Player2":
+		GameManger.player_2 = self
+	#GameManger.death_screen.hide()
+

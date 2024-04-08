@@ -1,4 +1,8 @@
+res://Sprites/Kaizo_Poyo/512x512
+res://Sprites/Kaizo_Poyo/1024x1024
 res://Sprites/Background
+D:/
+res://Sprites/Other
 res://Themes
 res://
 res://Sprites/Enemies/AngryPig
@@ -8,7 +12,6 @@ res://Sprites/Enemies/Chameleon
 res://Sprites/Traps/Spiked Ball
 res://Sprites/Terrain
 res://Levels
-res://Sprites/Other
 res://Sprites/Items/Fruits
 res://Sprites/Main Characters/Ninja Frog
 res://Sprites/Enemies/Duck
@@ -17,6 +20,3 @@ res://Transitions
 res://Sounds/Audio_Player
 res://Game_Manager
 res://Sprites/Main Characters/Pink Man
-res://addons
-res://Character
-res://Sprites/Main Characters

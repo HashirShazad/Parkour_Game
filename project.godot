@@ -13,7 +13,7 @@ config_version=5
 config/name="Pono & Mina"
 config/version="1.0"
 config/tags=PackedStringArray("pono&mina", "poyo")
-run/main_scene="res://Levels/Main_Menu.tscn"
+run/main_scene="res://Levels/Intro.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -120,6 +120,7 @@ Restart={
 
 2d_physics/layer_1="Basic_Collision"
 2d_physics/layer_2="Hit_Box"
+2d_physics/layer_3="Basic_Area"
 
 [physics]
 
@@ -127,6 +128,6 @@ Restart={
 
 [rendering]
 
-renderer/rendering_method="mobile"
+renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 environment/defaults/default_clear_color=Color(0.160784, 0, 0.160784, 1)
