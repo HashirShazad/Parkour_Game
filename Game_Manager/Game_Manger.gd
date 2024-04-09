@@ -172,5 +172,4 @@ func _on_area_2d_body_entered(body):
 	update_ui_alpha(.1)
 
 func _on_area_2d_body_exited(body):
-	print("LEFT")
 	update_ui_alpha(1)

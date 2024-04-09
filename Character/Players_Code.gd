@@ -8,9 +8,12 @@ var jump_sound = preload("res://Sounds/Sound/Jump.wav")
 
 const WALL_JUMP_PUSHBACK = 1000
 const jump_buffer_time:float = .1
+const coyote_time:float = .1
 
 var jump_buffer_timer:float = 0
-
+var coyote_timer:float = 0
+var squashed_size:Vector2 = Vector2(1.2, 0.6) 
+var stretched_size:Vector2 = Vector2(.6, 1.2)
 @onready var right_outer = $Right_Outer
 @onready var left_outer = $Left_Outer
 @onready var right_inner = $Right_Inner
@@ -26,10 +29,12 @@ var jump_buffer_timer:float = 0
 }
 func _process(delta):
 	jump_buffer_timer -= delta
+	coyote_timer -= delta
 	
 func _ready():
 	update_game_manager()
 	jump_buffer_timer = 0
+	coyote_timer = 0
 	
 func _physics_process(delta):
 	flip_sprite()
@@ -44,10 +49,17 @@ func _physics_process(delta):
 			
 		if not on_ground:
 			dust_particles.emitting = true
+			squash()
 		on_ground = true
 	else:
+		if on_ground:
+			if !(jump_count > 0):
+				coyote_timer = coyote_time
+				jump_count = 1
+			
+			
 		on_ground = false
-		velocity.y += gravity  * delta
+		velocity.y += gravity  * delta 
 	if is_dead:
 		return
 	push_off_ledges()
@@ -103,27 +115,28 @@ func handle_input():
 	
 	if !is_stunned && Engine.time_scale != 0:
 		if direction:
-			kb_direction.x = direction
+			kb_direction.x = direction	
 			velocity.x = direction * speed
 		else:
 			velocity.x = move_toward(velocity.x, 0, minimum_speed)
 			
 		if Input.is_action_just_pressed(btns.Jump):
-			#if is_on_wall() and Input.is_action_pressed(btns.Right):
-				#velocity.y = jump_velocity
-				#AudioPlayer.play_FX(jump_sound, 0, 1, 1.5)
-				#velocity.x = WALL_JUMP_PUSHBACK
-			#elif is_on_wall() and Input.is_action_pressed(btns.Left):
-				#velocity.y = jump_velocity
-				#AudioPlayer.play_FX(jump_sound, 0, 1, 1.5)
-				#velocity.x = WALL_JUMP_PUSHBACK
-			if jump_count < 2:
+			stretch()
+			if coyote_timer > 0:
+				AudioPlayer.play_FX(jump_sound, 0, 1, 1.5)
+				velocity.y = jump_velocity
+				jump_count = 1
+			elif jump_count < 2:
 				# AUDIO  (sound, volume, lower_limit, upper_limit)
 				AudioPlayer.play_FX(jump_sound, 0, 1, 1.5)
 				jump_count = jump_count + 1
 				velocity.y = jump_velocity
 			else:
 				jump_buffer_timer = jump_buffer_time
+		
+		if Input.is_action_just_released(btns.Jump):
+			if jump_count < 2:
+				velocity.y *= 0.8
 
 func update_game_manager():
 	if self.name == "Player1":
@@ -142,3 +155,18 @@ func push_off_ledges():
 	elif left_outer.is_colliding() and !left_inner.is_colliding() \
 		and !right_inner.is_colliding() and !right_outer.is_colliding():
 			self.global_position.x = 5
+
+func squash():
+	var tween = get_tree().create_tween()
+	tween.tween_property(sprite_2d, "scale",squashed_size, .1).set_trans(Tween.TRANS_QUAD)
+	tween.tween_callback(squash_and_stretch_finished())
+	
+func stretch():
+	var tween = get_tree().create_tween()
+	tween.tween_property(sprite_2d, "scale",stretched_size, .1).set_trans(Tween.TRANS_QUAD)
+	#tween.tween_callback(squash_and_stretch_finished())
+
+func squash_and_stretch_finished():
+	var tween = get_tree().create_tween()
+	tween.tween_property(sprite_2d, "scale",Vector2(1,1), .1).set_trans(Tween.TRANS_QUAD)
+	

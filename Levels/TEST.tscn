@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://lqeurs1jy57v" path="res://Camera/camera.tscn" id="8_7g11m"]
 [ext_resource type="PackedScene" uid="uid://ckkcr3nhr8ynj" path="res://Props/Strong_Box.tscn" id="8_y4vi6"]
 [ext_resource type="PackedScene" uid="uid://bq8l8hs3fwqug" path="res://Character/Both_Players.tscn" id="9_8g1e6"]
-[ext_resource type="PackedScene" uid="uid://bvus6eiup368o" path="res://Collectables/Text.tscn" id="9_kd1wo"]
+[ext_resource type="PackedScene" uid="uid://e03gg8dv00kt" path="res://Enemies/Plant/Plant.tscn" id="9_55yfq"]
 [ext_resource type="PackedScene" uid="uid://b7erda135hl3" path="res://Enemies/Pig/Pig.tscn" id="13_is56i"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_6ei6o"]
@@ -882,12 +882,12 @@ layer_0/tile_data = PackedInt32Array(7274652, 131072, 2, 7209116, 131072, 1, 714
 
 [node name="PhantomCamera2D" parent="Scene_Objects/Camera" index="0"]
 position = Vector2(1095, 837)
-zoom = Vector2(0.7725, 0.7725)
+zoom = Vector2(0.7975, 0.7975)
 follow_group = Array[NodePath]([NodePath("../../Players/Player1"), NodePath("../../Players/Player2")])
 
 [node name="Camera2D" parent="Scene_Objects/Camera" index="1"]
 position = Vector2(1095, 837)
-zoom = Vector2(0.7725, 0.7725)
+zoom = Vector2(0.797228, 0.797228)
 
 [node name="Players" parent="Scene_Objects" instance=ExtResource("9_8g1e6")]
 position = Vector2(1188, 848)
@@ -923,8 +923,8 @@ position = Vector2(816, 1506)
 [node name="Strong_Box" parent="Box" instance=ExtResource("8_y4vi6")]
 position = Vector2(445, 1474)
 
-[node name="Text" parent="." instance=ExtResource("9_kd1wo")]
-position = Vector2(950, 1484)
+[node name="Plant" parent="." instance=ExtResource("9_55yfq")]
+position = Vector2(238, 1432)
 
 [editable path="Scene_Objects/Camera"]
 [editable path="Scene_Objects/Players"]

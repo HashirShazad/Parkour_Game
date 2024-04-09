@@ -11,8 +11,10 @@ script = ExtResource("1_tb1wt")
 [node name="Hud" parent="." instance=ExtResource("3_aux3r")]
 
 [node name="Area2D" parent="Hud/Node" index="0"]
-collision_layer = 6
-collision_mask = 6
+visible = false
+
+[node name="CollisionShape2D" parent="Hud/Node/Area2D" index="0"]
+position = Vector2(576, 78)
 
 [node name="Pause_Menu" parent="." instance=ExtResource("2_2te14")]
 visible = false

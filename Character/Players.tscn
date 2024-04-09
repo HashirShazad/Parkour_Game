@@ -782,18 +782,22 @@ shape = SubResource("CapsuleShape2D_o1v4y")
 debug_color = Color(0.976471, 0, 0.423529, 0)
 
 [node name="Right_Outer" type="RayCast2D" parent="."]
+visible = false
 position = Vector2(10, 0)
 target_position = Vector2(0, -20)
 
 [node name="Left_Outer" type="RayCast2D" parent="."]
+visible = false
 position = Vector2(-10, 0)
 target_position = Vector2(0, -20)
 
 [node name="Right_Inner" type="RayCast2D" parent="."]
+visible = false
 position = Vector2(5, 0)
 target_position = Vector2(0, -20)
 
 [node name="Left_Inner" type="RayCast2D" parent="."]
+visible = false
 position = Vector2(-5, 0)
 target_position = Vector2(0, -20)
 

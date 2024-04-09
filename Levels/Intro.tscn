@@ -5,17 +5,17 @@
 
 [sub_resource type="Animation" id="Animation_btiv2"]
 resource_name = "Intro"
-length = 2.0
+length = 3.0
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer/TextureRect:self_modulate:a")
+tracks/0/path = NodePath("CanvasLayer/Text:self_modulate:a")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(0, 0, 0),
 "points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 1, 2)
+"times": PackedFloat32Array(0, 1.5, 3)
 }
 
 [sub_resource type="Animation" id="Animation_fprhj"]
@@ -23,7 +23,7 @@ length = 0.001
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer/TextureRect:self_modulate:a")
+tracks/0/path = NodePath("CanvasLayer/Text:self_modulate:a")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -39,7 +39,8 @@ _data = {
 }
 
 [sub_resource type="Gradient" id="Gradient_xe5ek"]
-colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+interpolation_mode = 2
+colors = PackedColorArray(0, 0, 0, 1, 0.321612, 0.337911, 0.327518, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_xuyca"]
 gradient = SubResource("Gradient_xe5ek")
@@ -55,7 +56,8 @@ autoplay = "Intro"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="TextureRect2" type="TextureRect" parent="CanvasLayer"]
+[node name="BG" type="TextureRect" parent="CanvasLayer"]
+texture_filter = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -63,7 +65,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture1D_xuyca")
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+[node name="Text" type="TextureRect" parent="CanvasLayer"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5

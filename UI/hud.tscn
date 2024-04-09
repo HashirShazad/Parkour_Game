@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dy3iatg1pcke" path="res://Sprites/Main Characters/Pink Man/Fall (32x32).png" id="4_s8py3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2ws8d"]
-size = Vector2(1152, 163)
+size = Vector2(1152, 160)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5tgq1"]
 bg_color = Color(0, 0.698039, 0.254902, 1)
@@ -85,7 +85,6 @@ corner_radius_bottom_left = 6
 [node name="Node" type="Node" parent="."]
 
 [node name="Area2D" type="Area2D" parent="Node"]
-visible = false
 collision_layer = 4
 collision_mask = 4
 

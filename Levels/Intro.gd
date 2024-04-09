@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var main_menu_music = preload
-("res://Sounds/BG_Music/Alien Hominid Invasion - Happy Termination (Instrumental Version).wav")
+("res://Sounds/BG_Music/Beethoven Virus (Insane Piano Version).wav")
 
 
 func _ready():
