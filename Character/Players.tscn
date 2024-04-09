@@ -740,7 +740,7 @@ platform_floor_layers = 4278190081
 script = ExtResource("1_kpwhk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 3)
+position = Vector2(0, 2.66667)
 shape = SubResource("CapsuleShape2D_yidtu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

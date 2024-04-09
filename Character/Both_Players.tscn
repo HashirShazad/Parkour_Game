@@ -5,10 +5,9 @@
 [node name="Players" type="Node2D"]
 
 [node name="Player1" parent="." instance=ExtResource("1_1sgb2")]
-position = Vector2(-93, -11)
 
 [node name="Player2" parent="." instance=ExtResource("1_1sgb2")]
-position = Vector2(1, -8)
+position = Vector2(101, -4)
 btns = {
 "Jump": "P2_Jump",
 "Left": "P2_Left",
@@ -25,7 +24,7 @@ animations = {
 "Walking": "Pink_Walking"
 }
 
-[node name="AnimatedSprite2D" parent="Player2" index="2"]
+[node name="AnimatedSprite2D" parent="Player2" index="1"]
 animation = &"Pink_Idle"
 
 [editable path="Player1"]

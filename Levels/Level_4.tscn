@@ -2089,6 +2089,10 @@ position = Vector2(3870, 3069)
 
 [node name="Pig" parent="Scene_Objects/Enemies" instance=ExtResource("4_8neit")]
 position = Vector2(6804, 3078)
+jump_height = null
+jump_time_to_peak = null
+jump_time_to_descent = null
+animations = null
 
 [node name="Chicken2" parent="Scene_Objects/Enemies" instance=ExtResource("10_7hy80")]
 position = Vector2(6324, 3561)

@@ -881,12 +881,12 @@ layer_0/tile_data = PackedInt32Array(7274652, 131072, 2, 7209116, 131072, 1, 714
 [node name="Camera" parent="Scene_Objects" instance=ExtResource("8_7g11m")]
 
 [node name="PhantomCamera2D" parent="Scene_Objects/Camera" index="0"]
-position = Vector2(1188, 848)
+position = Vector2(1095, 837)
 zoom = Vector2(0.7975, 0.7975)
 follow_group = Array[NodePath]([NodePath("../../Players/Player1"), NodePath("../../Players/Player2")])
 
 [node name="Camera2D" parent="Scene_Objects/Camera" index="1"]
-position = Vector2(1188, 848)
+position = Vector2(1095, 837)
 zoom = Vector2(0.7975, 0.7975)
 
 [node name="Players" parent="Scene_Objects" instance=ExtResource("9_8g1e6")]

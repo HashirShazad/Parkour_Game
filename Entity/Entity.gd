@@ -29,6 +29,9 @@ const sprint_push_force = 160.0
 
 var jump_count:int = 0
 
+var squashed_size:Vector2 = Vector2(1.1, 0.8) 
+var stretched_size:Vector2 = Vector2(0.8, 1.1)
+
 
 @export var animations = {
 	 Idle = "Frog_Idle",
@@ -138,3 +141,21 @@ func check_collisions():
 			c.get_collider().apply_central_impulse(-c.get_normal() * push_force)
 		else:
 			is_pushing = 0
+
+
+func squash():
+	var tween = get_tree().create_tween()
+	tween.tween_property(sprite_2d, "scale",squashed_size, .1).set_trans(Tween.TRANS_QUAD)
+	tween.tween_callback(squash_and_stretch_finished)
+
+	
+func stretch():
+	var tween = get_tree().create_tween()
+	tween.tween_property(sprite_2d, "scale",stretched_size, .1).set_trans(Tween.TRANS_QUAD)
+	tween.tween_callback(squash_and_stretch_finished)
+
+
+func squash_and_stretch_finished():
+	var tween = get_tree().create_tween()
+	tween.tween_property(sprite_2d, "scale",Vector2(1,1), .1).set_trans(Tween.TRANS_QUAD)
+	

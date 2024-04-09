@@ -12,8 +12,7 @@ const coyote_time:float = .1
 
 var jump_buffer_timer:float = 0
 var coyote_timer:float = 0
-var squashed_size:Vector2 = Vector2(1.2, 0.6) 
-var stretched_size:Vector2 = Vector2(.6, 1.2)
+
 @onready var right_outer = $Right_Outer
 @onready var left_outer = $Left_Outer
 @onready var right_inner = $Right_Inner
@@ -121,12 +120,13 @@ func handle_input():
 			velocity.x = move_toward(velocity.x, 0, minimum_speed)
 			
 		if Input.is_action_just_pressed(btns.Jump):
-			stretch()
 			if coyote_timer > 0:
 				AudioPlayer.play_FX(jump_sound, 0, 1, 1.5)
 				velocity.y = jump_velocity
 				jump_count = 1
 			elif jump_count < 2:
+				if jump_count == 0:
+					stretch()
 				# AUDIO  (sound, volume, lower_limit, upper_limit)
 				AudioPlayer.play_FX(jump_sound, 0, 1, 1.5)
 				jump_count = jump_count + 1
@@ -155,18 +155,3 @@ func push_off_ledges():
 	elif left_outer.is_colliding() and !left_inner.is_colliding() \
 		and !right_inner.is_colliding() and !right_outer.is_colliding():
 			self.global_position.x = 5
-
-func squash():
-	var tween = get_tree().create_tween()
-	tween.tween_property(sprite_2d, "scale",squashed_size, .1).set_trans(Tween.TRANS_QUAD)
-	tween.tween_callback(squash_and_stretch_finished())
-	
-func stretch():
-	var tween = get_tree().create_tween()
-	tween.tween_property(sprite_2d, "scale",stretched_size, .1).set_trans(Tween.TRANS_QUAD)
-	#tween.tween_callback(squash_and_stretch_finished())
-
-func squash_and_stretch_finished():
-	var tween = get_tree().create_tween()
-	tween.tween_property(sprite_2d, "scale",Vector2(1,1), .1).set_trans(Tween.TRANS_QUAD)
-	

@@ -1,12 +1,35 @@
 [gd_scene load_steps=56 format=3 uid="uid://b7erda135hl3"]
 
-[ext_resource type="Script" path="res://Enemies/Pig/Pig.gd" id="1_ivyug"]
 [ext_resource type="Texture2D" uid="uid://epx00bhsg0tb" path="res://Sprites/Enemies/AngryPig/Idle (36x30).png" id="2_53yo7"]
 [ext_resource type="Texture2D" uid="uid://bnlbykhuv65y5" path="res://Sprites/Enemies/AngryPig/Hit 1 (36x30).png" id="2_bt3se"]
+[ext_resource type="Script" path="res://Enemies/Enemies.gd" id="2_slas3"]
 [ext_resource type="Texture2D" uid="uid://dcevp3018aoxm" path="res://Sprites/Enemies/AngryPig/Run (36x30).png" id="3_uigvb"]
 [ext_resource type="Texture2D" uid="uid://5kd1fml7oru8" path="res://Sprites/Other/Dust Particle.png" id="5_jcbjq"]
 [ext_resource type="Texture2D" uid="uid://d4cw0jne78h8w" path="res://Sprites/Enemies/AngryPig/Walk (36x30).png" id="5_y27vv"]
 [ext_resource type="Script" path="res://Collision/Hit_Box.gd" id="6_3nses"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_bcfl3"]
+particles_animation = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Curve" id="Curve_nsxvh"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.13242, 1), 0.0, 0.0, 0, 0, Vector2(0.315068, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_m427d"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_6plne"]
+offsets = PackedFloat32Array(0, 0.691099, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sy77e"]
+height = 26.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ek61"]
+size = Vector2(27, 16.3333)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i0p0h"]
 atlas = ExtResource("2_bt3se")
@@ -172,7 +195,7 @@ region = Rect2(504, 0, 36, 30)
 atlas = ExtResource("5_y27vv")
 region = Rect2(540, 0, 36, 30)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_idhum"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_bnqc1"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -318,45 +341,22 @@ animations = [{
 "speed": 25.0
 }]
 
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_3ld2l"]
-particles_animation = true
-particles_anim_h_frames = 1
-particles_anim_v_frames = 1
-particles_anim_loop = false
-
-[sub_resource type="Curve" id="Curve_nmddb"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.13242, 1), 0.0, 0.0, 0, 0, Vector2(0.315068, 0), 0.0, 0.0, 0, 0]
-point_count = 3
-
-[sub_resource type="Gradient" id="Gradient_qnfyl"]
-colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
-
-[sub_resource type="Gradient" id="Gradient_kn7vb"]
-offsets = PackedFloat32Array(0, 0.691099, 1)
-colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yidtu"]
-height = 26.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_a1lq6"]
-size = Vector2(27, 16.3333)
-
-[node name="Pig" type="CharacterBody2D" groups=["Enemy"]]
+[node name="Pig" type="CharacterBody2D"]
 scale = Vector2(3, 3)
-platform_floor_layers = 4278190081
-script = ExtResource("1_ivyug")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-texture_filter = 1
-sprite_frames = SubResource("SpriteFrames_idhum")
-animation = &"Run"
-autoplay = "Run"
-frame = 9
-frame_progress = 0.757159
+script = ExtResource("2_slas3")
+animations = {
+"Damaged": "Damaged",
+"Dead": "Dead",
+"Double_Jump": "Double_Jump",
+"Falling": "Falling",
+"Idle": "Idle",
+"Jumping": "Jumping",
+"Walking": "Walking"
+}
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 texture_filter = 1
-material = SubResource("CanvasItemMaterial_3ld2l")
+material = SubResource("CanvasItemMaterial_bcfl3")
 position = Vector2(0, 15.6667)
 emitting = false
 amount = 2
@@ -366,26 +366,33 @@ texture = ExtResource("5_jcbjq")
 gravity = Vector2(100, 0)
 initial_velocity_max = 200.0
 scale_amount_max = 3.0
-scale_amount_curve = SubResource("Curve_nmddb")
-color_ramp = SubResource("Gradient_qnfyl")
-color_initial_ramp = SubResource("Gradient_kn7vb")
+scale_amount_curve = SubResource("Curve_nsxvh")
+color_ramp = SubResource("Gradient_m427d")
+color_initial_ramp = SubResource("Gradient_6plne")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 show_behind_parent = true
 position = Vector2(0, 3)
-shape = SubResource("CapsuleShape2D_yidtu")
+shape = SubResource("CapsuleShape2D_sy77e")
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
 
 [node name="Hit_Box" type="Area2D" parent="."]
-position = Vector2(-0.333333, 0)
+position = Vector2(-0.333333, 3)
 script = ExtResource("6_3nses")
 damage = 20.0
 knock_back_strength = Vector2(800, 200)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hit_Box"]
 position = Vector2(-0.833333, 2.83333)
-shape = SubResource("RectangleShape2D_a1lq6")
+shape = SubResource("RectangleShape2D_8ek61")
 debug_color = Color(0.768627, 0.447059, 0, 0.419608)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, 3)
+sprite_frames = SubResource("SpriteFrames_bnqc1")
+animation = &"Run"
+autoplay = "Run"
 
 [node name="Edge_Check_Right" type="RayCast2D" parent="."]
 position = Vector2(10, 0)

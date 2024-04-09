@@ -1,5 +1,5 @@
 extends Enemy
-class_name Shooting_Enemies
+class_name Shooting_Enemy
 
 const  BULLET = preload("res://Enemies/Plant/Bullet.tscn")
 @onready var animated_sprite_2d = $AnimatedSprite2D
