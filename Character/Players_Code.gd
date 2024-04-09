@@ -4,31 +4,53 @@ class_name Player
 
 var ghost_scene = preload("res://Character/Ghost.tscn")
 var jump_sound = preload("res://Sounds/Sound/Jump.wav")
+
+
 const WALL_JUMP_PUSHBACK = 1000
+const jump_buffer_time:float = .1
+
+var jump_buffer_timer:float = 0
+
+@onready var right_outer = $Right_Outer
+@onready var left_outer = $Left_Outer
+@onready var right_inner = $Right_Inner
+@onready var left_inner = $Left_Inner
+
+
+
 @export var btns = {
 	 Right = "P1_Right",
 	 Left = "P1_Left",
 	 Jump = "P1_Jump",
 	 Sprint = "P1_Sprint",
 }
-
+func _process(delta):
+	jump_buffer_timer -= delta
+	
 func _ready():
 	update_game_manager()
+	jump_buffer_timer = 0
 	
 func _physics_process(delta):
 	flip_sprite()
 	update_animation()
 	
 	if is_on_floor():
+		jump_count = 0
+		if jump_buffer_timer > 0:
+			AudioPlayer.play_FX(jump_sound, 0, 1, 1.5)
+			jump_count = jump_count + 1
+			velocity.y = jump_velocity
+			
 		if not on_ground:
 			dust_particles.emitting = true
 		on_ground = true
-		jump_count = 0
 	else:
 		on_ground = false
 		velocity.y += gravity  * delta
 	if is_dead:
 		return
+	push_off_ledges()
 	handle_input()
 	move_and_slide()
 	check_collisions()
@@ -100,6 +122,8 @@ func handle_input():
 				AudioPlayer.play_FX(jump_sound, 0, 1, 1.5)
 				jump_count = jump_count + 1
 				velocity.y = jump_velocity
+			else:
+				jump_buffer_timer = jump_buffer_time
 
 func update_game_manager():
 	if self.name == "Player1":
@@ -108,3 +132,13 @@ func update_game_manager():
 		GameManger.player_2 = self
 	#GameManger.death_screen.hide()
 
+func push_off_ledges():
+	return
+	# Still in development
+	 # Arbitrary offset, adjust as needed, or even use the raycasts to determine exactly how much to move
+	if right_outer.is_colliding() and !right_inner.is_colliding() \
+		and left_inner.is_colliding() and !left_outer.is_colliding():
+			self.global_position.x -= 5
+	elif left_outer.is_colliding() and !left_inner.is_colliding() \
+		and !right_inner.is_colliding() and !right_outer.is_colliding():
+			self.global_position.x = 5

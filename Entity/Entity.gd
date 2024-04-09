@@ -19,11 +19,13 @@ var def_speed:int = 400
 var def_jump_velocity:int = -800
 var def_minimum_speed:int = 8
 var def_push_force = 80.0
+var acceleration = 1
 
-var sprint_speed:int = 600
-var sprint_minimum_speed:int = 12
-var sprint_jump_velocity:int = -600
-var sprint_push_force = 160.0
+
+const sprint_speed:int = 600
+const sprint_minimum_speed:int = 12
+const sprint_jump_velocity:int = -600
+const sprint_push_force = 160.0
 
 var jump_count:int = 0
 

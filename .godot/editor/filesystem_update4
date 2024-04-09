@@ -1,2 +1,13 @@
 res://UI/pause_menu.tscn
 res://UI/pause_menu.gdshader
+res://Character/Players.tscn
+res://Character/Players_Code.gd
+res://Traps/Mace/Mace_Ball(360).tscn
+res://Game_Manager/Game_Manger.tscn
+res://UI/hud.tscn
+res://UI/death_screen.tscn
+res://Entity/Entity.gd
+res://Levels/Main_Menu.tscn
+res://Levels/Levels.gd
+res://Levels/Intro.tscn
+res://Levels/Intro.gd

@@ -66,6 +66,6 @@ res://Traps/Mace/Spike_Ball.tscn::2bc386fe45068eac0f9ecd96bd2b6ac0::1712232837::
 res://Traps/Saw/Saw.tscn::d0b7450b728c45e5f3143d4d24c5ea80::1712554572::res://.godot/exported/133200997/export-1c032a8469523f610b7d0c15b3e5da98-Saw.scn
 res://UI/death_screen.tscn::c692610f0662f188515025b5f9140ba0::1712575185::res://.godot/exported/133200997/export-11c5406be3079989308e0a1f2ef99017-death_screen.scn
 res://UI/hud.tscn::4bd17e1a68ea0a0077829656551acf81::1712575172::res://.godot/exported/133200997/export-a95b3dfddf44e866791e8c8563580609-hud.scn
-res://UI/pause_menu.tscn::7703c735e16d4db4689747a391268f0a::1712575410::res://.godot/exported/133200997/export-525826eebbacba7f238c774f76aea232-pause_menu.scn
+res://UI/pause_menu.tscn::7703c735e16d4db4689747a391268f0a::1712575545::res://.godot/exported/133200997/export-525826eebbacba7f238c774f76aea232-pause_menu.scn
 res://UI/Settings_Menu.tscn::26410bf2a172ecc00eb2597e05f7fded::1711874194::res://.godot/exported/133200997/export-b61d8a76c9191e200694880bf440338b-Settings_Menu.scn
 res://Levels/Intro.tscn::fc9ebaa086b9cb10a8ed78a8104aa19c::1712552047::res://.godot/exported/133200997/export-5a1419ed317fff067575082cf4abd9a4-Intro.scn

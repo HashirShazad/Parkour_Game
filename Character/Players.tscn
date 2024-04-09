@@ -18,23 +18,6 @@
 [ext_resource type="Texture2D" uid="uid://cgx4c8si16d4m" path="res://Sprites/Main Characters/Appearing (96x96).png" id="13_dykpo"]
 [ext_resource type="Script" path="res://Collision/Hurt_Box.gd" id="14_ol218"]
 
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_8u6c4"]
-particles_animation = true
-particles_anim_h_frames = 1
-particles_anim_v_frames = 1
-particles_anim_loop = false
-
-[sub_resource type="Curve" id="Curve_4fvka"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.13242, 1), 0.0, 0.0, 0, 0, Vector2(0.315068, 0), 0.0, 0.0, 0, 0]
-point_count = 3
-
-[sub_resource type="Gradient" id="Gradient_rtqv4"]
-colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
-
-[sub_resource type="Gradient" id="Gradient_xtfbq"]
-offsets = PackedFloat32Array(0, 0.691099, 1)
-colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yidtu"]
 height = 26.0
 
@@ -729,6 +712,23 @@ animations = [{
 "speed": 20.0
 }]
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_8u6c4"]
+particles_animation = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Curve" id="Curve_4fvka"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.13242, 1), 0.0, 0.0, 0, 0, Vector2(0.315068, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_rtqv4"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_xtfbq"]
+offsets = PackedFloat32Array(0, 0.691099, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o1v4y"]
 height = 25.3333
 
@@ -738,6 +738,15 @@ collision_layer = 5
 collision_mask = 5
 platform_floor_layers = 4278190081
 script = ExtResource("1_kpwhk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
+shape = SubResource("CapsuleShape2D_yidtu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_idra0")
+animation = &"Frog_Idle"
 
 [node name="Dust_Particles" type="CPUParticles2D" parent="."]
 texture_filter = 1
@@ -749,23 +758,17 @@ lifetime = 0.5
 one_shot = true
 explosiveness = 1.0
 texture = ExtResource("2_h4qf8")
-direction = Vector2(0, 0)
-spread = 180.0
+emission_shape = 3
+emission_rect_extents = Vector2(10, 1)
+direction = Vector2(0, -1)
+spread = 60.0
 gravity = Vector2(100, 0)
-initial_velocity_max = 200.0
+initial_velocity_min = 100.0
+initial_velocity_max = 130.0
 scale_amount_max = 3.0
 scale_amount_curve = SubResource("Curve_4fvka")
 color_ramp = SubResource("Gradient_rtqv4")
 color_initial_ramp = SubResource("Gradient_xtfbq")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 3)
-shape = SubResource("CapsuleShape2D_yidtu")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-texture_filter = 1
-sprite_frames = SubResource("SpriteFrames_idra0")
-animation = &"Frog_Idle"
 
 [node name="Hurt_Box" type="Area2D" parent="."]
 show_behind_parent = true
@@ -777,5 +780,21 @@ script = ExtResource("14_ol218")
 position = Vector2(0, 3)
 shape = SubResource("CapsuleShape2D_o1v4y")
 debug_color = Color(0.976471, 0, 0.423529, 0)
+
+[node name="Right_Outer" type="RayCast2D" parent="."]
+position = Vector2(10, 0)
+target_position = Vector2(0, -20)
+
+[node name="Left_Outer" type="RayCast2D" parent="."]
+position = Vector2(-10, 0)
+target_position = Vector2(0, -20)
+
+[node name="Right_Inner" type="RayCast2D" parent="."]
+position = Vector2(5, 0)
+target_position = Vector2(0, -20)
+
+[node name="Left_Inner" type="RayCast2D" parent="."]
+position = Vector2(-5, 0)
+target_position = Vector2(0, -20)
 
 [connection signal="area_entered" from="Hurt_Box" to="Hurt_Box" method="_on_area_entered"]

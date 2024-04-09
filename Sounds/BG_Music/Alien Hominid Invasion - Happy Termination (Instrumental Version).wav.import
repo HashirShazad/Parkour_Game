@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c2bwbxwkiweuh"
+path="res://.godot/imported/Alien Hominid Invasion - Happy Termination (Instrumental Version).wav-40e957ad84aa038f8fbfd1a18c190785.sample"
+
+[deps]
+
+source_file="res://Sounds/BG_Music/Alien Hominid Invasion - Happy Termination (Instrumental Version).wav"
+dest_files=["res://.godot/imported/Alien Hominid Invasion - Happy Termination (Instrumental Version).wav-40e957ad84aa038f8fbfd1a18c190785.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
