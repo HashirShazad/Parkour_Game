@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b2ip34x13hcrf" path="res://Levels/Level_4.tscn" id="4_xfv0q"]
 [ext_resource type="Texture2D" uid="uid://dqgm4rmmi5c3j" path="res://Sprites/Terrain/Terrain (16x16).png" id="5_co64u"]
 [ext_resource type="Texture2D" uid="uid://bbrcmwtrfyap2" path="res://Sprites/Additional/Treasure Hunters/Pirate Ship/Sprites/Tilesets/Terrain and Back Wall (32x32).png" id="6_dpwpj"]
-[ext_resource type="PackedScene" uid="uid://lqeurs1jy57v" path="res://Camera/camera.tscn" id="7_n6bwa"]
+[ext_resource type="PackedScene" uid="uid://lqeurs1jy57v" path="res://Camera/camera_2p.tscn" id="7_n6bwa"]
 [ext_resource type="Texture2D" uid="uid://b0qlu341sr3x4" path="res://Sprites/Additional/Treasure Hunters/Pirate Ship/Sprites/Tilesets/Platforms (32x32).png" id="7_n6y68"]
 [ext_resource type="PackedScene" uid="uid://bq8l8hs3fwqug" path="res://Character/Both_Players.tscn" id="8_ytky0"]
 [ext_resource type="PackedScene" uid="uid://drl6q0tnh0apb" path="res://Enemies/Spikes/Spike.tscn" id="9_xmdn7"]

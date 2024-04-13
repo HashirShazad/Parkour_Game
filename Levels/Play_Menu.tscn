@@ -1,0 +1,213 @@
+[gd_scene load_steps=16 format=3 uid="uid://bekqq4egn6odn"]
+
+[ext_resource type="Script" path="res://Levels/Levels.gd" id="1_12n1n"]
+[ext_resource type="PackedScene" uid="uid://dtajtyl1bbh6e" path="res://Game_Manager/Game_Manger.tscn" id="2_ems2f"]
+[ext_resource type="FontFile" uid="uid://vpy38kvl0qsd" path="res://Sprites/Menu/Text/Minecraft.ttf" id="3_3fe1y"]
+[ext_resource type="Texture2D" uid="uid://di6umekw71tm0" path="res://Sprites/Menu/Buttons/Single_Player.png" id="4_57op6"]
+[ext_resource type="Texture2D" uid="uid://dtymrrhwo7bsq" path="res://Sprites/Menu/Buttons/Two_Player.png" id="5_p7u71"]
+[ext_resource type="PackedScene" uid="uid://bq8l8hs3fwqug" path="res://Character/Both_Players.tscn" id="7_rn1el"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g3exq"]
+bg_color = Color(0.819608, 0.341176, 1, 1)
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iacc0"]
+bg_color = Color(0.576471, 0.607843, 0.592157, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v8lbd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tjoiu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iswgc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tpsx3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_457ln"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ifu6j"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gk3ag"]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_12n1n")
+
+[node name="Game_Manager" parent="." instance=ExtResource("2_ems2f")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="BG" type="Panel" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_g3exq")
+
+[node name="LOGO" type="Panel" parent="CanvasLayer/BG"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -213.0
+offset_top = 100.0
+offset_right = 231.0
+offset_bottom = 226.0
+grow_horizontal = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_iacc0")
+
+[node name="Label" type="Label" parent="CanvasLayer/BG/LOGO"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_3fe1y")
+theme_override_font_sizes/font_size = 50
+text = "Choose an option"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Buttons" type="Panel" parent="CanvasLayer/BG"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -213.0
+offset_top = -24.0
+offset_right = 231.0
+offset_bottom = 102.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_v8lbd")
+
+[node name="Sp" type="Panel" parent="CanvasLayer/BG/Buttons"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -63.0
+offset_right = 126.0
+offset_bottom = 63.0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_tjoiu")
+
+[node name="Sp" type="Panel" parent="CanvasLayer/BG/Buttons/Sp"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_iswgc")
+
+[node name="Sp_Button" type="Button" parent="CanvasLayer/BG/Buttons/Sp/Sp"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.227451, 0.227451, 0.227451, 1)
+theme_override_colors/font_hover_color = Color(0.776471, 0.776471, 0.776471, 1)
+theme_override_fonts/font = ExtResource("3_3fe1y")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tpsx3")
+text = "
+"
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/BG/Buttons/Sp/Sp/Sp_Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_57op6")
+
+[node name="2p" type="Panel" parent="CanvasLayer/BG/Buttons"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -126.0
+offset_top = -63.0
+offset_right = -126.0
+offset_bottom = -63.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_457ln")
+
+[node name="2p" type="Panel" parent="CanvasLayer/BG/Buttons/2p"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 126.0
+offset_bottom = 126.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ifu6j")
+
+[node name="2p_Button" type="Button" parent="CanvasLayer/BG/Buttons/2p/2p"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_3fe1y")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gk3ag")
+text = "
+"
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/BG/Buttons/2p/2p/2p_Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_p7u71")
+
+[node name="Players" parent="." instance=ExtResource("7_rn1el")]
+position = Vector2(655, 495)
+
+[editable path="Players"]
+[editable path="Players/Player1"]
+[editable path="Players/Player2"]

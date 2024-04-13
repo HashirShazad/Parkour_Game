@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dqgm4rmmi5c3j" path="res://Sprites/Terrain/Terrain (16x16).png" id="5_7sqg0"]
 [ext_resource type="Texture2D" uid="uid://bbrcmwtrfyap2" path="res://Sprites/Additional/Treasure Hunters/Pirate Ship/Sprites/Tilesets/Terrain and Back Wall (32x32).png" id="6_oj8yd"]
 [ext_resource type="Texture2D" uid="uid://b0qlu341sr3x4" path="res://Sprites/Additional/Treasure Hunters/Pirate Ship/Sprites/Tilesets/Platforms (32x32).png" id="7_1q6ir"]
-[ext_resource type="PackedScene" uid="uid://lqeurs1jy57v" path="res://Camera/camera.tscn" id="8_6h01q"]
+[ext_resource type="PackedScene" uid="uid://lqeurs1jy57v" path="res://Camera/camera_2p.tscn" id="8_6h01q"]
 [ext_resource type="PackedScene" uid="uid://cbcn5rodrx5r0" path="res://Traps/Saw/Saw.tscn" id="9_qmu3k"]
 [ext_resource type="PackedScene" uid="uid://bq8l8hs3fwqug" path="res://Character/Both_Players.tscn" id="9_qrw0p"]
 [ext_resource type="PackedScene" uid="uid://da70y2ydtwdiu" path="res://Enemies/Chicken/Chicken.tscn" id="10_7hy80"]

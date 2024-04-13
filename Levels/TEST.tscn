@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dpgyn2a3buml0" path="res://Props/Box.tscn" id="5_ctr6y"]
 [ext_resource type="PackedScene" uid="uid://drl6q0tnh0apb" path="res://Enemies/Spikes/Spike.tscn" id="6_e85dq"]
 [ext_resource type="PackedScene" uid="uid://dyi8g30o5iifp" path="res://Props/Iron_Box.tscn" id="6_k6jaq"]
-[ext_resource type="PackedScene" uid="uid://lqeurs1jy57v" path="res://Camera/camera.tscn" id="8_7g11m"]
+[ext_resource type="PackedScene" uid="uid://lqeurs1jy57v" path="res://Camera/camera_2p.tscn" id="8_7g11m"]
 [ext_resource type="PackedScene" uid="uid://ckkcr3nhr8ynj" path="res://Props/Strong_Box.tscn" id="8_y4vi6"]
 [ext_resource type="PackedScene" uid="uid://bq8l8hs3fwqug" path="res://Character/Both_Players.tscn" id="9_8g1e6"]
 [ext_resource type="PackedScene" uid="uid://e03gg8dv00kt" path="res://Enemies/Plant/Plant.tscn" id="9_55yfq"]

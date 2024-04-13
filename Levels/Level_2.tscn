@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://d1c7cnegraofw" path="res://Levels/Level_3.tscn" id="4_rw2ln"]
 [ext_resource type="Texture2D" uid="uid://dqgm4rmmi5c3j" path="res://Sprites/Terrain/Terrain (16x16).png" id="5_co64u"]
 [ext_resource type="PackedScene" uid="uid://kxusrwxus326" path="res://Collectables/Fruits.tscn" id="6_e5p2v"]
-[ext_resource type="PackedScene" uid="uid://lqeurs1jy57v" path="res://Camera/camera.tscn" id="7_n6bwa"]
+[ext_resource type="PackedScene" uid="uid://lqeurs1jy57v" path="res://Camera/camera_2p.tscn" id="7_n6bwa"]
 [ext_resource type="PackedScene" uid="uid://bq8l8hs3fwqug" path="res://Character/Both_Players.tscn" id="8_ytky0"]
 [ext_resource type="PackedScene" uid="uid://pa8e0cvnbkvd" path="res://Enemies/Spikes/Death_Spike.tscn" id="9_s2j47"]
 [ext_resource type="PackedScene" uid="uid://drl6q0tnh0apb" path="res://Enemies/Spikes/Spike.tscn" id="9_xmdn7"]
@@ -937,13 +937,13 @@ fruit_name = &"Melon"
 position = Vector2(-166, -51)
 
 [node name="PhantomCamera2D" parent="Scene_Objects/Camera" index="0"]
-position = Vector2(481, 949)
-zoom = Vector2(0.7725, 0.7725)
+position = Vector2(574, 960)
+zoom = Vector2(0.7975, 0.7975)
 follow_group = Array[NodePath]([NodePath("../../Players/Player1"), NodePath("../../Players/Player2")])
 
 [node name="Camera2D" parent="Scene_Objects/Camera" index="1"]
-position = Vector2(481, 949)
-zoom = Vector2(0.7725, 0.7725)
+position = Vector2(574, 960)
+zoom = Vector2(0.7975, 0.7975)
 
 [node name="Players" parent="Scene_Objects" instance=ExtResource("8_ytky0")]
 position = Vector2(408, 909)

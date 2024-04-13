@@ -9,7 +9,11 @@ extends Node
 
 var player_1
 var player_2
+var camera
+
 var input_disabled:bool = false
+var is_single_player:bool = false
+
 
 @onready var player1_info_box = $Hud/Node/Player_Info_Box
 @onready var player2_info_box = $Hud/Node/Player2_Info_Box
@@ -28,10 +32,16 @@ var points = 0
 var paused:bool = false
 var death_screen_shown:bool = false
 
+func _ready():
+	apply_single_player_rules()
+
 func _process(delta):
 	#update_time(delta)
 	if input_disabled:
 		return
+		if player_1:
+			get_input()
+			check_if_dead()
 	if player_1 && player_2:
 		get_input()
 		check_if_dead()
@@ -111,7 +121,8 @@ func _on_restart_button_pressed():
 func update_health():
 	var tween = get_tree().create_tween()
 	tween.tween_property(hp_bar_P1, "value", player_1.health, .1).set_trans(Tween.TRANS_QUAD)
-	tween.tween_property(hp_bar_P2, "value", player_2.health, .1).set_trans(Tween.TRANS_QUAD)
+	if !is_single_player:
+		tween.tween_property(hp_bar_P2, "value", player_2.health, .1).set_trans(Tween.TRANS_QUAD)
 	
 func _on_back_to_main_menu_button_pressed():
 	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_VISIBLE)
@@ -155,11 +166,16 @@ func get_input():
 func check_if_dead():
 	if player_1.is_dead:
 		player_1.position = player_2.position
-	if player_2.is_dead:
-		player_2.position = player_1.position
-	if player_1.is_dead && player_2.is_dead:
-		if death_screen_shown == false:
-			_death_screen()
+		if is_single_player:
+			if death_screen_shown == false:
+				_death_screen()
+	if !is_single_player:
+		if player_2.is_dead:
+			player_2.position = player_1.position
+
+		if player_1.is_dead && player_2.is_dead:
+			if death_screen_shown == false:
+				_death_screen()
 
 func update_ui_alpha(value:float = .5):
 	var tween = get_tree().create_tween()
@@ -173,3 +189,9 @@ func _on_area_2d_body_entered(body):
 
 func _on_area_2d_body_exited(body):
 	update_ui_alpha(1)
+
+func apply_single_player_rules():
+	if !is_single_player:
+		return
+	
+	player2_info_box.hide()

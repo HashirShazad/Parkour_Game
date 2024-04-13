@@ -10,9 +10,9 @@ duration = 0.1
 transition = 3
 ease = 1
 
-[node name="Camera" type="Node2D"]
+[node name="Camera_2p" type="Node2D"]
 
-[node name="PhantomCamera2D" type="Node2D" parent="."]
+[node name="PhantomCamera2D" type="Node2D" parent="." groups=["Camera_2p"]]
 position = Vector2(750, 886)
 script = ExtResource("1_47ree")
 priority_override = false

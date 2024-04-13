@@ -1,5 +1,8 @@
-res://Enemies/Pig
+res://Sprites/Terrain
+res://Levels
+res://Sprites/Menu/Buttons
 D:/
+res://Enemies/Pig
 res://Sprites/Enemies/Plant
 res://Sprites/Other
 F:/Softwares/Godot
@@ -13,10 +16,7 @@ res://Sprites/Enemies/AngryPig
 res://Sprites/Traps/Saw
 res://Sprites/Enemies/Chameleon
 res://Sprites/Traps/Spiked Ball
-res://Sprites/Terrain
-res://Levels
 res://Sprites/Items/Fruits
 res://Sprites/Main Characters/Ninja Frog
 res://Sprites/Enemies/Duck
 res://Sprites/Enemies/Chicken
-res://Transitions
