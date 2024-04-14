@@ -12,6 +12,8 @@ func start_transition():
 	color_rect.show()
 	animation_player.play("fade_in")
 
+func start_half_transition():
+	animation_player.play("fade_out")
 
 func _on_animation_player_animation_finished(anim_name):
 

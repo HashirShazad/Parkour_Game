@@ -47,10 +47,10 @@ var points = 0
 var paused:bool = false
 var death_screen_shown:bool = false
 
-func _ready():
-	apply_single_player_rules()
 
 func _process(delta):
+	apply_single_player_rules()
+	print("Single Player Mode in process : ", is_single_player)
 	#update_time(delta)
 	if input_disabled:
 		return
@@ -133,6 +133,7 @@ func _on_restart_button_pressed():
 	input_disabled = false
 
 func update_health():
+	print(is_single_player)
 	var tween = get_tree().create_tween()
 	tween.tween_property(hp_bar_P1, "value", player_1.health, .1).set_trans(Tween.TRANS_QUAD)
 	if !is_single_player:
@@ -180,10 +181,12 @@ func get_input():
 
 func check_if_dead():
 	if player_1.is_dead:
-		player_1.position = player_2.position
 		if is_single_player:
 			if death_screen_shown == false:
 				_death_screen()
+		else:
+			player_1.position = player_2.position
+		
 	if !is_single_player:
 		if player_2.is_dead:
 			player_2.position = player_1.position
@@ -206,12 +209,11 @@ func _on_area_2d_body_exited(body):
 
 func apply_single_player_rules():
 	if is_single_player:
+		player2_info_box.visible = false
 		player2_info_box.hide()
-		print("HIDDEN")
 	else:
 		player2_info_box.visible = true
 		player2_info_box.show()
-		print("SHOWED")
 
 func _on_sp_button_pressed():
 	is_single_player = true
@@ -238,7 +240,6 @@ func _on_2p_button_pressed():
 	get_tree().change_scene_to_file(levels_2P.l1)
 	await  Transitioner.transition_fully_finished
 	input_disabled = false
-	is_single_player = false
 	
 func _on_test_button_pressed():
 	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_HIDDEN)
