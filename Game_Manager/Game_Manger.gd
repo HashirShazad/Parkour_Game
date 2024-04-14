@@ -27,7 +27,7 @@ var player_2
 var camera
 
 var input_disabled:bool = false
-var is_single_player:bool = true
+var is_single_player:bool = false
 
 
 @onready var player1_info_box = $Hud/Node/Player_Info_Box
@@ -215,7 +215,6 @@ func apply_single_player_rules():
 
 func _on_sp_button_pressed():
 	is_single_player = true
-	print("HAHA" , is_single_player)
 	apply_single_player_rules()
 	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_HIDDEN)
 	if input_disabled:
@@ -229,7 +228,6 @@ func _on_sp_button_pressed():
 
 func _on_2p_button_pressed():
 	is_single_player = false
-	print("HAHA" , is_single_player)
 	apply_single_player_rules()
 	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_HIDDEN)
 	if input_disabled:
@@ -241,7 +239,6 @@ func _on_2p_button_pressed():
 	await  Transitioner.transition_fully_finished
 	input_disabled = false
 	is_single_player = false
-	print("2" , is_single_player)
 	
 func _on_test_button_pressed():
 	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_HIDDEN)

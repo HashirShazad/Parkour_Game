@@ -1,10 +1,10 @@
-res://Levels/Main_Menu.tscn
+res://Levels/Play_Menu.tscn
 res://UI/pause_menu.gdshader
 res://Enemies/Pig/Pig.gd
-res://Game_Manager/Game_Manger.tscn
 res://Game_Manager/Game_Manger.gd
 res://Character/Sp_Players.tscn
 res://Levels/Single_Player_Levels/Sp_Level_1.tscn
-res://Levels/Play_Menu.tscn
-res://UI/Settings_Menu.tscn
+res://Game_Manager/Game_Manger.tscn
+res://Levels/Main_Menu.tscn
 res://UI/pause_menu.tscn
+res://UI/Settings_Menu.tscn
