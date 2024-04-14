@@ -1,4 +1,6 @@
 extends Node
+
+# Levels <----------------------------------------------------------------------------------------->
 var levels_UI = {
 	main_menu = "res://Levels/Main_Menu.tscn",
 	play_menu = "res://Levels/Play_Menu.tscn",
@@ -17,44 +19,45 @@ var levels_1P = {
 	l1 = "res://Levels/Single_Player_Levels/Sp_Level_1.tscn"
 }
 
+# Labels <----------------------------------------------------------------------------------------->
 @onready var timer_label = $Hud/Node/Timer_Info_Box/TimerLabel
 @onready var points_label = $Hud/Node/Coin_Info_Box/PointsLabel
+
+# Menus <----------------------------------------------------------------------------------------->
 @onready var pause_menu = $Pause_Menu
 @onready var death_screen = $Death_Screen
 
+#Player Refs <----------------------------------------------------------------------------------------->
 var player_1
 var player_2
-var camera
-
-var input_disabled:bool = false
-var is_single_player:bool = false
 
 
+# Info Boxes <----------------------------------------------------------------------------------------->
 @onready var player1_info_box = $Hud/Node/Player_Info_Box
 @onready var player2_info_box = $Hud/Node/Player2_Info_Box
 @onready var coin_info_box = $Hud/Node/Coin_Info_Box
 
+
+# Health Bars <----------------------------------------------------------------------------------------->
 @onready var hp_bar_P1 = $Hud/Node/Player_Info_Box/Panel/ProgressBar
 @onready var hp_bar_P2 = $Hud/Node/Player2_Info_Box/Panel/ProgressBar
 
-
+# Timer <----------------------------------------------------------------------------------------->
 var time:float
 var time_sec:int
 var time_msec:int
 var time_min:int
 
+# Miscellanous <----------------------------------------------------------------------------------------->
 var points = 0
 var paused:bool = false
 var death_screen_shown:bool = false
-
+var input_disabled:bool = false
 
 func _process(delta):
-	apply_single_player_rules()
-	print("Single Player Mode in process : ", is_single_player)
-	#update_time(delta)
 	if input_disabled:
 		return
-	if is_single_player:
+	if player_2 == null:
 		if player_1:
 			get_input()
 			check_if_dead()
@@ -87,82 +90,11 @@ func add_points(collected_points:int) -> void:
 	points = points + collected_points
 	points_label.text = "Points: " + str(points)
 
-func _on_play_button_pressed():
-	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_HIDDEN)
-	if input_disabled:
-		return
-	Transitioner.start_transition()
-	input_disabled = true
-	await Transitioner.transiton_finsihed
-	get_tree().change_scene_to_file(levels_UI.play_menu)
-	await  Transitioner.transition_fully_finished
-	input_disabled = false
-
-func _on_close_button_pressed():
-	if input_disabled:
-		return
-	Transitioner.start_transition()
-	input_disabled = true
-	get_tree().quit()
-
-func _on_resume_button_pressed():
-	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_HIDDEN)
-	pause()
-
-func _on_back_button_pressed():
-	player_1 = null
-	player_2 = null
-	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_VISIBLE)
-	pause()
-	Transitioner.start_transition()
-	await Transitioner.transiton_finsihed
-	get_tree().change_scene_to_file(levels_UI.main_menu)
-
-func _on_restart_button_pressed():
-	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_HIDDEN)
-	# Pause menu button
-	input_disabled = true
-	restart()
-	death_screen_shown = false
-	update_health()
-	pause()
-	Transitioner.start_transition()
-	await Transitioner.transiton_finsihed
-	get_tree().change_scene_to_file(get_tree().current_scene.scene_file_path)
-	await Transitioner.transition_fully_finished
-	input_disabled = false
-
 func update_health():
-	print(is_single_player)
 	var tween = get_tree().create_tween()
 	tween.tween_property(hp_bar_P1, "value", player_1.health, .1).set_trans(Tween.TRANS_QUAD)
-	if !is_single_player:
+	if player_2:
 		tween.tween_property(hp_bar_P2, "value", player_2.health, .1).set_trans(Tween.TRANS_QUAD)
-	
-func _on_back_to_main_menu_button_pressed():
-	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_VISIBLE)
-	Transitioner.start_transition()
-	await Transitioner.transiton_finsihed
-	get_tree().change_scene_to_file(levels_UI.main_menu)
-
-func _on_settings_button_pressed():
-	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_VISIBLE)
-	Transitioner.start_transition()
-	await Transitioner.transiton_finsihed
-	get_tree().change_scene_to_file(levels_UI.settings_menu)
-
-func _on_retry_button_pressed():
-	#Death_Screen button
-	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_HIDDEN)
-	input_disabled = true
-	restart()
-	update_health()
-	Transitioner.start_transition()
-	await Transitioner.transiton_finsihed
-	get_tree().change_scene_to_file(get_tree().current_scene.scene_file_path)
-	_death_screen()
-	await Transitioner.transition_fully_finished
-	input_disabled = false
 	
 func update_time(delta):
 	time += delta
@@ -181,13 +113,13 @@ func get_input():
 
 func check_if_dead():
 	if player_1.is_dead:
-		if is_single_player:
+		if player_2 != null:
 			if death_screen_shown == false:
 				_death_screen()
 		else:
 			player_1.position = player_2.position
 		
-	if !is_single_player:
+	if player_2 != null:
 		if player_2.is_dead:
 			player_2.position = player_1.position
 
@@ -201,23 +133,25 @@ func update_ui_alpha(value:float = .5):
 	tween.tween_property(player2_info_box, "modulate:a", value, .1).set_trans(Tween.TRANS_QUAD)
 	tween.tween_property(coin_info_box, "modulate:a", value, .1).set_trans(Tween.TRANS_QUAD)
 
+func restart():
+	player_1.health = 100
+	points_label.text = "Points: 0"
+	points = 0
+	if player_2 != null:
+		player_2.health = 100
+	update_health()
+
+# Transparent UI <----------------------------------------------------------------------------------------->
 func _on_area_2d_body_entered(body):
 	update_ui_alpha(.1)
 
 func _on_area_2d_body_exited(body):
 	update_ui_alpha(1)
 
-func apply_single_player_rules():
-	if is_single_player:
-		player2_info_box.visible = false
-		player2_info_box.hide()
-	else:
-		player2_info_box.visible = true
-		player2_info_box.show()
 
+# Buttons <----------------------------------------------------------------------------------------->
+# Single Player Button
 func _on_sp_button_pressed():
-	is_single_player = true
-	apply_single_player_rules()
 	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_HIDDEN)
 	if input_disabled:
 		return
@@ -228,9 +162,8 @@ func _on_sp_button_pressed():
 	await  Transitioner.transition_fully_finished
 	input_disabled = false
 
+# Two Player Button
 func _on_2p_button_pressed():
-	is_single_player = false
-	apply_single_player_rules()
 	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_HIDDEN)
 	if input_disabled:
 		return
@@ -241,6 +174,7 @@ func _on_2p_button_pressed():
 	await  Transitioner.transition_fully_finished
 	input_disabled = false
 	
+# Test Level Button
 func _on_test_button_pressed():
 	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_HIDDEN)
 	if input_disabled:
@@ -252,10 +186,80 @@ func _on_test_button_pressed():
 	await  Transitioner.transition_fully_finished
 	input_disabled = false
 
-func restart():
-	player_1.health = 100
-	points_label.text = "Points: 0"
-	points = 0
-	if !is_single_player:
-		player_2.health = 100
+# Back to main menu button
+func _on_back_to_main_menu_button_pressed():
+	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_VISIBLE)
+	Transitioner.start_transition()
+	await Transitioner.transiton_finsihed
+	get_tree().change_scene_to_file(levels_UI.main_menu)
+
+# Settings button
+func _on_settings_button_pressed():
+	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_VISIBLE)
+	Transitioner.start_transition()
+	await Transitioner.transiton_finsihed
+	get_tree().change_scene_to_file(levels_UI.settings_menu)
+
+# Death Screen retry button
+func _on_retry_button_pressed():
+	#Death_Screen button
+	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_HIDDEN)
+	input_disabled = true
+	restart()
 	update_health()
+	Transitioner.start_transition()
+	await Transitioner.transiton_finsihed
+	get_tree().change_scene_to_file(get_tree().current_scene.scene_file_path)
+	_death_screen()
+	await Transitioner.transition_fully_finished
+	input_disabled = false
+	
+# Play button
+func _on_play_button_pressed():
+	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_HIDDEN)
+	if input_disabled:
+		return
+	Transitioner.start_transition()
+	input_disabled = true
+	await Transitioner.transiton_finsihed
+	get_tree().change_scene_to_file(levels_UI.play_menu)
+	await  Transitioner.transition_fully_finished
+	input_disabled = false
+
+# Game Quit/Close button
+func _on_close_button_pressed():
+	if input_disabled:
+		return
+	Transitioner.start_transition()
+	input_disabled = true
+	get_tree().quit()
+
+# Game resume button
+func _on_resume_button_pressed():
+	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_HIDDEN)
+	pause()
+
+# Game back to main menu when paused button
+func _on_back_button_pressed():
+	player_1 = null
+	player_2 = null
+	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_VISIBLE)
+	pause()
+	Transitioner.start_transition()
+	await Transitioner.transiton_finsihed
+	get_tree().change_scene_to_file(levels_UI.main_menu)
+
+# Restart Pause menu button
+func _on_restart_button_pressed():
+	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_HIDDEN)
+	# Pause menu button
+	input_disabled = true
+	restart()
+	death_screen_shown = false
+	update_health()
+	pause()
+	Transitioner.start_transition()
+	await Transitioner.transiton_finsihed
+	get_tree().change_scene_to_file(get_tree().current_scene.scene_file_path)
+	await Transitioner.transition_fully_finished
+	input_disabled = false

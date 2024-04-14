@@ -1,6 +1,6 @@
 extends AudioStreamPlayer2D
 
-
+# Bg Music Player <----------------------------------------------------------------------------------------->
 func play_music(music:AudioStream, volume = 0.0):
 	if stream == music:
 		return
@@ -9,6 +9,7 @@ func play_music(music:AudioStream, volume = 0.0):
 	volume_db = volume
 	play()
 	
+# Sound effect player <----------------------------------------------------------------------------------------->
 func play_FX(stream: AudioStream, volume = 0.0, lower_bound: int = 0.8, upper_bound: int = 1.3):
 	var fx_player = AudioStreamPlayer.new()
 	fx_player.stream = stream

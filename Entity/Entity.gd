@@ -2,33 +2,36 @@ extends CharacterBody2D
 
 class_name Entity
 
+
+# Stats <----------------------------------------------------------------------------------------->
 var push_force = 80.0
 var health:int = 100
 var max_health:int = 100
+var jump_count:int = 0
 
+# Directions <----------------------------------------------------------------------------------------->
 var direction:float
 var kb_direction:Vector2
 
+# Booleans <----------------------------------------------------------------------------------------->
 var is_pushing:bool = 0
 var is_dead:bool = 0
 var is_stunned:bool = 0
 var on_ground:bool = 0
 
-
+# Default Speed <----------------------------------------------------------------------------------------->
 var def_speed:int = 400
 var def_jump_velocity:int = -800
 var def_minimum_speed:int = 8
 var def_push_force = 80.0
-var acceleration = 1
 
-
+# Sprint Speed <----------------------------------------------------------------------------------------->
 const sprint_speed:int = 600
 const sprint_minimum_speed:int = 12
 const sprint_jump_velocity:int = -600
 const sprint_push_force = 160.0
 
-var jump_count:int = 0
-
+# Squash and Stretch <----------------------------------------------------------------------------------------->
 var squashed_size:Vector2 = Vector2(1.1, 0.8) 
 var stretched_size:Vector2 = Vector2(0.8, 1.1)
 
@@ -42,17 +45,22 @@ var stretched_size:Vector2 = Vector2(0.8, 1.1)
 	 Damaged = "Frog_Damaged",
 	 Dead = "Dead"
 }
+
+# Used Speed Variables <----------------------------------------------------------------------------------------->
 var speed = 400.0
 var minimum_speed = 8
 var jump_velocity = -800.0
 
+# References <----------------------------------------------------------------------------------------->
 @onready var sprite_2d = $AnimatedSprite2D
 @onready var hurt_box = $Hurt_Box/CollisionShape2D
 @onready var collision_shape_2d = $CollisionShape2D
 @onready var dust_particles = $Dust_Particles
 
-# Get the gravity from the project settings to be synced with RigidBody nodes.
+# Gravity <----------------------------------------------------------------------------------------->
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+
+
 func _physics_process(delta):
 	flip_sprite()
 	update_animation()
@@ -68,7 +76,6 @@ func _physics_process(delta):
 
 	move_and_slide()
 	check_collisions()
-	
 	
 func update_animation():
 	if is_dead:
@@ -148,12 +155,10 @@ func squash():
 	tween.tween_property(sprite_2d, "scale",squashed_size, .1).set_trans(Tween.TRANS_QUAD)
 	tween.tween_callback(squash_and_stretch_finished)
 
-	
 func stretch():
 	var tween = get_tree().create_tween()
 	tween.tween_property(sprite_2d, "scale",stretched_size, .1).set_trans(Tween.TRANS_QUAD)
 	tween.tween_callback(squash_and_stretch_finished)
-
 
 func squash_and_stretch_finished():
 	var tween = get_tree().create_tween()

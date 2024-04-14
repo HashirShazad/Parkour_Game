@@ -1,36 +1,40 @@
 extends Entity
 class_name Player
 
-
+# Scenes <----------------------------------------------------------------------------------------->
 var ghost_scene = preload("res://Character/Ghost.tscn")
 var jump_sound = preload("res://Sounds/Sound/Jump.wav")
 
-
+# Miscellanous <----------------------------------------------------------------------------------------->
+#Constants
 const WALL_JUMP_PUSHBACK = 1000
 const jump_buffer_time:float = .1
 const coyote_time:float = .1
-
+#Variables
 var jump_buffer_timer:float = 0
 var coyote_timer:float = 0
 
+# Ray Cast references <----------------------------------------------------------------------------------------->
 @onready var right_outer = $Right_Outer
 @onready var left_outer = $Left_Outer
 @onready var right_inner = $Right_Inner
 @onready var left_inner = $Left_Inner
 
-
-
+# Buttons <----------------------------------------------------------------------------------------->
 @export var btns = {
 	 Right = "P1_Right",
 	 Left = "P1_Left",
 	 Jump = "P1_Jump",
 	 Sprint = "P1_Sprint",
 }
+
 func _process(delta):
+	# Subtract delta(frame) every delta(frame) from these vars
 	jump_buffer_timer -= delta
 	coyote_timer -= delta
 	
 func _ready():
+	# Assign ref to game manager
 	update_game_manager()
 	jump_buffer_timer = 0
 	coyote_timer = 0
@@ -143,7 +147,6 @@ func update_game_manager():
 		GameManger.player_1 = self
 	elif self.name == "Player2":
 		GameManger.player_2 = self
-	#GameManger.death_screen.hide()
 
 func push_off_ledges():
 	return

@@ -1,9 +1,11 @@
 extends Entity
 class_name Enemy
 
-
+# Scenes <----------------------------------------------------------------------------------------->
 var ghost_scene = preload("res://Character/Ghost.tscn")
 var jump_sound = preload("res://Sounds/Sound/Jump.wav")
+
+# Edge Checks <----------------------------------------------------------------------------------------->
 @onready var edge_check_right = $Edge_Check_Right
 @onready var edge_check_left = $Edge_Check_Left
 
