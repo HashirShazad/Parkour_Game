@@ -1,10 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://c2hm7fpe6nigi"]
+[gd_scene load_steps=14 format=3 uid="uid://c2hm7fpe6nigi"]
 
-[ext_resource type="PackedScene" uid="uid://dtajtyl1bbh6e" path="res://Game_Manager/Game_Manger.tscn" id="1_1m74v"]
-[ext_resource type="PackedScene" uid="uid://bq8l8hs3fwqug" path="res://Character/Both_Players.tscn" id="2_5d34v"]
-[ext_resource type="FontFile" uid="uid://vpy38kvl0qsd" path="res://Sprites/Menu/Text/Minecraft.ttf" id="2_5dcng"]
-[ext_resource type="Texture2D" uid="uid://croy1xhacb6we" path="res://Sprites/Menu/Buttons/Back.png" id="3_ms3vp"]
-[ext_resource type="Script" path="res://UI/Remapable_Buttons.gd" id="4_bsixw"]
+[ext_resource type="PackedScene" uid="uid://dtajtyl1bbh6e" path="res://Game_Manager/Game_Manger.tscn" id="1_omias"]
+[ext_resource type="FontFile" uid="uid://vpy38kvl0qsd" path="res://Sprites/Menu/Text/Minecraft.ttf" id="3_bsg3h"]
+[ext_resource type="Texture2D" uid="uid://croy1xhacb6we" path="res://Sprites/Menu/Buttons/Back.png" id="4_jujvu"]
+[ext_resource type="Script" path="res://UI/Remapable_Buttons.gd" id="5_5m8ju"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pbmc6"]
 bg_color = Color(0.54902, 0.529412, 1, 1)
@@ -76,9 +75,7 @@ corner_radius_bottom_left = 10
 
 [node name="Settings_Menu" type="Node2D"]
 
-[node name="Game_Manager" parent="." instance=ExtResource("1_1m74v")]
-
-[node name="Players" parent="." instance=ExtResource("2_5d34v")]
+[node name="Game_Manager" parent="." instance=ExtResource("1_omias")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -114,7 +111,7 @@ offset_top = 8.0
 offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_5dcng")
+theme_override_fonts/font = ExtResource("3_bsg3h")
 theme_override_font_sizes/font_size = 40
 text = "Change Controls"
 horizontal_alignment = 1
@@ -162,7 +159,7 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.227451, 0.227451, 0.227451, 1)
 theme_override_colors/font_hover_color = Color(0.776471, 0.776471, 0.776471, 1)
-theme_override_fonts/font = ExtResource("2_5dcng")
+theme_override_fonts/font = ExtResource("3_bsg3h")
 theme_override_font_sizes/font_size = 60
 theme_override_styles/normal = SubResource("StyleBoxEmpty_tpsx3")
 text = "
@@ -175,7 +172,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_ms3vp")
+texture = ExtResource("4_jujvu")
 
 [node name="Controls" type="Panel" parent="CanvasLayer/BG"]
 layout_mode = 1
@@ -249,16 +246,16 @@ theme_override_constants/separation = 10
 texture_filter = 1
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_5dcng")
+theme_override_fonts/font = ExtResource("3_bsg3h")
 theme_override_font_sizes/font_size = 40
 text = "P1_Right"
 
 [node name="Remap_Button" type="Button" parent="CanvasLayer/BG/Controls/Settings_Grid_Container/P_1/HBoxContainer"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_5dcng")
+theme_override_fonts/font = ExtResource("3_bsg3h")
 theme_override_font_sizes/font_size = 30
-script = ExtResource("4_bsixw")
+script = ExtResource("5_5m8ju")
 action = "P1_Right"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/BG/Controls/Settings_Grid_Container/P_1"]
@@ -269,16 +266,16 @@ theme_override_constants/separation = 10
 texture_filter = 1
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_5dcng")
+theme_override_fonts/font = ExtResource("3_bsg3h")
 theme_override_font_sizes/font_size = 40
 text = "P1_Left"
 
 [node name="Remap_Button" type="Button" parent="CanvasLayer/BG/Controls/Settings_Grid_Container/P_1/HBoxContainer2"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_5dcng")
+theme_override_fonts/font = ExtResource("3_bsg3h")
 theme_override_font_sizes/font_size = 30
-script = ExtResource("4_bsixw")
+script = ExtResource("5_5m8ju")
 action = "P1_Left"
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/BG/Controls/Settings_Grid_Container/P_1"]
@@ -288,16 +285,16 @@ layout_mode = 2
 texture_filter = 1
 custom_minimum_size = Vector2(205, 0)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_5dcng")
+theme_override_fonts/font = ExtResource("3_bsg3h")
 theme_override_font_sizes/font_size = 40
 text = "P1_Sprint"
 
 [node name="Remap_Button" type="Button" parent="CanvasLayer/BG/Controls/Settings_Grid_Container/P_1/HBoxContainer3"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_5dcng")
+theme_override_fonts/font = ExtResource("3_bsg3h")
 theme_override_font_sizes/font_size = 30
-script = ExtResource("4_bsixw")
+script = ExtResource("5_5m8ju")
 action = "P1_Sprint"
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="CanvasLayer/BG/Controls/Settings_Grid_Container/P_1"]
@@ -307,16 +304,16 @@ layout_mode = 2
 texture_filter = 1
 custom_minimum_size = Vector2(205, 0)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_5dcng")
+theme_override_fonts/font = ExtResource("3_bsg3h")
 theme_override_font_sizes/font_size = 40
 text = "P1_Jump"
 
 [node name="Remap_Button" type="Button" parent="CanvasLayer/BG/Controls/Settings_Grid_Container/P_1/HBoxContainer4"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_5dcng")
+theme_override_fonts/font = ExtResource("3_bsg3h")
 theme_override_font_sizes/font_size = 30
-script = ExtResource("4_bsixw")
+script = ExtResource("5_5m8ju")
 action = "P1_Jump"
 
 [node name="P_2" type="VBoxContainer" parent="CanvasLayer/BG/Controls/Settings_Grid_Container"]
@@ -330,16 +327,16 @@ layout_mode = 2
 texture_filter = 1
 custom_minimum_size = Vector2(205, 0)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_5dcng")
+theme_override_fonts/font = ExtResource("3_bsg3h")
 theme_override_font_sizes/font_size = 40
 text = "P2_Right"
 
 [node name="Remap_Button" type="Button" parent="CanvasLayer/BG/Controls/Settings_Grid_Container/P_2/HBoxContainer"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_5dcng")
+theme_override_fonts/font = ExtResource("3_bsg3h")
 theme_override_font_sizes/font_size = 30
-script = ExtResource("4_bsixw")
+script = ExtResource("5_5m8ju")
 action = "P2_Right"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/BG/Controls/Settings_Grid_Container/P_2"]
@@ -349,16 +346,16 @@ layout_mode = 2
 texture_filter = 1
 custom_minimum_size = Vector2(205, 0)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_5dcng")
+theme_override_fonts/font = ExtResource("3_bsg3h")
 theme_override_font_sizes/font_size = 40
 text = "P2_Left"
 
 [node name="Remap_Button" type="Button" parent="CanvasLayer/BG/Controls/Settings_Grid_Container/P_2/HBoxContainer2"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_5dcng")
+theme_override_fonts/font = ExtResource("3_bsg3h")
 theme_override_font_sizes/font_size = 30
-script = ExtResource("4_bsixw")
+script = ExtResource("5_5m8ju")
 action = "P2_Left"
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/BG/Controls/Settings_Grid_Container/P_2"]
@@ -368,16 +365,16 @@ layout_mode = 2
 texture_filter = 1
 custom_minimum_size = Vector2(205, 0)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_5dcng")
+theme_override_fonts/font = ExtResource("3_bsg3h")
 theme_override_font_sizes/font_size = 40
 text = "P2_Sprint"
 
 [node name="Remap_Button" type="Button" parent="CanvasLayer/BG/Controls/Settings_Grid_Container/P_2/HBoxContainer3"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_5dcng")
+theme_override_fonts/font = ExtResource("3_bsg3h")
 theme_override_font_sizes/font_size = 30
-script = ExtResource("4_bsixw")
+script = ExtResource("5_5m8ju")
 action = "P2_Sprint"
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="CanvasLayer/BG/Controls/Settings_Grid_Container/P_2"]
@@ -387,16 +384,16 @@ layout_mode = 2
 texture_filter = 1
 custom_minimum_size = Vector2(205, 0)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_5dcng")
+theme_override_fonts/font = ExtResource("3_bsg3h")
 theme_override_font_sizes/font_size = 40
 text = "P2_Jump"
 
 [node name="Remap_Button" type="Button" parent="CanvasLayer/BG/Controls/Settings_Grid_Container/P_2/HBoxContainer4"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_5dcng")
+theme_override_fonts/font = ExtResource("3_bsg3h")
 theme_override_font_sizes/font_size = 30
-script = ExtResource("4_bsixw")
+script = ExtResource("5_5m8ju")
 action = "P2_Jump"
 
 [connection signal="pressed" from="CanvasLayer/BG/Buttons/Close_Panel/Back/Back_To_Main_Menu_Button" to="Game_Manager" method="_on_back_to_main_menu_button_pressed"]

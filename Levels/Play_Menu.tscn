@@ -1,11 +1,12 @@
-[gd_scene load_steps=16 format=3 uid="uid://bekqq4egn6odn"]
+[gd_scene load_steps=20 format=3 uid="uid://c7rk51mnliyi6"]
 
-[ext_resource type="Script" path="res://Levels/Levels.gd" id="1_12n1n"]
-[ext_resource type="PackedScene" uid="uid://dtajtyl1bbh6e" path="res://Game_Manager/Game_Manger.tscn" id="2_ems2f"]
-[ext_resource type="FontFile" uid="uid://vpy38kvl0qsd" path="res://Sprites/Menu/Text/Minecraft.ttf" id="3_3fe1y"]
-[ext_resource type="Texture2D" uid="uid://di6umekw71tm0" path="res://Sprites/Menu/Buttons/Single_Player.png" id="4_57op6"]
-[ext_resource type="Texture2D" uid="uid://dtymrrhwo7bsq" path="res://Sprites/Menu/Buttons/Two_Player.png" id="5_p7u71"]
-[ext_resource type="PackedScene" uid="uid://bq8l8hs3fwqug" path="res://Character/Both_Players.tscn" id="7_rn1el"]
+[ext_resource type="Script" path="res://Levels/Levels.gd" id="1_3txvo"]
+[ext_resource type="PackedScene" uid="uid://dtajtyl1bbh6e" path="res://Game_Manager/Game_Manger.tscn" id="2_3xrrb"]
+[ext_resource type="FontFile" uid="uid://vpy38kvl0qsd" path="res://Sprites/Menu/Text/Minecraft.ttf" id="3_te4sv"]
+[ext_resource type="Texture2D" uid="uid://di6umekw71tm0" path="res://Sprites/Menu/Buttons/Single_Player.png" id="4_mdt43"]
+[ext_resource type="Texture2D" uid="uid://dbjr5htuv70ef" path="res://Sprites/Menu/Buttons/Test.png" id="5_i56gb"]
+[ext_resource type="Texture2D" uid="uid://dtymrrhwo7bsq" path="res://Sprites/Menu/Buttons/Two_Player.png" id="5_tj1ap"]
+[ext_resource type="Texture2D" uid="uid://croy1xhacb6we" path="res://Sprites/Menu/Buttons/Back.png" id="7_oqgt0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g3exq"]
 bg_color = Color(0.819608, 0.341176, 1, 1)
@@ -45,10 +46,16 @@ corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gk3ag"]
 
-[node name="MainMenu" type="Node2D"]
-script = ExtResource("1_12n1n")
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i4sip"]
 
-[node name="Game_Manager" parent="." instance=ExtResource("2_ems2f")]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yu6ru"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_43q4f"]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_3txvo")
+
+[node name="Game_Manager" parent="." instance=ExtResource("2_3xrrb")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -85,7 +92,7 @@ offset_top = 8.0
 offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("3_3fe1y")
+theme_override_fonts/font = ExtResource("3_te4sv")
 theme_override_font_sizes/font_size = 50
 text = "Choose an option"
 horizontal_alignment = 1
@@ -137,7 +144,7 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.227451, 0.227451, 0.227451, 1)
 theme_override_colors/font_hover_color = Color(0.776471, 0.776471, 0.776471, 1)
-theme_override_fonts/font = ExtResource("3_3fe1y")
+theme_override_fonts/font = ExtResource("3_te4sv")
 theme_override_font_sizes/font_size = 60
 theme_override_styles/normal = SubResource("StyleBoxEmpty_tpsx3")
 text = "
@@ -150,7 +157,57 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("4_57op6")
+texture = ExtResource("4_mdt43")
+
+[node name="TEST" type="Panel" parent="CanvasLayer/BG/Buttons"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -63.0
+offset_top = -63.0
+offset_right = 63.0
+offset_bottom = 63.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_tjoiu")
+
+[node name="TEST" type="Panel" parent="CanvasLayer/BG/Buttons/TEST"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_iswgc")
+
+[node name="Test_Button" type="Button" parent="CanvasLayer/BG/Buttons/TEST/TEST"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.227451, 0.227451, 0.227451, 1)
+theme_override_colors/font_hover_color = Color(0.776471, 0.776471, 0.776471, 1)
+theme_override_fonts/font = ExtResource("3_te4sv")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tpsx3")
+text = "
+"
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/BG/Buttons/TEST/TEST/Test_Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_i56gb")
 
 [node name="2p" type="Panel" parent="CanvasLayer/BG/Buttons"]
 layout_mode = 1
@@ -188,7 +245,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("3_3fe1y")
+theme_override_fonts/font = ExtResource("3_te4sv")
 theme_override_font_sizes/font_size = 60
 theme_override_styles/normal = SubResource("StyleBoxEmpty_gk3ag")
 text = "
@@ -203,11 +260,54 @@ offset_top = 1.0
 offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("5_p7u71")
+texture = ExtResource("5_tj1ap")
 
-[node name="Players" parent="." instance=ExtResource("7_rn1el")]
-position = Vector2(655, 495)
+[node name="Close_Panel" type="Panel" parent="CanvasLayer"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -126.0
+offset_right = 126.0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_i4sip")
 
-[editable path="Players"]
-[editable path="Players/Player1"]
-[editable path="Players/Player2"]
+[node name="Back" type="Panel" parent="CanvasLayer/Close_Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_yu6ru")
+
+[node name="Back_To_Main_Menu_Button" type="Button" parent="CanvasLayer/Close_Panel/Back"]
+unique_name_in_owner = true
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.227451, 0.227451, 0.227451, 1)
+theme_override_colors/font_hover_color = Color(0.776471, 0.776471, 0.776471, 1)
+theme_override_fonts/font = ExtResource("3_te4sv")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxEmpty_43q4f")
+text = "
+"
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Close_Panel/Back/Back_To_Main_Menu_Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_oqgt0")
+
+[connection signal="pressed" from="CanvasLayer/BG/Buttons/Sp/Sp/Sp_Button" to="Game_Manager" method="_on_sp_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/BG/Buttons/TEST/TEST/Test_Button" to="Game_Manager" method="_on_test_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/BG/Buttons/2p/2p/2p_Button" to="Game_Manager" method="_on_2p_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Close_Panel/Back/Back_To_Main_Menu_Button" to="Game_Manager" method="_on_back_to_main_menu_button_pressed"]
