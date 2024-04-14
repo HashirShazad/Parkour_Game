@@ -1,6 +1,6 @@
 extends Entity
 class_name Player
-
+# Variables <===============================================================================================>
 # Scenes <----------------------------------------------------------------------------------------->
 var ghost_scene = preload("res://Character/Ghost.tscn")
 var jump_sound = preload("res://Sounds/Sound/Jump.wav")
@@ -28,6 +28,8 @@ var coyote_timer:float = 0
 	 Sprint = "P1_Sprint",
 }
 
+
+# Actual Code <===============================================================================================>
 func _process(delta):
 	# Subtract delta(frame) every delta(frame) from these vars
 	jump_buffer_timer -= delta
@@ -71,6 +73,7 @@ func _physics_process(delta):
 	check_collisions()
 				
 
+# Take damage and call update_health() on game manager
 func take_damage(damage:int, stun_duration:float):
 	if is_dead:
 		return
@@ -93,6 +96,7 @@ func take_damage(damage:int, stun_duration:float):
 	await get_tree().create_timer(stun_duration).timeout
 	is_stunned = 0
 
+# Add ghosts when running
 func add_ghost():
 	var ghost = ghost_scene.instantiate()
 	get_parent().get_parent().add_child(ghost)
@@ -101,6 +105,7 @@ func add_ghost():
 	ghost.flip_h = sprite_2d.flip_h
 	ghost.sprite_2d.frame = sprite_2d.frame
 	
+# Get input from user
 func handle_input():
 	if Input.is_action_pressed(btns.Sprint):
 		speed = sprint_speed
@@ -142,12 +147,14 @@ func handle_input():
 			if jump_count < 2:
 				velocity.y *= 0.8
 
+# Assign Refernces to game manager
 func update_game_manager():
 	if self.name == "Player1":
 		GameManger.player_1 = self
 	elif self.name == "Player2":
 		GameManger.player_2 = self
 
+# Push the character if its slightly touching a ledge from underneath so that he can jump
 func push_off_ledges():
 	return
 	# Still in development

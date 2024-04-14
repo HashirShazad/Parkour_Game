@@ -1,6 +1,6 @@
 extends Entity
 class_name Enemy
-
+# Variables <===============================================================================================>
 # Scenes <----------------------------------------------------------------------------------------->
 var ghost_scene = preload("res://Character/Ghost.tscn")
 var jump_sound = preload("res://Sounds/Sound/Jump.wav")
@@ -9,6 +9,8 @@ var jump_sound = preload("res://Sounds/Sound/Jump.wav")
 @onready var edge_check_right = $Edge_Check_Right
 @onready var edge_check_left = $Edge_Check_Left
 
+
+# Actual Code <===============================================================================================>
 func _ready():
 	health = max_health
 	if randf_range(-1, 1) > 0:
@@ -39,6 +41,8 @@ func _physics_process(delta):
 	move_and_slide()
 	check_collisions()
 				
+				
+
 func add_ghost():
 	var ghost = ghost_scene.instantiate()
 	get_parent().get_parent().add_child(ghost)

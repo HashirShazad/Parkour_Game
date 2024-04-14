@@ -1,5 +1,5 @@
 extends Node
-
+# Variables <===============================================================================================>
 # Levels <----------------------------------------------------------------------------------------->
 var levels_UI = {
 	main_menu = "res://Levels/Main_Menu.tscn",
@@ -54,7 +54,10 @@ var paused:bool = false
 var death_screen_shown:bool = false
 var input_disabled:bool = false
 
+
+# Actual Code <===============================================================================================>
 func _process(delta):
+	handle_UI()
 	if input_disabled:
 		return
 	if player_2 == null:
@@ -65,6 +68,15 @@ func _process(delta):
 		get_input()
 		check_if_dead()
 		
+
+# Show player 2 info box if player 2 exists only
+func handle_UI():
+	if player_2 != null:
+		player2_info_box.show()
+	else:
+		player2_info_box.hide()
+		
+# Pause the game if it is not paused and resume it if it is paused
 func pause():
 	if paused:
 		pause_menu.hide()
@@ -76,6 +88,7 @@ func pause():
 		DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_VISIBLE)
 	paused = !paused
 	
+# Show death screen if it is not shown and hide it if it is shown
 func _death_screen():
 	if death_screen_shown:
 		death_screen.hide()
@@ -86,16 +99,19 @@ func _death_screen():
 	
 	death_screen_shown = !death_screen_shown
 
+# Add and upadate points
 func add_points(collected_points:int) -> void:	
 	points = points + collected_points
 	points_label.text = "Points: " + str(points)
 
+# Tween over health of players
 func update_health():
 	var tween = get_tree().create_tween()
 	tween.tween_property(hp_bar_P1, "value", player_1.health, .1).set_trans(Tween.TRANS_QUAD)
 	if player_2:
 		tween.tween_property(hp_bar_P2, "value", player_2.health, .1).set_trans(Tween.TRANS_QUAD)
-	
+
+# Update the timer
 func update_time(delta):
 	time += delta
 	time_msec = fmod(time, 1) * 100
@@ -103,6 +119,7 @@ func update_time(delta):
 	time_min = fmod(time, 3600) / 60
 	timer_label.text = "Timer: " + str(time_min) + "." + str(time_sec) + "."+ str(time_msec) 
 
+# Get input pressed by user
 func get_input():
 	if Input.is_action_just_pressed("Pause") && !death_screen_shown:
 		pause()
@@ -111,6 +128,7 @@ func get_input():
 	if Input.is_action_just_pressed("Restart") && death_screen_shown:
 		_on_retry_button_pressed()
 
+# Check if p1 or p2 or both are dead and display death screen
 func check_if_dead():
 	if player_1.is_dead:
 		if player_2 != null:
@@ -127,12 +145,14 @@ func check_if_dead():
 			if death_screen_shown == false:
 				_death_screen()
 
+# Update UI alpha value so that it becomes trabnslucent when the player is behind it
 func update_ui_alpha(value:float = .5):
 	var tween = get_tree().create_tween()
 	tween.tween_property(player1_info_box, "modulate:a", value, .1).set_trans(Tween.TRANS_QUAD)
 	tween.tween_property(player2_info_box, "modulate:a", value, .1).set_trans(Tween.TRANS_QUAD)
 	tween.tween_property(coin_info_box, "modulate:a", value, .1).set_trans(Tween.TRANS_QUAD)
 
+# Set all the variables back to their original values
 func restart():
 	player_1.health = 100
 	points_label.text = "Points: 0"

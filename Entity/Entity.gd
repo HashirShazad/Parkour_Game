@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 class_name Entity
 
-
+# Variables <=====================================================================================>
 # Stats <----------------------------------------------------------------------------------------->
 var push_force = 80.0
 var health:int = 100
@@ -61,6 +61,7 @@ var jump_velocity = -800.0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 
+# Actual Code <=====================================================================================>
 func _physics_process(delta):
 	flip_sprite()
 	update_animation()
@@ -77,6 +78,7 @@ func _physics_process(delta):
 	move_and_slide()
 	check_collisions()
 	
+# Update animations based on conditions
 func update_animation():
 	if is_dead:
 		sprite_2d.play(animations.Dead)
@@ -99,6 +101,7 @@ func update_animation():
 	elif velocity.x == 0:
 		sprite_2d.play(animations.Idle)
 	
+# Flip the sprite horizontally
 func flip_sprite():
 	if is_stunned || is_dead:
 		return
@@ -108,6 +111,7 @@ func flip_sprite():
 		if velocity.x < -1:
 			sprite_2d.flip_h = 1
 
+# Take Damage and stun
 func take_damage(damage:int, stun_duration:float):
 	if is_dead:
 		return
@@ -127,6 +131,7 @@ func take_damage(damage:int, stun_duration:float):
 	await get_tree().create_timer(stun_duration).timeout
 	is_stunned = 0
 
+# Take knock back
 func take_knockback(strength:Vector2):
 	if is_dead:
 		return
@@ -140,6 +145,7 @@ func take_knockback(strength:Vector2):
 	else:
 		velocity.y = -kb_direction.y * strength.y 
 	
+# Check if it is colliding with rigid bodies
 func check_collisions():
 	for i in get_slide_collision_count():
 		var c = get_slide_collision(i)
@@ -149,17 +155,19 @@ func check_collisions():
 		else:
 			is_pushing = 0
 
-
+# Squash on land for cute effects :)
 func squash():
 	var tween = get_tree().create_tween()
 	tween.tween_property(sprite_2d, "scale",squashed_size, .1).set_trans(Tween.TRANS_QUAD)
 	tween.tween_callback(squash_and_stretch_finished)
 
+# Strectch on jump for cute effects :)
 func stretch():
 	var tween = get_tree().create_tween()
 	tween.tween_property(sprite_2d, "scale",stretched_size, .1).set_trans(Tween.TRANS_QUAD)
 	tween.tween_callback(squash_and_stretch_finished)
 
+# Return character to original state after squas and strectch are finsihed
 func squash_and_stretch_finished():
 	var tween = get_tree().create_tween()
 	tween.tween_property(sprite_2d, "scale",Vector2(1,1), .1).set_trans(Tween.TRANS_QUAD)
