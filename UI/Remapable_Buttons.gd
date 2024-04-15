@@ -36,4 +36,5 @@ func _unhandled_input(event):
 
 # Set text of button
 func update_key_text():
+	
 	text = "%s" % InputMap.action_get_events(action)[0].as_text()

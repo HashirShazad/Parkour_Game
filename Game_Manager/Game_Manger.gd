@@ -130,20 +130,23 @@ func get_input():
 
 # Check if p1 or p2 or both are dead and display death screen
 func check_if_dead():
-	if player_1.is_dead:
-		if player_2 != null:
-			if death_screen_shown == false:
-				_death_screen()
-		else:
-			player_1.position = player_2.position
-		
-	if player_2 != null:
+	# If player 2 exists
+	if player_2:
+		# If p2 dead follow p1
 		if player_2.is_dead:
 			player_2.position = player_1.position
-
+		# If p1 dead follow p2
+		if player_1.is_dead:
+			player_1.position = player_2.position
+		# If p1 and p2 dead show death screen
 		if player_1.is_dead && player_2.is_dead:
 			if death_screen_shown == false:
 				_death_screen()
+	# If player 2 does not exist and p1 is dead
+	elif player_1.is_dead:
+		if death_screen_shown == false:
+			_death_screen()
+	
 
 # Update UI alpha value so that it becomes trabnslucent when the player is behind it
 func update_ui_alpha(value:float = .5):
@@ -206,7 +209,7 @@ func _on_test_button_pressed():
 	await  Transitioner.transition_fully_finished
 	input_disabled = false
 
-# Back to main menu button
+# Back to main menu button from settings and play menu
 func _on_back_to_main_menu_button_pressed():
 	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_VISIBLE)
 	Transitioner.start_transition()
@@ -252,6 +255,7 @@ func _on_close_button_pressed():
 		return
 	Transitioner.start_transition()
 	input_disabled = true
+	await Transitioner.transiton_finsihed
 	get_tree().quit()
 
 # Game resume button
@@ -271,8 +275,8 @@ func _on_back_button_pressed():
 
 # Restart Pause menu button
 func _on_restart_button_pressed():
+	# Hide mouse and disable input
 	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_HIDDEN)
-	# Pause menu button
 	input_disabled = true
 	restart()
 	death_screen_shown = false

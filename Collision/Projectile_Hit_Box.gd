@@ -10,7 +10,7 @@ func _init() -> void:
 	collision_layer = 2
 	collision_mask = 2
 	#sprite_2d.texture = texture
-		
+	
 func _ready():
 	if sprite_2d.flip_h == true:
 		direction = 1

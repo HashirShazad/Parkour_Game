@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "vVa123uV35y2fsVHI9V7dBB+UFVKY18ep2XTeBlISjXql1TNmJv02deYbfW73CH+CX0R7sdg62y2l9OgEqYUQw==",
+  "success": true,
+  "projectFilePath": "F:\\Godot_Prjects\\Parkour_Game\\Parkour Game.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Mr Pineapple\\.nuget\\packages\\godot.sourcegenerators\\4.2.1\\godot.sourcegenerators.4.2.1.nupkg.sha512",
+    "C:\\Users\\Mr Pineapple\\.nuget\\packages\\godotsharp\\4.2.1\\godotsharp.4.2.1.nupkg.sha512",
+    "C:\\Users\\Mr Pineapple\\.nuget\\packages\\godotsharpeditor\\4.2.1\\godotsharpeditor.4.2.1.nupkg.sha512",
+    "C:\\Users\\Mr Pineapple\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.28\\microsoft.netcore.app.ref.6.0.28.nupkg.sha512",
+    "C:\\Users\\Mr Pineapple\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.28\\microsoft.windowsdesktop.app.ref.6.0.28.nupkg.sha512",
+    "C:\\Users\\Mr Pineapple\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.28\\microsoft.aspnetcore.app.ref.6.0.28.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,6 +1,6 @@
 extends Entity
 class_name Player
-# Variables <===============================================================================================>
+# Variables <===================================================================================>
 # Scenes <----------------------------------------------------------------------------------------->
 var ghost_scene = preload("res://Character/Ghost.tscn")
 var jump_sound = preload("res://Sounds/Sound/Jump.wav")
@@ -14,7 +14,7 @@ const coyote_time:float = .1
 var jump_buffer_timer:float = 0
 var coyote_timer:float = 0
 
-# Ray Cast references <----------------------------------------------------------------------------------------->
+# Ray Cast references <--------------------------------------------------------------------------->
 @onready var right_outer = $Right_Outer
 @onready var left_outer = $Left_Outer
 @onready var right_inner = $Right_Inner
@@ -29,18 +29,22 @@ var coyote_timer:float = 0
 }
 
 
-# Actual Code <===============================================================================================>
+# Actual Code <=====================================================================>
+
+# Called every frame
 func _process(delta):
 	# Subtract delta(frame) every delta(frame) from these vars
 	jump_buffer_timer -= delta
 	coyote_timer -= delta
-	
+
+# Called only once
 func _ready():
 	# Assign ref to game manager
 	update_game_manager()
 	jump_buffer_timer = 0
 	coyote_timer = 0
-	
+
+# Called every frame idk the dif between _process() and _phyiscs_process()
 func _physics_process(delta):
 	flip_sprite()
 	update_animation()
@@ -71,7 +75,6 @@ func _physics_process(delta):
 	handle_input()
 	move_and_slide()
 	check_collisions()
-				
 
 # Take damage and call update_health() on game manager
 func take_damage(damage:int, stun_duration:float):

@@ -1,5 +1,4 @@
 extends CharacterBody2D
-
 class_name Entity
 
 # Variables <=====================================================================================>
@@ -31,7 +30,7 @@ const sprint_minimum_speed:int = 12
 const sprint_jump_velocity:int = -600
 const sprint_push_force = 160.0
 
-# Squash and Stretch <----------------------------------------------------------------------------------------->
+# Squash and Stretch <------------------------------------------------------------------------->
 var squashed_size:Vector2 = Vector2(1.1, 0.8) 
 var stretched_size:Vector2 = Vector2(0.8, 1.1)
 
@@ -46,7 +45,7 @@ var stretched_size:Vector2 = Vector2(0.8, 1.1)
 	 Dead = "Dead"
 }
 
-# Used Speed Variables <----------------------------------------------------------------------------------------->
+# Used Speed Variables <--------------------------------------------------------------------------------->
 var speed = 400.0
 var minimum_speed = 8
 var jump_velocity = -800.0

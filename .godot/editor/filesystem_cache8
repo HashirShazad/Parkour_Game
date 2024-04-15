@@ -1,5 +1,5 @@
 fc8a56933c4b1c8d796fdb8f7a9f9475
-::res://::1713174992
+::res://::1713191267
 export_presets.cfg::TextFile::-1::1712822409::0::1::::<><>::
 icon.svg::CompressedTexture2D::8286680479429612557::1711717724::1711717724::1::::<><>::
 README.md::TextFile::-1::1711717723::0::1::::<><>::
@@ -161,8 +161,8 @@ Enemies.tscn::PackedScene::6655442347405234864::1712575171::0::1::::<><>::res://
 Chicken.tscn::PackedScene::7226884378450420080::1712575171::0::1::::<><>::res://Enemies/Enemies.gd<>uid://16bj1yhsvyja::::res://Sprites/Enemies/Chicken/Hit (32x34).png<>uid://5io4gfwbuoip::::res://Sprites/Enemies/Chicken/Idle (32x34).png<>uid://rgqx7mey51pw::::res://Sprites/Enemies/Chicken/Run (32x34).png<>uid://5kd1fml7oru8::::res://Sprites/Other/Dust Particle.png<>res://Collision/Hit_Box.gd
 ::res://Enemies/Kill_Zone/::1712137069
 Kill_Zone.tscn::PackedScene::5895502806752422379::1712137069::0::1::::<><>::uid://pa8e0cvnbkvd::::res://Enemies/Spikes/Death_Spike.tscn
-::res://Enemies/Pig/::1713090694
-Pig.gd::GDScript::-1::1713090694::0::1::::Pig<>Enemy<>::
+::res://Enemies/Pig/::1713180946
+Pig.gd::GDScript::-1::1713180946::0::1::::Pig<>Enemy<>::
 Pig.tscn::PackedScene::136522317025370782::1712997486::0::1::::<><>::uid://epx00bhsg0tb::::res://Sprites/Enemies/AngryPig/Idle (36x30).png<>uid://bnlbykhuv65y5::::res://Sprites/Enemies/AngryPig/Hit 1 (36x30).png<>res://Enemies/Enemies.gd<>uid://dcevp3018aoxm::::res://Sprites/Enemies/AngryPig/Run (36x30).png<>uid://5kd1fml7oru8::::res://Sprites/Other/Dust Particle.png<>uid://d4cw0jne78h8w::::res://Sprites/Enemies/AngryPig/Walk (36x30).png<>res://Collision/Hit_Box.gd
 ::res://Enemies/Plant/::1712997486
 Bullet.tscn::PackedScene::4143397121569778890::1712997486::0::1::::<><>::uid://cf4vc8ky518se::::res://Sprites/Enemies/Plant/Bullet.png<>res://Collision/Projectile_Hit_Box.gd
@@ -175,12 +175,12 @@ Spear_Spike.tscn::PackedScene::8915436763419723422::1711794195::0::1::::<><>::ui
 Spike.tscn::PackedScene::8377092690734785431::1712225117::0::1::::<><>::res://Collision/Hit_Box.gd<>uid://dnhcqh1ajym3g::::res://Sprites/Traps/Spikes/Idle.png
 ::res://Entity/::1713091253
 Entity.gd::GDScript::-1::1713091253::0::1::::Entity<>CharacterBody2D<>::
-::res://Game_Manager/::1713091469
-Game_Manger.gd::GDScript::-1::1713091281::0::1::::<>Node<>::
-Game_Manger.tscn::PackedScene::8493431741956967510::1713091469::0::1::::<><>::res://Game_Manager/Game_Manger.gd<>uid://baha77q1ltfnx::::res://UI/pause_menu.tscn<>uid://cp2ytcs60oa2h::::res://UI/hud.tscn<>uid://bnejv1eixxtt1::::res://UI/death_screen.tscn
-::res://Levels/::1713091508
+::res://Game_Manager/::1713181487
+Game_Manger.gd::GDScript::-1::1713181487::0::1::::<>Node<>::
+Game_Manger.tscn::PackedScene::8493431741956967510::1713181120::0::1::::<><>::res://Game_Manager/Game_Manger.gd<>uid://baha77q1ltfnx::::res://UI/pause_menu.tscn<>uid://cp2ytcs60oa2h::::res://UI/hud.tscn<>uid://bnejv1eixxtt1::::res://UI/death_screen.tscn
+::res://Levels/::1713181487
 Intro.gd::GDScript::-1::1713091508::0::1::::<>Node2D<>::
-Intro.tscn::PackedScene::4908689800269186677::1713091508::0::1::::<><>::res://Levels/Intro.gd<>uid://b54wuktvxwxpt::::res://Sprites/Kaizo_Poyo/512x512/Logo.png
+Intro.tscn::PackedScene::4908689800269186677::1713181487::0::1::::<><>::res://Levels/Intro.gd<>uid://b54wuktvxwxpt::::res://Sprites/Kaizo_Poyo/512x512/Logo.png
 Levels.gd::GDScript::-1::1713074144::0::1::::<>Node<>::
 Level_1.tscn::PackedScene::7353940201814871145::1713080639::0::1::::<><>::res://Levels/Levels.gd<>uid://bdlua5a7mavuv::::res://Sprites/Background/Brown.png<>uid://cafmeyndfm7ml::::res://Levels/Level_2.tscn<>uid://kxusrwxus326::::res://Collectables/Fruits.tscn<>uid://lqeurs1jy57v::::res://Camera/camera_2p.tscn<>uid://dqgm4rmmi5c3j::::res://Sprites/Terrain/Terrain (16x16).png<>uid://blknjycqdvppw::::res://Collectables/Check_Point.tscn<>uid://bq8l8hs3fwqug::::res://Character/Both_Players.tscn
 Level_2.tscn::PackedScene::4783900284031676019::1713090880::0::1::::<><>::uid://e8qk3dt180th::::res://Sprites/Background/Green.png<>uid://blknjycqdvppw::::res://Collectables/Check_Point.tscn<>uid://d1c7cnegraofw::::res://Levels/Level_3.tscn<>uid://dqgm4rmmi5c3j::::res://Sprites/Terrain/Terrain (16x16).png<>uid://kxusrwxus326::::res://Collectables/Fruits.tscn<>uid://lqeurs1jy57v::::res://Camera/camera_2p.tscn<>uid://bq8l8hs3fwqug::::res://Character/Both_Players.tscn<>uid://pa8e0cvnbkvd::::res://Enemies/Spikes/Death_Spike.tscn<>uid://drl6q0tnh0apb::::res://Enemies/Spikes/Spike.tscn
@@ -2835,10 +2835,10 @@ Spike_Ball.tscn::PackedScene::2826522654385392136::1712232837::0::1::::<><>::uid
 ::res://Traps/Saw/::1712554572
 Saw.gd::GDScript::-1::1712315227::0::1::::<>Node2D<>::
 Saw.tscn::PackedScene::4848002775939642491::1712554572::0::1::::<><>::res://Collision/Hit_Box.gd<>res://Traps/Saw/Saw.gd<>uid://cwi25rh4so4hw::::res://Sprites/Traps/Saw/On (38x38).png
-::res://UI/::1713091549
+::res://UI/::1713181522
 death_screen.tscn::PackedScene::3307718488792129300::1712997486::0::1::::<><>::res://UI/pause_menu.gdshader<>uid://vpy38kvl0qsd::::res://Sprites/Menu/Text/Minecraft.ttf<>uid://croy1xhacb6we::::res://Sprites/Menu/Buttons/Back.png<>uid://dhdm857cg406g::::res://Sprites/Menu/Buttons/Restart.png
 hud.tscn::PackedScene::5882903493522527485::1712997486::0::1::::<><>::uid://vpy38kvl0qsd::::res://Sprites/Menu/Text/Minecraft.ttf<>uid://dj48bttltoec2::::res://Sprites/Main Characters/Ninja Frog/Fall (32x32).png<>uid://d32bxk1j63fcb::::res://Sprites/Items/Fruits/Logo.png<>uid://dy3iatg1pcke::::res://Sprites/Main Characters/Pink Man/Fall (32x32).png
-pause_menu.gdshader::Shader::-1::1713091549::0::1::::<><>::
+pause_menu.gdshader::Shader::-1::1713181522::0::1::::<><>::
 pause_menu.tscn::PackedScene::2400930180037325165::1713090880::0::1::::<><>::res://UI/pause_menu.gdshader<>uid://vpy38kvl0qsd::::res://Sprites/Menu/Text/Minecraft.ttf<>uid://chhiw8tnjskvp::::res://Sprites/Menu/Buttons/Next.png<>uid://croy1xhacb6we::::res://Sprites/Menu/Buttons/Back.png<>uid://dhdm857cg406g::::res://Sprites/Menu/Buttons/Restart.png
-Remapable_Buttons.gd::GDScript::-1::1712236381::0::1::::Remap_Button<>Button<>::
-Settings_Menu.tscn::PackedScene::6683176825222154636::1713090880::0::1::::<><>::uid://dtajtyl1bbh6e::::res://Game_Manager/Game_Manger.tscn<>uid://vpy38kvl0qsd::::res://Sprites/Menu/Text/Minecraft.ttf<>uid://croy1xhacb6we::::res://Sprites/Menu/Buttons/Back.png<>res://UI/Remapable_Buttons.gd
+Remapable_Buttons.gd::GDScript::-1::1713175267::0::1::::Remap_Button<>Button<>::
+Settings_Menu.tscn::PackedScene::6683176825222154636::1713181120::0::1::::<><>::uid://dtajtyl1bbh6e::::res://Game_Manager/Game_Manger.tscn<>uid://vpy38kvl0qsd::::res://Sprites/Menu/Text/Minecraft.ttf<>uid://croy1xhacb6we::::res://Sprites/Menu/Buttons/Back.png<>res://UI/Remapable_Buttons.gd

@@ -1,0 +1,18 @@
+F:\Godot_Prjects\Parkour_Game\.godot\mono\temp\bin\Debug\Parkour Game.deps.json
+F:\Godot_Prjects\Parkour_Game\.godot\mono\temp\bin\Debug\Parkour Game.runtimeconfig.json
+F:\Godot_Prjects\Parkour_Game\.godot\mono\temp\bin\Debug\Parkour Game.dll
+F:\Godot_Prjects\Parkour_Game\.godot\mono\temp\bin\Debug\Parkour Game.pdb
+F:\Godot_Prjects\Parkour_Game\.godot\mono\temp\bin\Debug\GodotSharp.dll
+F:\Godot_Prjects\Parkour_Game\.godot\mono\temp\bin\Debug\GodotSharpEditor.dll
+F:\Godot_Prjects\Parkour_Game\.godot\mono\temp\obj\Debug\Parkour Game.csproj.AssemblyReference.cache
+F:\Godot_Prjects\Parkour_Game\.godot\mono\temp\obj\Debug\Parkour Game.GeneratedMSBuildEditorConfig.editorconfig
+F:\Godot_Prjects\Parkour_Game\.godot\mono\temp\obj\Debug\Parkour Game.AssemblyInfoInputs.cache
+F:\Godot_Prjects\Parkour_Game\.godot\mono\temp\obj\Debug\Parkour Game.AssemblyInfo.cs
+F:\Godot_Prjects\Parkour_Game\.godot\mono\temp\obj\Debug\Parkour Game.csproj.CoreCompileInputs.cache
+F:\Godot_Prjects\Parkour_Game\.godot\mono\temp\obj\Debug\Parkour Game.sourcelink.json
+F:\Godot_Prjects\Parkour_Game\.godot\mono\temp\obj\Debug\Parkour .7DA82E06.Up2Date
+F:\Godot_Prjects\Parkour_Game\.godot\mono\temp\obj\Debug\Parkour Game.dll
+F:\Godot_Prjects\Parkour_Game\.godot\mono\temp\obj\Debug\refint\Parkour Game.dll
+F:\Godot_Prjects\Parkour_Game\.godot\mono\temp\obj\Debug\Parkour Game.pdb
+F:\Godot_Prjects\Parkour_Game\.godot\mono\temp\obj\Debug\Parkour Game.genruntimeconfig.cache
+F:\Godot_Prjects\Parkour_Game\.godot\mono\temp\obj\Debug\ref\Parkour Game.dll
