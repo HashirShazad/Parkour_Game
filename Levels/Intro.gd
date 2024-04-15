@@ -1,9 +1,9 @@
 extends Node2D
-
+# Variables <===============================================================================================>
 @export var main_menu_music = preload
 ("res://Sounds/BG_Music/Beethoven Virus (Insane Piano Version).wav")
 
-
+# Actual Code <===============================================================================================>
 func _ready():
 	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_HIDDEN)
 	AudioPlayer.play_music(main_menu_music)

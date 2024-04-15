@@ -253,6 +253,8 @@ text = "P1_Right"
 [node name="Remap_Button" type="Button" parent="CanvasLayer/BG/Controls/Settings_Grid_Container/P_1/HBoxContainer"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
+focus_neighbor_right = NodePath("../../../P_2/HBoxContainer/Remap_Button")
+focus_neighbor_bottom = NodePath("../../HBoxContainer2/Remap_Button")
 theme_override_fonts/font = ExtResource("3_bsg3h")
 theme_override_font_sizes/font_size = 30
 script = ExtResource("5_5m8ju")
