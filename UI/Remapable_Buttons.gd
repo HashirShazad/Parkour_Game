@@ -28,13 +28,19 @@ func _toggled(button_pressed):
 		
 # Input
 func _unhandled_input(event):
-	if event.pressed: 
-		InputMap.action_erase_events(action)
-		InputMap.action_add_event(action, event)
-		button_pressed = false
+	if "pressed" in event:
+		if event.pressed: 
+			InputMap.action_erase_events(action)
+			InputMap.action_add_event(action, event)
+			button_pressed = false
 		
 
 # Set text of button
 func update_key_text():
-	
 	text = "%s" % InputMap.action_get_events(action)[0].as_text()
+	if text.length() > 16:
+		text = text.left(text.length() - (text.length() - 16))
+		text = text.right(text.length() - (text.length() - 2))
+		text = "🎮" + text
+	else:
+		text = "⌨️" + text

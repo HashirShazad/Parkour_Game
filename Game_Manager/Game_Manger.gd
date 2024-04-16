@@ -19,6 +19,10 @@ var levels_1P = {
 	l1 = "res://Levels/Single_Player_Levels/Sp_Level_1.tscn"
 }
 
+
+# Mouse
+var mouse_speed = 3
+var mouse_pos = Vector2()
 # Labels <----------------------------------------------------------------------------------------->
 @onready var timer_label = $Hud/Node/Timer_Info_Box/TimerLabel
 @onready var points_label = $Hud/Node/Coin_Info_Box/PointsLabel
@@ -147,13 +151,23 @@ func check_if_dead():
 		if death_screen_shown == false:
 			_death_screen()
 	
+# Gets input for mouse
+func get_ui_input(delta):
+	var mouse_rel = Vector2.ZERO
+	if Input.is_action_pressed("Mouse_Up"):
+		mouse_rel += Vector2.UP * mouse_speed
+	elif Input.is_action_pressed("Mouse_Down"):
+		mouse_rel += Vector2.DOWN * mouse_speed
+	elif Input.is_action_pressed("Mouse_Left"):
+		mouse_rel += Vector2.LEFT * mouse_speed
+	elif Input.is_action_pressed("Mouse_Right"):
+		mouse_rel += Vector2.RIGHT * mouse_speed
+	if mouse_rel != Vector2.ZERO:
+		DisplayServer.warp_mouse(mouse_pos + mouse_rel)
+		#warp_mouse_position(mouse_pos + mouse_rel)
+	#cursor.position = get_global_mouse_position()
 
-# Update UI alpha value so that it becomes trabnslucent when the player is behind it
-func update_ui_alpha(value:float = .5):
-	var tween = get_tree().create_tween()
-	tween.tween_property(player1_info_box, "modulate:a", value, .1).set_trans(Tween.TRANS_QUAD)
-	tween.tween_property(player2_info_box, "modulate:a", value, .1).set_trans(Tween.TRANS_QUAD)
-	tween.tween_property(coin_info_box, "modulate:a", value, .1).set_trans(Tween.TRANS_QUAD)
+
 
 # Set all the variables back to their original values
 func restart():
@@ -171,7 +185,12 @@ func _on_area_2d_body_entered(body):
 func _on_area_2d_body_exited(body):
 	update_ui_alpha(1)
 
-
+# Update UI alpha value so that it becomes trabnslucent when the player is behind it
+func update_ui_alpha(value:float = .5):
+	var tween = get_tree().create_tween()
+	tween.tween_property(player1_info_box, "modulate:a", value, .1).set_trans(Tween.TRANS_QUAD)
+	tween.tween_property(player2_info_box, "modulate:a", value, .1).set_trans(Tween.TRANS_QUAD)
+	tween.tween_property(coin_info_box, "modulate:a", value, .1).set_trans(Tween.TRANS_QUAD)
 # Buttons <----------------------------------------------------------------------------------------->
 # Single Player Button
 func _on_sp_button_pressed():
@@ -211,17 +230,24 @@ func _on_test_button_pressed():
 
 # Back to main menu button from settings and play menu
 func _on_back_to_main_menu_button_pressed():
+	if input_disabled:
+		return
 	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_VISIBLE)
 	Transitioner.start_transition()
+	input_disabled = true
 	await Transitioner.transiton_finsihed
 	get_tree().change_scene_to_file(levels_UI.main_menu)
-
+	input_disabled = false
 # Settings button
 func _on_settings_button_pressed():
+	if input_disabled:
+		return
 	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_VISIBLE)
 	Transitioner.start_transition()
+	input_disabled = true
 	await Transitioner.transiton_finsihed
 	get_tree().change_scene_to_file(levels_UI.settings_menu)
+	input_disabled = false
 
 # Death Screen retry button
 func _on_retry_button_pressed():
@@ -287,3 +313,4 @@ func _on_restart_button_pressed():
 	get_tree().change_scene_to_file(get_tree().current_scene.scene_file_path)
 	await Transitioner.transition_fully_finished
 	input_disabled = false
+
