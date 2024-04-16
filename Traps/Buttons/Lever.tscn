@@ -1,0 +1,76 @@
+[gd_scene load_steps=8 format=3 uid="uid://b3isqaxx5s8el"]
+
+[ext_resource type="Script" path="res://Traps/Buttons/Lever.gd" id="1_dxemh"]
+[ext_resource type="Texture2D" uid="uid://c85l2oqf2keqr" path="res://Sprites/Traps/Button And Door/Lever_Closed.png" id="2_3lww3"]
+[ext_resource type="Texture2D" uid="uid://b35owq6dghbm4" path="res://Sprites/Traps/Button And Door/Lever_Opened.png" id="2_a85ld"]
+[ext_resource type="Texture2D" uid="uid://5kd1fml7oru8" path="res://Sprites/Other/Dust Particle.png" id="4_se8ff"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_26xgr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_3lww3")
+}],
+"loop": true,
+"name": &"Off",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_a85ld")
+}],
+"loop": true,
+"name": &"On",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5pgn2"]
+radius = 18.2483
+
+[sub_resource type="Curve" id="Curve_8ecou"]
+_data = [Vector2(0, 0.681319), 0.0, 0.0, 0, 0, Vector2(0.840183, 0.648352), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[node name="Lever" type="Node2D"]
+script = ExtResource("1_dxemh")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1, -24)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_26xgr")
+animation = &"Off"
+
+[node name="Area2D" type="Area2D" parent="."]
+show_behind_parent = true
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1, -10)
+shape = SubResource("CircleShape2D_5pgn2")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -17)
+emitting = false
+amount = 30
+lifetime = 0.25
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+texture = ExtResource("4_se8ff")
+emission_shape = 1
+emission_sphere_radius = 0.01
+direction = Vector2(-1, -1)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_max = 100.0
+angle_min = 720.0
+angle_max = 720.0
+scale_amount_min = 0.5
+scale_amount_max = 0.5
+scale_amount_curve = SubResource("Curve_8ecou")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

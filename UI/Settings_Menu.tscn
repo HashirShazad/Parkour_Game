@@ -256,7 +256,7 @@ layout_mode = 2
 focus_neighbor_right = NodePath("../../../P_2/HBoxContainer/Remap_Button")
 focus_neighbor_bottom = NodePath("../../HBoxContainer2/Remap_Button")
 theme_override_fonts/font = ExtResource("3_bsg3h")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 20
 script = ExtResource("5_5m8ju")
 action = "P1_Right"
 
@@ -276,7 +276,7 @@ text = "P1_Left"
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_bsg3h")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 20
 script = ExtResource("5_5m8ju")
 action = "P1_Left"
 
@@ -295,7 +295,7 @@ text = "P1_Sprint"
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_bsg3h")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 20
 script = ExtResource("5_5m8ju")
 action = "P1_Sprint"
 
@@ -314,7 +314,7 @@ text = "P1_Jump"
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_bsg3h")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 20
 script = ExtResource("5_5m8ju")
 action = "P1_Jump"
 
@@ -337,7 +337,7 @@ text = "P2_Right"
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_bsg3h")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 20
 script = ExtResource("5_5m8ju")
 action = "P2_Right"
 
@@ -356,7 +356,7 @@ text = "P2_Left"
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_bsg3h")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 20
 script = ExtResource("5_5m8ju")
 action = "P2_Left"
 
@@ -375,7 +375,7 @@ text = "P2_Sprint"
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_bsg3h")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 20
 script = ExtResource("5_5m8ju")
 action = "P2_Sprint"
 
@@ -394,7 +394,7 @@ text = "P2_Jump"
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_bsg3h")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 20
 script = ExtResource("5_5m8ju")
 action = "P2_Jump"
 

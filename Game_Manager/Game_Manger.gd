@@ -111,7 +111,8 @@ func add_points(collected_points:int) -> void:
 # Tween over health of players
 func update_health():
 	var tween = get_tree().create_tween()
-	tween.tween_property(hp_bar_P1, "value", player_1.health, .1).set_trans(Tween.TRANS_QUAD)
+	if player_1:
+		tween.tween_property(hp_bar_P1, "value", player_1.health, .1).set_trans(Tween.TRANS_QUAD)
 	if player_2:
 		tween.tween_property(hp_bar_P2, "value", player_2.health, .1).set_trans(Tween.TRANS_QUAD)
 
@@ -125,6 +126,8 @@ func update_time(delta):
 
 # Get input pressed by user
 func get_input():
+	if input_disabled:
+		return
 	if Input.is_action_just_pressed("Pause") && !death_screen_shown:
 		pause()
 	if Input.is_action_just_pressed("Restart") && paused:
@@ -237,6 +240,7 @@ func _on_back_to_main_menu_button_pressed():
 	input_disabled = true
 	await Transitioner.transiton_finsihed
 	get_tree().change_scene_to_file(levels_UI.main_menu)
+	await Transitioner.transition_fully_finished
 	input_disabled = false
 # Settings button
 func _on_settings_button_pressed():

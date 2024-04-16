@@ -33,8 +33,6 @@ func _unhandled_input(event):
 			InputMap.action_erase_events(action)
 			InputMap.action_add_event(action, event)
 			button_pressed = false
-		
-
 # Set text of button
 func update_key_text():
 	text = "%s" % InputMap.action_get_events(action)[0].as_text()
@@ -42,5 +40,9 @@ func update_key_text():
 		text = text.left(text.length() - (text.length() - 16))
 		text = text.right(text.length() - (text.length() - 2))
 		text = "🎮" + text
+	elif text.length() > 5:
+		text = text.left(text.length() - (text.length() - 5))
+		text = "⌨️" + text
 	else:
 		text = "⌨️" + text
+	text = text.replace(" ", "") # Replace space with nothing

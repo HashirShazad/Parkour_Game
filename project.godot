@@ -55,6 +55,7 @@ folder_colors={
 "res://Props/": "teal",
 "res://Sounds/": "red",
 "res://Sprites/": "yellow",
+"res://Traps/": "pink",
 "res://addons/": "gray"
 }
 
@@ -160,9 +161,10 @@ Mouse_Right={
 
 [layer_names]
 
-2d_physics/layer_1="Basic_Collision"
+2d_physics/layer_1="Ground_Collision"
 2d_physics/layer_2="Hit_Box"
-2d_physics/layer_3="Basic_Area"
+2d_physics/layer_3="Players"
+2d_physics/layer_4="Buttons"
 
 [navigation]
 

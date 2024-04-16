@@ -734,8 +734,8 @@ height = 25.3333
 
 [node name="EntityBody2D" type="CharacterBody2D" groups=["Players"]]
 scale = Vector2(3, 3)
-collision_layer = 5
-collision_mask = 5
+collision_layer = 13
+collision_mask = 13
 platform_floor_layers = 4278190081
 script = ExtResource("1_kpwhk")
 

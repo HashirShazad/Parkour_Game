@@ -1,10 +1,12 @@
+res://Sprites/Other
+res://Sprites/Traps/Button And Door
+res://Traps/Buttons
 res://Sprites/Terrain
 res://Levels
 res://Sprites/Menu/Buttons
 D:/
 res://Enemies/Pig
 res://Sprites/Enemies/Plant
-res://Sprites/Other
 F:/Softwares/Godot
 C:/Program Files/Java/jdk-21/bin
 res://Sprites/Kaizo_Poyo/512x512
@@ -18,5 +20,3 @@ res://Sprites/Enemies/Chameleon
 res://Sprites/Traps/Spiked Ball
 res://Sprites/Items/Fruits
 res://Sprites/Main Characters/Ninja Frog
-res://Sprites/Enemies/Duck
-res://Sprites/Enemies/Chicken
