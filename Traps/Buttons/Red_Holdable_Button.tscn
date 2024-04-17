@@ -44,7 +44,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2o8aa"]
 size = Vector2(95, 11)
 
-[node name="Holdabe_Button" type="Node2D"]
+[node name="R_Holdabe_Button" type="Node2D"]
 script = ExtResource("1_dsgv4")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]

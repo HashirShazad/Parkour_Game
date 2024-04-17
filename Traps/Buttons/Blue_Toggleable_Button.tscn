@@ -1,16 +1,16 @@
-[gd_scene load_steps=8 format=3 uid="uid://cp716sja4mvxb"]
+[gd_scene load_steps=8 format=3 uid="uid://dmq7ud743lqol"]
 
-[ext_resource type="Script" path="res://Traps/Buttons/Toggleable_Buttons.gd" id="1_smwbb"]
-[ext_resource type="Texture2D" uid="uid://da5n57l88njr2" path="res://Sprites/Traps/Button And Door/Blue_Button_Toggle.png" id="2_55skl"]
-[ext_resource type="Texture2D" uid="uid://byndrl6rytmo2" path="res://Sprites/Traps/Button And Door/Red_Button_Toggle.png" id="3_wdt81"]
-[ext_resource type="Texture2D" uid="uid://0un1ignpq6dh" path="res://Sprites/Traps/Button And Door/Blue_Button_Toggle_Pressed.png" id="4_fokpn"]
-[ext_resource type="Texture2D" uid="uid://b1db35tsxspmv" path="res://Sprites/Traps/Button And Door/Red_Button_Toggle_Pressed.png" id="5_fy7hu"]
+[ext_resource type="Script" path="res://Traps/Buttons/Toggleable_Buttons.gd" id="1_mkjhi"]
+[ext_resource type="Texture2D" uid="uid://da5n57l88njr2" path="res://Sprites/Traps/Button And Door/Blue_Button_Toggle.png" id="2_xrqwt"]
+[ext_resource type="Texture2D" uid="uid://byndrl6rytmo2" path="res://Sprites/Traps/Button And Door/Red_Button_Toggle.png" id="3_m57i7"]
+[ext_resource type="Texture2D" uid="uid://0un1ignpq6dh" path="res://Sprites/Traps/Button And Door/Blue_Button_Toggle_Pressed.png" id="4_xt8fe"]
+[ext_resource type="Texture2D" uid="uid://b1db35tsxspmv" path="res://Sprites/Traps/Button And Door/Red_Button_Toggle_Pressed.png" id="5_3fmoi"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_26xgr"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_55skl")
+"texture": ExtResource("2_xrqwt")
 }],
 "loop": true,
 "name": &"default_blue",
@@ -18,7 +18,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_wdt81")
+"texture": ExtResource("3_m57i7")
 }],
 "loop": true,
 "name": &"default_red",
@@ -26,7 +26,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_fokpn")
+"texture": ExtResource("4_xt8fe")
 }],
 "loop": true,
 "name": &"pressed_blue",
@@ -34,7 +34,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_fy7hu")
+"texture": ExtResource("5_3fmoi")
 }],
 "loop": true,
 "name": &"pressed_red",
@@ -42,18 +42,22 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2o8aa"]
-size = Vector2(96, 11)
+size = Vector2(48, 11)
 
-[node name="Toggleable_Button" type="Node2D"]
-script = ExtResource("1_smwbb")
+[node name="B_Toggleable_Button" type="Node2D"]
+script = ExtResource("1_mkjhi")
+animations = {
+"default": "default_blue",
+"pressed": "pressed_blue"
+}
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(1, -24)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_26xgr")
-animation = &"default_red"
-autoplay = "default_red"
+animation = &"default_blue"
+autoplay = "default_blue"
 
 [node name="Area2D" type="Area2D" parent="."]
 show_behind_parent = true

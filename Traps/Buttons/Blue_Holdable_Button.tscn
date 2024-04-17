@@ -1,0 +1,72 @@
+[gd_scene load_steps=8 format=3 uid="uid://cbmrycadcw6fr"]
+
+[ext_resource type="Script" path="res://Traps/Buttons/Holdable_Buttons.gd" id="1_dbmfq"]
+[ext_resource type="Texture2D" uid="uid://bohdwa4jkovhx" path="res://Sprites/Traps/Button And Door/Blue_Button.png" id="2_8f4x2"]
+[ext_resource type="Texture2D" uid="uid://ubbhywqbgyg6" path="res://Sprites/Traps/Button And Door/Red_Button.png" id="3_yy2uh"]
+[ext_resource type="Texture2D" uid="uid://10jssikqjmg8" path="res://Sprites/Traps/Button And Door/Blue_Button_Pressed.png" id="4_cpaem"]
+[ext_resource type="Texture2D" uid="uid://cv18ly4w8jw6" path="res://Sprites/Traps/Button And Door/Red_Button_Pressed.png" id="5_4cu23"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uriis"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_8f4x2")
+}],
+"loop": true,
+"name": &"default_blue",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_yy2uh")
+}],
+"loop": true,
+"name": &"default_red",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_cpaem")
+}],
+"loop": true,
+"name": &"pressed_blue",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_4cu23")
+}],
+"loop": true,
+"name": &"pressed_red",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2o8aa"]
+size = Vector2(47, 11)
+
+[node name="B_Holdabe_Button" type="Node2D"]
+script = ExtResource("1_dbmfq")
+animations = {
+"default": "default_blue",
+"pressed": "pressed_blue"
+}
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1, -24)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_uriis")
+animation = &"default_blue"
+autoplay = "default_blue"
+
+[node name="Area2D" type="Area2D" parent="."]
+show_behind_parent = true
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.5, -14.5)
+shape = SubResource("RectangleShape2D_2o8aa")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

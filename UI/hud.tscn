@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cp2ytcs60oa2h"]
+[gd_scene load_steps=16 format=3 uid="uid://cp2ytcs60oa2h"]
 
 [ext_resource type="FontFile" uid="uid://vpy38kvl0qsd" path="res://Sprites/Menu/Text/Minecraft.ttf" id="1_g1jbi"]
 [ext_resource type="Texture2D" uid="uid://dj48bttltoec2" path="res://Sprites/Main Characters/Ninja Frog/Fall (32x32).png" id="3_iy57m"]
@@ -79,6 +79,21 @@ corner_radius_top_left = 6
 corner_radius_top_right = 6
 corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p78m3"]
+bg_color = Color(0.521569, 0.6, 0.572549, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_48ol8"]
+bg_color = Color(1, 1, 1, 0)
 
 [node name="UI" type="CanvasLayer"]
 
@@ -285,7 +300,6 @@ horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="Timer_Info_Box" type="Panel" parent="Node"]
-visible = false
 texture_filter = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -324,84 +338,114 @@ offset_bottom = 23.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MsecLabel" type="Label" parent="Node/Timer_Info_Box"]
-texture_filter = 1
+[node name="HBoxContainer" type="HBoxContainer" parent="Node/Timer_Info_Box"]
+custom_minimum_size = Vector2(140, 0)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -57.5
-offset_top = -8.0
-offset_right = 57.5
-offset_bottom = 8.0
+offset_left = -65.5
+offset_top = -18.0
+offset_right = 66.5
+offset_bottom = 22.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("1_g1jbi")
-theme_override_font_sizes/font_size = 0
-text = "00
-"
-horizontal_alignment = 2
-vertical_alignment = 1
 
-[node name="MinLabel" type="Label" parent="Node/Timer_Info_Box"]
+[node name="TimerLabel" type="Label" parent="Node/Timer_Info_Box/HBoxContainer"]
 texture_filter = 1
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -57.5
-offset_top = -8.0
-offset_right = 57.5
-offset_bottom = 8.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("1_g1jbi")
-theme_override_font_sizes/font_size = 0
-text = "00
-"
-horizontal_alignment = 2
-vertical_alignment = 1
-
-[node name="SecLabel" type="Label" parent="Node/Timer_Info_Box"]
-texture_filter = 1
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -57.5
-offset_top = -8.0
-offset_right = 57.5
-offset_bottom = 8.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("1_g1jbi")
-theme_override_font_sizes/font_size = 0
-text = "00"
-horizontal_alignment = 2
-vertical_alignment = 1
-
-[node name="TimerLabel" type="Label" parent="Node/Timer_Info_Box"]
-texture_filter = 1
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -36.5
-offset_top = -8.0
-offset_right = 36.5
-offset_bottom = 8.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 2
 theme_override_fonts/font = ExtResource("1_g1jbi")
 theme_override_font_sizes/font_size = 0
 text = "Timer:"
+vertical_alignment = 1
+
+[node name="MinLabel" type="Label" parent="Node/Timer_Info_Box/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_g1jbi")
+theme_override_font_sizes/font_size = 0
+text = "00:"
 horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SecLabel" type="Label" parent="Node/Timer_Info_Box/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_g1jbi")
+theme_override_font_sizes/font_size = 0
+text = "00."
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="MsecLabel" type="Label" parent="Node/Timer_Info_Box/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_g1jbi")
+theme_override_font_sizes/font_size = 0
+text = "000
+"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="FPS_Info_Box" type="Panel" parent="Node"]
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -78.5
+offset_right = 78.5
+offset_bottom = 58.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_p78m3")
+
+[node name="Avatar_Frame" type="Panel" parent="Node/FPS_Info_Box"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 8.0
+offset_top = -20.0
+offset_right = 48.0
+offset_bottom = 20.0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_48ol8")
+
+[node name="TextureRect" type="TextureRect" parent="Node/FPS_Info_Box/Avatar_Frame"]
+visible = false
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.0
+offset_top = -23.0
+offset_right = 23.0
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_5ie0f")
+
+[node name="FPSLabel" type="Label" parent="Node/FPS_Info_Box"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.5
+offset_top = -8.0
+offset_right = 32.5
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_g1jbi")
+theme_override_font_sizes/font_size = 0
+text = "FPS: 0"
+horizontal_alignment = 1
 vertical_alignment = 1

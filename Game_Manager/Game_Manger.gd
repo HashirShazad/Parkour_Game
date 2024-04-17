@@ -24,8 +24,11 @@ var levels_1P = {
 var mouse_speed = 3
 var mouse_pos = Vector2()
 # Labels <----------------------------------------------------------------------------------------->
-@onready var timer_label = $Hud/Node/Timer_Info_Box/TimerLabel
+@onready var sec_label = $Hud/Node/Timer_Info_Box/HBoxContainer/SecLabel
+@onready var min_label = $Hud/Node/Timer_Info_Box/HBoxContainer/MinLabel
+@onready var msec_label = $Hud/Node/Timer_Info_Box/HBoxContainer/MsecLabel
 @onready var points_label = $Hud/Node/Coin_Info_Box/PointsLabel
+@onready var fps_label = $Hud/Node/FPS_Info_Box/FPSLabel
 
 # Menus <----------------------------------------------------------------------------------------->
 @onready var pause_menu = $Pause_Menu
@@ -61,6 +64,8 @@ var input_disabled:bool = false
 
 # Actual Code <===========================================================================================>
 func _process(delta):
+	fps_label.text = "FPS: " + str(Engine.get_frames_per_second())
+	update_time(delta)
 	handle_UI()
 	if input_disabled:
 		return
@@ -112,17 +117,23 @@ func add_points(collected_points:int) -> void:
 func update_health():
 	var tween = get_tree().create_tween()
 	if player_1:
-		tween.tween_property(hp_bar_P1, "value", player_1.health, .1).set_trans(Tween.TRANS_QUAD)
+		if "health" in player_1:
+			tween.tween_property(hp_bar_P1, "value", player_1.health, .1).set_trans(Tween.TRANS_QUAD)
 	if player_2:
-		tween.tween_property(hp_bar_P2, "value", player_2.health, .1).set_trans(Tween.TRANS_QUAD)
+		if "health" in player_2:
+			tween.tween_property(hp_bar_P2, "value", player_2.health, .1).set_trans(Tween.TRANS_QUAD)
 
 # Update the timer
 func update_time(delta):
+	if player_1 == null:
+		return
 	time += delta
 	time_msec = fmod(time, 1) * 100
 	time_sec = fmod(time, 60)
 	time_min = fmod(time, 3600) / 60
-	timer_label.text = "Timer: " + str(time_min) + "." + str(time_sec) + "."+ str(time_msec) 
+	min_label.text = "%02d:" % time_min
+	sec_label.text = "%02d." % time_sec
+	msec_label.text = "%03d" % time_msec
 
 # Get input pressed by user
 func get_input():
@@ -170,13 +181,19 @@ func get_ui_input(delta):
 		#warp_mouse_position(mouse_pos + mouse_rel)
 	#cursor.position = get_global_mouse_position()
 
-
-
 # Set all the variables back to their original values
 func restart():
-	player_1.health = 100
-	points_label.text = "Points: 0"
+	# Timer
+	time = 0
+	min_label.text = "00:" 
+	sec_label.text = "00."
+	msec_label.text = "000"
+	# Points
 	points = 0
+	points_label.text = "Points: 0"
+	# Health
+	if player_1 != null:
+		player_1.health = 100
 	if player_2 != null:
 		player_2.health = 100
 	update_health()
@@ -195,6 +212,7 @@ func update_ui_alpha(value:float = .5):
 	tween.tween_property(player2_info_box, "modulate:a", value, .1).set_trans(Tween.TRANS_QUAD)
 	tween.tween_property(coin_info_box, "modulate:a", value, .1).set_trans(Tween.TRANS_QUAD)
 # Buttons <----------------------------------------------------------------------------------------->
+
 # Single Player Button
 func _on_sp_button_pressed():
 	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_HIDDEN)
@@ -206,6 +224,7 @@ func _on_sp_button_pressed():
 	get_tree().change_scene_to_file(levels_1P.l1)
 	await  Transitioner.transition_fully_finished
 	input_disabled = false
+	update_health()
 
 # Two Player Button
 func _on_2p_button_pressed():
@@ -218,7 +237,7 @@ func _on_2p_button_pressed():
 	get_tree().change_scene_to_file(levels_2P.l1)
 	await  Transitioner.transition_fully_finished
 	input_disabled = false
-	
+	update_health()
 # Test Level Button
 func _on_test_button_pressed():
 	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_HIDDEN)
@@ -242,6 +261,7 @@ func _on_back_to_main_menu_button_pressed():
 	get_tree().change_scene_to_file(levels_UI.main_menu)
 	await Transitioner.transition_fully_finished
 	input_disabled = false
+
 # Settings button
 func _on_settings_button_pressed():
 	if input_disabled:
@@ -295,6 +315,7 @@ func _on_resume_button_pressed():
 
 # Game back to main menu when paused button
 func _on_back_button_pressed():
+	restart()
 	player_1 = null
 	player_2 = null
 	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_VISIBLE)
@@ -318,3 +339,14 @@ func _on_restart_button_pressed():
 	await Transitioner.transition_fully_finished
 	input_disabled = false
 
+# Game back to main menu of death_screen
+func _on_back_button_death_screen_pressed():
+	restart()
+	player_1 = null
+	player_2 = null
+	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_VISIBLE)
+	Transitioner.start_transition()
+	await Transitioner.transiton_finsihed
+	get_tree().change_scene_to_file(levels_UI.main_menu)
+	if death_screen_shown:
+		_death_screen()

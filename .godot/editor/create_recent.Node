@@ -1,3 +1,5 @@
+HBoxContainer
+VBoxContainer
 CPUParticles2D
 Area2D
 Node2D
@@ -11,5 +13,3 @@ CharacterBody2D
 AudioStreamPlayer2D
 RayCast2D
 VisibleOnScreenNotifier2D
-TextureRect
-Label

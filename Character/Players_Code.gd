@@ -156,6 +156,7 @@ func update_game_manager():
 		GameManger.player_1 = self
 	elif self.name == "Player2":
 		GameManger.player_2 = self
+	GameManger.update_health()
 
 # Push the character if its slightly touching a ledge from underneath so that he can jump
 func push_off_ledges():
