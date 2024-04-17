@@ -18,7 +18,7 @@ func _physics_process(delta):
 		return
 	# Add the gravity.
 	if not is_on_floor():
-		velocity.y += get_gravity()  * delta
+		velocity.y += gravity  * delta
 		
 	elif jump_count != 0:
 		jump_count = 0

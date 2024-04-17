@@ -18,7 +18,7 @@ config/description="I am here."
 config/version="1.0"
 config/tags=PackedStringArray("pono&mina", "poyo")
 run/main_scene="res://Levels/Play_Menu.tscn"
-config/features=PackedStringArray("4.2", "C#", "GL Compatibility")
+config/features=PackedStringArray("4.2", "GL Compatibility")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/show_image=false
 config/icon="res://Sprites/Other/Logo.svg"
@@ -53,6 +53,7 @@ folder_colors={
 "res://Game_Manager/": "blue",
 "res://Levels/": "purple",
 "res://Props/": "teal",
+"res://Resources/": "green",
 "res://Sounds/": "red",
 "res://Sprites/": "yellow",
 "res://Traps/": "pink",

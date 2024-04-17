@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Parkour Game")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f5a35923e766029331ff274615a7dc8e5349cf40")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f475cb6d97a24ef15a125ffe1525679e978591a8")]
 [assembly: System.Reflection.AssemblyProductAttribute("Parkour Game")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Parkour Game")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

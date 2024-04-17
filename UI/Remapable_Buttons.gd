@@ -1,8 +1,9 @@
 extends Button
 class_name Remap_Button
+
 # Variables <=====================================================================================>
 @export var action:String
-
+var user_prefs: User_Preferences
 
 # Actual Code <=====================================================================================>
 
@@ -13,7 +14,9 @@ func _init():
 
 # On ready
 func _ready():
+	user_prefs = User_Preferences.load_or_create()
 	set_process_unhandled_input(false)
+	load_user_input()
 	update_key_text()
 
 # On clicked
@@ -33,6 +36,9 @@ func _unhandled_input(event):
 			InputMap.action_erase_events(action)
 			InputMap.action_add_event(action, event)
 			button_pressed = false
+			action_remapped(action, event)
+			
+
 # Set text of button
 func update_key_text():
 	text = "%s" % InputMap.action_get_events(action)[0].as_text()
@@ -46,3 +52,16 @@ func update_key_text():
 	else:
 		text = "⌨️" + text
 	text = text.replace(" ", "") # Replace space with nothing
+	
+	
+func action_remapped(action:String , event: InputEvent) -> void:
+	if user_prefs:
+		user_prefs.action_events[action] = event
+		user_prefs.save()
+
+func load_user_input():
+	if user_prefs:
+		if user_prefs.action_events.has(action):
+			var event = user_prefs.action_events[action]
+			InputMap.action_erase_events(action)
+			InputMap.action_add_event(action, event)

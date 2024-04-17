@@ -62,7 +62,10 @@ var death_screen_shown:bool = false
 var input_disabled:bool = false
 
 
+
 # Actual Code <===========================================================================================>
+
+# Process just like event per tick
 func _process(delta):
 	fps_label.text = "FPS: " + str(Engine.get_frames_per_second())
 	update_time(delta)
@@ -77,7 +80,8 @@ func _process(delta):
 		get_input()
 		check_if_dead()
 		
-
+		
+# Update user preference
 # Show player 2 info box if player 2 exists only
 func handle_UI():
 	if player_2 != null:
