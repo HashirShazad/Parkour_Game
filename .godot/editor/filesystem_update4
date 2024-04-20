@@ -10,3 +10,7 @@ res://UI/hud.tscn
 res://UI/Settings_Menu.tscn
 res://Traps/Doors/Small_Door.tscn
 res://Traps/Buttons and Doors/Door_And_Buttons.tscn
+res://Traps/Mace/Mace_Ball(360).tscn
+res://Traps/Mace/Mace_Ball(HOLLOW).tscn
+res://Traps/Saw/Saw.tscn
+res://Traps/Mace/Spike_Ball.tscn

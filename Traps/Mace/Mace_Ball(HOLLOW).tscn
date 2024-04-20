@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://doe8oi1g8l5dl"]
+[gd_scene load_steps=6 format=3 uid="uid://3nkp7822ab7c"]
 
-[ext_resource type="PackedScene" uid="uid://bgjgod6mbs5qq" path="res://Traps/Mace/Spike_Ball.tscn" id="2_071va"]
-[ext_resource type="Texture2D" uid="uid://dybecqxvp1nrf" path="res://Sprites/Traps/Spiked Ball/Chain.png" id="2_nkwaa"]
+[ext_resource type="Texture2D" uid="uid://dybecqxvp1nrf" path="res://Sprites/Traps/Spiked Ball/Chain.png" id="1_i5hva"]
+[ext_resource type="PackedScene" uid="uid://bgjgod6mbs5qq" path="res://Traps/Mace/Spike_Ball.tscn" id="2_fc66d"]
 
 [sub_resource type="Animation" id="Animation_2dw4e"]
 resource_name = "OG"
@@ -16,7 +16,7 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 6.28319, 0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.475839, 52, 6.28319, 0, 0, 0, 0),
 "times": PackedFloat32Array(0, 2)
 }
 
@@ -40,7 +40,7 @@ _data = {
 "RESET": SubResource("Animation_r7f8d")
 }
 
-[node name="MaceBall(360)" type="Node2D"]
+[node name="MaceBall(HOLLOW)" type="Node2D"]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -52,49 +52,49 @@ autoplay = "OG"
 texture_filter = 1
 position = Vector2(-1.5, -1.5)
 scale = Vector2(3, 3)
-texture = ExtResource("2_nkwaa")
+texture = ExtResource("1_i5hva")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(-1.5, 19)
 scale = Vector2(3, 3)
-texture = ExtResource("2_nkwaa")
+texture = ExtResource("1_i5hva")
 
 [node name="Sprite2D3" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(-1.5, 40)
 scale = Vector2(3, 3)
-texture = ExtResource("2_nkwaa")
+texture = ExtResource("1_i5hva")
 
 [node name="Sprite2D4" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(-1.5, 60.5)
 scale = Vector2(3, 3)
-texture = ExtResource("2_nkwaa")
+texture = ExtResource("1_i5hva")
 
 [node name="Sprite2D5" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(-1.5, 81)
 scale = Vector2(3, 3)
-texture = ExtResource("2_nkwaa")
+texture = ExtResource("1_i5hva")
 
 [node name="Sprite2D6" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(-1.5, 101.5)
 scale = Vector2(3, 3)
-texture = ExtResource("2_nkwaa")
+texture = ExtResource("1_i5hva")
 
 [node name="Sprite2D7" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(-1.5, 122.5)
 scale = Vector2(3, 3)
-texture = ExtResource("2_nkwaa")
+texture = ExtResource("1_i5hva")
 
 [node name="Sprite2D8" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(-1.5, 143)
 scale = Vector2(3, 3)
-texture = ExtResource("2_nkwaa")
+texture = ExtResource("1_i5hva")
 
-[node name="Mace" parent="." instance=ExtResource("2_071va")]
+[node name="Mace" parent="." instance=ExtResource("2_fc66d")]
 position = Vector2(-2, 179)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://b5iiu71ex3syu"]
+[gd_scene load_steps=20 format=3 uid="uid://b5iiu71ex3syu"]
 
 [ext_resource type="Texture2D" uid="uid://dqgm4rmmi5c3j" path="res://Sprites/Terrain/Terrain (16x16).png" id="4_hd538"]
 [ext_resource type="PackedScene" uid="uid://dpgyn2a3buml0" path="res://Props/Box.tscn" id="5_ctr6y"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://b3isqaxx5s8el" path="res://Traps/Buttons/Lever.tscn" id="11_1nhuf"]
 [ext_resource type="PackedScene" uid="uid://cbmrycadcw6fr" path="res://Traps/Buttons/Blue_Holdable_Button.tscn" id="11_waq7q"]
 [ext_resource type="PackedScene" uid="uid://c4f31fc42beji" path="res://Traps/Buttons and Doors/Door_And_Buttons.tscn" id="14_ptien"]
+[ext_resource type="PackedScene" uid="uid://3nkp7822ab7c" path="res://Traps/Mace/Mace_Ball(HOLLOW).tscn" id="15_mp5cc"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_6ei6o"]
 tile_data = PackedInt32Array(0, 0, 4, 65536, 0, 5, 131072, 0, 5, 196608, 0, 5, 262144, 0, 6, 1, 65536, 4, 65537, 65536, 5, 131073, 65536, 5, 196609, 65536, 5, 262145, 65536, 6, 2, 65536, 4, 65538, 65536, 5, 131074, 65536, 5, 196610, 65536, 5, 262146, 65536, 6, 3, 65536, 4, 65539, 65536, 5, 131075, 65536, 5, 196611, 65536, 5, 262147, 65536, 6, 4, 65536, 4, 65540, 65536, 5, 131076, 65536, 5, 196612, 65536, 5, 262148, 65536, 6, 5, 65536, 4, 65541, 65536, 5, 131077, 65536, 5, 196613, 65536, 5, 262149, 65536, 6, 6, 65536, 4, 65542, 65536, 5, 131078, 65536, 5, 196614, 65536, 5, 262150, 65536, 6, 7, 65536, 4, 65543, 65536, 5, 131079, 65536, 5, 196615, 65536, 5, 262151, 65536, 6, 8, 65536, 4, 65544, 65536, 5, 131080, 65536, 5, 196616, 65536, 5, 262152, 65536, 6, 9, 65536, 4, 65545, 65536, 5, 131081, 65536, 5, 196617, 65536, 5, 262153, 65536, 6, 10, 65536, 4, 65546, 65536, 5, 131082, 65536, 5, 196618, 65536, 5, 262154, 65536, 6, 11, 65536, 4, 65547, 65536, 5, 131083, 65536, 5, 196619, 65536, 5, 262155, 65536, 6, 12, 65536, 4, 65548, 65536, 5, 131084, 65536, 5, 196620, 65536, 5, 262156, 65536, 6, 13, 65536, 4, 65549, 65536, 5, 131085, 65536, 5, 196621, 65536, 5, 262157, 65536, 6, 14, 65536, 4, 65550, 65536, 5, 131086, 65536, 5, 196622, 65536, 5, 262158, 65536, 6, 15, 65536, 4, 65551, 65536, 5, 131087, 65536, 5, 196623, 65536, 5, 262159, 65536, 6, 16, 65536, 4, 65552, 65536, 5, 131088, 65536, 5, 196624, 65536, 5, 262160, 65536, 6, 17, 65536, 4, 65553, 65536, 5, 131089, 65536, 5, 196625, 65536, 5, 262161, 65536, 6, 18, 131072, 4, 65554, 131072, 5, 131090, 131072, 5, 196626, 131072, 5, 262162, 131072, 6)
@@ -946,17 +947,20 @@ position = Vector2(983, 1587)
 [node name="SmallDoorAndButtons" parent="." instance=ExtResource("14_ptien")]
 position = Vector2(2055, 1111)
 
+[node name="B_Holdabe_Button" parent="SmallDoorAndButtons" index="0"]
+position = Vector2(-137, 42)
+
+[node name="B_Holdabe_Button2" parent="SmallDoorAndButtons" index="1"]
+position = Vector2(58, 40)
+
+[node name="Position_To_Move" parent="SmallDoorAndButtons" index="3"]
+position = Vector2(-4, -138)
+
 [node name="R_Toggleable_Button" parent="SmallDoorAndButtons" instance=ExtResource("10_8o1qi")]
 position = Vector2(187, 40)
 
-[node name="B_Holdabe_Button" parent="SmallDoorAndButtons" index="1"]
-position = Vector2(-137, 42)
-
-[node name="B_Holdabe_Button2" parent="SmallDoorAndButtons" index="2"]
-position = Vector2(58, 40)
-
-[node name="Position_To_Move" parent="SmallDoorAndButtons" index="4"]
-position = Vector2(-4, -138)
+[node name="MaceBall(360)" parent="." instance=ExtResource("15_mp5cc")]
+position = Vector2(708, 767)
 
 [editable path="Scene_Objects/Camera"]
 [editable path="Scene_Objects/Players"]
