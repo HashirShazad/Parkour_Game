@@ -44,7 +44,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2o8aa"]
 size = Vector2(96, 11)
 
-[node name="R_Toggleable_Button" type="Node2D"]
+[node name="R_Toggleable_Button" type="Node2D" groups=["Button"]]
 script = ExtResource("1_smwbb")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]

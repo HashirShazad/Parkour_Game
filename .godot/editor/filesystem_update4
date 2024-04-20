@@ -1,7 +1,12 @@
-res://Levels/Level_2.tscn
+res://Levels/TEST.tscn
 res://UI/pause_menu.gdshader
 res://Enemies/Pig/Pig.gd
+res://Traps/Buttons and Doors/Small_Door_And_Buttons.tscn
+res://Traps/Doors/Door.gd
+res://Levels/Level_2.tscn
 res://Character/Players.tscn
 res://Game_Manager/Game_Manger.tscn
 res://UI/hud.tscn
 res://UI/Settings_Menu.tscn
+res://Traps/Doors/Small_Door.tscn
+res://Traps/Buttons and Doors/Door_And_Buttons.tscn

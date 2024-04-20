@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://by21n81tnomx2"]
+
+[ext_resource type="Script" path="res://Traps/Doors/Door.gd" id="1_oy3mo"]
+[ext_resource type="Texture2D" uid="uid://ce6kctnuiw6d5" path="res://Sprites/Traps/Button And Door/Door.png" id="1_xx67d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m8t5e"]
+size = Vector2(16, 32)
+
+[node name="SmallDoor" type="AnimatableBody2D"]
+scale = Vector2(3, 3)
+script = ExtResource("1_oy3mo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_xx67d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_m8t5e")

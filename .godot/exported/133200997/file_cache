@@ -28,7 +28,7 @@ res://addons/phantom_camera/panel/viewfinder/viewfinder_panel.tscn::8610143b809d
 res://addons/phantom_camera/panel/editor.tscn::301fb0cc90409f56b3363b3ba926cc15::1711717724::res://.godot/exported/133200997/export-6bd9b44760778c0373aa0c2ca7e8a044-editor.scn
 res://Character/Both_Players.tscn::707fecd2d543465a2efea3681c4ad167::1713080590::res://.godot/exported/133200997/export-0874268c9c4c73da1f34a7cceb12a22c-Both_Players.scn
 res://Character/Ghost.tscn::f3f0f3a3a9878653cd91616e1ed75e7e::1712660704::res://.godot/exported/133200997/export-fdb6bd182c643d9c6424b6f094fac27d-Ghost.scn
-res://Character/Players.tscn::09adabfcfa88c22083832158dedf8ae1::1713359198::res://.godot/exported/133200997/export-fde0c8b3f5384bd9df19e9461a3e23cb-Players.scn
+res://Character/Players.tscn::09adabfcfa88c22083832158dedf8ae1::1713419215::res://.godot/exported/133200997/export-fde0c8b3f5384bd9df19e9461a3e23cb-Players.scn
 res://Collectables/Check_Point.tscn::4e3cfa691fdc09b763b44f78c765afe3::1712146181::res://.godot/exported/133200997/export-2b95d667c50de659cd80764835fe8f98-Check_Point.scn
 res://Collectables/Fruits.tscn::67b322a5704e8c7c922084f832816a4e::1711874179::res://.godot/exported/133200997/export-0fc87b9ea4cd58b3f3570fa7b6f71e50-Fruits.scn
 res://Collectables/Text.tscn::b6a6dfdded04711be20d2aa3281e28bc::1712399445::res://.godot/exported/133200997/export-89cece010c8641197a53f3317e1e7dbc-Text.scn
@@ -42,13 +42,13 @@ res://Enemies/Spikes/Mace.tscn::d819580e302abcd9ccaaac0afb4c81f9::1711793288::re
 res://Enemies/Spikes/Spear_Spike.tscn::c72e75d1a7cfc489b149a8bc4079118f::1711794195::res://.godot/exported/133200997/export-8e9d11386d49b83a0df3289b04e876c3-Spear_Spike.scn
 res://Enemies/Spikes/Spike.tscn::7c8cefbf47a2cd194fd8a379b7365e67::1712225117::res://.godot/exported/133200997/export-eb0e49c1ad1f36804208b6e94a0fccb7-Spike.scn
 res://Enemies/Enemies.tscn::478acc538f85d9042bdbec8982bfa691::1712575171::res://.godot/exported/133200997/export-a7e8f57bc5db4f0fd4c6634bbe378393-Enemies.scn
-res://Game_Manager/Game_Manger.tscn::2435bba51c68c6f19aa770c68fe1d5a5::1713359198::res://.godot/exported/133200997/export-9df07fa200d8c3f0c9285b88e128f8d7-Game_Manger.scn
+res://Game_Manager/Game_Manger.tscn::2435bba51c68c6f19aa770c68fe1d5a5::1713419215::res://.godot/exported/133200997/export-9df07fa200d8c3f0c9285b88e128f8d7-Game_Manger.scn
 res://Levels/Level_1.tscn::37a667ac9f98717abe06ac2527d3d937::1713080639::res://.godot/exported/133200997/export-cdee61c0fbd58917a0b951358539dac2-Level_1.scn
-res://Levels/Level_2.tscn::f45729e33504d756569a427ba10c3824::1713359198::res://.godot/exported/133200997/export-ad93ed32bbfd3737968415e46b46b62e-Level_2.scn
+res://Levels/Level_2.tscn::f45729e33504d756569a427ba10c3824::1713419214::res://.godot/exported/133200997/export-ad93ed32bbfd3737968415e46b46b62e-Level_2.scn
 res://Levels/Level_3.tscn::54baef01e332812150cfe58a0a79de33::1713080590::res://.godot/exported/133200997/export-d890e82ec7f39bfeeb8f16d6b7df04f4-Level_3.scn
 res://Levels/Level_4.tscn::361ec40f901345d04abe1681b7982c7e::1712998383::res://.godot/exported/133200997/export-1eb8180fe58372e03f70e02523e7f5cf-Level_4.scn
 res://Levels/Main_Menu.tscn::ec38582fca8c47bf839f42834972a511::1713090880::res://.godot/exported/133200997/export-145d164fd0844de0dc95b9a89265aa7f-Main_Menu.scn
-res://Levels/TEST.tscn::c311e3977270a1f7015cdf452b2bd51b::1713327200::res://.godot/exported/133200997/export-eb2f064c3d1cee98d0ccdd414cf55dd8-TEST.scn
+res://Levels/TEST.tscn::d6f82fb358e9bffab6778502e9e08dd8::1713419551::res://.godot/exported/133200997/export-eb2f064c3d1cee98d0ccdd414cf55dd8-TEST.scn
 res://Props/Box.tscn::df76f462809092c8b6660ab7f8c636bd::1713254780::res://.godot/exported/133200997/export-b13c8ac41735699670a2badac5d5ab9f-Box.scn
 res://Props/Iron_Box.tscn::dbc0c09ef9f6efb714a38c7af9f10062::1713254786::res://.godot/exported/133200997/export-f3f494bd8c41f4ff8a73f111db59d9ff-Iron_Box.scn
 res://Props/Strong_Box.tscn::aed891005219d7143d79069ef1070ef1::1713254794::res://.godot/exported/133200997/export-b3bb97d45ece6d2c942102f015d72c98-Strong_Box.scn
@@ -64,9 +64,9 @@ res://Traps/Mace/Mace_Ball(360).tscn::5800378dfb3d64c7036ddccb873d65c4::17126505
 res://Traps/Mace/Spike_Ball.tscn::2bc386fe45068eac0f9ecd96bd2b6ac0::1712232837::res://.godot/exported/133200997/export-d3a0300a9481447155a275687a92d387-Spike_Ball.scn
 res://Traps/Saw/Saw.tscn::d0b7450b728c45e5f3143d4d24c5ea80::1712554572::res://.godot/exported/133200997/export-1c032a8469523f610b7d0c15b3e5da98-Saw.scn
 res://UI/death_screen.tscn::c692610f0662f188515025b5f9140ba0::1712997486::res://.godot/exported/133200997/export-11c5406be3079989308e0a1f2ef99017-death_screen.scn
-res://UI/hud.tscn::47a444bbace32da38fa2fac4d54409ec::1713359198::res://.godot/exported/133200997/export-a95b3dfddf44e866791e8c8563580609-hud.scn
+res://UI/hud.tscn::47a444bbace32da38fa2fac4d54409ec::1713419215::res://.godot/exported/133200997/export-a95b3dfddf44e866791e8c8563580609-hud.scn
 res://UI/pause_menu.tscn::7703c735e16d4db4689747a391268f0a::1713090880::res://.godot/exported/133200997/export-525826eebbacba7f238c774f76aea232-pause_menu.scn
-res://UI/Settings_Menu.tscn::9816c24bea12c00168f5a8112a190336::1713359198::res://.godot/exported/133200997/export-b61d8a76c9191e200694880bf440338b-Settings_Menu.scn
+res://UI/Settings_Menu.tscn::9816c24bea12c00168f5a8112a190336::1713419215::res://.godot/exported/133200997/export-b61d8a76c9191e200694880bf440338b-Settings_Menu.scn
 res://Levels/Intro.tscn::5a775f2ccbc6c087670ff15f15a35a66::1713327199::res://.godot/exported/133200997/export-5a1419ed317fff067575082cf4abd9a4-Intro.scn
 res://Camera/camera_2p.tscn::e712e4f4404649fb3c989ee8c606caed::1712999023::res://.godot/exported/133200997/export-ac26319e5e38a628444d406302899962-camera_2p.scn
 res://Camera/camera_sp.tscn::3393847f277f971a32bee507881c246b::1713078796::res://.godot/exported/133200997/export-18d9eb92ca7594d4efbbc3dfa0d67c19-camera_sp.scn
@@ -76,9 +76,11 @@ res://Levels/Single_Player_Levels/Sp_Level_2.tscn::215aa5d8ca29da3f5f29c8c79233d
 res://Levels/Single_Player_Levels/Sp_Level_3.tscn::40a4874267c591208858344f61759be9::1713090880::res://.godot/exported/133200997/export-21018240987d4fd9a4a80800bbddb957-Sp_Level_3.scn
 res://Levels/Level_Essentials.tscn::f99c1d746e88c807196294897d073b83::1713078796::res://.godot/exported/133200997/export-4d86c7ac593e24167169ae2bd458d041-Level_Essentials.scn
 res://Levels/Play_Menu.tscn::4aede4a030370589ab9c1b299608155f::1713083760::res://.godot/exported/133200997/export-05cdfcfdd73306d47acbd79b77681826-Play_Menu.scn
-res://Traps/Buttons/Blue_Holdable_Button.tscn::5b2c52c9146e7f36875e3ec198aea255::1713327200::res://.godot/exported/133200997/export-dd85b30bd87a825a2afb2ec38a391a24-Blue_Holdable_Button.scn
-res://Traps/Buttons/Blue_Toggleable_Button.tscn::1dcfae28482060563165d7f44eb36c08::1713327200::res://.godot/exported/133200997/export-e77463313b0cfdc005d88a2235e6383e-Blue_Toggleable_Button.scn
+res://Traps/Buttons/Blue_Holdable_Button.tscn::6f291be8ef53019b20427a1518aac62b::1713419373::res://.godot/exported/133200997/export-dd85b30bd87a825a2afb2ec38a391a24-Blue_Holdable_Button.scn
+res://Traps/Buttons/Blue_Toggleable_Button.tscn::cc47b81b07ee1ca54d9b69f92f155778::1713419377::res://.godot/exported/133200997/export-e77463313b0cfdc005d88a2235e6383e-Blue_Toggleable_Button.scn
 res://Traps/Buttons/Lever.tscn::406d68f94892f94dd18da49223694fcf::1713327200::res://.godot/exported/133200997/export-c20d02ff7959b5f08a94d1ce775ab4bf-Lever.scn
-res://Traps/Buttons/Red_Holdable_Button.tscn::93637571567749109b74c12300cb3c0f::1713327199::res://.godot/exported/133200997/export-1394df3340a3a820633b53bb4dafd993-Red_Holdable_Button.scn
-res://Traps/Buttons/Red_Toggleable_Button.tscn::ee7bc884bded06b955ac9ae9d275697f::1713327200::res://.godot/exported/133200997/export-c8c6310ac959b164ba4aea1402bb414f-Red_Toggleable_Button.scn
-res://addons/MonoBuildToggler/toggler.tscn::a4cfab4c1541a2cfb5c82d9a6c8c0e81::1713359198::res://.godot/exported/133200997/export-13ea5678c9e89b9b5c6a457d68fb8337-toggler.scn
+res://Traps/Buttons/Red_Holdable_Button.tscn::13035951ea98fd4b1c7a8eb18f788437::1713419368::res://.godot/exported/133200997/export-1394df3340a3a820633b53bb4dafd993-Red_Holdable_Button.scn
+res://Traps/Buttons/Red_Toggleable_Button.tscn::34192bfbe942ac560aef418dd56fddf1::1713419361::res://.godot/exported/133200997/export-c8c6310ac959b164ba4aea1402bb414f-Red_Toggleable_Button.scn
+res://addons/MonoBuildToggler/toggler.tscn::a4cfab4c1541a2cfb5c82d9a6c8c0e81::1713363219::res://.godot/exported/133200997/export-13ea5678c9e89b9b5c6a457d68fb8337-toggler.scn
+res://Traps/Buttons and Doors/Small_Door_And_Buttons.tscn::51cce7706cb17393b70f96fb27ef4e8b::1713419468::res://.godot/exported/133200997/export-4c768cbf15d28a77a065bbd8c7404eb4-Small_Door_And_Buttons.scn
+res://Traps/Doors/Small_Door.tscn::2debb71938b4440a0af86f0ab830be5e::1713419215::res://.godot/exported/133200997/export-59a8b6d7694bf536f2b01511c611c67e-Small_Door.scn

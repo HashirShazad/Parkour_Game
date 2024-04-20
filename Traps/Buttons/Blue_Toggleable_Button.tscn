@@ -44,7 +44,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2o8aa"]
 size = Vector2(48, 11)
 
-[node name="B_Toggleable_Button" type="Node2D"]
+[node name="B_Toggleable_Button" type="Node2D" groups=["Button"]]
 script = ExtResource("1_mkjhi")
 animations = {
 "default": "default_blue",
