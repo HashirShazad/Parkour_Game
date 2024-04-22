@@ -2,7 +2,7 @@ extends Area2D
 
 @export var target_scene:PackedScene
 @onready var animated_sprite_2d = $AnimatedSprite2D
-
+	
 func _on_body_entered(body):
 	if body.is_in_group("Players"):
 		

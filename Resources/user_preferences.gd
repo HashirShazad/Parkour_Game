@@ -5,8 +5,8 @@ class_name User_Preferences
 # Variables <===========================================================================================>
 @export var action_events: Dictionary = {
 }
-
-
+@export var saved_level:String
+@export var points:int
 
 
 # Actual Code <===========================================================================================>

@@ -1,16 +1,12 @@
-res://Levels/TEST.tscn
+res://Game_Manager/Game_Manger.tscn
 res://UI/pause_menu.gdshader
 res://Enemies/Pig/Pig.gd
-res://Traps/Buttons and Doors/Small_Door_And_Buttons.tscn
-res://Traps/Doors/Door.gd
-res://Levels/Level_2.tscn
+res://Collectables/Check_Point.gd
+res://Resources/user_preferences.gd
+res://Game_Manager/Game_Manger.gd
 res://Character/Players.tscn
-res://Game_Manager/Game_Manger.tscn
-res://UI/hud.tscn
 res://UI/Settings_Menu.tscn
-res://Traps/Doors/Small_Door.tscn
-res://Traps/Buttons and Doors/Door_And_Buttons.tscn
-res://Traps/Mace/Mace_Ball(360).tscn
-res://Traps/Mace/Mace_Ball(HOLLOW).tscn
-res://Traps/Saw/Saw.tscn
-res://Traps/Mace/Spike_Ball.tscn
+res://UI/load_menu.tscn
+res://UI/pause_menu.tscn
+res://UI/hud.tscn
+res://Levels/Play_Menu.tscn

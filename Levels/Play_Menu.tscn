@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://c7rk51mnliyi6"]
+[gd_scene load_steps=21 format=3 uid="uid://c7rk51mnliyi6"]
 
 [ext_resource type="Script" path="res://Levels/Levels.gd" id="1_3txvo"]
 [ext_resource type="PackedScene" uid="uid://dtajtyl1bbh6e" path="res://Game_Manager/Game_Manger.tscn" id="2_3xrrb"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://di6umekw71tm0" path="res://Sprites/Menu/Buttons/Single_Player.png" id="4_mdt43"]
 [ext_resource type="Texture2D" uid="uid://dbjr5htuv70ef" path="res://Sprites/Menu/Buttons/Test.png" id="5_i56gb"]
 [ext_resource type="Texture2D" uid="uid://dtymrrhwo7bsq" path="res://Sprites/Menu/Buttons/Two_Player.png" id="5_tj1ap"]
+[ext_resource type="Texture2D" uid="uid://ifrm7dmj1y3" path="res://Sprites/Menu/Buttons/Save.png" id="7_0i7bf"]
 [ext_resource type="Texture2D" uid="uid://croy1xhacb6we" path="res://Sprites/Menu/Buttons/Back.png" id="7_oqgt0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g3exq"]
@@ -141,6 +142,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+tooltip_text = "Single Player Mode"
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.227451, 0.227451, 0.227451, 1)
 theme_override_colors/font_hover_color = Color(0.776471, 0.776471, 0.776471, 1)
@@ -191,6 +193,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+tooltip_text = "TEST"
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.227451, 0.227451, 0.227451, 1)
 theme_override_colors/font_hover_color = Color(0.776471, 0.776471, 0.776471, 1)
@@ -245,6 +248,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+tooltip_text = "Two Player Mode"
 theme_override_fonts/font = ExtResource("3_te4sv")
 theme_override_font_sizes/font_size = 60
 theme_override_styles/normal = SubResource("StyleBoxEmpty_gk3ag")
@@ -261,6 +265,54 @@ offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("5_tj1ap")
+
+[node name="Load" type="Panel" parent="CanvasLayer"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -126.0
+offset_top = -126.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_tjoiu")
+
+[node name="TEST" type="Panel" parent="CanvasLayer/Load"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_iswgc")
+
+[node name="Load_Button" type="Button" parent="CanvasLayer/Load/TEST"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+tooltip_text = "Load Save File If it exists otherwise nothing will happen"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.227451, 0.227451, 0.227451, 1)
+theme_override_colors/font_hover_color = Color(0.776471, 0.776471, 0.776471, 1)
+theme_override_fonts/font = ExtResource("3_te4sv")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tpsx3")
+text = "
+"
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Load/TEST/Load_Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_0i7bf")
 
 [node name="Close_Panel" type="Panel" parent="CanvasLayer"]
 anchors_preset = 2
@@ -289,6 +341,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+tooltip_text = "BACK"
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.227451, 0.227451, 0.227451, 1)
 theme_override_colors/font_hover_color = Color(0.776471, 0.776471, 0.776471, 1)
@@ -310,4 +363,5 @@ texture = ExtResource("7_oqgt0")
 [connection signal="pressed" from="CanvasLayer/BG/Buttons/Sp/Sp/Sp_Button" to="Game_Manager" method="_on_sp_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/BG/Buttons/TEST/TEST/Test_Button" to="Game_Manager" method="_on_test_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/BG/Buttons/2p/2p/2p_Button" to="Game_Manager" method="_on_2p_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Load/TEST/Load_Button" to="Game_Manager" method="_on_load_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Close_Panel/Back/Back_To_Main_Menu_Button" to="Game_Manager" method="_on_back_to_main_menu_button_pressed"]

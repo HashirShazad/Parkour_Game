@@ -31,7 +31,7 @@ radius = 18.2483
 _data = [Vector2(0, 0.681319), 0.0, 0.0, 0, 0, Vector2(0.840183, 0.648352), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 3
 
-[node name="Lever" type="Node2D"]
+[node name="Lever" type="Node2D" groups=["Button"]]
 script = ExtResource("1_dxemh")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]

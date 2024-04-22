@@ -8,9 +8,8 @@ var is_opened:bool = false
 func _ready():
 	var children := get_parent().get_children()
 	for child in children:
-		child.is_in_group("Button")
-		buttons.append(child)
-		print(buttons)
+		if child.is_in_group("Button"):
+			buttons.append(child)
 	
 func _process(delta):
 	if buttons == null:

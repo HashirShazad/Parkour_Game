@@ -61,10 +61,11 @@ var paused:bool = false
 var death_screen_shown:bool = false
 var input_disabled:bool = false
 
-
+var user_prefs:User_Preferences
 
 # Actual Code <===========================================================================================>
-
+func _ready():
+	user_prefs = User_Preferences.load_or_create()
 # Process just like event per tick
 func _process(delta):
 	fps_label.text = "FPS: " + str(Engine.get_frames_per_second())
@@ -202,13 +203,19 @@ func restart():
 		player_2.health = 100
 	update_health()
 
+func set_saved_level(level):
+	if user_prefs:
+		user_prefs.saved_level = level
+		print(user_prefs.saved_level)
+		user_prefs.save()
 # Transparent UI <----------------------------------------------------------------------------------------->
 func _on_area_2d_body_entered(body):
+	print("ENTERED")
 	update_ui_alpha(.1)
 
 func _on_area_2d_body_exited(body):
 	update_ui_alpha(1)
-
+	print("EXITED")
 # Update UI alpha value so that it becomes trabnslucent when the player is behind it
 func update_ui_alpha(value:float = .5):
 	var tween = get_tree().create_tween()
@@ -319,6 +326,8 @@ func _on_resume_button_pressed():
 
 # Game back to main menu when paused button
 func _on_back_button_pressed():
+	set_saved_level(get_tree().current_scene.scene_file_path)
+	user_prefs.points = points
 	restart()
 	player_1 = null
 	player_2 = null
@@ -345,6 +354,7 @@ func _on_restart_button_pressed():
 
 # Game back to main menu of death_screen
 func _on_back_button_death_screen_pressed():
+	set_saved_level(get_tree().current_scene.scene_file_path)
 	restart()
 	player_1 = null
 	player_2 = null
@@ -354,3 +364,18 @@ func _on_back_button_death_screen_pressed():
 	get_tree().change_scene_to_file(levels_UI.main_menu)
 	if death_screen_shown:
 		_death_screen()
+
+# Load button
+func _on_load_button_pressed():
+	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_HIDDEN)
+	if input_disabled:
+		return
+	Transitioner.start_transition()
+	input_disabled = true
+	await Transitioner.transiton_finsihed
+	if user_prefs:
+		if user_prefs.saved_level != null:
+			print(user_prefs.saved_level)
+			get_tree().change_scene_to_file(user_prefs.saved_level)
+	await  Transitioner.transition_fully_finished
+	input_disabled = false

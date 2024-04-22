@@ -1,15 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c4f31fc42beji"]
+[gd_scene load_steps=2 format=3 uid="uid://c4f31fc42beji"]
 
-[ext_resource type="PackedScene" uid="uid://cbmrycadcw6fr" path="res://Traps/Buttons/Blue_Holdable_Button.tscn" id="1_cjac3"]
 [ext_resource type="PackedScene" uid="uid://by21n81tnomx2" path="res://Traps/Doors/Small_Door.tscn" id="2_bkwq4"]
 
 [node name="DoorAndButtons" type="Node2D"]
-
-[node name="B_Holdabe_Button" parent="." instance=ExtResource("1_cjac3")]
-position = Vector2(-141, -19)
-
-[node name="B_Holdabe_Button2" parent="." instance=ExtResource("1_cjac3")]
-position = Vector2(107, -7)
 
 [node name="SmallDoor" parent="." instance=ExtResource("2_bkwq4")]
 

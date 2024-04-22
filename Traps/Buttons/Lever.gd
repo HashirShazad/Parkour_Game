@@ -16,9 +16,9 @@ class_name Lever
 func _on_area_2d_body_entered(body):
 	effects.emitting = 1
 	if body.velocity.x < -1:
-		is_on = true
+		is_on = false
 		sprite_2d.play(animations.pressed)
 	elif body.velocity.x > 1:
-		is_on = false
+		is_on = true
 		sprite_2d.play(animations.default)
 	
