@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://dtajtyl1bbh6e"]
+
+[ext_resource type="Script" path="res://Game_Manager/Game_Manger.gd" id="1_tb1wt"]
+[ext_resource type="PackedScene" uid="uid://baha77q1ltfnx" path="res://UI/pause_menu.tscn" id="2_2te14"]
+[ext_resource type="PackedScene" uid="uid://cp2ytcs60oa2h" path="res://UI/hud.tscn" id="3_aux3r"]
+[ext_resource type="PackedScene" uid="uid://bnejv1eixxtt1" path="res://UI/death_screen.tscn" id="4_eq1kn"]
+[ext_resource type="Texture2D" uid="uid://dy30a236e6egq" path="res://Sprites/Other/Timer_Logo.png" id="5_5e2og"]
+
+[node name="Game_Manager" type="Node"]
+script = ExtResource("1_tb1wt")
+
+[node name="Hud" parent="." instance=ExtResource("3_aux3r")]
+
+[node name="CollisionShape2D" parent="Hud/Node/Area2D" index="0"]
+position = Vector2(576, 162)
+
+[node name="Avatar_Frame" parent="Hud/Node/Timer_Info_Box" index="0"]
+visible = false
+
+[node name="TextureRect" parent="Hud/Node/Timer_Info_Box/Avatar_Frame" index="0"]
+texture = ExtResource("5_5e2og")
+
+[node name="Pause_Menu" parent="." instance=ExtResource("2_2te14")]
+visible = false
+
+[node name="Death_Screen" parent="." instance=ExtResource("4_eq1kn")]
+process_priority = 10
+visible = false
+
+[connection signal="body_entered" from="Hud/Node/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Hud/Node/Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="pressed" from="Pause_Menu/Panel/Buttons/Play_Panel/Play/Resume_Button" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="Pause_Menu/Panel/Buttons/Close_Panel/Back/Back_Button" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="Pause_Menu/Panel/Buttons/Settings_Panel/Settings/Restart_Button" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="Death_Screen/Panel/Buttons/Close_Panel/Back/Back_Button" to="." method="_on_back_button_death_screen_pressed"]
+[connection signal="pressed" from="Death_Screen/Panel/Buttons/Settings_Panel/Settings/Retry_Button" to="." method="_on_retry_button_pressed"]
+
+[editable path="Hud"]
+[editable path="Pause_Menu"]
+[editable path="Death_Screen"]

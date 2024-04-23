@@ -146,10 +146,6 @@ func get_input():
 		return
 	if Input.is_action_just_pressed("Pause") && !death_screen_shown:
 		pause()
-	if Input.is_action_just_pressed("Restart") && paused:
-		_on_restart_button_pressed()
-	if Input.is_action_just_pressed("Restart") && death_screen_shown:
-		_on_retry_button_pressed()
 
 # Check if p1 or p2 or both are dead and display death screen
 func check_if_dead():

@@ -11,3 +11,5 @@ res://Levels/TEST.tscn
 res://Levels/Level_4.tscn
 res://Enemies/Plant/Bullet.tscn
 res://Collision/Projectile_Hit_Box.gd
+res://Game_Manager/Game_Manger.gd
+res://UI/death_screen.tscn

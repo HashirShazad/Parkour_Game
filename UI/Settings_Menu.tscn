@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c2hm7fpe6nigi"]
+[gd_scene load_steps=16 format=3 uid="uid://c2hm7fpe6nigi"]
 
 [ext_resource type="PackedScene" uid="uid://dtajtyl1bbh6e" path="res://Game_Manager/Game_Manger.tscn" id="1_omias"]
 [ext_resource type="FontFile" uid="uid://vpy38kvl0qsd" path="res://Sprites/Menu/Text/Minecraft.ttf" id="3_bsg3h"]
@@ -36,6 +36,13 @@ corner_radius_bottom_left = 10
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iswgc"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tpsx3"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_nb4k8"]
+device = -1
+keycode = 4194305
+
+[sub_resource type="Shortcut" id="Shortcut_k3ksp"]
+events = [SubResource("InputEventKey_nb4k8")]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_74aj7"]
 bg_color = Color(0, 0.694118, 0.6, 1)
@@ -162,6 +169,7 @@ theme_override_colors/font_hover_color = Color(0.776471, 0.776471, 0.776471, 1)
 theme_override_fonts/font = ExtResource("3_bsg3h")
 theme_override_font_sizes/font_size = 60
 theme_override_styles/normal = SubResource("StyleBoxEmpty_tpsx3")
+shortcut = SubResource("Shortcut_k3ksp")
 text = "
 "
 

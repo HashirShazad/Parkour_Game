@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://c7rk51mnliyi6"]
+[gd_scene load_steps=31 format=3 uid="uid://c7rk51mnliyi6"]
 
 [ext_resource type="Script" path="res://Levels/Levels.gd" id="1_3txvo"]
 [ext_resource type="PackedScene" uid="uid://dtajtyl1bbh6e" path="res://Game_Manager/Game_Manger.tscn" id="2_3xrrb"]
@@ -41,17 +41,56 @@ corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tpsx3"]
 
+[sub_resource type="InputEventKey" id="InputEventKey_b6rj6"]
+device = -1
+keycode = 83
+unicode = 115
+
+[sub_resource type="Shortcut" id="Shortcut_rmq21"]
+events = [SubResource("InputEventKey_b6rj6")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_p24l3"]
+device = -1
+keycode = 84
+unicode = 116
+
+[sub_resource type="Shortcut" id="Shortcut_7g3kb"]
+events = [SubResource("InputEventKey_p24l3")]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_457ln"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ifu6j"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gk3ag"]
 
+[sub_resource type="InputEventKey" id="InputEventKey_yu7tr"]
+device = -1
+keycode = 68
+unicode = 100
+
+[sub_resource type="Shortcut" id="Shortcut_yfjar"]
+events = [SubResource("InputEventKey_yu7tr")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_a3a03"]
+device = -1
+keycode = 76
+unicode = 108
+
+[sub_resource type="Shortcut" id="Shortcut_c83sx"]
+events = [SubResource("InputEventKey_a3a03")]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i4sip"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yu6ru"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_43q4f"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_82lt7"]
+device = -1
+keycode = 4194305
+
+[sub_resource type="Shortcut" id="Shortcut_h07jt"]
+events = [SubResource("InputEventKey_82lt7")]
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_3txvo")
@@ -149,6 +188,7 @@ theme_override_colors/font_hover_color = Color(0.776471, 0.776471, 0.776471, 1)
 theme_override_fonts/font = ExtResource("3_te4sv")
 theme_override_font_sizes/font_size = 60
 theme_override_styles/normal = SubResource("StyleBoxEmpty_tpsx3")
+shortcut = SubResource("Shortcut_rmq21")
 text = "
 "
 
@@ -200,6 +240,7 @@ theme_override_colors/font_hover_color = Color(0.776471, 0.776471, 0.776471, 1)
 theme_override_fonts/font = ExtResource("3_te4sv")
 theme_override_font_sizes/font_size = 60
 theme_override_styles/normal = SubResource("StyleBoxEmpty_tpsx3")
+shortcut = SubResource("Shortcut_7g3kb")
 text = "
 "
 
@@ -252,6 +293,7 @@ tooltip_text = "Two Player Mode"
 theme_override_fonts/font = ExtResource("3_te4sv")
 theme_override_font_sizes/font_size = 60
 theme_override_styles/normal = SubResource("StyleBoxEmpty_gk3ag")
+shortcut = SubResource("Shortcut_yfjar")
 text = "
 "
 
@@ -302,6 +344,7 @@ theme_override_colors/font_hover_color = Color(0.776471, 0.776471, 0.776471, 1)
 theme_override_fonts/font = ExtResource("3_te4sv")
 theme_override_font_sizes/font_size = 60
 theme_override_styles/normal = SubResource("StyleBoxEmpty_tpsx3")
+shortcut = SubResource("Shortcut_c83sx")
 text = "
 "
 
@@ -348,6 +391,7 @@ theme_override_colors/font_hover_color = Color(0.776471, 0.776471, 0.776471, 1)
 theme_override_fonts/font = ExtResource("3_te4sv")
 theme_override_font_sizes/font_size = 60
 theme_override_styles/normal = SubResource("StyleBoxEmpty_43q4f")
+shortcut = SubResource("Shortcut_h07jt")
 text = "
 "
 
