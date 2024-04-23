@@ -1,8 +1,9 @@
-[gd_scene load_steps=20 format=3 uid="uid://bnejv1eixxtt1"]
+[gd_scene load_steps=24 format=3 uid="uid://bnejv1eixxtt1"]
 
 [ext_resource type="Shader" path="res://UI/pause_menu.gdshader" id="1_v02m5"]
 [ext_resource type="FontFile" uid="uid://vpy38kvl0qsd" path="res://Sprites/Menu/Text/Minecraft.ttf" id="2_a7vg4"]
 [ext_resource type="Texture2D" uid="uid://croy1xhacb6we" path="res://Sprites/Menu/Buttons/Back.png" id="4_85lap"]
+[ext_resource type="Script" path="res://UI/Focused_Button.gd" id="4_fr6dx"]
 [ext_resource type="Texture2D" uid="uid://dhdm857cg406g" path="res://Sprites/Menu/Buttons/Restart.png" id="5_0ip8r"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2j3c3"]
@@ -26,8 +27,16 @@ bg_color = Color(1, 0.407843, 0.329412, 0.0745098)
 device = -1
 keycode = 4194305
 
+[sub_resource type="InputEventJoypadMotion" id="InputEventJoypadMotion_lo6ko"]
+axis = 4
+axis_value = 1.0
+
+[sub_resource type="InputEventJoypadButton" id="InputEventJoypadButton_ufgvb"]
+button_index = 1
+pressed = true
+
 [sub_resource type="Shortcut" id="Shortcut_apcf8"]
-events = [SubResource("InputEventKey_whtxm")]
+events = [SubResource("InputEventKey_whtxm"), SubResource("InputEventJoypadMotion_lo6ko"), SubResource("InputEventJoypadButton_ufgvb")]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7vpim"]
 
@@ -40,8 +49,12 @@ device = -1
 keycode = 82
 unicode = 114
 
+[sub_resource type="InputEventJoypadMotion" id="InputEventJoypadMotion_ybv8p"]
+axis = 5
+axis_value = 1.0
+
 [sub_resource type="Shortcut" id="Shortcut_u5vq6"]
-events = [SubResource("InputEventKey_1bafw")]
+events = [SubResource("InputEventKey_1bafw"), SubResource("InputEventJoypadMotion_ybv8p")]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5elqm"]
 bg_color = Color(0.741176, 0, 0.164706, 1)
@@ -204,6 +217,7 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_hfdlx")
 shortcut = SubResource("Shortcut_u5vq6")
 text = "
 "
+script = ExtResource("4_fr6dx")
 metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect" type="TextureRect" parent="Panel/Buttons/Settings_Panel/Settings/Retry_Button"]

@@ -1,9 +1,10 @@
-[gd_scene load_steps=25 format=3 uid="uid://baha77q1ltfnx"]
+[gd_scene load_steps=31 format=3 uid="uid://baha77q1ltfnx"]
 
 [ext_resource type="Shader" path="res://UI/pause_menu.gdshader" id="1_x6xew"]
 [ext_resource type="FontFile" uid="uid://vpy38kvl0qsd" path="res://Sprites/Menu/Text/Minecraft.ttf" id="2_ah3wj"]
 [ext_resource type="Texture2D" uid="uid://chhiw8tnjskvp" path="res://Sprites/Menu/Buttons/Next.png" id="2_efwn0"]
 [ext_resource type="Texture2D" uid="uid://croy1xhacb6we" path="res://Sprites/Menu/Buttons/Back.png" id="3_4bhwa"]
+[ext_resource type="Script" path="res://UI/Focused_Button.gd" id="3_vwv7r"]
 [ext_resource type="Texture2D" uid="uid://dhdm857cg406g" path="res://Sprites/Menu/Buttons/Restart.png" id="5_jwmso"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2j3c3"]
@@ -25,8 +26,11 @@ device = -1
 keycode = 32
 unicode = 32
 
+[sub_resource type="InputEventJoypadButton" id="InputEventJoypadButton_1wqt2"]
+pressed = true
+
 [sub_resource type="Shortcut" id="Shortcut_rvv2p"]
-events = [SubResource("InputEventKey_qmkjv")]
+events = [SubResource("InputEventKey_qmkjv"), SubResource("InputEventJoypadButton_1wqt2")]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mwfpb"]
 
@@ -39,8 +43,16 @@ device = -1
 shift_pressed = true
 keycode = 4194305
 
+[sub_resource type="InputEventJoypadMotion" id="InputEventJoypadMotion_twqqx"]
+axis = 4
+axis_value = 1.0
+
+[sub_resource type="InputEventJoypadButton" id="InputEventJoypadButton_fyu0g"]
+button_index = 1
+pressed = true
+
 [sub_resource type="Shortcut" id="Shortcut_gvkva"]
-events = [SubResource("InputEventKey_pw23e")]
+events = [SubResource("InputEventKey_pw23e"), SubResource("InputEventJoypadMotion_twqqx"), SubResource("InputEventJoypadButton_fyu0g")]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7vpim"]
 
@@ -53,8 +65,16 @@ device = -1
 keycode = 82
 unicode = 114
 
+[sub_resource type="InputEventJoypadMotion" id="InputEventJoypadMotion_xyaup"]
+axis = 5
+axis_value = 1.0
+
+[sub_resource type="InputEventJoypadButton" id="InputEventJoypadButton_r1d4s"]
+button_index = 3
+pressed = true
+
 [sub_resource type="Shortcut" id="Shortcut_fcjop"]
-events = [SubResource("InputEventKey_ljbo5")]
+events = [SubResource("InputEventKey_ljbo5"), SubResource("InputEventJoypadMotion_xyaup"), SubResource("InputEventJoypadButton_r1d4s")]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5elqm"]
 bg_color = Color(0.259294, 0.259294, 0.259294, 1)
@@ -148,6 +168,7 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_mcx24")
 shortcut = SubResource("Shortcut_rvv2p")
 text = "
 "
+script = ExtResource("3_vwv7r")
 metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect" type="TextureRect" parent="Panel/Buttons/Play_Panel/Play/Resume_Button"]

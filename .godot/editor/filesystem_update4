@@ -10,3 +10,4 @@ res://Levels/TEST.tscn
 res://Enemies/Plant/Bullet.tscn
 res://UI/death_screen.tscn
 res://Levels/Main_Menu.tscn
+res://UI/Focused_Button.gd

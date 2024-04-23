@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://c7rk51mnliyi6"]
+[gd_scene load_steps=33 format=3 uid="uid://c7rk51mnliyi6"]
 
 [ext_resource type="Script" path="res://Levels/Levels.gd" id="1_3txvo"]
 [ext_resource type="PackedScene" uid="uid://dtajtyl1bbh6e" path="res://Game_Manager/Game_Manger.tscn" id="2_3xrrb"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dbjr5htuv70ef" path="res://Sprites/Menu/Buttons/Test.png" id="5_i56gb"]
 [ext_resource type="Texture2D" uid="uid://dtymrrhwo7bsq" path="res://Sprites/Menu/Buttons/Two_Player.png" id="5_tj1ap"]
 [ext_resource type="Texture2D" uid="uid://ifrm7dmj1y3" path="res://Sprites/Menu/Buttons/Save.png" id="7_0i7bf"]
+[ext_resource type="Script" path="res://UI/Focused_Button.gd" id="7_15vrd"]
 [ext_resource type="Texture2D" uid="uid://croy1xhacb6we" path="res://Sprites/Menu/Buttons/Back.png" id="7_oqgt0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g3exq"]
@@ -89,8 +90,12 @@ events = [SubResource("InputEventKey_a3a03")]
 device = -1
 keycode = 4194305
 
+[sub_resource type="InputEventJoypadButton" id="InputEventJoypadButton_d3qx1"]
+button_index = 1
+pressed = true
+
 [sub_resource type="Shortcut" id="Shortcut_h07jt"]
-events = [SubResource("InputEventKey_82lt7")]
+events = [SubResource("InputEventKey_82lt7"), SubResource("InputEventJoypadButton_d3qx1")]
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_3txvo")
@@ -182,6 +187,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 tooltip_text = "Single Player Mode"
+focus_neighbor_left = NodePath("../../../../../Close_Panel/Back/Back_To_Main_Menu_Button")
+focus_neighbor_bottom = NodePath("../../../../../Close_Panel/Back/Back_To_Main_Menu_Button")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.227451, 0.227451, 0.227451, 1)
 theme_override_colors/font_hover_color = Color(0.776471, 0.776471, 0.776471, 1)
@@ -290,6 +297,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 tooltip_text = "Two Player Mode"
+focus_neighbor_right = NodePath("../../../../../Load/TEST/Load_Button")
+focus_neighbor_bottom = NodePath("../../../../../Load/TEST/Load_Button")
 theme_override_fonts/font = ExtResource("3_te4sv")
 theme_override_font_sizes/font_size = 60
 theme_override_styles/normal = SubResource("StyleBoxEmpty_gk3ag")
@@ -338,6 +347,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 tooltip_text = "Load Save File If it exists otherwise nothing will happen"
+focus_neighbor_left = NodePath("../../../BG/Buttons/2p/2p/2p_Button")
+focus_neighbor_top = NodePath("../../../BG/Buttons/2p/2p/2p_Button")
+focus_neighbor_right = NodePath("../../../Close_Panel/Back/Back_To_Main_Menu_Button")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.227451, 0.227451, 0.227451, 1)
 theme_override_colors/font_hover_color = Color(0.776471, 0.776471, 0.776471, 1)
@@ -347,6 +359,7 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_tpsx3")
 shortcut = SubResource("Shortcut_c83sx")
 text = "
 "
+script = ExtResource("7_15vrd")
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Load/TEST/Load_Button"]
 layout_mode = 1
@@ -385,6 +398,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 tooltip_text = "BACK"
+focus_neighbor_left = NodePath("../../../Load/TEST/Load_Button")
+focus_neighbor_top = NodePath("../../../BG/Buttons/Sp/Sp/Sp_Button")
+focus_neighbor_right = NodePath("../../../BG/Buttons/Sp/Sp/Sp_Button")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.227451, 0.227451, 0.227451, 1)
 theme_override_colors/font_hover_color = Color(0.776471, 0.776471, 0.776471, 1)

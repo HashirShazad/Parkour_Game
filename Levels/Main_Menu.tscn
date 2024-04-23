@@ -1,10 +1,11 @@
-[gd_scene load_steps=22 format=3 uid="uid://bekqq4egn6odn"]
+[gd_scene load_steps=25 format=3 uid="uid://bekqq4egn6odn"]
 
 [ext_resource type="Script" path="res://Levels/Levels.gd" id="1_rj21s"]
 [ext_resource type="PackedScene" uid="uid://dtajtyl1bbh6e" path="res://Game_Manager/Game_Manger.tscn" id="2_s6xqc"]
 [ext_resource type="FontFile" uid="uid://vpy38kvl0qsd" path="res://Sprites/Menu/Text/Minecraft.ttf" id="3_tqylh"]
 [ext_resource type="Texture2D" uid="uid://dhowsw4q3bgoo" path="res://Sprites/Menu/Buttons/Close.png" id="4_51xbc"]
 [ext_resource type="Texture2D" uid="uid://cp5i8wjruxkt4" path="res://Sprites/Menu/Buttons/Play.png" id="5_1r3ck"]
+[ext_resource type="Script" path="res://UI/Focused_Button.gd" id="5_7t1ag"]
 [ext_resource type="Texture2D" uid="uid://bandv15rq2680" path="res://Sprites/Menu/Buttons/Settings.png" id="6_ychsk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xg6f8"]
@@ -44,15 +45,18 @@ device = -1
 shift_pressed = true
 keycode = 4194305
 
-[sub_resource type="Shortcut" id="Shortcut_65crp"]
-events = [SubResource("InputEventKey_q64ef")]
+[sub_resource type="InputEventJoypadButton" id="InputEventJoypadButton_3h83p"]
+button_index = 4
+pressed = true
 
-[sub_resource type="InputEventKey" id="InputEventKey_h01ku"]
-device = -1
-keycode = 4194309
+[sub_resource type="InputEventJoypadButton" id="InputEventJoypadButton_t557m"]
+button_index = 1
+pressed = true
+
+[sub_resource type="Shortcut" id="Shortcut_65crp"]
+events = [SubResource("InputEventKey_q64ef"), SubResource("InputEventJoypadButton_3h83p"), SubResource("InputEventJoypadButton_t557m")]
 
 [sub_resource type="Shortcut" id="Shortcut_t3lvt"]
-events = [SubResource("InputEventKey_h01ku")]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2roi3"]
 
@@ -65,8 +69,12 @@ device = -1
 keycode = 69
 unicode = 101
 
+[sub_resource type="InputEventJoypadButton" id="InputEventJoypadButton_q5aes"]
+button_index = 6
+pressed = true
+
 [sub_resource type="Shortcut" id="Shortcut_qinjm"]
-events = [SubResource("InputEventKey_x128b")]
+events = [SubResource("InputEventKey_x128b"), SubResource("InputEventJoypadButton_q5aes")]
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_rj21s")
@@ -219,6 +227,7 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_5bwq4")
 shortcut = SubResource("Shortcut_t3lvt")
 text = "
 "
+script = ExtResource("5_7t1ag")
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/BG/Buttons/Play/Play/Play_Button"]
 layout_mode = 1

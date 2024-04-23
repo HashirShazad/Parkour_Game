@@ -1,6 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://c2hm7fpe6nigi"]
+[gd_scene load_steps=19 format=3 uid="uid://c2hm7fpe6nigi"]
 
 [ext_resource type="PackedScene" uid="uid://dtajtyl1bbh6e" path="res://Game_Manager/Game_Manger.tscn" id="1_omias"]
+[ext_resource type="Script" path="res://UI/Focused_Button.gd" id="3_2kvtg"]
 [ext_resource type="FontFile" uid="uid://vpy38kvl0qsd" path="res://Sprites/Menu/Text/Minecraft.ttf" id="3_bsg3h"]
 [ext_resource type="Texture2D" uid="uid://croy1xhacb6we" path="res://Sprites/Menu/Buttons/Back.png" id="4_jujvu"]
 [ext_resource type="Script" path="res://UI/Remapable_Buttons.gd" id="5_5m8ju"]
@@ -40,9 +41,19 @@ corner_radius_bottom_left = 10
 [sub_resource type="InputEventKey" id="InputEventKey_nb4k8"]
 device = -1
 keycode = 4194305
+physical_keycode = 4194305
+key_label = 4194305
+
+[sub_resource type="InputEventJoypadButton" id="InputEventJoypadButton_kctkl"]
+button_index = 4
+pressed = true
+
+[sub_resource type="InputEventJoypadButton" id="InputEventJoypadButton_pstpc"]
+button_index = 1
+pressed = true
 
 [sub_resource type="Shortcut" id="Shortcut_k3ksp"]
-events = [SubResource("InputEventKey_nb4k8")]
+events = [SubResource("InputEventKey_nb4k8"), SubResource("InputEventJoypadButton_kctkl"), SubResource("InputEventJoypadButton_pstpc")]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_74aj7"]
 bg_color = Color(0, 0.694118, 0.6, 1)
@@ -172,6 +183,7 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_tpsx3")
 shortcut = SubResource("Shortcut_k3ksp")
 text = "
 "
+script = ExtResource("3_2kvtg")
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/BG/Buttons/Close_Panel/Back/Back_To_Main_Menu_Button"]
 layout_mode = 1
