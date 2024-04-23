@@ -1,0 +1,287 @@
+[gd_scene load_steps=21 format=3 uid="uid://baha77q1ltfnx"]
+
+[ext_resource type="Shader" path="res://UI/pause_menu.gdshader" id="1_x6xew"]
+[ext_resource type="FontFile" uid="uid://vpy38kvl0qsd" path="res://Sprites/Menu/Text/Minecraft.ttf" id="2_ah3wj"]
+[ext_resource type="Texture2D" uid="uid://chhiw8tnjskvp" path="res://Sprites/Menu/Buttons/Next.png" id="2_efwn0"]
+[ext_resource type="Texture2D" uid="uid://croy1xhacb6we" path="res://Sprites/Menu/Buttons/Back.png" id="3_4bhwa"]
+[ext_resource type="Texture2D" uid="uid://dhdm857cg406g" path="res://Sprites/Menu/Buttons/Restart.png" id="5_jwmso"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2j3c3"]
+shader = ExtResource("1_x6xew")
+shader_parameter/amount = 2.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xi8ei"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_veor2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m0pyf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4k7if"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mcx24"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_g66qo"]
+device = -1
+keycode = 4194309
+
+[sub_resource type="Shortcut" id="Shortcut_htbw8"]
+events = [SubResource("InputEventKey_g66qo")]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mwfpb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nkbwj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p52hu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7vpim"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fvfg4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hfdlx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5elqm"]
+bg_color = Color(0.259294, 0.259294, 0.259294, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="UI" type="CanvasLayer"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_2j3c3")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_xi8ei")
+metadata/_edit_use_anchors_ = true
+
+[node name="Buttons" type="Panel" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -222.0
+offset_top = -63.0
+offset_right = 222.0
+offset_bottom = 63.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_veor2")
+metadata/_edit_use_anchors_ = true
+
+[node name="Play_Panel" type="Panel" parent="Panel/Buttons"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -62.0
+offset_top = -63.0
+offset_right = -62.0
+offset_bottom = -63.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_m0pyf")
+metadata/_edit_use_anchors_ = true
+
+[node name="Play" type="Panel" parent="Panel/Buttons/Play_Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 126.0
+offset_bottom = 126.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_4k7if")
+metadata/_edit_use_anchors_ = true
+
+[node name="Resume_Button" type="Button" parent="Panel/Buttons/Play_Panel/Play"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+tooltip_text = "Resume the game"
+theme_override_fonts/font = ExtResource("2_ah3wj")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mcx24")
+shortcut = SubResource("Shortcut_htbw8")
+text = "
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Panel/Buttons/Play_Panel/Play/Resume_Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_efwn0")
+metadata/_edit_use_anchors_ = true
+
+[node name="Close_Panel" type="Panel" parent="Panel/Buttons"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -63.0
+offset_right = 126.0
+offset_bottom = 63.0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_mwfpb")
+metadata/_edit_use_anchors_ = true
+
+[node name="Back" type="Panel" parent="Panel/Buttons/Close_Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_nkbwj")
+metadata/_edit_use_anchors_ = true
+
+[node name="Back_Button" type="Button" parent="Panel/Buttons/Close_Panel/Back"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+tooltip_text = "Back to main menu"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.227451, 0.227451, 0.227451, 1)
+theme_override_colors/font_hover_color = Color(0.776471, 0.776471, 0.776471, 1)
+theme_override_fonts/font = ExtResource("2_ah3wj")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxEmpty_p52hu")
+text = "
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Panel/Buttons/Close_Panel/Back/Back_Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_4bhwa")
+metadata/_edit_use_anchors_ = true
+
+[node name="Settings_Panel" type="Panel" parent="Panel/Buttons"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -126.0
+offset_top = -63.0
+offset_right = -126.0
+offset_bottom = -63.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_7vpim")
+metadata/_edit_use_anchors_ = true
+
+[node name="Settings" type="Panel" parent="Panel/Buttons/Settings_Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 126.0
+offset_bottom = 126.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_fvfg4")
+metadata/_edit_use_anchors_ = true
+
+[node name="Restart_Button" type="Button" parent="Panel/Buttons/Settings_Panel/Settings"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+tooltip_text = "Restart the level"
+theme_override_fonts/font = ExtResource("2_ah3wj")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxEmpty_hfdlx")
+text = "
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Panel/Buttons/Settings_Panel/Settings/Restart_Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_jwmso")
+metadata/_edit_use_anchors_ = true
+
+[node name="LOGO" type="Panel" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -222.0
+offset_right = 222.0
+offset_bottom = 126.0
+grow_horizontal = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_5elqm")
+
+[node name="Label" type="Label" parent="Panel/LOGO"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -122.0
+offset_top = -35.5
+offset_right = 122.0
+offset_bottom = 35.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_ah3wj")
+theme_override_font_sizes/font_size = 70
+text = "Paused
+"
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -927,7 +927,7 @@ position = Vector2(816, 1506)
 position = Vector2(445, 1474)
 
 [node name="Plant" parent="." instance=ExtResource("9_55yfq")]
-position = Vector2(-441, 1238)
+position = Vector2(1977, 906)
 
 [node name="Lever" parent="." instance=ExtResource("11_1nhuf")]
 position = Vector2(1125, 1097)
@@ -947,13 +947,7 @@ position = Vector2(983, 1587)
 [node name="SmallDoorAndButtons" parent="." instance=ExtResource("14_ptien")]
 position = Vector2(2055, 1111)
 
-[node name="B_Holdabe_Button" parent="SmallDoorAndButtons" index="0"]
-position = Vector2(-137, 42)
-
-[node name="B_Holdabe_Button2" parent="SmallDoorAndButtons" index="1"]
-position = Vector2(58, 40)
-
-[node name="Position_To_Move" parent="SmallDoorAndButtons" index="3"]
+[node name="Position_To_Move" parent="SmallDoorAndButtons" index="1"]
 position = Vector2(-4, -138)
 
 [node name="R_Toggleable_Button" parent="SmallDoorAndButtons" instance=ExtResource("10_8o1qi")]
