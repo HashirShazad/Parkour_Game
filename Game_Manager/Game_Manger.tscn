@@ -11,6 +11,9 @@ script = ExtResource("1_tb1wt")
 
 [node name="Hud" parent="." instance=ExtResource("3_aux3r")]
 
+[node name="Area2D" parent="Hud/Node" index="0"]
+visible = false
+
 [node name="CollisionShape2D" parent="Hud/Node/Area2D" index="0"]
 position = Vector2(576, 162)
 

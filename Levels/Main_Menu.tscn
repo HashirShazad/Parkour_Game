@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bekqq4egn6odn"]
+[gd_scene load_steps=22 format=3 uid="uid://bekqq4egn6odn"]
 
 [ext_resource type="Script" path="res://Levels/Levels.gd" id="1_rj21s"]
 [ext_resource type="PackedScene" uid="uid://dtajtyl1bbh6e" path="res://Game_Manager/Game_Manger.tscn" id="2_s6xqc"]
@@ -39,11 +39,34 @@ corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5bwq4"]
 
+[sub_resource type="InputEventKey" id="InputEventKey_q64ef"]
+device = -1
+shift_pressed = true
+keycode = 4194305
+
+[sub_resource type="Shortcut" id="Shortcut_65crp"]
+events = [SubResource("InputEventKey_q64ef")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_h01ku"]
+device = -1
+keycode = 4194309
+
+[sub_resource type="Shortcut" id="Shortcut_t3lvt"]
+events = [SubResource("InputEventKey_h01ku")]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2roi3"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mkgc1"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rlgd5"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_x128b"]
+device = -1
+keycode = 69
+unicode = 101
+
+[sub_resource type="Shortcut" id="Shortcut_qinjm"]
+events = [SubResource("InputEventKey_x128b")]
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_rj21s")
@@ -141,6 +164,7 @@ theme_override_colors/font_hover_color = Color(0.776471, 0.776471, 0.776471, 1)
 theme_override_fonts/font = ExtResource("3_tqylh")
 theme_override_font_sizes/font_size = 60
 theme_override_styles/normal = SubResource("StyleBoxEmpty_5bwq4")
+shortcut = SubResource("Shortcut_65crp")
 text = "
 "
 
@@ -192,6 +216,7 @@ theme_override_colors/font_hover_color = Color(0.776471, 0.776471, 0.776471, 1)
 theme_override_fonts/font = ExtResource("3_tqylh")
 theme_override_font_sizes/font_size = 60
 theme_override_styles/normal = SubResource("StyleBoxEmpty_5bwq4")
+shortcut = SubResource("Shortcut_t3lvt")
 text = "
 "
 
@@ -244,6 +269,7 @@ tooltip_text = "Change the controls"
 theme_override_fonts/font = ExtResource("3_tqylh")
 theme_override_font_sizes/font_size = 60
 theme_override_styles/normal = SubResource("StyleBoxEmpty_rlgd5")
+shortcut = SubResource("Shortcut_qinjm")
 text = "
 "
 

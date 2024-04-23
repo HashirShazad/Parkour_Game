@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://baha77q1ltfnx"]
+[gd_scene load_steps=25 format=3 uid="uid://baha77q1ltfnx"]
 
 [ext_resource type="Shader" path="res://UI/pause_menu.gdshader" id="1_x6xew"]
 [ext_resource type="FontFile" uid="uid://vpy38kvl0qsd" path="res://Sprites/Menu/Text/Minecraft.ttf" id="2_ah3wj"]
@@ -20,17 +20,41 @@ shader_parameter/amount = 2.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mcx24"]
 
+[sub_resource type="InputEventKey" id="InputEventKey_qmkjv"]
+device = -1
+keycode = 32
+unicode = 32
+
+[sub_resource type="Shortcut" id="Shortcut_rvv2p"]
+events = [SubResource("InputEventKey_qmkjv")]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mwfpb"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nkbwj"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p52hu"]
 
+[sub_resource type="InputEventKey" id="InputEventKey_pw23e"]
+device = -1
+shift_pressed = true
+keycode = 4194305
+
+[sub_resource type="Shortcut" id="Shortcut_gvkva"]
+events = [SubResource("InputEventKey_pw23e")]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7vpim"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fvfg4"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hfdlx"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_ljbo5"]
+device = -1
+keycode = 82
+unicode = 114
+
+[sub_resource type="Shortcut" id="Shortcut_fcjop"]
+events = [SubResource("InputEventKey_ljbo5")]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5elqm"]
 bg_color = Color(0.259294, 0.259294, 0.259294, 1)
@@ -121,6 +145,7 @@ tooltip_text = "Resume the game"
 theme_override_fonts/font = ExtResource("2_ah3wj")
 theme_override_font_sizes/font_size = 60
 theme_override_styles/normal = SubResource("StyleBoxEmpty_mcx24")
+shortcut = SubResource("Shortcut_rvv2p")
 text = "
 "
 metadata/_edit_use_anchors_ = true
@@ -172,6 +197,7 @@ theme_override_colors/font_hover_color = Color(0.776471, 0.776471, 0.776471, 1)
 theme_override_fonts/font = ExtResource("2_ah3wj")
 theme_override_font_sizes/font_size = 60
 theme_override_styles/normal = SubResource("StyleBoxEmpty_p52hu")
+shortcut = SubResource("Shortcut_gvkva")
 text = "
 "
 metadata/_edit_use_anchors_ = true
@@ -228,6 +254,7 @@ tooltip_text = "Restart the level"
 theme_override_fonts/font = ExtResource("2_ah3wj")
 theme_override_font_sizes/font_size = 60
 theme_override_styles/normal = SubResource("StyleBoxEmpty_hfdlx")
+shortcut = SubResource("Shortcut_fcjop")
 text = "
 "
 metadata/_edit_use_anchors_ = true
