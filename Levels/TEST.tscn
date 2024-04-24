@@ -957,8 +957,7 @@ position = Vector2(187, 40)
 position = Vector2(708, 767)
 
 [node name="Plant" parent="." instance=ExtResource("9_55yfq")]
-visible = false
-position = Vector2(1823, 1025)
+position = Vector2(1823, 714)
 
 [editable path="Scene_Objects/Camera"]
 [editable path="Scene_Objects/Players"]

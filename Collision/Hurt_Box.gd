@@ -24,7 +24,6 @@ func _on_area_entered(hitbox: Hit_Box) -> void:
 	if owner.has_method("take_knockback"):
 		var angle = hitbox.global_position.direction_to(global_position)
 		angle = vec_to_dir(angle)
-		print(angle)
 		owner.take_knockback(hitbox.knock_back_strength, angle)
 	if owner.has_method("take_damage"):
 		owner.take_damage(hitbox.damage, hitbox.stun_duration)

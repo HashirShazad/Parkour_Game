@@ -3,7 +3,7 @@ class_name Projectile_Hit_Box
 
 @export var piercing:bool = false
 @export var speed:int = 200
-@export var direction:Vector2 = Vector2.RIGHT
+@export var direction:Vector2 = Vector2.DOWN
 
 func _init() -> void:
 	collision_layer = 2

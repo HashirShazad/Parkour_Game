@@ -132,6 +132,7 @@ func take_damage(damage:int, stun_duration:float):
 
 # Take knock back
 func take_knockback(strength:Vector2, direction:Vector2):
+	var str_y_const = 1
 	if is_dead:
 		return
 	if is_stunned:
@@ -141,12 +142,13 @@ func take_knockback(strength:Vector2, direction:Vector2):
 	if direction.x != 0:
 		velocity.x = strength.x * direction.x
 	else:
-		velocity.x = strength.x * -kb_direction.x
+		str_y_const = 2
+		velocity.x = strength.x * direction.x
 	if is_on_floor():
-		velocity.y = -1 * strength.y 
+		velocity.y = -1 * strength.y  * str_y_const
 	else:
 		#velocity.y = -kb_direction.y * strength.y
-		velocity.y = direction.y * strength.y
+		velocity.y = direction.y * strength.y * str_y_const
 	
 # Check if it is colliding with rigid bodies
 func check_collisions():
