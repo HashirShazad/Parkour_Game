@@ -1,19 +1,23 @@
 [gd_scene load_steps=4 format=3 uid="uid://b0bde65j5w0bu"]
 
-[ext_resource type="Texture2D" uid="uid://cf4vc8ky518se" path="res://Sprites/Enemies/Plant/Bullet.png" id="1_2lehh"]
-[ext_resource type="Script" path="res://Collision/Projectile_Hit_Box.gd" id="2_7yehg"]
+[ext_resource type="Script" path="res://Collision/Projectile_Hit_Box.gd" id="1_v0im4"]
+[ext_resource type="Texture2D" uid="uid://cdvq8p4k20mjt" path="res://Sprites/Enemies/Turrent_Bulle.png" id="2_72l7c"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fycuf"]
-radius = 6.66667
+radius = 3.72678
 
 [node name="Bullet" type="Area2D"]
 texture_filter = 1
 scale = Vector2(3, 3)
-script = ExtResource("2_7yehg")
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_v0im4")
+speed = 400
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("1_2lehh")
+position = Vector2(0, -0.666667)
+texture = ExtResource("2_72l7c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 show_behind_parent = true

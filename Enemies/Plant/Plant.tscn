@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://e03gg8dv00kt"]
+[gd_scene load_steps=30 format=3 uid="uid://e03gg8dv00kt"]
 
 [ext_resource type="Script" path="res://Enemies/Plant/Plant.gd" id="1_axqme"]
 [ext_resource type="Texture2D" uid="uid://cj1dw2745soyn" path="res://Sprites/Enemies/Plant/Attack (44x42).png" id="2_561yc"]
@@ -172,9 +172,6 @@ colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
 radius = 11.0
 height = 40.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_vbsft"]
-radius = 249.36
-
 [node name="Plant" type="CharacterBody2D" groups=["Enemy"]]
 scale = Vector2(3, 3)
 platform_floor_layers = 4278190081
@@ -184,7 +181,8 @@ script = ExtResource("1_axqme")
 texture_filter = 1
 position = Vector2(-4.33333, -2.66667)
 sprite_frames = SubResource("SpriteFrames_idhum")
-animation = &"Attack"
+animation = &"Idle"
+autoplay = "Idle"
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 texture_filter = 1
@@ -208,17 +206,12 @@ position = Vector2(-0.333333, -1.33333)
 shape = SubResource("CapsuleShape2D_yidtu")
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
 
-[node name="Edge_Check_Right" type="RayCast2D" parent="."]
+[node name="Check_Right" type="RayCast2D" parent="."]
 position = Vector2(10, 0)
-target_position = Vector2(0, 20)
+scale = Vector2(200, 200)
+target_position = Vector2(-100, 0)
 
-[node name="Edge_Check_Left" type="RayCast2D" parent="."]
-position = Vector2(-10.6667, -0.333333)
-target_position = Vector2(0, 20)
-
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CircleShape2D_vbsft")
-
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[node name="Check_Left" type="RayCast2D" parent="."]
+position = Vector2(10, 0)
+scale = Vector2(200, 200)
+target_position = Vector2(100, 0)

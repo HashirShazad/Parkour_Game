@@ -1,4 +1,4 @@
-[gd_scene load_steps=112 format=3 uid="uid://cjmv5s0f1p6hx"]
+[gd_scene load_steps=113 format=3 uid="uid://cjmv5s0f1p6hx"]
 
 [ext_resource type="Script" path="res://Character/Players_Code.gd" id="1_kpwhk"]
 [ext_resource type="Texture2D" uid="uid://dt3srkugkr4w" path="res://Sprites/Main Characters/Ninja Frog/Hit (32x32).png" id="1_u4h0n"]
@@ -722,15 +722,18 @@ particles_anim_loop = false
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.13242, 1), 0.0, 0.0, 0, 0, Vector2(0.315068, 0), 0.0, 0.0, 0, 0]
 point_count = 3
 
-[sub_resource type="Gradient" id="Gradient_rtqv4"]
+[sub_resource type="Gradient" id="Gradient_kb00k"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
 [sub_resource type="Gradient" id="Gradient_xtfbq"]
-offsets = PackedFloat32Array(0, 0.691099, 1)
+offsets = PackedFloat32Array(0, 0.670157, 1)
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o1v4y"]
 height = 25.3333
+
+[sub_resource type="Gradient" id="Gradient_rtqv4"]
+colors = PackedColorArray(1, 0, 0, 1, 1, 1, 1, 0)
 
 [node name="EntityBody2D" type="CharacterBody2D" groups=["Players"]]
 scale = Vector2(3, 3)
@@ -767,7 +770,7 @@ initial_velocity_min = 100.0
 initial_velocity_max = 130.0
 scale_amount_max = 3.0
 scale_amount_curve = SubResource("Curve_4fvka")
-color_ramp = SubResource("Gradient_rtqv4")
+color_ramp = SubResource("Gradient_kb00k")
 color_initial_ramp = SubResource("Gradient_xtfbq")
 
 [node name="Hurt_Box" type="Area2D" parent="."]
@@ -800,5 +803,53 @@ target_position = Vector2(0, -20)
 visible = false
 position = Vector2(-5, 0)
 target_position = Vector2(0, -20)
+
+[node name="Damage_Particles" type="Node2D" parent="."]
+
+[node name="Yellow_Particles" type="CPUParticles2D" parent="Damage_Particles"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_8u6c4")
+position = Vector2(0.666667, 2.33333)
+emitting = false
+amount = 20
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+texture = ExtResource("2_h4qf8")
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector2(0, -1)
+spread = 180.0
+gravity = Vector2(100, 0)
+initial_velocity_min = 200.0
+initial_velocity_max = 230.0
+scale_amount_max = 3.0
+scale_amount_curve = SubResource("Curve_4fvka")
+color = Color(1, 0.94902, 0.639216, 1)
+color_ramp = SubResource("Gradient_rtqv4")
+color_initial_ramp = SubResource("Gradient_xtfbq")
+
+[node name="Red_Particles" type="CPUParticles2D" parent="Damage_Particles"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_8u6c4")
+position = Vector2(0.666667, 2.33333)
+emitting = false
+amount = 20
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+texture = ExtResource("2_h4qf8")
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector2(0, -1)
+spread = 180.0
+gravity = Vector2(100, 0)
+initial_velocity_min = 200.0
+initial_velocity_max = 230.0
+scale_amount_max = 3.0
+scale_amount_curve = SubResource("Curve_4fvka")
+color = Color(1, 0, 0, 1)
+color_ramp = SubResource("Gradient_rtqv4")
+color_initial_ramp = SubResource("Gradient_xtfbq")
 
 [connection signal="area_entered" from="Hurt_Box" to="Hurt_Box" method="_on_area_entered"]

@@ -1,20 +1,93 @@
-[gd_scene load_steps=3 format=3 uid="uid://c76lvafgy0r37"]
+[gd_scene load_steps=12 format=3 uid="uid://cq6ietvk7s8j4"]
 
 [ext_resource type="Script" path="res://Enemies/Turrent/Turrent.gd" id="1_7nry0"]
-[ext_resource type="Texture2D" uid="uid://die2id1mgi8c5" path="res://Sprites/Other/Logo.svg" id="1_bg68m"]
+[ext_resource type="Texture2D" uid="uid://cdjo3rps0x4g8" path="res://Sprites/Enemies/Turrent.png" id="3_tvasv"]
+[ext_resource type="Texture2D" uid="uid://5kd1fml7oru8" path="res://Sprites/Other/Dust Particle.png" id="4_42nli"]
 
-[node name="Turrent" type="Node2D"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_joekt"]
+atlas = ExtResource("3_tvasv")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_idhum"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_tvasv")
+}],
+"loop": true,
+"name": &"Attack",
+"speed": 25.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_joekt")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 25.0
+}]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_3ld2l"]
+particles_animation = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Curve" id="Curve_nmddb"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.13242, 1), 0.0, 0.0, 0, 0, Vector2(0.315068, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_qnfyl"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_kn7vb"]
+offsets = PackedFloat32Array(0, 0.691099, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vpjbm"]
+radius = 6.69992
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vbsft"]
+radius = 115.71
+
+[node name="Turrent" type="CharacterBody2D" groups=["Enemy"]]
+scale = Vector2(3, 3)
+platform_floor_layers = 4278190081
 script = ExtResource("1_7nry0")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_bg68m")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, 2.38419e-07)
+sprite_frames = SubResource("SpriteFrames_idhum")
+animation = &"Attack"
+autoplay = "Idle"
 
-[node name="RayCast2D" type="RayCast2D" parent="."]
-scale = Vector2(20, 20)
-target_position = Vector2(0, 30)
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_3ld2l")
+position = Vector2(0, 15.6667)
+emitting = false
+amount = 2
+one_shot = true
+explosiveness = 1.0
+texture = ExtResource("4_42nli")
+gravity = Vector2(100, 0)
+initial_velocity_max = 200.0
+scale_amount_max = 3.0
+scale_amount_curve = SubResource("Curve_nmddb")
+color_ramp = SubResource("Gradient_qnfyl")
+color_initial_ramp = SubResource("Gradient_kn7vb")
 
-[node name="Reload_Timer" type="Timer" parent="RayCast2D"]
-wait_time = 0.2
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+show_behind_parent = true
+shape = SubResource("CircleShape2D_vpjbm")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
 
-[connection signal="timeout" from="RayCast2D/Reload_Timer" to="." method="_on_reload_timer_timeout"]
+[node name="Area2D" type="Area2D" parent="."]
+show_behind_parent = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_vbsft")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

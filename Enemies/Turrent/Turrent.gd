@@ -1,65 +1,54 @@
-extends Node2D
+extends Enemy
 class_name Turrent
 
-# Variables <===================================================================================>
-@onready var sprite_2d = $Sprite2D
+const  BULLET = preload("res://Enemies/Bullet.tscn")
+@onready var animated_sprite_2d = $AnimatedSprite2D
+@export var cool_down:float = 1
+var can_shoot:bool = true
 var target
-@onready var ray_cast_2d = $RayCast2D
-@onready var reload_timer = $RayCast2D/Reload_Timer
-
-@export var BULLET:PackedScene
-
-
-
-
-# Code <===================================================================================>
-func _ready():
-	await(get_tree().process_frame)
-	target = find_target()
-
-
-func _physics_process(delta):
-	target = find_target()
-	if target != null:
-		var angle_to_target: float = global_position.direction_to(target.global_position).angle()
-		ray_cast_2d.rotation = angle_to_target
-		
-		if ray_cast_2d.is_colliding() and ray_cast_2d.get_collider().is_in_group("Players"):
-			sprite_2d.rotation = angle_to_target
-			if reload_timer.is_stopped():
-				shoot()
-		 
-# Finds the nearest player
-func find_target():
-	var new_target
-	var new_target_distance 
-	var prev_target_distance = 1000000000
-	var players
-	if get_tree().has_group("Players"):
-		players = get_tree().get_nodes_in_group("Players")
-	# Get all players
-	for player in players:
-		# If they have a property position
-		if "global_position" in player:
-			# Get distance from self to player
-			new_target_distance = position.distance_to(players.position)
-			# If distance is less than the previous target distance
-			if new_target_distance < prev_target_distance:
-				# New target is the player and the previous target distance is the new target distance
-				new_target = player
-				prev_target_distance = new_target_distance
-	# Return the target
-	return new_target
-
+var prev_target
+var direction_to_target:Vector2
 func shoot():
-	ray_cast_2d.enabled = false
+	if can_shoot == false:
+		return
+		
+	can_shoot = false
+	#ray_cast_2d.enabled = false
+	animated_sprite_2d.play("Attack")
+	await get_tree().create_timer(.3).timeout
 	if BULLET:
 		var bullet = BULLET.instantiate()
-		add_child(bullet)
+		get_parent().get_parent().add_child(bullet)
 		bullet.global_position = global_position
-		bullet.global_rotation = sprite_2d.global_rotation
-	reload_timer.start()
+		bullet.direction = direction_to_target
+		animated_sprite_2d.rotation = direction_to_target.angle()
+ 
+	await get_tree().create_timer(cool_down).timeout
+	#ray_cast_2d.enabled = true
+	can_shoot = true
+	animated_sprite_2d.play("Idle")
+	
+func _physics_process(delta):
+	if target != null:
+		var angle_to_target:Vector2 = global_position.direction_to(target.global_position)
+		direction_to_target = angle_to_target
+		# POYo
+		shoot()
+
+func _on_area_2d_body_entered(body):
+	if body.is_in_group("Players"):
+		target = body
+
+func vec_to_dir(vec : Vector2)->Vector2:
+	if vec == Vector2.ZERO:
+		return Vector2.ZERO
+	var ass = abs(vec.aspect())
+	var res = vec.sign()
+	if ass < 0.557852 or ass > 1.79259:
+		res[int(ass > 1.0)] = 0
+	return res
 
 
-func _on_reload_timer_timeout():
-	ray_cast_2d.enabled = true
+func _on_area_2d_body_exited(body):
+	if body == target:
+		target = null
