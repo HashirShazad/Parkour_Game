@@ -98,6 +98,7 @@ func pause():
 		DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_HIDDEN)
 	else:
 		pause_menu.show()
+		pause_menu.grab_player_focus()
 		Engine.time_scale = 0
 		DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_VISIBLE)
 	paused = !paused
@@ -109,6 +110,7 @@ func _death_screen():
 		DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_HIDDEN)
 	else:
 		death_screen.show()
+		death_screen.grab_player_focus()
 		DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_VISIBLE)
 	
 	death_screen_shown = !death_screen_shown

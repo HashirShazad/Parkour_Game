@@ -18,7 +18,24 @@ func _on_area_entered(hitbox: Hit_Box) -> void:
 			#return
 	if hitbox.has_method("destroy"):
 		hitbox.destroy()
+	#if "kb_direction" in hitbox:
+		#if owner.has_method("take_fixed_direction_knockback"):
+			#owner.take_fixed_direction_knockback(hitbox.knock_back_strength, hitbox.kb_direction)
 	if owner.has_method("take_knockback"):
-		owner.take_knockback(hitbox.knock_back_strength)
+		var angle = hitbox.global_position.direction_to(global_position)
+		angle = vec_to_dir(angle)
+		print(angle)
+		owner.take_knockback(hitbox.knock_back_strength, angle)
 	if owner.has_method("take_damage"):
 		owner.take_damage(hitbox.damage, hitbox.stun_duration)
+
+func vec_to_dir(vec : Vector2)->Vector2:
+	if vec == Vector2.ZERO:
+		return Vector2.ZERO
+	var ass = abs(vec.aspect())
+	var res = vec.sign()
+	if ass < 0.557852 or ass > 1.79259:
+		res[int(ass > 1.0)] = 0
+	return res
+	
+

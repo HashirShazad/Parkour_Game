@@ -1,5 +1,9 @@
 extends Entity
 class_name Player
+# Y--- Jump height is 2.5 blocks You can cover 5 blocks via double jump
+# X--- 13 blocks via double jump. 15 jumps with runnin
+
+
 # Variables <===================================================================================>
 # Scenes <----------------------------------------------------------------------------------------->
 var ghost_scene = preload("res://Character/Ghost.tscn")

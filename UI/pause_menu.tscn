@@ -1,5 +1,6 @@
-[gd_scene load_steps=31 format=3 uid="uid://baha77q1ltfnx"]
+[gd_scene load_steps=32 format=3 uid="uid://baha77q1ltfnx"]
 
+[ext_resource type="Script" path="res://UI/pause_menu.gd" id="1_8q5cf"]
 [ext_resource type="Shader" path="res://UI/pause_menu.gdshader" id="1_x6xew"]
 [ext_resource type="FontFile" uid="uid://vpy38kvl0qsd" path="res://Sprites/Menu/Text/Minecraft.ttf" id="2_ah3wj"]
 [ext_resource type="Texture2D" uid="uid://chhiw8tnjskvp" path="res://Sprites/Menu/Buttons/Next.png" id="2_efwn0"]
@@ -89,6 +90,7 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
 [node name="UI" type="CanvasLayer"]
+script = ExtResource("1_8q5cf")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_2j3c3")
