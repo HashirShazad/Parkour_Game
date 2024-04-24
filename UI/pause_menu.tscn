@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://baha77q1ltfnx"]
+[gd_scene load_steps=31 format=3 uid="uid://baha77q1ltfnx"]
 
 [ext_resource type="Script" path="res://UI/pause_menu.gd" id="1_8q5cf"]
 [ext_resource type="Shader" path="res://UI/pause_menu.gdshader" id="1_x6xew"]
@@ -27,11 +27,8 @@ device = -1
 keycode = 32
 unicode = 32
 
-[sub_resource type="InputEventJoypadButton" id="InputEventJoypadButton_1wqt2"]
-pressed = true
-
 [sub_resource type="Shortcut" id="Shortcut_rvv2p"]
-events = [SubResource("InputEventKey_qmkjv"), SubResource("InputEventJoypadButton_1wqt2")]
+events = [SubResource("InputEventKey_qmkjv")]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mwfpb"]
 

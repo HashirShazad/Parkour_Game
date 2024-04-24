@@ -139,18 +139,19 @@ func take_knockback(strength:Vector2, direction:Vector2):
 		return
 	pass
 	velocity.x = 0
-	if direction == Vector2(0,0):
-		velocity.x = strength.x * -kb_direction.x
-		velocity.y = -kb_direction.y * strength.y
-	elif direction.x != 0:
+	if direction.x != 0:
+		str_y_const = 1
 		velocity.x = strength.x * direction.x
 	else:
 		str_y_const = 2
-		velocity.x = strength.x * direction.x
+		velocity.x = strength.x * -kb_direction.x
 	if is_on_floor():
 		velocity.y = -1 * strength.y  * str_y_const
 	else:
-		velocity.y = direction.y * strength.y * str_y_const
+		if direction.y != 0:
+			velocity.y = direction.y * strength.y * str_y_const
+		else:
+			velocity.y = strength.y * -kb_direction.y
 	
 # Check if it is colliding with rigid bodies
 func check_collisions():
