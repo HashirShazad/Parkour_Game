@@ -209,6 +209,7 @@ func set_saved_level(level):
 # Transparent UI <----------------------------------------------------------------------------------------->
 func _on_area_2d_body_entered(body):
 	print("ENTERED")
+	print(body)
 	update_ui_alpha(.1)
 
 func _on_area_2d_body_exited(body):

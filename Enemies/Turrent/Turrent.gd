@@ -6,6 +6,7 @@ const  BULLET = preload("res://Enemies/Bullet.tscn")
 @export var cool_down:float = 1
 var can_shoot:bool = true
 var target
+var other_targets:Array = []
 var prev_target
 var direction_to_target:Vector2
 func shoot():
@@ -30,12 +31,14 @@ func shoot():
 	
 func _physics_process(delta):
 	if target != null:
-		var angle_to_target:Vector2 = global_position.direction_to(target.global_position)
-		direction_to_target = angle_to_target
-		# POYo
-		shoot()
+		if "global_position" in target:
+			var angle_to_target:Vector2 = global_position.direction_to(target.global_position)
+			direction_to_target = angle_to_target
+			shoot()
 
 func _on_area_2d_body_entered(body):
+	if target != null:
+		return
 	if body.is_in_group("Players"):
 		target = body
 
@@ -52,3 +55,6 @@ func vec_to_dir(vec : Vector2)->Vector2:
 func _on_area_2d_body_exited(body):
 	if body == target:
 		target = null
+
+func return_any(number):
+	return number

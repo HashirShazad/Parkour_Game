@@ -743,7 +743,7 @@ platform_floor_layers = 4278190081
 script = ExtResource("1_kpwhk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 3)
+position = Vector2(0, 2.66667)
 shape = SubResource("CapsuleShape2D_yidtu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -786,18 +786,21 @@ debug_color = Color(0.976471, 0, 0.423529, 0)
 
 [node name="Right_Outer" type="RayCast2D" parent="."]
 position = Vector2(10, 0)
+scale = Vector2(1.2, 1)
 target_position = Vector2(0, -12)
+collide_with_areas = true
 
 [node name="Left_Outer" type="RayCast2D" parent="."]
 position = Vector2(-10, 0)
+scale = Vector2(1.2, 1)
 target_position = Vector2(0, -12)
 
 [node name="Right_Inner" type="RayCast2D" parent="."]
-position = Vector2(4, 0)
+position = Vector2(5, 0)
 target_position = Vector2(0, -12)
 
 [node name="Left_Inner" type="RayCast2D" parent="."]
-position = Vector2(-4, 0)
+position = Vector2(-5, 0)
 target_position = Vector2(0, -12)
 
 [node name="Damage_Particles" type="Node2D" parent="."]
@@ -847,5 +850,13 @@ scale_amount_curve = SubResource("Curve_4fvka")
 color = Color(1, 0, 0, 1)
 color_ramp = SubResource("Gradient_rtqv4")
 color_initial_ramp = SubResource("Gradient_xtfbq")
+
+[node name="Right" type="RayCast2D" parent="."]
+scale = Vector2(10, 10)
+target_position = Vector2(1.5, 0)
+
+[node name="Left" type="RayCast2D" parent="."]
+scale = Vector2(10, 10)
+target_position = Vector2(-2, 0)
 
 [connection signal="area_entered" from="Hurt_Box" to="Hurt_Box" method="_on_area_entered"]

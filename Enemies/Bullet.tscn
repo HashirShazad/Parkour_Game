@@ -9,8 +9,8 @@ radius = 3.72678
 [node name="Bullet" type="Area2D"]
 texture_filter = 1
 scale = Vector2(3, 3)
-collision_layer = 3
-collision_mask = 3
+collision_layer = 7
+collision_mask = 7
 script = ExtResource("1_v0im4")
 speed = 400
 

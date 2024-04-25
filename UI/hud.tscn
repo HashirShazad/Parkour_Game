@@ -1,12 +1,18 @@
-[gd_scene load_steps=16 format=3 uid="uid://cp2ytcs60oa2h"]
+[gd_scene load_steps=18 format=3 uid="uid://cp2ytcs60oa2h"]
 
 [ext_resource type="FontFile" uid="uid://vpy38kvl0qsd" path="res://Sprites/Menu/Text/Minecraft.ttf" id="1_g1jbi"]
 [ext_resource type="Texture2D" uid="uid://dj48bttltoec2" path="res://Sprites/Main Characters/Ninja Frog/Fall (32x32).png" id="3_iy57m"]
 [ext_resource type="Texture2D" uid="uid://d32bxk1j63fcb" path="res://Sprites/Items/Fruits/Logo.png" id="4_5ie0f"]
 [ext_resource type="Texture2D" uid="uid://dy3iatg1pcke" path="res://Sprites/Main Characters/Pink Man/Fall (32x32).png" id="4_s8py3"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uhnvs"]
+size = Vector2(151, 121.75)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2ws8d"]
-size = Vector2(1152, 322.5)
+size = Vector2(254, 155.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yso5h"]
+size = Vector2(155, 55.75)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5tgq1"]
 bg_color = Color(0, 0.698039, 0.254902, 1)
@@ -100,12 +106,20 @@ bg_color = Color(1, 1, 1, 0)
 [node name="Node" type="Node" parent="."]
 
 [node name="Area2D" type="Area2D" parent="Node"]
-collision_layer = 4
-collision_mask = 4
+collision_layer = 6
+collision_mask = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Area2D"]
-position = Vector2(576, 160.75)
+position = Vector2(1073.5, 60.125)
+shape = SubResource("RectangleShape2D_uhnvs")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Node/Area2D"]
+position = Vector2(127, 77.25)
 shape = SubResource("RectangleShape2D_2ws8d")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Node/Area2D"]
+position = Vector2(576.5, 30.125)
+shape = SubResource("RectangleShape2D_yso5h")
 
 [node name="Player_Info_Box" type="Panel" parent="Node"]
 texture_filter = 1

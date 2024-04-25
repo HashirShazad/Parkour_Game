@@ -14,15 +14,18 @@ var jump_sound = preload("res://Sounds/Sound/Jump.wav")
 const WALL_JUMP_PUSHBACK = 1000
 const jump_buffer_time:float = .1
 const coyote_time:float = .1
+
 #Variables
 var jump_buffer_timer:float = 0
 var coyote_timer:float = 0
-
+var carried_player_ref:Player = null
 # Ray Cast references <--------------------------------------------------------------------------->
 @onready var right_outer = $Right_Outer
 @onready var left_outer = $Left_Outer
 @onready var right_inner = $Right_Inner
 @onready var left_inner = $Left_Inner
+
+
 
 # Buttons <----------------------------------------------------------------------------------------->
 @export var btns = {
@@ -167,7 +170,9 @@ func push_off_ledges():
 	 # Arbitrary offset, adjust as needed, or even use the raycasts to determine exactly how much to move
 	if right_outer.is_colliding() and !right_inner.is_colliding() \
 		and left_inner.is_colliding() and !left_outer.is_colliding():
-			self.global_position.x -= 1
+			self.global_position.x -= 5
 	elif left_outer.is_colliding() and !left_inner.is_colliding() \
 		and !right_inner.is_colliding() and !right_outer.is_colliding():
-			self.global_position.x += 1
+			self.global_position.x += 5
+
+

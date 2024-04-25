@@ -48,7 +48,7 @@ colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
 radius = 6.69992
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vbsft"]
-radius = 115.71
+radius = 150.0
 
 [node name="Turrent" type="CharacterBody2D" groups=["Enemy"]]
 scale = Vector2(3, 3)
