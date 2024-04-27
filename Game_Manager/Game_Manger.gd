@@ -4,7 +4,7 @@ extends Node
 var levels_UI = {
 	main_menu = "res://Levels/Main_Menu.tscn",
 	play_menu = "res://Levels/Play_Menu.tscn",
-	settings_menu = "res://UI/Settings_Menu.tscn"
+	controls_menu = "res://UI/Controls_Menu.tscn"
 }
 
 var levels_2P = {
@@ -260,7 +260,7 @@ func _on_test_button_pressed():
 	await  Transitioner.transition_fully_finished
 	input_disabled = false
 
-# Back to main menu button from settings and play menu
+# Back to main menu button from controls and play menu
 func _on_back_to_main_menu_button_pressed():
 	if input_disabled:
 		return
@@ -272,15 +272,15 @@ func _on_back_to_main_menu_button_pressed():
 	await Transitioner.transition_fully_finished
 	input_disabled = false
 
-# Settings button
-func _on_settings_button_pressed():
+# controls button
+func _on_controls_button_pressed():
 	if input_disabled:
 		return
 	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_VISIBLE)
 	Transitioner.start_transition()
 	input_disabled = true
 	await Transitioner.transiton_finsihed
-	get_tree().change_scene_to_file(levels_UI.settings_menu)
+	get_tree().change_scene_to_file(levels_UI.controls_menu)
 	input_disabled = false
 
 # Death Screen retry button

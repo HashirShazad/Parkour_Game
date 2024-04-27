@@ -1,3 +1,7 @@
+OptionButton
+VSeparator
+Label
+HBoxContainer
 CollisionShape2D
 Hurt_Box
 Area2D
@@ -9,6 +13,3 @@ Timer
 ParallaxLayer
 Sprite2D
 AnimatableBody2D
-Marker2D
-StaticBody2D
-HBoxContainer

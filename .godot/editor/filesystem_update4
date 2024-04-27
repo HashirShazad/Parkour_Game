@@ -1,14 +1,5 @@
-res://Game_Manager/Game_Manger.tscn
+res://Character/Players.tscn
 res://UI/pause_menu.gdshader
 res://Enemies/Pig/Pig.gd
-res://Character/Players.tscn
-res://Levels/TEST.tscn
-res://Levels/Level_4.tscn
 res://Resources/Tile_Set.tres
-res://Collision/Projectile_Hit_Box.gd
-res://Enemies/Bullet.tscn
-res://Levels/2p_Level_5.tscn
-res://Character/Players_Code.gd
-res://Enemies/Turrent/Turrent.tscn
-res://Enemies/Turrent/Turrent.gd
-res://Entity/Entity.gd
+res://Character/Ghost.tscn

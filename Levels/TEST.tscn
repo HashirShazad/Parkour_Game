@@ -37,7 +37,6 @@ follow_group = Array[NodePath]([NodePath("../../Players/Player1"), NodePath("../
 
 [node name="Camera2D" parent="Scene_Objects/Camera" index="1"]
 position = Vector2(1188, 848)
-zoom = Vector2(1, 1)
 
 [node name="Players" parent="Scene_Objects" instance=ExtResource("9_8g1e6")]
 position = Vector2(1188, 848)
