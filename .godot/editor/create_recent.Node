@@ -1,3 +1,5 @@
+TabContainer
+VBoxContainer
 OptionButton
 VSeparator
 Label
@@ -10,6 +12,3 @@ Node2D
 VisibleOnScreenNotifier2D
 Projectile_Hit_Box
 Timer
-ParallaxLayer
-Sprite2D
-AnimatableBody2D

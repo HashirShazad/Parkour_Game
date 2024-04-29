@@ -1,11 +1,12 @@
-[gd_scene load_steps=17 format=3 uid="uid://bur31qhdm2tvf"]
+[gd_scene load_steps=18 format=3 uid="uid://bur31qhdm2tvf"]
 
 [ext_resource type="PackedScene" uid="uid://dtajtyl1bbh6e" path="res://Game_Manager/Game_Manger.tscn" id="1_omias"]
+[ext_resource type="Script" path="res://UI/Settings_Menu.gd" id="1_v65b2"]
 [ext_resource type="StyleBox" uid="uid://8epewkvtwv4u" path="res://Resources/Style_Box_Flat.tres" id="2_7d05d"]
 [ext_resource type="Script" path="res://UI/Focused_Button.gd" id="3_2kvtg"]
 [ext_resource type="FontFile" uid="uid://vpy38kvl0qsd" path="res://Sprites/Menu/Text/Minecraft.ttf" id="3_bsg3h"]
 [ext_resource type="Texture2D" uid="uid://croy1xhacb6we" path="res://Sprites/Menu/Buttons/Back.png" id="4_jujvu"]
-[ext_resource type="Theme" uid="uid://cabn6wnyhy80m" path="res://Resources/Theme.tres" id="5_s5xgx"]
+[ext_resource type="Theme" uid="uid://fg7dva5ufoat" path="res://Themes/Pixel_Theme.tres" id="8_7cg7w"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_76hny"]
 bg_color = Color(0.0509804, 0.654902, 0.85098, 1)
@@ -57,6 +58,7 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
 [node name="Settings_Menu" type="Node2D"]
+script = ExtResource("1_v65b2")
 
 [node name="Game_Manager" parent="." instance=ExtResource("1_omias")]
 
@@ -139,6 +141,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("8_7cg7w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.227451, 0.227451, 0.227451, 1)
 theme_override_colors/font_hover_color = Color(0.776471, 0.776471, 0.776471, 1)
@@ -160,6 +163,7 @@ grow_vertical = 2
 texture = ExtResource("4_jujvu")
 
 [node name="Settings" type="Panel" parent="CanvasLayer/BG"]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -175,22 +179,5 @@ grow_vertical = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_74aj7")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/BG/Settings"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Label" type="Label" parent="CanvasLayer/BG/Settings/HBoxContainer"]
-layout_mode = 2
-theme = ExtResource("5_s5xgx")
-theme_override_font_sizes/font_size = 40
-text = "Bas"
-
-[node name="VSeparator" type="VSeparator" parent="CanvasLayer/BG/Settings/HBoxContainer"]
-layout_mode = 2
-
-[node name="OptionButton" type="OptionButton" parent="CanvasLayer/BG/Settings/HBoxContainer"]
-layout_mode = 2
 
 [connection signal="pressed" from="CanvasLayer/BG/Buttons/Close_Panel/Back/Back_To_Main_Menu_Button" to="Game_Manager" method="_on_back_to_main_menu_button_pressed"]
