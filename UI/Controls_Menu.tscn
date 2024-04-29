@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://c2hm7fpe6nigi"]
+[gd_scene load_steps=21 format=3 uid="uid://c2hm7fpe6nigi"]
 
 [ext_resource type="PackedScene" uid="uid://dtajtyl1bbh6e" path="res://Game_Manager/Game_Manger.tscn" id="1_bbmf8"]
 [ext_resource type="Script" path="res://UI/Settings_Menu.gd" id="1_pis1e"]
@@ -57,6 +57,10 @@ corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vvsdq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d4vgg"]
 
 [node name="Settings_Menu" type="Node2D"]
 script = ExtResource("1_pis1e")
@@ -166,8 +170,11 @@ offset_bottom = 140.5
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("5_j5810")
+theme_override_constants/icon_separation = 1
+current_tab = 1
 
 [node name="Controls" type="GridContainer" parent="CanvasLayer/BG/Controls/TabContainer"]
+visible = false
 custom_minimum_size = Vector2(730, 250)
 layout_mode = 2
 theme_override_constants/h_separation = 100
@@ -339,9 +346,9 @@ script = ExtResource("5_i4hpi")
 action = "P2_Jump"
 
 [node name="Settings" type="VBoxContainer" parent="CanvasLayer/BG/Controls/TabContainer"]
-visible = false
 custom_minimum_size = Vector2(730, 250)
 layout_mode = 2
+theme_override_constants/separation = 20
 
 [node name="Resolution_Container" type="HBoxContainer" parent="CanvasLayer/BG/Controls/TabContainer/Settings"]
 layout_mode = 2
@@ -358,6 +365,7 @@ text = "Resolution"
 
 [node name="VSeparator" type="VSeparator" parent="CanvasLayer/BG/Controls/TabContainer/Settings/Resolution_Container"]
 layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_vvsdq")
 
 [node name="OptionButton" type="OptionButton" parent="CanvasLayer/BG/Controls/TabContainer/Settings/Resolution_Container"]
 custom_minimum_size = Vector2(256, 64)
@@ -379,6 +387,7 @@ text = "Window Mode"
 
 [node name="VSeparator" type="VSeparator" parent="CanvasLayer/BG/Controls/TabContainer/Settings/Window_Mode_Container"]
 layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_d4vgg")
 
 [node name="OptionButton" type="OptionButton" parent="CanvasLayer/BG/Controls/TabContainer/Settings/Window_Mode_Container"]
 custom_minimum_size = Vector2(256, 64)

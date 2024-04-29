@@ -24,7 +24,6 @@ default_font = ExtResource("1_6bt4u")
 /styles/Style_Box = SubResource("StyleBoxFlat_f1y28")
 TabContainer/constants/icon_max_width = 0
 TabContainer/constants/icon_separation = 10
-TabContainer/font_sizes/font_size = 40
 TabContainer/fonts/font = ExtResource("1_6bt4u")
 TabContainer/styles/panel = ExtResource("1_lvjuv")
 TabContainer/styles/tab_focus = SubResource("StyleBoxEmpty_7bmx7")
