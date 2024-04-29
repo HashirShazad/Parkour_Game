@@ -1,8 +1,9 @@
-[gd_scene load_steps=25 format=3 uid="uid://bnejv1eixxtt1"]
+[gd_scene load_steps=26 format=3 uid="uid://bnejv1eixxtt1"]
 
 [ext_resource type="Script" path="res://UI/death_screen.gd" id="1_mnlfq"]
 [ext_resource type="Shader" path="res://UI/pause_menu.gdshader" id="1_v02m5"]
 [ext_resource type="FontFile" uid="uid://vpy38kvl0qsd" path="res://Sprites/Menu/Text/Minecraft.ttf" id="2_a7vg4"]
+[ext_resource type="Theme" uid="uid://fg7dva5ufoat" path="res://Themes/Pixel_Theme.tres" id="3_n472c"]
 [ext_resource type="Texture2D" uid="uid://croy1xhacb6we" path="res://Sprites/Menu/Buttons/Back.png" id="4_85lap"]
 [ext_resource type="Script" path="res://UI/Focused_Button.gd" id="4_fr6dx"]
 [ext_resource type="Texture2D" uid="uid://dhdm857cg406g" path="res://Sprites/Menu/Buttons/Restart.png" id="5_0ip8r"]
@@ -153,6 +154,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 tooltip_text = "Back to main menu"
+theme = ExtResource("3_n472c")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.227451, 0.227451, 0.227451, 1)
 theme_override_colors/font_hover_color = Color(0.776471, 0.776471, 0.776471, 1)
@@ -213,6 +215,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 tooltip_text = "Retry "
+theme = ExtResource("3_n472c")
 theme_override_fonts/font = ExtResource("2_a7vg4")
 theme_override_font_sizes/font_size = 60
 theme_override_styles/normal = SubResource("StyleBoxEmpty_hfdlx")

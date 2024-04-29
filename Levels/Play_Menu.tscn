@@ -1,8 +1,9 @@
-[gd_scene load_steps=33 format=3 uid="uid://c7rk51mnliyi6"]
+[gd_scene load_steps=34 format=3 uid="uid://c7rk51mnliyi6"]
 
 [ext_resource type="Script" path="res://Levels/Levels.gd" id="1_3txvo"]
 [ext_resource type="PackedScene" uid="uid://dtajtyl1bbh6e" path="res://Game_Manager/Game_Manger.tscn" id="2_3xrrb"]
 [ext_resource type="FontFile" uid="uid://vpy38kvl0qsd" path="res://Sprites/Menu/Text/Minecraft.ttf" id="3_te4sv"]
+[ext_resource type="Theme" uid="uid://fg7dva5ufoat" path="res://Themes/Pixel_Theme.tres" id="4_6yw2w"]
 [ext_resource type="Texture2D" uid="uid://di6umekw71tm0" path="res://Sprites/Menu/Buttons/Single_Player.png" id="4_mdt43"]
 [ext_resource type="Texture2D" uid="uid://dbjr5htuv70ef" path="res://Sprites/Menu/Buttons/Test.png" id="5_i56gb"]
 [ext_resource type="Texture2D" uid="uid://dtymrrhwo7bsq" path="res://Sprites/Menu/Buttons/Two_Player.png" id="5_tj1ap"]
@@ -189,6 +190,7 @@ grow_vertical = 2
 tooltip_text = "Single Player Mode"
 focus_neighbor_left = NodePath("../../../../../Close_Panel/Back/Back_To_Main_Menu_Button")
 focus_neighbor_bottom = NodePath("../../../../../Close_Panel/Back/Back_To_Main_Menu_Button")
+theme = ExtResource("4_6yw2w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.227451, 0.227451, 0.227451, 1)
 theme_override_colors/font_hover_color = Color(0.776471, 0.776471, 0.776471, 1)
@@ -241,6 +243,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 tooltip_text = "TEST"
+theme = ExtResource("4_6yw2w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.227451, 0.227451, 0.227451, 1)
 theme_override_colors/font_hover_color = Color(0.776471, 0.776471, 0.776471, 1)
@@ -299,6 +302,7 @@ grow_vertical = 2
 tooltip_text = "Two Player Mode"
 focus_neighbor_right = NodePath("../../../../../Load/TEST/Load_Button")
 focus_neighbor_bottom = NodePath("../../../../../Load/TEST/Load_Button")
+theme = ExtResource("4_6yw2w")
 theme_override_fonts/font = ExtResource("3_te4sv")
 theme_override_font_sizes/font_size = 60
 theme_override_styles/normal = SubResource("StyleBoxEmpty_gk3ag")
@@ -350,6 +354,7 @@ tooltip_text = "Load Save File If it exists otherwise nothing will happen"
 focus_neighbor_left = NodePath("../../../BG/Buttons/2p/2p/2p_Button")
 focus_neighbor_top = NodePath("../../../BG/Buttons/2p/2p/2p_Button")
 focus_neighbor_right = NodePath("../../../Close_Panel/Back/Back_To_Main_Menu_Button")
+theme = ExtResource("4_6yw2w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.227451, 0.227451, 0.227451, 1)
 theme_override_colors/font_hover_color = Color(0.776471, 0.776471, 0.776471, 1)
@@ -401,6 +406,7 @@ tooltip_text = "BACK"
 focus_neighbor_left = NodePath("../../../Load/TEST/Load_Button")
 focus_neighbor_top = NodePath("../../../BG/Buttons/Sp/Sp/Sp_Button")
 focus_neighbor_right = NodePath("../../../BG/Buttons/Sp/Sp/Sp_Button")
+theme = ExtResource("4_6yw2w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.227451, 0.227451, 0.227451, 1)
 theme_override_colors/font_hover_color = Color(0.776471, 0.776471, 0.776471, 1)

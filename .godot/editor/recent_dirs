@@ -1,10 +1,11 @@
+res://Resources/Themes
+res://UI
 D:/
 res://Resources
 D:/Games/Hs ga
 res://Sprites/Terrain
 res://
 res://Sprites/Enemies
-res://UI
 res://addons
 res://Sprites/Other
 res://Sprites/Traps/Button And Door
@@ -19,4 +20,3 @@ res://Sprites/Kaizo_Poyo/512x512
 res://Sprites/Kaizo_Poyo/1024x1024
 res://Sprites/Background
 res://Themes
-res://Sprites/Enemies/AngryPig

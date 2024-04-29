@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://baha77q1ltfnx"]
+[gd_scene load_steps=32 format=3 uid="uid://baha77q1ltfnx"]
 
 [ext_resource type="Script" path="res://UI/pause_menu.gd" id="1_8q5cf"]
 [ext_resource type="Shader" path="res://UI/pause_menu.gdshader" id="1_x6xew"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://chhiw8tnjskvp" path="res://Sprites/Menu/Buttons/Next.png" id="2_efwn0"]
 [ext_resource type="Texture2D" uid="uid://croy1xhacb6we" path="res://Sprites/Menu/Buttons/Back.png" id="3_4bhwa"]
 [ext_resource type="Script" path="res://UI/Focused_Button.gd" id="3_vwv7r"]
+[ext_resource type="Theme" uid="uid://fg7dva5ufoat" path="res://Themes/Pixel_Theme.tres" id="3_xcmfx"]
 [ext_resource type="Texture2D" uid="uid://dhdm857cg406g" path="res://Sprites/Menu/Buttons/Restart.png" id="5_jwmso"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2j3c3"]
@@ -161,6 +162,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 tooltip_text = "Resume the game"
+theme = ExtResource("3_xcmfx")
 theme_override_fonts/font = ExtResource("2_ah3wj")
 theme_override_font_sizes/font_size = 60
 theme_override_styles/normal = SubResource("StyleBoxEmpty_mcx24")
@@ -211,6 +213,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 tooltip_text = "Back to main menu"
+theme = ExtResource("3_xcmfx")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.227451, 0.227451, 0.227451, 1)
 theme_override_colors/font_hover_color = Color(0.776471, 0.776471, 0.776471, 1)
@@ -271,6 +274,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 tooltip_text = "Restart the level"
+theme = ExtResource("3_xcmfx")
 theme_override_fonts/font = ExtResource("2_ah3wj")
 theme_override_font_sizes/font_size = 60
 theme_override_styles/normal = SubResource("StyleBoxEmpty_hfdlx")

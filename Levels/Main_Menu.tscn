@@ -1,9 +1,10 @@
-[gd_scene load_steps=25 format=3 uid="uid://bekqq4egn6odn"]
+[gd_scene load_steps=26 format=3 uid="uid://bekqq4egn6odn"]
 
 [ext_resource type="Script" path="res://Levels/Levels.gd" id="1_rj21s"]
 [ext_resource type="PackedScene" uid="uid://dtajtyl1bbh6e" path="res://Game_Manager/Game_Manger.tscn" id="2_s6xqc"]
 [ext_resource type="FontFile" uid="uid://vpy38kvl0qsd" path="res://Sprites/Menu/Text/Minecraft.ttf" id="3_tqylh"]
 [ext_resource type="Texture2D" uid="uid://dhowsw4q3bgoo" path="res://Sprites/Menu/Buttons/Close.png" id="4_51xbc"]
+[ext_resource type="Theme" uid="uid://fg7dva5ufoat" path="res://Themes/Pixel_Theme.tres" id="4_iusvx"]
 [ext_resource type="Texture2D" uid="uid://cp5i8wjruxkt4" path="res://Sprites/Menu/Buttons/Play.png" id="5_1r3ck"]
 [ext_resource type="Script" path="res://UI/Focused_Button.gd" id="5_7t1ag"]
 [ext_resource type="Texture2D" uid="uid://bandv15rq2680" path="res://Sprites/Menu/Buttons/Settings.png" id="6_ychsk"]
@@ -166,6 +167,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 tooltip_text = "Embrace Cowardance"
+theme = ExtResource("4_iusvx")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.227451, 0.227451, 0.227451, 1)
 theme_override_colors/font_hover_color = Color(0.776471, 0.776471, 0.776471, 1)
@@ -218,6 +220,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 tooltip_text = "Play the game"
+theme = ExtResource("4_iusvx")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.227451, 0.227451, 0.227451, 1)
 theme_override_colors/font_hover_color = Color(0.776471, 0.776471, 0.776471, 1)
@@ -275,6 +278,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 tooltip_text = "Change the controls"
+theme = ExtResource("4_iusvx")
 theme_override_fonts/font = ExtResource("3_tqylh")
 theme_override_font_sizes/font_size = 60
 theme_override_styles/normal = SubResource("StyleBoxEmpty_rlgd5")

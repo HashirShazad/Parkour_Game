@@ -1,6 +1,8 @@
-[gd_resource type="Theme" load_steps=3 format=3 uid="uid://fg7dva5ufoat"]
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://fg7dva5ufoat"]
 
 [ext_resource type="FontFile" uid="uid://vpy38kvl0qsd" path="res://Sprites/Menu/Text/Minecraft.ttf" id="1_6bt4u"]
+[ext_resource type="StyleBox" uid="uid://ibabttfrkh7n" path="res://Resources/Themes/Tab_Style_Box_Flat.tres" id="1_lvjuv"]
+[ext_resource type="StyleBox" uid="uid://du3854qsfr0bu" path="res://Resources/Themes/Tab_Heading_Style_Box_Flat.tres" id="2_x6ok6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f1y28"]
 resource_name = "Pixel_Style_Box"
@@ -15,6 +17,18 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7bmx7"]
+
 [resource]
 default_font = ExtResource("1_6bt4u")
 /styles/Style_Box = SubResource("StyleBoxFlat_f1y28")
+TabContainer/constants/icon_max_width = 0
+TabContainer/constants/icon_separation = 10
+TabContainer/font_sizes/font_size = 40
+TabContainer/fonts/font = ExtResource("1_6bt4u")
+TabContainer/styles/panel = ExtResource("1_lvjuv")
+TabContainer/styles/tab_focus = SubResource("StyleBoxEmpty_7bmx7")
+TabContainer/styles/tab_hovered = ExtResource("2_x6ok6")
+TabContainer/styles/tab_selected = ExtResource("2_x6ok6")
+TabContainer/styles/tab_unselected = ExtResource("2_x6ok6")
+TooltipLabel/fonts/font = ExtResource("1_6bt4u")

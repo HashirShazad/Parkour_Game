@@ -24,30 +24,30 @@ var levels_1P = {
 var mouse_speed = 3
 var mouse_pos = Vector2()
 # Labels <----------------------------------------------------------------------------------------->
-@onready var sec_label = $Hud/Node/Timer_Info_Box/HBoxContainer/SecLabel
-@onready var min_label = $Hud/Node/Timer_Info_Box/HBoxContainer/MinLabel
-@onready var msec_label = $Hud/Node/Timer_Info_Box/HBoxContainer/MsecLabel
-@onready var points_label = $Hud/Node/Coin_Info_Box/PointsLabel
-@onready var fps_label = $Hud/Node/FPS_Info_Box/FPSLabel
+@onready var sec_label:Label = $Hud/Node/Timer_Info_Box/HBoxContainer/SecLabel
+@onready var min_label:Label = $Hud/Node/Timer_Info_Box/HBoxContainer/MinLabel
+@onready var msec_label:Label = $Hud/Node/Timer_Info_Box/HBoxContainer/MsecLabel
+@onready var points_label:Label = $Hud/Node/Coin_Info_Box/PointsLabel
+@onready var fps_label:Label = $Hud/Node/FPS_Info_Box/FPSLabel
 
 # Menus <----------------------------------------------------------------------------------------->
-@onready var pause_menu = $Pause_Menu
-@onready var death_screen = $Death_Screen
+@onready var pause_menu:CanvasLayer = $Pause_Menu
+@onready var death_screen:CanvasLayer = $Death_Screen
 
 #Player Refs <----------------------------------------------------------------------------------------->
-var player_1
-var player_2
+var player_1:Player
+var player_2:Player
 
 
 # Info Boxes <----------------------------------------------------------------------------------------->
-@onready var player1_info_box = $Hud/Node/Player_Info_Box
-@onready var player2_info_box = $Hud/Node/Player2_Info_Box
-@onready var coin_info_box = $Hud/Node/Coin_Info_Box
+@onready var player1_info_box:Panel = $Hud/Node/Player_Info_Box
+@onready var player2_info_box:Panel = $Hud/Node/Player2_Info_Box
+@onready var coin_info_box:Panel = $Hud/Node/Coin_Info_Box
 
 
 # Health Bars <----------------------------------------------------------------------------------------->
-@onready var hp_bar_P1 = $Hud/Node/Player_Info_Box/Panel/ProgressBar
-@onready var hp_bar_P2 = $Hud/Node/Player2_Info_Box/Panel/ProgressBar
+@onready var hp_bar_P1:ProgressBar = $Hud/Node/Player_Info_Box/Panel/ProgressBar
+@onready var hp_bar_P2:ProgressBar = $Hud/Node/Player2_Info_Box/Panel/ProgressBar
 
 # Timer <----------------------------------------------------------------------------------------->
 var time:float
@@ -56,7 +56,7 @@ var time_msec:int
 var time_min:int
 
 # Miscellanous <----------------------------------------------------------------------------------------->
-var points = 0
+var points:int = 0
 var paused:bool = false
 var death_screen_shown:bool = false
 var input_disabled:bool = false
@@ -204,7 +204,6 @@ func restart():
 func set_saved_level(level):
 	if user_prefs:
 		user_prefs.saved_level = level
-		print(user_prefs.saved_level)
 		user_prefs.save()
 # Transparent UI <----------------------------------------------------------------------------------------->
 func _on_area_2d_body_entered(body):
