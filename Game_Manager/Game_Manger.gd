@@ -64,11 +64,9 @@ var input_disabled:bool = false
 var user_prefs:User_Preferences
 
 # Actual Code <===========================================================================================>
-func _init():
-	set_res()
-	
 func _ready():
 	user_prefs = User_Preferences.load_or_create()
+	set_res()
 # Process just like event per tick
 func _process(delta):
 	fps_label.text = "FPS: " + str(Engine.get_frames_per_second())
@@ -211,11 +209,11 @@ func set_saved_level(level):
 		user_prefs.save()
 
 func set_res() -> void:
-	return
 	if !user_prefs:
 		return
 	DisplayServer.window_set_size(user_prefs.resolution)
 	DisplayServer.window_set_mode(user_prefs.window_mode)
+	DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, user_prefs.is_borderless)
 
 # Transparent UI <----------------------------------------------------------------------------------------->
 func _on_area_2d_body_entered(body):

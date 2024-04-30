@@ -8,7 +8,8 @@ class_name User_Preferences
 @export var saved_level:String
 @export var points:int
 @export var resolution:Vector2i
-var window_mode:int
+@export var window_mode:int
+@export var is_borderless:bool
 
 # Actual Code <===========================================================================================>
 

@@ -394,4 +394,27 @@ custom_minimum_size = Vector2(256, 64)
 layout_mode = 2
 theme = ExtResource("5_j5810")
 
+[node name="Window_Mode_Container2" type="HBoxContainer" parent="CanvasLayer/BG/Controls/TabContainer/Settings"]
+layout_mode = 2
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/BG/Controls/TabContainer/Settings/Window_Mode_Container2"]
+texture_filter = 1
+custom_minimum_size = Vector2(264, 0)
+layout_mode = 2
+theme = ExtResource("6_gwl28")
+theme_override_font_sizes/font_size = 40
+text = "Borderless"
+
+[node name="VSeparator" type="VSeparator" parent="CanvasLayer/BG/Controls/TabContainer/Settings/Window_Mode_Container2"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_d4vgg")
+
+[node name="CheckButton" type="CheckButton" parent="CanvasLayer/BG/Controls/TabContainer/Settings/Window_Mode_Container2"]
+custom_minimum_size = Vector2(256, 64)
+layout_mode = 2
+text = "Show Border"
+
 [connection signal="pressed" from="CanvasLayer/BG/Buttons/Close_Panel/Back/Back_To_Main_Menu_Button" to="Game_Manager" method="_on_back_to_main_menu_button_pressed"]
+[connection signal="toggled" from="CanvasLayer/BG/Controls/TabContainer/Settings/Window_Mode_Container2/CheckButton" to="." method="_on_check_button_toggled"]

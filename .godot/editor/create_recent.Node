@@ -1,3 +1,5 @@
+CheckButton
+CheckBox
 TabContainer
 VBoxContainer
 OptionButton
@@ -10,5 +12,3 @@ Area2D
 RayCast2D
 Node2D
 VisibleOnScreenNotifier2D
-Projectile_Hit_Box
-Timer
