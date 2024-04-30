@@ -414,7 +414,7 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_d4vgg")
 [node name="CheckButton" type="CheckButton" parent="CanvasLayer/BG/Controls/TabContainer/Settings/Window_Mode_Container2"]
 custom_minimum_size = Vector2(256, 64)
 layout_mode = 2
-text = "Show Border"
+text = "Disable Border"
 
 [connection signal="pressed" from="CanvasLayer/BG/Buttons/Close_Panel/Back/Back_To_Main_Menu_Button" to="Game_Manager" method="_on_back_to_main_menu_button_pressed"]
 [connection signal="toggled" from="CanvasLayer/BG/Controls/TabContainer/Settings/Window_Mode_Container2/CheckButton" to="." method="_on_check_button_toggled"]

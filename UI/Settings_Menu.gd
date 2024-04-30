@@ -47,8 +47,7 @@ func _on_window_mode_selected(index : int):
 	match index:
 		0:#Windowed
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
-			if stored_res:
-				DisplayServer.window_set_size(stored_res)
+			DisplayServer.window_set_size(stored_res)
 		1:#Full screen
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 	
@@ -73,18 +72,25 @@ func get_current_res_and_apply() -> void:
 		return
 		
 	var res = user_prefs.resolution
-	print(res)
 	var win_mode = DisplayServer.window_get_mode()
 	var res_index = RESOLUTION_MODES.values().find(res)
 	var win_mode_index = win_mode
 	
-	if win_mode_index == 1:
-		window_mode_option_button.selected = 0
-	elif win_mode_index == 3:
-		window_mode_option_button.selected = 1
+	if res_index == -1:
+		res_index = 0
+		stored_res = RESOLUTION_MODES.values()[res_index]
+		DisplayServer.window_set_size(stored_res)
 		
 	resolution_option_button.selected = res_index
 	borderless_button.button_pressed = user_prefs.is_borderless
+	
+	if win_mode_index == 1:# Windowed
+		window_mode_option_button.selected = 0
+	elif win_mode_index == 3:# Full screen
+		window_mode_option_button.selected = 1
+		
+	
+
 
 func _on_check_button_toggled(toggled_on):
 	DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, toggled_on)

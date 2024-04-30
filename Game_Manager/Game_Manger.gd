@@ -211,6 +211,7 @@ func set_saved_level(level):
 func set_res() -> void:
 	if !user_prefs:
 		return
+	print(user_prefs.resolution)
 	DisplayServer.window_set_size(user_prefs.resolution)
 	DisplayServer.window_set_mode(user_prefs.window_mode)
 	DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, user_prefs.is_borderless)
