@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://b5iiu71ex3syu"]
+[gd_scene load_steps=18 format=3 uid="uid://b5iiu71ex3syu"]
 
 [ext_resource type="TileSet" uid="uid://ccic8k3fbwsfm" path="res://Resources/Tile_Set.tres" id="1_cdjcn"]
 [ext_resource type="PackedScene" uid="uid://dpgyn2a3buml0" path="res://Props/Box.tscn" id="5_ctr6y"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://3nkp7822ab7c" path="res://Traps/Mace/Mace_Ball(HOLLOW).tscn" id="15_mp5cc"]
 [ext_resource type="PackedScene" uid="uid://cq6ietvk7s8j4" path="res://Enemies/Turrent/Turrent.tscn" id="15_pmsco"]
 [ext_resource type="PackedScene" uid="uid://cehwcvpmrjcof" path="res://Enemies/Turrent/Turrent_Auto.tscn" id="16_tgq2o"]
+[ext_resource type="PackedScene" uid="uid://drvnwu1l0gsdq" path="res://Character/Ghost.tscn" id="18_qnu7d"]
 
 [node name="Level1" type="Node2D"]
 
@@ -37,6 +38,7 @@ follow_group = Array[NodePath]([NodePath("../../Players/Player1"), NodePath("../
 
 [node name="Camera2D" parent="Scene_Objects/Camera" index="1"]
 position = Vector2(1188, 848)
+zoom = Vector2(1, 1)
 
 [node name="Players" parent="Scene_Objects" instance=ExtResource("9_8g1e6")]
 position = Vector2(1188, 848)
@@ -104,6 +106,9 @@ position = Vector2(1685, 961)
 
 [node name="Turrent2" parent="." instance=ExtResource("16_tgq2o")]
 position = Vector2(2235, 918)
+
+[node name="Sprite2D" parent="." instance=ExtResource("18_qnu7d")]
+position = Vector2(80, -80)
 
 [editable path="Scene_Objects/Camera"]
 [editable path="Scene_Objects/Players"]

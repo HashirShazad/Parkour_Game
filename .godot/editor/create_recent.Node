@@ -1,4 +1,10 @@
+Control
+HSlider
+AudioStreamPlayer
 CheckButton
+ColorRect
+WorldEnvironment
+CanvasLayer
 CheckBox
 TabContainer
 VBoxContainer
@@ -7,8 +13,3 @@ VSeparator
 Label
 HBoxContainer
 CollisionShape2D
-Hurt_Box
-Area2D
-RayCast2D
-Node2D
-VisibleOnScreenNotifier2D

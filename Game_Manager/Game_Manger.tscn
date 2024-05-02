@@ -1,13 +1,49 @@
-[gd_scene load_steps=6 format=3 uid="uid://dtajtyl1bbh6e"]
+[gd_scene load_steps=8 format=3 uid="uid://dtajtyl1bbh6e"]
 
 [ext_resource type="Script" path="res://Game_Manager/Game_Manger.gd" id="1_tb1wt"]
 [ext_resource type="PackedScene" uid="uid://baha77q1ltfnx" path="res://UI/pause_menu.tscn" id="2_2te14"]
+[ext_resource type="Shader" path="res://Game_Manager/CRT.gdshader" id="2_vegdo"]
 [ext_resource type="PackedScene" uid="uid://cp2ytcs60oa2h" path="res://UI/hud.tscn" id="3_aux3r"]
 [ext_resource type="PackedScene" uid="uid://bnejv1eixxtt1" path="res://UI/death_screen.tscn" id="4_eq1kn"]
 [ext_resource type="Texture2D" uid="uid://dy30a236e6egq" path="res://Sprites/Other/Timer_Logo.png" id="5_5e2og"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kt3ep"]
+shader = ExtResource("2_vegdo")
+shader_parameter/overlay = false
+shader_parameter/scanlines_opacity = 0.4
+shader_parameter/scanlines_width = 0.25
+shader_parameter/grille_opacity = 0.3
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = true
+shader_parameter/roll = true
+shader_parameter/roll_speed = 8.0
+shader_parameter/roll_size = 15.0
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.05
+shader_parameter/noise_opacity = 0.4
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.06
+shader_parameter/aberration = 0.03
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = true
+shader_parameter/warp_amount = 1.0
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.5
+
 [node name="Game_Manager" type="Node"]
 script = ExtResource("1_tb1wt")
+
+[node name="CRT" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="CRT"]
+material = SubResource("ShaderMaterial_kt3ep")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Hud" parent="." instance=ExtResource("3_aux3r")]
 
@@ -36,6 +72,7 @@ visible = false
 [connection signal="pressed" from="Pause_Menu/Panel/Buttons/Play_Panel/Play/Resume_Button" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="Pause_Menu/Panel/Buttons/Close_Panel/Back/Back_Button" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="Pause_Menu/Panel/Buttons/Settings_Panel/Settings/Restart_Button" to="." method="_on_restart_button_pressed"]
+[connection signal="toggled" from="Pause_Menu/Panel/CRTBtn" to="." method="_on_crt_btn_toggled"]
 [connection signal="pressed" from="Death_Screen/Panel/Buttons/Close_Panel/Back/Back_Button" to="." method="_on_back_button_death_screen_pressed"]
 [connection signal="pressed" from="Death_Screen/Panel/Buttons/Settings_Panel/Settings/Retry_Button" to="." method="_on_retry_button_pressed"]
 

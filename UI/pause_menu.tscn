@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://baha77q1ltfnx"]
+[gd_scene load_steps=39 format=3 uid="uid://baha77q1ltfnx"]
 
 [ext_resource type="Script" path="res://UI/pause_menu.gd" id="1_8q5cf"]
 [ext_resource type="Shader" path="res://UI/pause_menu.gdshader" id="1_x6xew"]
@@ -8,6 +8,8 @@
 [ext_resource type="Script" path="res://UI/Focused_Button.gd" id="3_vwv7r"]
 [ext_resource type="Theme" uid="uid://fg7dva5ufoat" path="res://Themes/Pixel_Theme.tres" id="3_xcmfx"]
 [ext_resource type="Texture2D" uid="uid://dhdm857cg406g" path="res://Sprites/Menu/Buttons/Restart.png" id="5_jwmso"]
+[ext_resource type="StyleBox" uid="uid://ibabttfrkh7n" path="res://Resources/Themes/Tab_Style_Box_Flat.tres" id="9_ekiak"]
+[ext_resource type="StyleBox" uid="uid://du3854qsfr0bu" path="res://Resources/Themes/Tab_Heading_Style_Box_Flat.tres" id="10_abnvf"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2j3c3"]
 shader = ExtResource("1_x6xew")
@@ -86,6 +88,41 @@ corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f1y28"]
+resource_name = "Pixel_Style_Box"
+bg_color = Color(0.517647, 0.419608, 1, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_ot2ei"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_i07tx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7bmx7"]
+
+[sub_resource type="Theme" id="Theme_j7brt"]
+default_font = ExtResource("2_ah3wj")
+/styles/Style_Box = SubResource("StyleBoxFlat_f1y28")
+CheckButton/icons/checked = SubResource("CanvasTexture_ot2ei")
+CheckButton/icons/checked_disabled = null
+CheckButton/icons/unchecked = SubResource("CanvasTexture_i07tx")
+TabContainer/constants/icon_max_width = 0
+TabContainer/constants/icon_separation = 10
+TabContainer/fonts/font = ExtResource("2_ah3wj")
+TabContainer/styles/panel = ExtResource("9_ekiak")
+TabContainer/styles/tab_focus = SubResource("StyleBoxEmpty_7bmx7")
+TabContainer/styles/tab_hovered = ExtResource("10_abnvf")
+TabContainer/styles/tab_selected = ExtResource("10_abnvf")
+TabContainer/styles/tab_unselected = ExtResource("10_abnvf")
+TooltipLabel/fonts/font = ExtResource("2_ah3wj")
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_8q5cf")
@@ -328,3 +365,11 @@ text = "Paused
 "
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="CRTBtn" type="CheckButton" parent="Panel"]
+texture_filter = 1
+layout_mode = 1
+offset_right = 13.0
+offset_bottom = 9.0
+theme = SubResource("Theme_j7brt")
+button_mask = 2

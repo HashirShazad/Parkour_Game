@@ -4,7 +4,7 @@ extends Node
 var levels_UI = {
 	main_menu = "res://Levels/Main_Menu.tscn",
 	play_menu = "res://Levels/Play_Menu.tscn",
-	controls_menu = "res://UI/Controls_Menu.tscn"
+	settings_menu = "res://UI/Settings_Menu.tscn"
 }
 
 var levels_2P = {
@@ -33,11 +33,13 @@ var mouse_pos = Vector2()
 # Menus <----------------------------------------------------------------------------------------->
 @onready var pause_menu:CanvasLayer = $Pause_Menu
 @onready var death_screen:CanvasLayer = $Death_Screen
+@onready var hud = $Hud
 
 #Player Refs <----------------------------------------------------------------------------------------->
 var player_1:Player
 var player_2:Player
 
+@onready var crt:CanvasLayer = $CRT
 
 # Info Boxes <----------------------------------------------------------------------------------------->
 @onready var player1_info_box:Panel = $Hud/Node/Player_Info_Box
@@ -66,7 +68,6 @@ var user_prefs:User_Preferences
 # Actual Code <===========================================================================================>
 func _ready():
 	user_prefs = User_Preferences.load_or_create()
-	set_res()
 # Process just like event per tick
 func _process(delta):
 	fps_label.text = "FPS: " + str(Engine.get_frames_per_second())
@@ -90,6 +91,10 @@ func handle_UI():
 		player2_info_box.show()
 	else:
 		player2_info_box.hide()
+	if player_1 != null:
+		player1_info_box.show()
+	else:
+		player1_info_box.hide()
 		
 # Pause the game if it is not paused and resume it if it is paused
 func pause():
@@ -208,13 +213,7 @@ func set_saved_level(level):
 		user_prefs.saved_level = level
 		user_prefs.save()
 
-func set_res() -> void:
-	if !user_prefs:
-		return
-	print(user_prefs.resolution)
-	DisplayServer.window_set_size(user_prefs.resolution)
-	DisplayServer.window_set_mode(user_prefs.window_mode)
-	DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, user_prefs.is_borderless)
+
 
 # Transparent UI <----------------------------------------------------------------------------------------->
 func _on_area_2d_body_entered(body):
@@ -270,7 +269,7 @@ func _on_test_button_pressed():
 	await  Transitioner.transition_fully_finished
 	input_disabled = false
 
-# Back to main menu button from controls and play menu
+# Back to main menu button from settings and play menu
 func _on_back_to_main_menu_button_pressed():
 	if input_disabled:
 		return
@@ -282,15 +281,15 @@ func _on_back_to_main_menu_button_pressed():
 	await Transitioner.transition_fully_finished
 	input_disabled = false
 
-# controls button
-func _on_controls_button_pressed():
+# settings button
+func _on_settings_button_pressed():
 	if input_disabled:
 		return
 	DisplayServer.mouse_set_mode(DisplayServer.MOUSE_MODE_VISIBLE)
 	Transitioner.start_transition()
 	input_disabled = true
 	await Transitioner.transiton_finsihed
-	get_tree().change_scene_to_file(levels_UI.controls_menu)
+	get_tree().change_scene_to_file(levels_UI.settings_menu)
 	input_disabled = false
 
 # Death Screen retry button
@@ -388,3 +387,7 @@ func _on_load_button_pressed():
 			get_tree().change_scene_to_file(user_prefs.saved_level)
 	await  Transitioner.transition_fully_finished
 	input_disabled = false
+
+#CRT BUTTON
+func _on_crt_btn_toggled(toggled_on):
+	crt.visible = toggled_on

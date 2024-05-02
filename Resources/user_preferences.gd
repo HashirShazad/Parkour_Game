@@ -5,8 +5,17 @@ class_name User_Preferences
 # Variables <===========================================================================================>
 @export var action_events: Dictionary = {
 }
+# Levels
 @export var saved_level:String
 @export var points:int
+
+# Sounds
+@export var master_value:int
+@export var music_value:int
+@export var sfx_value:int
+
+
+# Resolution stuff 
 @export var resolution:Vector2i
 @export var window_mode:int
 @export var is_borderless:bool

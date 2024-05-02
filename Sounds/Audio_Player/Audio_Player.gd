@@ -1,4 +1,4 @@
-extends AudioStreamPlayer2D
+extends AudioStreamPlayer
 
 # Bg Music Player <----------------------------------------------------------------------------->
 func play_music(music:AudioStream, volume = 0.0):
@@ -13,8 +13,10 @@ func play_music(music:AudioStream, volume = 0.0):
 # Sound effect player <------------------------------------------------------------->
 func play_FX(stream: AudioStream, volume = 0.0, lower_bound: int = 0.8, upper_bound: int = 1.3):
 	# Create new stream player
-	var fx_player = AudioStreamPlayer.new()
+	# Was normal not 2D before 
+	var fx_player = AudioStreamPlayer2D.new()
 	# Assign its variables
+	fx_player.bus = &"SFX"
 	fx_player.stream = stream
 	fx_player.name = "fx_player"
 	fx_player.volume_db = volume

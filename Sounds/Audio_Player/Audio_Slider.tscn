@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=3 uid="uid://d1ah7ypodov3y"]
+
+[ext_resource type="Theme" uid="uid://cabn6wnyhy80m" path="res://Resources/Theme.tres" id="1_fgvg5"]
+[ext_resource type="Script" path="res://Sounds/Audio_Player/Audio_Slider.gd" id="1_iknbm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vvsdq"]
+
+[node name="Audio_Slider" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_iknbm")
+bus_name = "Music"
+
+[node name="Music" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(730, 40)
+layout_mode = 2
+offset_left = 207.0
+offset_top = 559.0
+offset_right = 937.0
+offset_bottom = 599.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="Label" type="Label" parent="Music"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("1_fgvg5")
+theme_override_font_sizes/font_size = 40
+text = "Music"
+
+[node name="VSeparator" type="VSeparator" parent="Music"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_vvsdq")
+
+[node name="HSlider" type="HSlider" parent="Music"]
+custom_minimum_size = Vector2(200, 32)
+layout_mode = 2
+step = 0.001
+
+[node name="Value" type="Label" parent="Music"]
+texture_filter = 1
+custom_minimum_size = Vector2(64, 40)
+layout_mode = 2
+theme = ExtResource("1_fgvg5")
+theme_override_font_sizes/font_size = 40
+text = "100"
+horizontal_alignment = 1

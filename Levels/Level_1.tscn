@@ -13,6 +13,7 @@
 script = ExtResource("1_ceb3v")
 
 [node name="Background_Image" type="TextureRect" parent="."]
+visible = false
 z_index = -2
 texture_filter = 1
 anchors_preset = -1
