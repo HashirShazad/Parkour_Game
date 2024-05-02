@@ -1,0 +1,7 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://ccmv2wr6sicwi"]
+
+[ext_resource type="Shader" path="res://Resources/Shaders/Character Silhouette Shader(Show dark body if behind wall).gdshader" id="1_u2cto"]
+
+[resource]
+shader = ExtResource("1_u2cto")
+shader_parameter/silhouette_color = Color(0, 0, 0, 0.5)

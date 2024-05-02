@@ -51,7 +51,9 @@ var minimum_speed = 8
 var jump_velocity = -800.0
 
 # References <----------------------------------------------------------------------------------------->
-@onready var sprite_2d = $AnimatedSprite2D
+@onready var sprite_2d:AnimatedSprite2D = $AnimatedSprite2D
+@onready var silhouette_sprite:AnimatedSprite2D = $AnimatedSprite2D/Silhouette_Sprite
+
 @onready var hurt_box = $Hurt_Box/CollisionShape2D
 @onready var collision_shape_2d = $CollisionShape2D
 @onready var dust_particles = $Dust_Particles
@@ -81,24 +83,32 @@ func _physics_process(delta):
 func update_animation():
 	if is_dead:
 		sprite_2d.play(animations.Dead)
+		silhouette_sprite.play(animations.Dead)
 	elif is_stunned:
 		sprite_2d.play(animations.Damaged)
+		silhouette_sprite.play(animations.Damaged)
 	elif velocity.y < 0:
 		kb_direction.y = -1
 		if jump_count < 2:
 			sprite_2d.play(animations.Jumping)
+			silhouette_sprite.play(animations.Jumping)
 		else:
 			sprite_2d.play(animations.Double_Jump)
+			silhouette_sprite.play(animations.Double_Jump)
 	elif velocity.y > 0:
 		kb_direction.y = 1
 		if jump_count < 2:
 			sprite_2d.play(animations.Falling)
+			silhouette_sprite.play(animations.Falling)
 		else:
 			sprite_2d.play(animations.Double_Jump)
+			silhouette_sprite.play(animations.Double_Jump)
 	elif velocity.x != 0 || is_pushing:
 		sprite_2d.play(animations.Walking)
+		silhouette_sprite.play(animations.Walking)
 	elif velocity.x == 0:
 		sprite_2d.play(animations.Idle)
+		silhouette_sprite.play(animations.Idle)
 	
 # Flip the sprite horizontally
 func flip_sprite():
@@ -107,8 +117,10 @@ func flip_sprite():
 	if velocity.x != 0:
 		if velocity.x > 1:
 			sprite_2d.flip_h = 0
+			silhouette_sprite.flip_h = 0
 		if velocity.x < -1:
 			sprite_2d.flip_h = 1
+			silhouette_sprite.flip_h = 1
 
 # Take Damage and stun
 func take_damage(damage:int, stun_duration:float):

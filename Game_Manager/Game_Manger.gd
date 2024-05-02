@@ -216,20 +216,6 @@ func set_saved_level(level):
 
 
 # Transparent UI <----------------------------------------------------------------------------------------->
-func _on_area_2d_body_entered(body):
-	print("ENTERED")
-	print(body)
-	update_ui_alpha(.1)
-
-func _on_area_2d_body_exited(body):
-	update_ui_alpha(1)
-	print("EXITED")
-# Update UI alpha value so that it becomes trabnslucent when the player is behind it
-func update_ui_alpha(value:float = .5):
-	var tween = get_tree().create_tween()
-	tween.tween_property(player1_info_box, "modulate:a", value, .1).set_trans(Tween.TRANS_QUAD)
-	tween.tween_property(player2_info_box, "modulate:a", value, .1).set_trans(Tween.TRANS_QUAD)
-	tween.tween_property(coin_info_box, "modulate:a", value, .1).set_trans(Tween.TRANS_QUAD)
 # Buttons <----------------------------------------------------------------------------------------->
 
 # Single Player Button

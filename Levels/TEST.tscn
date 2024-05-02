@@ -20,6 +20,14 @@
 
 [node name="Level1" type="Node2D"]
 
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = 200
+offset_left = 808.0
+offset_top = 962.0
+offset_right = 848.0
+offset_bottom = 1002.0
+scale = Vector2(4.7489, 3.95657)
+
 [node name="Scene_Objects" type="Node" parent="."]
 
 [node name="Tilemap" type="TileMap" parent="Scene_Objects"]

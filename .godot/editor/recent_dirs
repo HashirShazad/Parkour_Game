@@ -1,3 +1,4 @@
+res://Resources/Shaders
 res://Sounds/Audio_Player
 res://Resources/Environment
 res://Game_Manager
@@ -19,4 +20,3 @@ res://Enemies/Pig
 res://Sprites/Enemies/Plant
 F:/Softwares/Godot
 C:/Program Files/Java/jdk-21/bin
-res://Sprites/Kaizo_Poyo/512x512

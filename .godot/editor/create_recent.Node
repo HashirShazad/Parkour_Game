@@ -1,3 +1,4 @@
+ColorRect
 AudioStreamPlayer2D
 Label
 LineEdit
@@ -5,11 +6,9 @@ Control
 HSlider
 AudioStreamPlayer
 CheckButton
-ColorRect
 WorldEnvironment
 CanvasLayer
 CheckBox
 TabContainer
 VBoxContainer
 OptionButton
-VSeparator

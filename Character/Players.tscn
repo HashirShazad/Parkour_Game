@@ -1,9 +1,10 @@
-[gd_scene load_steps=113 format=3 uid="uid://cjmv5s0f1p6hx"]
+[gd_scene load_steps=115 format=3 uid="uid://cjmv5s0f1p6hx"]
 
 [ext_resource type="Script" path="res://Character/Players_Code.gd" id="1_kpwhk"]
 [ext_resource type="Texture2D" uid="uid://dt3srkugkr4w" path="res://Sprites/Main Characters/Ninja Frog/Hit (32x32).png" id="1_u4h0n"]
 [ext_resource type="Texture2D" uid="uid://dj48bttltoec2" path="res://Sprites/Main Characters/Ninja Frog/Fall (32x32).png" id="2_7impj"]
 [ext_resource type="Texture2D" uid="uid://5kd1fml7oru8" path="res://Sprites/Other/Dust Particle.png" id="2_h4qf8"]
+[ext_resource type="Material" uid="uid://ccmv2wr6sicwi" path="res://Resources/Shaders/Character Silhouette Shader(Show dark body if behind wall).tres" id="2_yuhxg"]
 [ext_resource type="Texture2D" uid="uid://ojjeqv1o2jtq" path="res://Sprites/Main Characters/Desappearing (96x96).png" id="3_fbw2c"]
 [ext_resource type="Texture2D" uid="uid://db1rmhuju51vx" path="res://Sprites/Main Characters/Ninja Frog/Idle (32x32).png" id="3_vbo1p"]
 [ext_resource type="Texture2D" uid="uid://cqxuvul2spimh" path="res://Sprites/Main Characters/Ninja Frog/Double Jump (32x32).png" id="4_5hive"]
@@ -17,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://bnstrc55mnvdc" path="res://Sprites/Main Characters/Pink Man/Double Jump (32x32).png" id="8_s0ixg"]
 [ext_resource type="Texture2D" uid="uid://cgx4c8si16d4m" path="res://Sprites/Main Characters/Appearing (96x96).png" id="13_dykpo"]
 [ext_resource type="Script" path="res://Collision/Hurt_Box.gd" id="14_ol218"]
+[ext_resource type="Script" path="res://Character/AnimatedSprite2D.gd" id="17_raq7k"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yidtu"]
 height = 26.0
@@ -743,13 +745,25 @@ platform_floor_layers = 4278190081
 script = ExtResource("1_kpwhk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+show_behind_parent = true
 position = Vector2(0, 3)
 shape = SubResource("CapsuleShape2D_yidtu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_idra0")
+animation = &"Frog_Falling"
+autoplay = "Frog_Idle"
+script = ExtResource("17_raq7k")
+
+[node name="Silhouette_Sprite" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+z_index = 4096
+texture_filter = 1
+material = ExtResource("2_yuhxg")
+sprite_frames = SubResource("SpriteFrames_idra0")
 animation = &"Frog_Idle"
+frame = 8
+frame_progress = 0.0239912
 
 [node name="Dust_Particles" type="CPUParticles2D" parent="."]
 texture_filter = 1
@@ -781,23 +795,28 @@ collision_mask = 2
 script = ExtResource("14_ol218")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurt_Box"]
+show_behind_parent = true
 position = Vector2(0, 3)
 shape = SubResource("CapsuleShape2D_o1v4y")
 debug_color = Color(0.976471, 0, 0.423529, 0)
 
 [node name="Right_Outer" type="RayCast2D" parent="."]
+show_behind_parent = true
 position = Vector2(10, 0)
 target_position = Vector2(0, -12)
 
 [node name="Left_Outer" type="RayCast2D" parent="."]
+show_behind_parent = true
 position = Vector2(-10, 0)
 target_position = Vector2(0, -12)
 
 [node name="Right_Inner" type="RayCast2D" parent="."]
+show_behind_parent = true
 position = Vector2(4, 0)
 target_position = Vector2(0, -12)
 
 [node name="Left_Inner" type="RayCast2D" parent="."]
+show_behind_parent = true
 position = Vector2(-4, 0)
 target_position = Vector2(0, -12)
 

@@ -1,21 +1,17 @@
-res://UI/Settings_Menu.tscn
+res://Character/Players.tscn
 res://UI/pause_menu.gdshader
 res://Themes/Pixel_Theme.tres
 res://Game_Manager/CRT.gdshader
 res://Enemies/Pig/Pig.gd
 res://UI/Settings_Menu.gd
 res://Resources/Tile_Set.tres
-res://Sounds/Audio_Player/Audio_Slider.tscn
+res://Resources/Shaders/Character Silhouette Shader(Show dark body if behind wall).tres
+res://Resources/Shaders/Character Silhouette Shader(Show dark body if behind wall).gdshader
 res://Levels/TEST.tscn
 res://Character/Ghost.tscn
 res://UI/pause_menu.tscn
 res://Levels/Intro.tscn
-res://Levels/Main_Menu.tscn
+res://Character/AnimatedSprite2D.gd
+res://UI/hud.tscn
 res://Game_Manager/Game_Manger.gd
-res://Sounds/Audio_Player/Audio_Slider.gd
-res://Levels/Intro.gd
-res://Levels/Levels.gd
-res://Resources/user_preferences.gd
-res://Sounds/Audio_Player/Audio_Player.tscn
-res://Sounds/Audio_Player/Audio_Player.gd
-res://Character/Players_Code.gd
+res://Entity/Entity.gd
