@@ -1,3 +1,6 @@
+AudioStreamPlayer2D
+Label
+LineEdit
 Control
 HSlider
 AudioStreamPlayer
@@ -10,6 +13,3 @@ TabContainer
 VBoxContainer
 OptionButton
 VSeparator
-Label
-HBoxContainer
-CollisionShape2D

@@ -423,8 +423,16 @@ custom_minimum_size = Vector2(730, 250)
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="Audio_Slider" parent="CanvasLayer/BG/Controls/TabContainer/Sound" instance=ExtResource("9_u27bp")]
+[node name="Master" parent="CanvasLayer/BG/Controls/TabContainer/Sound" instance=ExtResource("9_u27bp")]
 layout_mode = 2
+bus_name = "Master"
+
+[node name="Music" parent="CanvasLayer/BG/Controls/TabContainer/Sound" instance=ExtResource("9_u27bp")]
+layout_mode = 2
+
+[node name="SFX" parent="CanvasLayer/BG/Controls/TabContainer/Sound" instance=ExtResource("9_u27bp")]
+layout_mode = 2
+bus_name = "SFX"
 
 [connection signal="pressed" from="CanvasLayer/BG/Buttons/Close_Panel/Back/Back_To_Main_Menu_Button" to="Game_Manager" method="_on_back_to_main_menu_button_pressed"]
 [connection signal="toggled" from="CanvasLayer/BG/Controls/TabContainer/Settings/Window_Mode_Container2/CheckButton" to="." method="_on_check_button_toggled"]

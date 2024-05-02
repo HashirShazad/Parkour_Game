@@ -256,7 +256,7 @@ grow_horizontal = 0
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_2roi3")
 
-[node name="Controls" type="Panel" parent="CanvasLayer/BG/Buttons/Controls"]
+[node name="Settings" type="Panel" parent="CanvasLayer/BG/Buttons/Controls"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -269,7 +269,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_mkgc1")
 
-[node name="Controls_Button" type="Button" parent="CanvasLayer/BG/Buttons/Controls/Controls"]
+[node name="Settings_Button" type="Button" parent="CanvasLayer/BG/Buttons/Controls/Settings"]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
@@ -286,7 +286,7 @@ shortcut = SubResource("Shortcut_qinjm")
 text = "
 "
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/BG/Buttons/Controls/Controls/Controls_Button"]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/BG/Buttons/Controls/Settings/Settings_Button"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -299,4 +299,4 @@ texture = ExtResource("6_ychsk")
 
 [connection signal="pressed" from="CanvasLayer/BG/Buttons/Exit/Sp/Exit_Button" to="Game_Manager" method="_on_close_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/BG/Buttons/Play/Play/Play_Button" to="Game_Manager" method="_on_play_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/BG/Buttons/Controls/Controls/Controls_Button" to="Game_Manager" method="_on_controls_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/BG/Buttons/Controls/Settings/Settings_Button" to="Game_Manager" method="_on_settings_button_pressed"]

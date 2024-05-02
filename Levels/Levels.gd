@@ -1,6 +1,6 @@
 extends Node
 @export var main_menu_music = preload
-("res://Sounds/BG_Music/Beethoven Virus (Insane Piano Version).wav")
+("res://Sounds/BG_Music/Albeniz Asturias-1sdsfVcxpC0-192k-1708856808.mp3")
 
 
 func _ready():

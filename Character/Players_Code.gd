@@ -155,7 +155,7 @@ func handle_input():
 		
 		if Input.is_action_just_released(btns.Jump):
 			if jump_count < 2:
-				velocity.y *= 0.8
+				velocity.y *= 0.5
 
 # Assign Refernces to game manager
 func update_game_manager():

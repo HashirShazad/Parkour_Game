@@ -10,9 +10,9 @@ class_name User_Preferences
 @export var points:int
 
 # Sounds
-@export var master_value:int
-@export var music_value:int
-@export var sfx_value:int
+@export var master_value:float
+@export var music_value:float
+@export var sfx_value:float
 
 
 # Resolution stuff 

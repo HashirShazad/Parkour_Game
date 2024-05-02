@@ -16,20 +16,20 @@ func _ready():
 	h_slider.value_changed.connect(_on_h_slider_changed)
 	set_name_label()
 	load_save()
+	set_value_label()
 	
 func load_save():
-	
 	match bus_index:
 		0:# Master
-			h_slider.value = user_prefs.master_value
+			h_slider.value = user_prefs.master_value * 10
 		1:# Music
-			h_slider.value = user_prefs.music_value
+			h_slider.value = user_prefs.music_value * 10
 		2:# SFX
-			h_slider.value = user_prefs.sfx_value
+			h_slider.value = user_prefs.sfx_value * 10
 
-func _on_h_slider_changed(value:int) -> void:
-	AudioServer.set_bus_volume_db(bus_index, linear_to_db(value))
-	h_slider.value = db_to_linear(AudioServer.get_bus_volume_db(bus_index))
+func _on_h_slider_changed(value:float) -> void:
+	var audio_value = value / 10
+	AudioServer.set_bus_volume_db(bus_index, linear_to_db(audio_value))
 	set_value_label()
 	save()
 
@@ -38,16 +38,20 @@ func set_name_label() -> void:
 
 func set_value_label() -> void:
 	value_label.text = str(h_slider.value)
+	if h_slider.value == 0:
+		value_label.text = "🔇"
 
 func save():
 	if !user_prefs:
 		return
 	match bus_index:
 		0:# Master
-			user_prefs.master_value = h_slider.value 
+			user_prefs.master_value = h_slider.value  / 10
 		1:# Music
-			user_prefs.music_value = h_slider.value 
+			user_prefs.music_value = h_slider.value / 10
 		2:# SFX
-			user_prefs.sfx_value = h_slider.value
+			user_prefs.sfx_value = h_slider.value / 10
 			
 	user_prefs.save()
+
+
