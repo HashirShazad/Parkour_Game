@@ -905,11 +905,13 @@ position = Vector2(709, 905)
 [node name="Pineapple" parent="Scene_Objects/Fruits" instance=ExtResource("5_t74nq")]
 position = Vector2(6656, 305)
 scale = Vector2(3, 3)
+fruit_name = "Pineapple"
 value = 9
 
 [node name="Strawberry" parent="Scene_Objects/Fruits" instance=ExtResource("5_t74nq")]
 position = Vector2(4600, 1201)
 scale = Vector2(3, 3)
+fruit_name = "Strawberry"
 
 [node name="Banana" parent="Scene_Objects/Fruits" instance=ExtResource("5_t74nq")]
 position = Vector2(3860, 1403)

@@ -129,10 +129,10 @@ func add_points(collected_points:int) -> void:
 # Tween over health of players
 func update_health():
 	var tween = get_tree().create_tween()
-	if player_1:
+	if player_1 != null:
 		if "health" in player_1:
 			tween.tween_property(hp_bar_P1, "value", player_1.health, .1).set_trans(Tween.TRANS_QUAD)
-	if player_2:
+	if player_2 != null:
 		if "health" in player_2:
 			tween.tween_property(hp_bar_P2, "value", player_2.health, .1).set_trans(Tween.TRANS_QUAD)
 

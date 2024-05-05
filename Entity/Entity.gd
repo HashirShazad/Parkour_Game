@@ -179,16 +179,19 @@ func check_collisions():
 func squash():
 	var tween = get_tree().create_tween()
 	tween.tween_property(sprite_2d, "scale",squashed_size, .1).set_trans(Tween.TRANS_QUAD)
+	#tween.tween_property(silhouette_sprite, "scale",squashed_size, .1).set_trans(Tween.TRANS_QUAD)
 	tween.tween_callback(squash_and_stretch_finished)
 
 # Strectch on jump for cute effects :)
 func stretch():
 	var tween = get_tree().create_tween()
 	tween.tween_property(sprite_2d, "scale",stretched_size, .1).set_trans(Tween.TRANS_QUAD)
+	#tween.tween_property(silhouette_sprite, "scale",stretched_size, .1).set_trans(Tween.TRANS_QUAD)
 	tween.tween_callback(squash_and_stretch_finished)
 
 # Return character to original state after squas and strectch are finsihed
 func squash_and_stretch_finished():
 	var tween = get_tree().create_tween()
 	tween.tween_property(sprite_2d, "scale",Vector2(1,1), .1).set_trans(Tween.TRANS_QUAD)
+	#tween.tween_property(silhouette_sprite, "scale",Vector2(1,1), .1).set_trans(Tween.TRANS_QUAD)
 	

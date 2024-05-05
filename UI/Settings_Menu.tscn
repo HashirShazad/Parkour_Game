@@ -172,7 +172,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("8_7cg7w")
 theme_override_constants/icon_separation = 1
-current_tab = 2
+current_tab = 1
 
 [node name="Controls" type="GridContainer" parent="CanvasLayer/BG/Controls/TabContainer"]
 visible = false
@@ -347,7 +347,6 @@ script = ExtResource("7_3fmx6")
 action = "P2_Jump"
 
 [node name="Settings" type="VBoxContainer" parent="CanvasLayer/BG/Controls/TabContainer"]
-visible = false
 custom_minimum_size = Vector2(730, 250)
 layout_mode = 2
 theme_override_constants/separation = 20
@@ -419,6 +418,7 @@ layout_mode = 2
 text = "Disable Border"
 
 [node name="Sound" type="VBoxContainer" parent="CanvasLayer/BG/Controls/TabContainer"]
+visible = false
 custom_minimum_size = Vector2(730, 250)
 layout_mode = 2
 theme_override_constants/separation = 20

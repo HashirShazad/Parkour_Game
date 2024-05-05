@@ -5,6 +5,7 @@ extends Node2D
 @onready var borderless_button:CheckButton = $CanvasLayer/BG/Controls/TabContainer/Settings/Window_Mode_Container2/CheckButton
 
 var user_prefs:User_Preferences
+
 var stored_res:Vector2i
 const WINDOW_MODES:Array[String] = [
 	"Window Mode",
@@ -47,15 +48,17 @@ func _on_window_mode_selected(index : int):
 	match index:
 		0:#Windowed
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
-			DisplayServer.window_set_size(stored_res)
+			resolution_option_button.disabled = false
+			#DisplayServer.window_set_size(stored_res)
 		1:#Full screen
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+			resolution_option_button.disabled = true
 	
 	save()
 
 func _on_resolution_selected(index : int):
-	if DisplayServer.window_get_mode() == 3: # 3 is fullscreen while 1 is windowed
-		stored_res = RESOLUTION_MODES.values()[index]
+	#if DisplayServer.window_get_mode() == 3: # 3 is fullscreen while 1 is windowed
+		#stored_res = RESOLUTION_MODES.values()[index]
 	DisplayServer.window_set_size(RESOLUTION_MODES.values()[index])
 	save()
 
@@ -86,8 +89,10 @@ func get_current_res_and_apply() -> void:
 	
 	if win_mode_index == 1:# Windowed
 		window_mode_option_button.selected = 0
+		resolution_option_button.disabled = false
 	elif win_mode_index == 3:# Full screen
 		window_mode_option_button.selected = 1
+		resolution_option_button.disabled = true
 		
 	
 

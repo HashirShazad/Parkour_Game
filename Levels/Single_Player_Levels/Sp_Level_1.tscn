@@ -686,11 +686,13 @@ layer_0/tile_data = PackedInt32Array(1441795, 393216, 1, 1507331, 393216, 1, 157
 [node name="Pineapple" parent="Scene_Objects/Fruits" instance=ExtResource("8_njaq6")]
 position = Vector2(3230, 256)
 scale = Vector2(3, 3)
+fruit_name = "Pineapple"
 value = 3
 
 [node name="Strawberry" parent="Scene_Objects/Fruits" instance=ExtResource("8_njaq6")]
 position = Vector2(976, 842)
 scale = Vector2(3, 3)
+fruit_name = "Strawberry"
 
 [node name="Banana" parent="Scene_Objects/Fruits" instance=ExtResource("8_njaq6")]
 position = Vector2(3907, 791)

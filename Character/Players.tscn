@@ -752,7 +752,7 @@ shape = SubResource("CapsuleShape2D_yidtu")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_idra0")
-animation = &"Frog_Falling"
+animation = &"Frog_Idle"
 autoplay = "Frog_Idle"
 script = ExtResource("17_raq7k")
 
@@ -762,10 +762,9 @@ texture_filter = 1
 material = ExtResource("2_yuhxg")
 sprite_frames = SubResource("SpriteFrames_idra0")
 animation = &"Frog_Idle"
-frame = 8
-frame_progress = 0.0239912
 
 [node name="Dust_Particles" type="CPUParticles2D" parent="."]
+show_behind_parent = true
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_8u6c4")
 position = Vector2(0, 15.6667)

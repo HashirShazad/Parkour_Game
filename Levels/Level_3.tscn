@@ -2132,6 +2132,7 @@ position = Vector2(6919, 1497)
 [node name="Fruits" parent="." instance=ExtResource("12_ec8uw")]
 position = Vector2(2354, 427)
 scale = Vector2(9, 9)
+fruit_name = "Pineapple"
 value = 10
 
 [node name="Fruits2" parent="." instance=ExtResource("12_ec8uw")]

@@ -14,6 +14,15 @@
 
 [node name="Level5" type="Node2D"]
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+z_index = 2
+offset_left = 1443.0
+offset_top = 2883.0
+offset_right = 1483.0
+offset_bottom = 2923.0
+
 [node name="Scene_Objects" type="Node" parent="."]
 
 [node name="Background_Image" type="TextureRect" parent="Scene_Objects"]

@@ -22,11 +22,12 @@
 
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = 200
-offset_left = 808.0
-offset_top = 962.0
-offset_right = 848.0
-offset_bottom = 1002.0
+offset_left = -771.0
+offset_top = 1427.0
+offset_right = -731.0
+offset_bottom = 1467.0
 scale = Vector2(4.7489, 3.95657)
+color = Color(0.705882, 0, 0.254902, 1)
 
 [node name="Scene_Objects" type="Node" parent="."]
 

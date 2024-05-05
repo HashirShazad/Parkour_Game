@@ -27,5 +27,12 @@ animations = {
 [node name="AnimatedSprite2D" parent="Player2" index="1"]
 animation = &"Pink_Idle"
 
+[node name="Silhouette_Sprite" parent="Player2/AnimatedSprite2D" index="0"]
+animation = &"Pink_Idle"
+autoplay = "Pink_Idle"
+
+[node name="CollisionShape2D" parent="Player2/Hurt_Box" index="0"]
+position = Vector2(0, 3.33333)
+
 [editable path="Player1"]
 [editable path="Player2"]
