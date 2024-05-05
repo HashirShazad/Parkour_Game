@@ -1,0 +1,70 @@
+[gd_scene load_steps=9 format=3 uid="uid://d3buwh7w6q0kh"]
+
+[ext_resource type="Texture2D" uid="uid://dmb1teg81dqy3" path="res://Sprites/Background/Purple.png" id="1_ye6br"]
+[ext_resource type="PackedScene" uid="uid://blknjycqdvppw" path="res://Collectables/Check_Point.tscn" id="3_6ijk1"]
+[ext_resource type="PackedScene" uid="uid://b2ip34x13hcrf" path="res://Levels/Level_4.tscn" id="4_er2ns"]
+[ext_resource type="TileSet" uid="uid://ccic8k3fbwsfm" path="res://Resources/Tile_Set.tres" id="4_mkvt6"]
+[ext_resource type="PackedScene" uid="uid://pa8e0cvnbkvd" path="res://Enemies/Spikes/Death_Spike.tscn" id="8_3nhm6"]
+[ext_resource type="PackedScene" uid="uid://c4khbvomo2txs" path="res://Camera/camera_sp.tscn" id="8_h3t1t"]
+[ext_resource type="PackedScene" uid="uid://cfj2cbuh0vbwb" path="res://Character/Sp_Players.tscn" id="8_tbsce"]
+[ext_resource type="PackedScene" uid="uid://kxusrwxus326" path="res://Collectables/Fruits.tscn" id="12_8x7pn"]
+
+[node name="Level4" type="Node2D"]
+
+[node name="Scene_Objects" type="Node" parent="."]
+
+[node name="Background_Image" type="TextureRect" parent="Scene_Objects"]
+z_index = -2
+texture_filter = 1
+anchors_preset = -1
+anchor_right = 4.31163
+anchor_bottom = 3.3179
+offset_left = -963.0
+offset_top = -1245.0
+offset_right = 11037.0
+offset_bottom = 10755.0
+texture = ExtResource("1_ye6br")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="CheckPoint" parent="Scene_Objects" instance=ExtResource("3_6ijk1")]
+position = Vector2(921, -555)
+scale = Vector2(3, 3)
+target_scene = ExtResource("4_er2ns")
+
+[node name="Tilemap" type="TileMap" parent="Scene_Objects"]
+texture_filter = 1
+position = Vector2(3, 0)
+scale = Vector2(3, 3)
+tile_set = ExtResource("4_mkvt6")
+format = 2
+layer_0/tile_data = PackedInt32Array(-2, 0, 0, -65535, 65536, 0, -65534, 131072, 0, -1, 65536, 0, -65536, 65536, 0, -65528, 1114112, 2, -65527, 1179648, 2, -65526, 1245184, 2, 131089, 1114112, 2, 131090, 1179648, 2, 131091, 1245184, 2, -65515, 1114112, 2, -65514, 1179648, 2, -65513, 1245184, 2, 29, 0, 0, 65565, 0, 1, 131101, 0, 2, 30, 65536, 0, 65566, 65536, 1, 131102, 65536, 2, 31, 131072, 0, 65567, 131072, 1, 131103, 131072, 2, 36, 1114112, 2, 37, 1179648, 2, 38, 1245184, 2, 524306, 983040, 4, -196563, 983040, 5, 65581, 983040, 5, 131117, 851968, 4, -131027, 983040, 5, -65491, 983040, 5, 45, 983040, 5, -458707, 983040, 5, -393171, 983040, 5, -327635, 983040, 5, -262099, 983040, 5, -524243, 983040, 5, 131116, 786432, 4, -589779, 983040, 4, 131118, 917504, 4, 393260, 1114112, 2, 393261, 1179648, 2, 393262, 1245184, 2, 262194, 1114112, 2, 262195, 1179648, 2, 262196, 1245184, 2, 131127, 1114112, 2, 131128, 1179648, 2, 131129, 1179648, 2, 131130, 1179648, 2, 131131, 1179648, 2, 131132, 1245184, 2, 655417, 1114112, 2, 655418, 1179648, 2, 655419, 1245184, 2, 786489, 1114112, 2, 786490, 1179648, 2, 786491, 1245184, 2, 917561, 1114112, 2, 917562, 1179648, 2, 917563, 1245184, 2, 524355, 1114112, 2, 524356, 1114112, 2, 524357, 1179648, 2, 524358, 1245184, 2, 524359, 1245184, 2, 1179705, 1114112, 2, 1179706, 1179648, 2, 1179707, 1245184, 2, 1245234, 1114112, 2, 1245235, 1179648, 2, 1245236, 1245184, 2, 1441835, 1114112, 2, 1441836, 1179648, 2, 1441837, 1245184, 2, 1507365, 1114112, 2, 1507366, 1179648, 2, 1507367, 1245184, 2, 1507358, 786432, 4, 1507359, 851968, 4, 1507360, 917504, 4, 1310753, 983040, 4, 1376289, 983040, 5, 1441825, 983040, 6)
+
+[node name="Players" parent="." instance=ExtResource("8_tbsce")]
+position = Vector2(24, -120)
+
+[node name="Camera_Sp" parent="." instance=ExtResource("8_h3t1t")]
+
+[node name="PhantomCamera2D" parent="Camera_Sp" index="0"]
+position = Vector2(24, -120)
+follow_target = NodePath("../../Players/Player1")
+
+[node name="Camera2D" parent="Camera_Sp" index="1"]
+position = Vector2(24, -120)
+
+[node name="Fruits" parent="." instance=ExtResource("12_8x7pn")]
+position = Vector2(1518, 990)
+fruit_name = "Cherry"
+value = 500
+
+[node name="Death_Spike" parent="." instance=ExtResource("8_3nhm6")]
+position = Vector2(1904.75, 1092)
+scale = Vector2(2.21876, 1.875)
+
+[node name="Death_Spike2" parent="." instance=ExtResource("8_3nhm6")]
+position = Vector2(1803, 1093.5)
+scale = Vector2(2.25, 1.6875)
+
+[editable path="Players"]
+[editable path="Players/Player1"]
+[editable path="Camera_Sp"]

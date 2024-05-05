@@ -47,9 +47,6 @@ grow_vertical = 2
 
 [node name="Hud" parent="." instance=ExtResource("3_aux3r")]
 
-[node name="Avatar_Frame" parent="Hud/Node/Timer_Info_Box" index="0"]
-visible = false
-
 [node name="TextureRect" parent="Hud/Node/Timer_Info_Box/Avatar_Frame" index="0"]
 texture = ExtResource("5_5e2og")
 
