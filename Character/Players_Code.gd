@@ -28,6 +28,8 @@ var carried_player_ref:Player = null
 
 
 # Buttons <----------------------------------------------------------------------------------------->
+
+## Buttons to be pressed
 @export var btns = {
 	 Right = "P1_Right",
 	 Left = "P1_Left",

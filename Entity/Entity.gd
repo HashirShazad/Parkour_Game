@@ -34,7 +34,7 @@ const sprint_push_force = 160.0
 var squashed_size:Vector2 = Vector2(1.1, 0.8) 
 var stretched_size:Vector2 = Vector2(0.8, 1.1)
 
-
+## Animations to be played
 @export var animations = {
 	 Idle = "Frog_Idle",
 	 Jumping = "Frog_Jumping",

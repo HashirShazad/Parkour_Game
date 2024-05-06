@@ -1,7 +1,9 @@
 extends Hit_Box
 class_name Projectile_Hit_Box
 
+## If it pierces.
 @export var piercing:bool = false
+## speed at which it travels
 @export var speed:int = 200
 var direction:Vector2 
 

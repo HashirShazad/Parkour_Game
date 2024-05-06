@@ -5,10 +5,15 @@ res://Game_Manager/CRT.gdshader
 res://Enemies/Pig/Pig.gd
 res://UI/Settings_Menu.gd
 res://Resources/Shaders/Character Silhouette Shader(Show dark body if behind wall).gdshader
+res://Resources/Shaders/Character Silhouette Shader(Show dark body if behind wall).tres
 res://Resources/Tile_Set.tres
 res://Levels/Multiplayer_Menu.tscn
-res://Levels/Multiplayer_Menu.gd
-res://Resources/Shaders/Character Silhouette Shader(Show dark body if behind wall).tres
 res://Character/Multiplayer_Player.tscn
-res://Character/Players_Code.gd
 res://Character/Multiplayer_Player.gd
+res://Levels/Multiplayer_Menu.gd
+res://Character/Players_Code.gd
+res://Entity/Entity.gd
+res://Collectables/Fruits.gd
+res://Collision/Hit_Box.gd
+res://Collision/Projectile_Hit_Box.gd
+res://Resources/user_preferences.gd

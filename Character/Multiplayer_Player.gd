@@ -139,7 +139,7 @@ func handle_input():
 func update_game_manager():
 	if self.name == "Player1":
 		GameManger.player_1 = self
-	elif self.name == "Player2":
+	else:
 		GameManger.player_2 = self
 	GameManger.update_health()
 
