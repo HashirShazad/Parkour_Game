@@ -1,3 +1,6 @@
+TileMap
+MultiplayerSynchronizer
+MultiplayerSpawner
 CanvasLayer
 Node
 Control
@@ -10,5 +13,3 @@ HSlider
 AudioStreamPlayer
 CheckButton
 WorldEnvironment
-CheckBox
-TabContainer
