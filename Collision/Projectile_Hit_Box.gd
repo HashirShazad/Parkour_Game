@@ -1,9 +1,10 @@
 extends Hit_Box
 class_name Projectile_Hit_Box
 
-## If it pierces.
+## If it pierces. Meaning it wont get destroyed if it hits an entity.
 @export var piercing:bool = false
-## speed at which it travels
+
+## Speed at which the hitbox travels.
 @export var speed:int = 200
 var direction:Vector2 
 

@@ -1,4 +1,5 @@
 extends Node
+class_name Game_Manager
 # Variables <===========================================================================================>
 # Levels <----------------------------------------------------------------------------------------->
 var levels_UI = {
@@ -123,19 +124,22 @@ func _death_screen():
 
 # Add and upadate points
 func add_points(collected_points:int) -> void:	
-	points = points + collected_points
+	for n in collected_points:
+		points += 1
+		
 	points_label.text = "Points: " + str(points)
 
 # Tween over health of players
 func update_health():
 	var tween = get_tree().create_tween()
-	if player_1 != null:
+	if is_instance_valid(player_1):
+		#if player_1 != null:
 		if "health" in player_1:
 			tween.tween_property(hp_bar_P1, "value", player_1.health, .1).set_trans(Tween.TRANS_QUAD)
-	if player_2 != null:
+	if is_instance_valid(player_2):
+		#if player_2 != null:
 		if "health" in player_2:
 			tween.tween_property(hp_bar_P2, "value", player_2.health, .1).set_trans(Tween.TRANS_QUAD)
-
 # Update the timer
 func update_time(delta):
 	if player_1 == null:
@@ -158,7 +162,7 @@ func get_input():
 # Check if p1 or p2 or both are dead and display death screen
 func check_if_dead():
 	# If player 2 exists
-	if player_2:
+	if is_instance_valid(player_2):
 		# If p2 dead follow p1
 		if player_2.is_dead:
 			player_2.position = player_1.position
@@ -170,9 +174,10 @@ func check_if_dead():
 			if death_screen_shown == false:
 				_death_screen()
 	# If player 2 does not exist and p1 is dead
-	elif player_1.is_dead:
-		if death_screen_shown == false:
-			_death_screen()
+	elif is_instance_valid(player_1):
+		if player_1.is_dead:
+			if death_screen_shown == false:
+				_death_screen()
 	
 # Gets input for mouse
 func get_ui_input(delta):

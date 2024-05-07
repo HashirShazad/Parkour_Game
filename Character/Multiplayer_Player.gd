@@ -5,13 +5,14 @@ class_name Multiplayer_Player
 
 
 # Variables <===================================================================================>
-
-
+@onready var health_label:Label = $Label
 
 
 # Actual Code <=====================================================================>
 
 # Enter tree
+
+
 func _enter_tree():
 	set_multiplayer_authority(name.to_int())
 
@@ -24,6 +25,7 @@ func _process(delta):
 # Called only once
 func _ready():
 	# Assign ref to game manager
+	$Camera2D.make_current()
 	update_game_manager()
 	jump_buffer_timer = 0
 	coyote_timer = 0
@@ -61,38 +63,6 @@ func _physics_process(delta):
 	move_and_slide()
 	check_collisions()
 
-# Take damage and call update_health() on game manager
-func take_damage(damage:int, stun_duration:float):
-	if is_dead:
-		return
-	if is_stunned:
-		return
-	health -= damage
-	is_stunned = 1
-	GameManger.update_health()
-	
-	if health <= 0:
-		is_dead = true
-		hurt_box.set_deferred("disabled", true)
-		collision_shape_2d.set_deferred("disabled", true)
-		await get_tree().create_timer(.25).timeout
-		
-		sprite_2d.hide()
-		
-	jump_count = 1
-	
-	await get_tree().create_timer(stun_duration).timeout
-	is_stunned = 0
-
-# Add ghosts when running
-func add_ghost():
-	var ghost = ghost_scene.instantiate()
-	get_parent().get_parent().add_child(ghost)
-	ghost.global_position = global_position
-	ghost.play(sprite_2d.animation)
-	ghost.flip_h = sprite_2d.flip_h
-	ghost.sprite_2d.frame = sprite_2d.frame
-	
 # Get input from user
 func handle_input():
 	if Input.is_action_pressed(btns.Sprint):
@@ -134,23 +104,47 @@ func handle_input():
 		if Input.is_action_just_released(btns.Jump):
 			if jump_count < 2:
 				velocity.y *= 0.5
+				
+	#rpc("remote_set_position", global_position)
+	
 
 # Assign Refernces to game manager
 func update_game_manager():
 	if self.name == "Player1":
 		GameManger.player_1 = self
-	else:
+	elif self.name == "Player2":
 		GameManger.player_2 = self
 	GameManger.update_health()
 
-# Push the character if its slightly touching a ledge from underneath so that he can jump
-func push_off_ledges():
-	 # Arbitrary offset, adjust as needed, or even use the raycasts to determine exactly how much to move
-	if right_outer.is_colliding() and !right_inner.is_colliding() \
-		and left_inner.is_colliding() and !left_outer.is_colliding():
-			self.global_position.x -= 5
-	elif left_outer.is_colliding() and !left_inner.is_colliding() \
-		and !right_inner.is_colliding() and !right_outer.is_colliding():
-			self.global_position.x += 5
+func update_health():
+	health_label.text = str(health) + "%"
+# Take damage and call update_health() on game manager
+func take_damage(damage:int, stun_duration:float):
+	if is_dead:
+		return
+	if is_stunned:
+		return
+	health -= damage
+	is_stunned = 1
+	update_health()
+	
+	if health <= 0:
+		is_dead = true
+		hurt_box.set_deferred("disabled", true)
+		collision_shape_2d.set_deferred("disabled", true)
+		await get_tree().create_timer(.25).timeout
+		
+		sprite_2d.hide()
+		
+	jump_count = 1
+	
+	await get_tree().create_timer(stun_duration).timeout
+	is_stunned = 0
+@rpc("unreliable")
+func remote_set_position(authority_position):
+	global_position = authority_position
 
+@rpc
+func display_message(message):
+	pass
 

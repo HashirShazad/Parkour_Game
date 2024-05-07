@@ -1,4 +1,6 @@
 extends Node
+
+## Music to be played when the level starts
 @export var main_menu_music = preload
 ("res://Sounds/BG_Music/Albeniz Asturias-1sdsfVcxpC0-192k-1708856808.mp3")
 

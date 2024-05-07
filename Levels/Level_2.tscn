@@ -901,38 +901,31 @@ layer_0/tile_data = PackedInt32Array(2555933, 131072, 10, 2490397, 131072, 9, 24
 
 [node name="Pineapple" parent="Scene_Objects/Fruits" instance=ExtResource("6_e5p2v")]
 position = Vector2(6656, 305)
-scale = Vector2(3, 3)
 fruit_name = "Pineapple"
 value = 9
 
 [node name="Strawberry" parent="Scene_Objects/Fruits" instance=ExtResource("6_e5p2v")]
 position = Vector2(4600, 1201)
-scale = Vector2(3, 3)
 fruit_name = "Strawberry"
 
 [node name="Banana" parent="Scene_Objects/Fruits" instance=ExtResource("6_e5p2v")]
 position = Vector2(3860, 1403)
-scale = Vector2(3, 3)
 fruit_name = &"Banana"
 
 [node name="Kiwi" parent="Scene_Objects/Fruits" instance=ExtResource("6_e5p2v")]
 position = Vector2(7030, 1115)
-scale = Vector2(3, 3)
 fruit_name = &"Kiwi"
 
 [node name="Cherry" parent="Scene_Objects/Fruits" instance=ExtResource("6_e5p2v")]
 position = Vector2(2223, 852)
-scale = Vector2(3, 3)
 fruit_name = &"Cherry"
 
 [node name="Cherry2" parent="Scene_Objects/Fruits" instance=ExtResource("6_e5p2v")]
 position = Vector2(964, 850)
-scale = Vector2(3, 3)
 fruit_name = &"Orange"
 
 [node name="Melon" parent="Scene_Objects/Fruits" instance=ExtResource("6_e5p2v")]
 position = Vector2(2825, 769)
-scale = Vector2(3, 3)
 fruit_name = &"Melon"
 
 [node name="Camera" parent="Scene_Objects" instance=ExtResource("7_n6bwa")]
@@ -940,12 +933,12 @@ position = Vector2(-166, -51)
 
 [node name="PhantomCamera2D" parent="Scene_Objects/Camera" index="0"]
 position = Vector2(574, 960)
-zoom = Vector2(0.7975, 0.7975)
+zoom = Vector2(0.8, 0.8)
 follow_group = Array[NodePath]([NodePath("../../Players/Player1"), NodePath("../../Players/Player2")])
 
 [node name="Camera2D" parent="Scene_Objects/Camera" index="1"]
 position = Vector2(574, 960)
-zoom = Vector2(0.7975, 0.7975)
+zoom = Vector2(0.8, 0.8)
 
 [node name="Players" parent="Scene_Objects" instance=ExtResource("8_ytky0")]
 position = Vector2(408, 909)
@@ -975,9 +968,6 @@ position = Vector2(7659, -168)
 
 [node name="Spike21" parent="Scene_Objects/Spikes" instance=ExtResource("9_xmdn7")]
 position = Vector2(7704, -168)
-
-[node name="DirectionalLight2D" type="DirectionalLight2D" parent="Scene_Objects/Spikes"]
-energy = 0.1
 
 [node name="Death_Spikes" type="Node2D" parent="Scene_Objects"]
 

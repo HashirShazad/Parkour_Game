@@ -904,38 +904,31 @@ position = Vector2(709, 905)
 
 [node name="Pineapple" parent="Scene_Objects/Fruits" instance=ExtResource("5_t74nq")]
 position = Vector2(6656, 305)
-scale = Vector2(3, 3)
 fruit_name = "Pineapple"
 value = 9
 
 [node name="Strawberry" parent="Scene_Objects/Fruits" instance=ExtResource("5_t74nq")]
 position = Vector2(4600, 1201)
-scale = Vector2(3, 3)
 fruit_name = "Strawberry"
 
 [node name="Banana" parent="Scene_Objects/Fruits" instance=ExtResource("5_t74nq")]
 position = Vector2(3860, 1403)
-scale = Vector2(3, 3)
 fruit_name = &"Banana"
 
 [node name="Kiwi" parent="Scene_Objects/Fruits" instance=ExtResource("5_t74nq")]
 position = Vector2(7030, 1115)
-scale = Vector2(3, 3)
 fruit_name = &"Kiwi"
 
 [node name="Cherry" parent="Scene_Objects/Fruits" instance=ExtResource("5_t74nq")]
 position = Vector2(2223, 852)
-scale = Vector2(3, 3)
 fruit_name = &"Cherry"
 
 [node name="Cherry2" parent="Scene_Objects/Fruits" instance=ExtResource("5_t74nq")]
 position = Vector2(964, 850)
-scale = Vector2(3, 3)
 fruit_name = &"Orange"
 
 [node name="Melon" parent="Scene_Objects/Fruits" instance=ExtResource("5_t74nq")]
 position = Vector2(2825, 769)
-scale = Vector2(3, 3)
 fruit_name = &"Melon"
 
 [node name="Camera" parent="Scene_Objects" instance=ExtResource("6_hjw3g")]
@@ -976,9 +969,6 @@ position = Vector2(7659, -168)
 
 [node name="Spike21" parent="Scene_Objects/Spikes" instance=ExtResource("8_7818h")]
 position = Vector2(7704, -168)
-
-[node name="DirectionalLight2D" type="DirectionalLight2D" parent="Scene_Objects/Spikes"]
-energy = 0.1
 
 [node name="Death_Spikes" type="Node2D" parent="Scene_Objects"]
 

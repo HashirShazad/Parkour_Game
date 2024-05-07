@@ -1,10 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://b0bde65j5w0bu"]
+[gd_scene load_steps=5 format=3 uid="uid://b0bde65j5w0bu"]
 
 [ext_resource type="Script" path="res://Collision/Projectile_Hit_Box.gd" id="1_v0im4"]
 [ext_resource type="Texture2D" uid="uid://cdvq8p4k20mjt" path="res://Sprites/Enemies/Turrent_Bulle.png" id="2_72l7c"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fycuf"]
 radius = 3.72678
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_budnm"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
 
 [node name="Bullet" type="Area2D"]
 texture_filter = 1
@@ -24,5 +29,8 @@ show_behind_parent = true
 shape = SubResource("CircleShape2D_fycuf")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_budnm")
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_screen_exited"]

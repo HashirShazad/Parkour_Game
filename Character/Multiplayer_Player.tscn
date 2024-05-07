@@ -1,4 +1,4 @@
-[gd_scene load_steps=116 format=3 uid="uid://cr0aqnmtob2jv"]
+[gd_scene load_steps=117 format=3 uid="uid://cr0aqnmtob2jv"]
 
 [ext_resource type="Script" path="res://Character/Multiplayer_Player.gd" id="1_f6vgq"]
 [ext_resource type="Texture2D" uid="uid://ojjeqv1o2jtq" path="res://Sprites/Main Characters/Desappearing (96x96).png" id="2_1ik4h"]
@@ -19,6 +19,7 @@
 [ext_resource type="Material" uid="uid://ccmv2wr6sicwi" path="res://Resources/Shaders/Character Silhouette Shader(Show dark body if behind wall).tres" id="17_ydvk2"]
 [ext_resource type="Texture2D" uid="uid://5kd1fml7oru8" path="res://Sprites/Other/Dust Particle.png" id="18_w5ej7"]
 [ext_resource type="Script" path="res://Collision/Hurt_Box.gd" id="19_yheku"]
+[ext_resource type="Theme" uid="uid://fg7dva5ufoat" path="res://Themes/Pixel_Theme.tres" id="20_j4bk3"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yidtu"]
 height = 26.0
@@ -750,6 +751,9 @@ properties/2/replication_mode = 1
 properties/3/path = NodePath("AnimatedSprite2D:flip_h")
 properties/3/spawn = true
 properties/3/replication_mode = 2
+properties/4/path = NodePath(".:health")
+properties/4/spawn = true
+properties/4/replication_mode = 1
 
 [node name="EntityBody2D" type="CharacterBody2D" groups=["Players"]]
 scale = Vector2(3, 3)
@@ -883,5 +887,23 @@ color_initial_ramp = SubResource("Gradient_xtfbq")
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
 replication_config = SubResource("SceneReplicationConfig_wem5v")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+limit_smoothed = true
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+offset_left = -18.0
+offset_top = -27.3333
+offset_right = 22.0
+offset_bottom = -4.33333
+theme = ExtResource("20_j4bk3")
+theme_override_colors/font_color = Color(1, 1, 1, 0.639216)
+theme_override_colors/font_outline_color = Color(1, 0, 0, 0.639216)
+theme_override_constants/outline_size = 5
+text = "100%"
 
 [connection signal="area_entered" from="Hurt_Box" to="Hurt_Box" method="_on_area_entered"]

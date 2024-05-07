@@ -4,7 +4,8 @@ class_name Entity
 # Variables <=====================================================================================>
 # Stats <----------------------------------------------------------------------------------------->
 var push_force = 80.0
-var health:int = 100
+## Current health of the entity. If it is 0 or less than the object is killed.
+@export var health:int = 100
 var max_health:int = 100
 var jump_count:int = 0
 

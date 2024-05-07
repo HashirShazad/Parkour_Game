@@ -2138,12 +2138,10 @@ value = 10
 
 [node name="Fruits2" parent="." instance=ExtResource("12_e4dc6")]
 position = Vector2(6332, 658)
-scale = Vector2(3, 3)
 fruit_name = &"Strawberry"
 
 [node name="Fruits3" parent="." instance=ExtResource("12_e4dc6")]
 position = Vector2(6142, 330)
-scale = Vector2(3, 3)
 fruit_name = &"Banana"
 value = 2
 

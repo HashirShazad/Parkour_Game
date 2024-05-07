@@ -1,5 +1,9 @@
-TileMap
+Label
+SubViewport
+LineEdit
+Camera2D
 MultiplayerSynchronizer
+TileMap
 MultiplayerSpawner
 CanvasLayer
 Node
@@ -7,9 +11,4 @@ Control
 Node2D
 ColorRect
 AudioStreamPlayer2D
-Label
-LineEdit
 HSlider
-AudioStreamPlayer
-CheckButton
-WorldEnvironment
