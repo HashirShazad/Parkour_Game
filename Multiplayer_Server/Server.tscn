@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=3 uid="uid://mgls7jtu56ld"]
+
+[ext_resource type="Script" path="res://Multiplayer_Server/Server.gd" id="1_x5ptv"]
+[ext_resource type="PackedScene" uid="uid://tn6r0v4jsxhj" path="res://Multiplayer_Server/Player_Character_Handeler.tscn" id="2_l0by1"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_yu7tr"]
+device = -1
+keycode = 68
+unicode = 100
+
+[sub_resource type="Shortcut" id="Shortcut_lq1fn"]
+events = [SubResource("InputEventKey_yu7tr")]
+
+[node name="Server" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_x5ptv")
+player_scene = ExtResource("2_l0by1")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -56.5
+offset_top = -58.0
+offset_right = 56.5
+offset_bottom = 58.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Host" type="Button" parent="VBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+tooltip_text = "Two Player Mode"
+shortcut = SubResource("Shortcut_lq1fn")
+text = "Host"
+
+[node name="Max_Players_Input" type="LineEdit" parent="VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+text = "32"
+alignment = 1
+
+[node name="Port_Address" type="LineEdit" parent="VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+placeholder_text = "Enter Port address"
+alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/Host" to="." method="_on_host_pressed"]

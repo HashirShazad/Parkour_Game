@@ -1,5 +1,4 @@
 extends Node
-class_name Game_Manager
 # Variables <===========================================================================================>
 # Levels <----------------------------------------------------------------------------------------->
 var levels_UI = {
@@ -218,7 +217,9 @@ func set_saved_level(level):
 		user_prefs.saved_level = level
 		user_prefs.save()
 
-
+# Called by the multiplayer player to disable the UI
+func disable_ui():
+	hud.visible = false
 
 # Transparent UI <----------------------------------------------------------------------------------------->
 # Buttons <----------------------------------------------------------------------------------------->

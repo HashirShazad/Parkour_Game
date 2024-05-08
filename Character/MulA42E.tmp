@@ -891,10 +891,10 @@ replication_config = SubResource("SceneReplicationConfig_wem5v")
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_smoothed = true
 position_smoothing_enabled = true
+drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
 [node name="Label" type="Label" parent="."]
-show_behind_parent = true
 texture_filter = 1
 offset_left = -18.0
 offset_top = -27.3333

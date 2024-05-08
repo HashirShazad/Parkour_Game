@@ -1,11 +1,9 @@
-[gd_scene load_steps=28 format=3 uid="uid://qdrs13u14fx2"]
+[gd_scene load_steps=18 format=3 uid="uid://qdrs13u14fx2"]
 
 [ext_resource type="Script" path="res://Levels/Multiplayer_Menu.gd" id="1_osss2"]
 [ext_resource type="PackedScene" uid="uid://cr0aqnmtob2jv" path="res://Character/Multiplayer_Player.tscn" id="2_noewy"]
 [ext_resource type="FontFile" uid="uid://vpy38kvl0qsd" path="res://Sprites/Menu/Text/Minecraft.ttf" id="3_4lmol"]
 [ext_resource type="Theme" uid="uid://fg7dva5ufoat" path="res://Themes/Pixel_Theme.tres" id="4_mw5qo"]
-[ext_resource type="Texture2D" uid="uid://di6umekw71tm0" path="res://Sprites/Menu/Buttons/Single_Player.png" id="5_oxyiu"]
-[ext_resource type="Texture2D" uid="uid://dtymrrhwo7bsq" path="res://Sprites/Menu/Buttons/Two_Player.png" id="7_ir8yx"]
 [ext_resource type="TileSet" uid="uid://ccic8k3fbwsfm" path="res://Resources/Tile_Set.tres" id="9_hpo64"]
 [ext_resource type="Texture2D" uid="uid://croy1xhacb6we" path="res://Sprites/Menu/Buttons/Back.png" id="10_x8ewl"]
 
@@ -22,26 +20,6 @@ corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v8lbd"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tjoiu"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iswgc"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tpsx3"]
-
-[sub_resource type="InputEventKey" id="InputEventKey_b6rj6"]
-device = -1
-keycode = 83
-unicode = 115
-
-[sub_resource type="Shortcut" id="Shortcut_rmq21"]
-events = [SubResource("InputEventKey_b6rj6")]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_457ln"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ifu6j"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gk3ag"]
 
@@ -75,6 +53,7 @@ script = ExtResource("1_osss2")
 player_scene = ExtResource("2_noewy")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
 
 [node name="BG" type="Panel" parent="CanvasLayer"]
 anchors_preset = 15
@@ -90,10 +69,9 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -213.0
-offset_top = 100.0
-offset_right = 231.0
-offset_bottom = 226.0
+offset_left = -222.0
+offset_right = 222.0
+offset_bottom = 126.0
 grow_horizontal = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
@@ -115,109 +93,28 @@ text = "Join or Host"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Buttons" type="Panel" parent="CanvasLayer/BG"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/BG"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -213.0
-offset_top = -24.0
-offset_right = 231.0
-offset_bottom = 102.0
+offset_left = -56.5
+offset_top = -58.0
+offset_right = 56.5
+offset_bottom = 58.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_v8lbd")
+theme_override_constants/separation = 20
 
-[node name="Sp" type="Panel" parent="CanvasLayer/BG/Buttons"]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -63.0
-offset_right = 126.0
-offset_bottom = 63.0
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_tjoiu")
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/BG/VBoxContainer"]
+layout_mode = 2
 
-[node name="Sp" type="Panel" parent="CanvasLayer/BG/Buttons/Sp"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_iswgc")
-
-[node name="Host" type="Button" parent="CanvasLayer/BG/Buttons/Sp/Sp"]
+[node name="Join" type="Button" parent="CanvasLayer/BG/VBoxContainer/HBoxContainer"]
 texture_filter = 1
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-tooltip_text = "Single Player Mode"
-focus_neighbor_left = NodePath("../../../../../Close_Panel/Back/Back_To_Main_Menu_Button")
-focus_neighbor_bottom = NodePath("../../../../../Close_Panel/Back/Back_To_Main_Menu_Button")
-theme = ExtResource("4_mw5qo")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(0.227451, 0.227451, 0.227451, 1)
-theme_override_colors/font_hover_color = Color(0.776471, 0.776471, 0.776471, 1)
-theme_override_fonts/font = ExtResource("3_4lmol")
-theme_override_font_sizes/font_size = 60
-theme_override_styles/normal = SubResource("StyleBoxEmpty_tpsx3")
-shortcut = SubResource("Shortcut_rmq21")
-text = "
-Host"
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/BG/Buttons/Sp/Sp/Host"]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("5_oxyiu")
-
-[node name="2p" type="Panel" parent="CanvasLayer/BG/Buttons"]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -126.0
-offset_top = -63.0
-offset_right = -126.0
-offset_bottom = -63.0
-grow_horizontal = 0
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_457ln")
-
-[node name="2p" type="Panel" parent="CanvasLayer/BG/Buttons/2p"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_right = 126.0
-offset_bottom = 126.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_ifu6j")
-
-[node name="Join" type="Button" parent="CanvasLayer/BG/Buttons/2p/2p"]
-texture_filter = 1
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
 tooltip_text = "Two Player Mode"
 theme = ExtResource("4_mw5qo")
 theme_override_fonts/font = ExtResource("3_4lmol")
@@ -226,34 +123,75 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_gk3ag")
 shortcut = SubResource("Shortcut_yfjar")
 text = "Join"
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/BG/Buttons/2p/2p/Join"]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 1.0
-offset_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("7_ir8yx")
-
-[node name="IP address" type="LineEdit" parent="CanvasLayer/BG"]
+[node name="Host" type="Button" parent="CanvasLayer/BG/VBoxContainer/HBoxContainer"]
 texture_filter = 1
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -646.0
-offset_top = -151.0
-offset_right = -458.0
-offset_bottom = -109.0
-grow_horizontal = 0
-grow_vertical = 0
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+tooltip_text = "Two Player Mode"
 theme = ExtResource("4_mw5qo")
+theme_override_fonts/font = ExtResource("3_4lmol")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gk3ag")
+shortcut = SubResource("Shortcut_yfjar")
+text = "Host
+"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/BG/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/BG/VBoxContainer/HBoxContainer2"]
+texture_filter = 1
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme = ExtResource("4_mw5qo")
+text = "Port ID"
+
+[node name="Port_ID" type="LineEdit" parent="CanvasLayer/BG/VBoxContainer/HBoxContainer2"]
+texture_filter = 1
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme = ExtResource("4_mw5qo")
+text = "9999"
 placeholder_text = "Enter Port address"
+alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/BG/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/BG/VBoxContainer/HBoxContainer3"]
+texture_filter = 1
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme = ExtResource("4_mw5qo")
+text = "Address"
+
+[node name="Address" type="LineEdit" parent="CanvasLayer/BG/VBoxContainer/HBoxContainer3"]
+texture_filter = 1
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme = ExtResource("4_mw5qo")
+text = "localhost"
+placeholder_text = "Enter Address"
+alignment = 1
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="CanvasLayer/BG/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/BG/VBoxContainer/HBoxContainer4"]
+texture_filter = 1
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme = ExtResource("4_mw5qo")
+text = "Max number of players"
+
+[node name="MaxClients" type="LineEdit" parent="CanvasLayer/BG/VBoxContainer/HBoxContainer4"]
+texture_filter = 1
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme = ExtResource("4_mw5qo")
+text = "2"
+placeholder_text = "Enter maximum number of players"
+alignment = 1
 
 [node name="Close_Panel" type="Panel" parent="CanvasLayer"]
 anchors_preset = 2
@@ -283,8 +221,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 tooltip_text = "BACK"
-focus_neighbor_top = NodePath("../../../BG/Buttons/Sp/Sp/Host")
-focus_neighbor_right = NodePath("../../../BG/Buttons/Sp/Sp/Host")
 theme = ExtResource("4_mw5qo")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.227451, 0.227451, 0.227451, 1)
@@ -316,5 +252,5 @@ tile_set = ExtResource("9_hpo64")
 format = 2
 layer_0/tile_data = PackedInt32Array(2621463, 458752, 0, 2621464, 458752, 0, 2621465, 458752, 0, 2621466, 458752, 0, 2621467, 458752, 0, 2621468, 458752, 0, 2621469, 458752, 0, 2621470, 458752, 0, 2621471, 458752, 0, 2621472, 458752, 0, 2621473, 458752, 0, 2621474, 458752, 0, 2621475, 458752, 0, 2621476, 458752, 0, 2621477, 458752, 0, 2621478, 458752, 0, 2621479, 458752, 0, 2621480, 458752, 0, 2621481, 458752, 0, 2621482, 458752, 0, 2621483, 458752, 0, 2621484, 458752, 0, 2621485, 458752, 0, 2621486, 458752, 0, 2621487, 458752, 0, 2621488, 458752, 0, 2621489, 458752, 0, 2621490, 458752, 0, 2621491, 458752, 0, 2621492, 458752, 0, 2621493, 458752, 0, 2621494, 458752, 0, 2621495, 458752, 0, 2621496, 458752, 0, 2621497, 458752, 0, 2621498, 458752, 0, 2621499, 458752, 0, 2621500, 458752, 0, 2555965, 458752, 0, 2555966, 458752, 0, 2555967, 458752, 0, 2490432, 458752, 0, 2555968, 458752, 0, 2621503, 458752, 0, 2621502, 458752, 0, 2687037, 458752, 0, 2687036, 458752, 0, 2752572, 458752, 0, 2818107, 458752, 0, 2818106, 458752, 0, 2883641, 458752, 0, 2818104, 458752, 0, 2752568, 458752, 0, 2687031, 458752, 0, 2555958, 458752, 0, 2490421, 458752, 0, 2424884, 458752, 0, 2359347, 458752, 0, 2359346, 458752, 0, 2359345, 458752, 0, 2359344, 458752, 0, 2359343, 458752, 0, 2359342, 458752, 0, 2359341, 458752, 0, 2359340, 458752, 0, 2359339, 458752, 0, 2359338, 458752, 0, 2424873, 458752, 0, 2424872, 458752, 0, 2424871, 458752, 0, 2424870, 458752, 0, 2424869, 458752, 0, 2424868, 458752, 0, 2424867, 458752, 0, 2424866, 458752, 0, 2490401, 458752, 0, 2490400, 458752, 0, 2490399, 458752, 0, 2490398, 458752, 0, 2490397, 458752, 0, 2490396, 458752, 0, 2490395, 458752, 0, 2490394, 458752, 0, 2490393, 458752, 0, 2555928, 458752, 0, 2621462, 458752, 0, 2621461, 458752, 0, 2621460, 458752, 0, 2555924, 458752, 0, 2490388, 458752, 0, 2424852, 458752, 0, 2359316, 458752, 0, 2293780, 458752, 0, 2228244, 458752, 0, 2162708, 458752, 0, 2097172, 458752, 0, 2031636, 458752, 0, 1966100, 458752, 0, 1966101, 458752, 0, 2031638, 458752, 0, 2031639, 458752, 0, 2031640, 458752, 0, 2031641, 458752, 0, 2031642, 458752, 0, 2031643, 458752, 0, 2031644, 458752, 0, 2097181, 458752, 0, 2097182, 458752, 0, 2097183, 458752, 0, 2097184, 458752, 0, 2097185, 458752, 0, 2097186, 458752, 0, 2097187, 458752, 0, 2097188, 458752, 0, 2031653, 458752, 0, 2031654, 458752, 0, 2031655, 458752, 0, 2031656, 458752, 0, 2031657, 458752, 0, 2031658, 458752, 0, 2031659, 458752, 0, 2031660, 458752, 0, 2031661, 458752, 0, 2031662, 458752, 0, 2031663, 458752, 0, 2031664, 458752, 0, 1966129, 458752, 0, 1966130, 458752, 0, 1966131, 458752, 0, 1966132, 458752, 0, 1966133, 458752, 0, 1966134, 458752, 0, 1966135, 458752, 0, 1966136, 458752, 0, 1900601, 458752, 0, 1900602, 458752, 0, 1835066, 458752, 0, 1835065, 458752, 0, 1835064, 458752, 0, 1769527, 458752, 0, 1703990, 458752, 0, 1703989, 458752, 0, 1703988, 458752, 0, 1703987, 458752, 0, 1769522, 458752, 0, 1769521, 458752, 0, 1835056, 458752, 0, 1835055, 458752, 0, 1835054, 458752, 0, 1900589, 458752, 0, 1900588, 458752, 0, 1900587, 458752, 0, 1900586, 458752, 0, 1900585, 458752, 0, 1900584, 458752, 0, 1900583, 458752, 0, 1900582, 458752, 0, 1900581, 458752, 0, 1900580, 458752, 0, 1900579, 458752, 0, 1900578, 458752, 0, 1900577, 458752, 0, 1900576, 458752, 0, 1900575, 458752, 0, 1900574, 458752, 0, 1900573, 458752, 0, 1900572, 458752, 0, 1900571, 458752, 0, 1900570, 458752, 0, 1900569, 458752, 0, 1900568, 458752, 0, 1900567, 458752, 0, 1900566, 458752, 0, 1900565, 458752, 0, 1900564, 458752, 0, 1900563, 458752, 0, 1179649, 458752, 0, 1179650, 458752, 0, 1179651, 458752, 0, 1179652, 458752, 0, 1179653, 458752, 0, 1179654, 458752, 0, 1179655, 458752, 0, 1179656, 458752, 0, 1179657, 458752, 0, 1179658, 458752, 0, 1179659, 458752, 0, 1179660, 458752, 0, 1179661, 458752, 0, 1179662, 458752, 0, 1179663, 458752, 0, 1179664, 458752, 0, 1179665, 458752, 0, 1179666, 458752, 0, 1245202, 458752, 0, 1310739, 458752, 0, 1376276, 458752, 0, 1441812, 458752, 0, 1441811, 458752, 0, 1507346, 458752, 0, 1507345, 458752, 0, 1507344, 458752, 0, 1507343, 458752, 0, 1507342, 458752, 0, 1507341, 458752, 0, 1507340, 458752, 0, 1507339, 458752, 0, 1507338, 458752, 0, 1507337, 458752, 0, 1507336, 458752, 0, 1507335, 458752, 0, 1507334, 458752, 0, 1507333, 458752, 0, 1507332, 458752, 0, 1507331, 458752, 0, 1507330, 458752, 0, 1507329, 458752, 0, 1507328, 458752, 0, 1572863, 458752, 0, 1572862, 458752, 0, 1572861, 458752, 0, 1572860, 458752, 0, 1572859, 458752, 0, 1572858, 458752, 0, 1572857, 458752, 0, 1507320, 458752, 0, 1441783, 458752, 0, 1376247, 458752, 0, 1310711, 458752, 0, 1245175, 458752, 0, 1245176, 458752, 0, 1179641, 458752, 0, 1179642, 458752, 0, 1179643, 458752, 0, 1114108, 458752, 0, 1114109, 458752, 0, 1114110, 458752, 0, 1114111, 458752, 0, 1048576, 458752, 0, 983041, 458752, 0, 983042, 458752, 0, 983043, 458752, 0, 983044, 458752, 0, 983045, 458752, 0, 983046, 458752, 0, 983047, 458752, 0, 983048, 458752, 0, 983049, 458752, 0, 983050, 458752, 0, 983051, 458752, 0, 983052, 458752, 0, 983053, 458752, 0, 983054, 458752, 0, 983055, 458752, 0, 983056, 458752, 0, 983057, 458752, 0, 1048593, 458752, 0, 1114130, 458752, 0, 1245203, 458752, 0, 1376275, 458752, 0, 1376274, 458752, 0, 1376273, 458752, 0, 1376272, 458752, 0, 1376271, 458752, 0, 1376270, 458752, 0, 1376269, 458752, 0, 1376268, 458752, 0, 1376267, 458752, 0, 1376266, 458752, 0, 1376265, 458752, 0, 1376264, 458752, 0, 1376263, 458752, 0, 1376262, 458752, 0, 1376261, 458752, 0, 1376260, 458752, 0, 1376259, 458752, 0, 1376258, 458752, 0, 1376257, 458752, 0, 1376256, 458752, 0, 1441791, 458752, 0, 1441790, 458752, 0, 1441789, 458752, 0)
 
-[connection signal="pressed" from="CanvasLayer/BG/Buttons/Sp/Sp/Host" to="." method="_on_host_pressed"]
-[connection signal="pressed" from="CanvasLayer/BG/Buttons/2p/2p/Join" to="." method="_on_join_pressed"]
+[connection signal="pressed" from="CanvasLayer/BG/VBoxContainer/HBoxContainer/Join" to="." method="_on_join_pressed"]
+[connection signal="pressed" from="CanvasLayer/BG/VBoxContainer/HBoxContainer/Host" to="." method="_on_host_pressed"]

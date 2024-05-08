@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://tn6r0v4jsxhj"]
+
+[ext_resource type="Script" path="res://Multiplayer_Server/Player_Character_Handeler.gd" id="1_1gg1l"]
+
+[node name="PlayerCharacterHandeler" type="Button"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1gg1l")

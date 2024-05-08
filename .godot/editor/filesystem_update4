@@ -1,4 +1,4 @@
-res://Levels/Single_Player_Levels/Sp_Level_3.tscn
+res://Levels/Multiplayer_Menu.tscn
 res://UI/pause_menu.gdshader
 res://Themes/Pixel_Theme.tres
 res://Game_Manager/CRT.gdshader
@@ -7,10 +7,5 @@ res://UI/Settings_Menu.gd
 res://Resources/Shaders/Character Silhouette Shader(Show dark body if behind wall).gdshader
 res://Resources/Shaders/Character Silhouette Shader(Show dark body if behind wall).tres
 res://Resources/Tile_Set.tres
-res://Entity/Entity.gd
-res://Levels/Play_Menu.tscn
-res://Levels/Multiplayer_Menu.tscn
+res://Levels/Multiplayer_Menu.gd
 res://Character/Multiplayer_Player.tscn
-res://Levels/Single_Player_Levels/Sp_Level_2.tscn
-res://Character/Sp_Players.tscn
-res://Enemies/Chicken/Chicken.tscn

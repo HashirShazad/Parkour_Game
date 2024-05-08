@@ -1,4 +1,7 @@
 Label
+HBoxContainer
+Button
+VBoxContainer
 SubViewport
 LineEdit
 Camera2D
@@ -9,6 +12,3 @@ CanvasLayer
 Node
 Control
 Node2D
-ColorRect
-AudioStreamPlayer2D
-HSlider

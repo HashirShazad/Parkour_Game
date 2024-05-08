@@ -6,6 +6,8 @@ class_name Multiplayer_Player
 
 # Variables <===================================================================================>
 @onready var health_label:Label = $Label
+@onready var multiplayer_synchronizer = $MultiplayerSynchronizer
+@onready var camera = $Camera2D
 
 
 # Actual Code <=====================================================================>
@@ -24,8 +26,9 @@ func _process(delta):
 
 # Called only once
 func _ready():
+	if is_multiplayer_authority():
+		camera.make_current()
 	# Assign ref to game manager
-	$Camera2D.make_current()
 	update_game_manager()
 	jump_buffer_timer = 0
 	coyote_timer = 0
@@ -110,11 +113,13 @@ func handle_input():
 
 # Assign Refernces to game manager
 func update_game_manager():
-	if self.name == "Player1":
-		GameManger.player_1 = self
-	elif self.name == "Player2":
-		GameManger.player_2 = self
-	GameManger.update_health()
+	GameManger.disable_ui()
+	return
+	#if self.name == "Player1":
+		#GameManger.player_1 = self
+	#elif self.name == "Player2":
+		#GameManger.player_2 = self
+	#GameManger.update_health()
 
 func update_health():
 	health_label.text = str(health) + "%"
@@ -140,6 +145,9 @@ func take_damage(damage:int, stun_duration:float):
 	
 	await get_tree().create_timer(stun_duration).timeout
 	is_stunned = 0
+
+
+
 @rpc("unreliable")
 func remote_set_position(authority_position):
 	global_position = authority_position
