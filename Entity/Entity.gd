@@ -54,7 +54,6 @@ var jump_velocity = -800.0
 # References <----------------------------------------------------------------------------------------->
 @onready var sprite_2d:AnimatedSprite2D = $AnimatedSprite2D
 @onready var silhouette_sprite:AnimatedSprite2D = $AnimatedSprite2D/Silhouette_Sprite
-
 @onready var hurt_box = $Hurt_Box/CollisionShape2D
 @onready var collision_shape_2d = $CollisionShape2D
 @onready var dust_particles = $Dust_Particles
@@ -66,7 +65,8 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 # Actual Code <=====================================================================================>
 func _physics_process(delta):
 	flip_sprite()
-	update_animation()
+	if silhouette_sprite && sprite_2d:
+		update_animation()
 	if is_dead:
 		return
 	# Add the gravity.
