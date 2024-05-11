@@ -1,23 +1,19 @@
 extends Node
 
 var is_single_player:bool = false
-
-var discord_images:Dictionary = {
-	background = "background",
-	cannibal = "cannibal",
-	hashir_icon = "hashir_icon",
-	kaizo_poyo_logo = "kaizo_poyo_logo"
-}
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	DiscordRPC.app_id = 1224374449084567755
 	DiscordRPC.state = "Playing"
 	DiscordRPC.details = "ABD RMN"
+	#DiscordRPC.get_current_user()
+	#print(DiscordRPC.get_current_user())
 	update_presence()
 	DiscordRPC.refresh()
 
 func _process(delta):
 	DiscordRPC.run_callbacks()
+	
 ## Got to this link https://discord.com/developers/applications/1224374449084567755/rich-presence/visualizer
 func update_presence():
 	DiscordRPC.max_party_size = 2
@@ -30,21 +26,14 @@ func update_presence():
 	#memset(&DiscordRPC, 0, sizeof(DiscordRPC));
 	if is_single_player:
 		DiscordRPC.state = "Playing Solo"
-		DiscordRPC.small_image = "pono"
 		DiscordRPC.small_image_text = "Playing as Pono"
-		DiscordRPC.current_party_size = 1
 	else:
 		DiscordRPC.state = "Playing Coop"
-		DiscordRPC.small_image = "pono_and_mina"
 		DiscordRPC.small_image_text = "Playing as Pono & Mina"
-		DiscordRPC.current_party_size = 2
 	DiscordRPC.details = "Casual"
-	#DiscordRPC.start_timestamp = 1507665886;
+	DiscordRPC.start_timestamp = int(Time.get_unix_time_from_system());
 	#DiscordRPC.end_timestamp = 1507665886;
-
-
-	
-
-	
+	DiscordRPC.small_image = "pono"
+	DiscordRPC.current_party_size = 1
 	
 	#Discord_UpdatePresence(&DiscordRPC);

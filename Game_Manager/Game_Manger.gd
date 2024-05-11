@@ -57,7 +57,7 @@ var time:float
 var time_sec:int
 var time_msec:int
 var time_min:int
-
+var timer_stopped:bool
 # Miscellanous <----------------------------------------------------------------------------------------->
 var points:int = 0
 var paused:bool = false
@@ -145,6 +145,8 @@ func update_health():
 			tween.tween_property(hp_bar_P2, "value", player_2.health, .1).set_trans(Tween.TRANS_QUAD)
 # Update the timer
 func update_time(delta):
+	if timer_stopped:
+		return
 	if player_1 == null:
 		return
 	time += delta

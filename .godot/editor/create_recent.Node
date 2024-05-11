@@ -1,3 +1,4 @@
+DiscordRPCDebug
 Node
 Timer
 RayCast2D
@@ -12,4 +13,3 @@ Camera2D
 MultiplayerSynchronizer
 TileMap
 MultiplayerSpawner
-CanvasLayer
