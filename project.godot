@@ -50,6 +50,7 @@ folder_colors={
 "res://Character/": "green",
 "res://Collectables/": "orange",
 "res://Collision/": "teal",
+"res://Discord_Configurer/": "blue",
 "res://Game_Manager/": "blue",
 "res://Levels/": "purple",
 "res://Props/": "teal",

@@ -1,5 +1,5 @@
 fc8a56933c4b1c8d796fdb8f7a9f9475
-::res://::1715417435
+::res://::1715417590
 default_bus_layout.tres::AudioBusLayout::5495428649889114858::1714649025::0::1::::<><>::
 export_presets.cfg::TextFile::-1::1715167176::0::1::::<><>::
 icon.svg::CompressedTexture2D::8286680479429612557::1711717724::1711717724::1::::<><>::
@@ -199,6 +199,8 @@ Text.tscn::PackedScene::3902822444035551676::1712399445::0::1::::<><>::res://Col
 Hit_Box.gd::GDScript::-1::1714990181::0::1::::Hit_Box<>Area2D<>::
 Hurt_Box.gd::GDScript::-1::1715336926::0::1::::Hurt_Box<>Area2D<>::
 Projectile_Hit_Box.gd::GDScript::-1::1715069640::0::1::::Projectile_Hit_Box<>Hit_Box<>::
+::res://Discord configurer/::1715417590
+discord_manger.gd::GDScript::-1::1715417651::0::1::::<>Node<>::
 ::res://Enemies/::1715417429
 Bullet.tscn::PackedScene::4143397121569778890::1715417429::0::1::::<><>::res://Collision/Projectile_Hit_Box.gd<>uid://cdvq8p4k20mjt::::res://Sprites/Enemies/Turrent_Bulle.png
 Enemies.gd::GDScript::-1::1715346910::0::1::::Enemy<>Entity<>::
@@ -212,7 +214,7 @@ Chicken.tscn::PackedScene::7226884378450420080::1715163389::0::1::::<><>::res://
 ::res://Enemies/Kill_Zone/::1712137069
 Kill_Zone.tscn::PackedScene::5895502806752422379::1712137069::0::1::::<><>::uid://pa8e0cvnbkvd::::res://Enemies/Spikes/Death_Spike.tscn
 ::res://Enemies/Pig/::1715414765
-Pig.gd::GDScript::-1::1715414765::0::1::::Pig<>Enemy<>::
+Pig.gd::GDScript::-1::1715417652::0::1::::Pig<>Enemy<>::
 Pig.tscn::PackedScene::136522317025370782::1713963571::0::1::::<><>::uid://epx00bhsg0tb::::res://Sprites/Enemies/AngryPig/Idle (36x30).png<>uid://bnlbykhuv65y5::::res://Sprites/Enemies/AngryPig/Hit 1 (36x30).png<>res://Enemies/Enemies.gd<>uid://dcevp3018aoxm::::res://Sprites/Enemies/AngryPig/Run (36x30).png<>uid://5kd1fml7oru8::::res://Sprites/Other/Dust Particle.png<>uid://d4cw0jne78h8w::::res://Sprites/Enemies/AngryPig/Walk (36x30).png<>res://Collision/Hit_Box.gd
 ::res://Enemies/Plant/::1713963572
 Plant.gd::GDScript::-1::1713946890::0::1::::Plant<>Enemy<>::
@@ -230,7 +232,7 @@ Turrent_Bullet.tscn::PackedScene::3830846577661708720::1713963572::0::1::::<><>:
 ::res://Entity/::1715414915
 Entity.gd::GDScript::-1::1715414915::0::1::::Entity<>CharacterBody2D<>::
 ::res://Game_Manager/::1715417430
-CRT.gdshader::Shader::-1::1715417430::0::1::::<><>::
+CRT.gdshader::Shader::-1::1715417653::0::1::::<><>::
 Game_Manger.gd::GDScript::-1::1715245878::0::1::::<>Node<>::
 Game_Manger.tscn::PackedScene::8493431741956967510::1715245929::0::1::::<><>::res://Game_Manager/Game_Manger.gd<>uid://baha77q1ltfnx::::res://UI/pause_menu.tscn<>res://Game_Manager/CRT.gdshader<>uid://cp2ytcs60oa2h::::res://UI/hud.tscn<>uid://bnejv1eixxtt1::::res://UI/death_screen.tscn<>uid://dy30a236e6egq::::res://Sprites/Other/Timer_Logo.png
 ::res://Levels/::1715417430
@@ -247,7 +249,7 @@ Main_Menu.tscn::PackedScene::2688821410020161587::1714656145::0::1::::<><>::res:
 Multiplayer_Menu.gd::GDScript::-1::1715168422::0::1::::<>Node2D<>::
 Multiplayer_Menu.tscn::PackedScene::1130280374444242501::1715417429::0::1::::<><>::res://Levels/Multiplayer_Menu.gd<>uid://cr0aqnmtob2jv::::res://Character/Multiplayer_Player.tscn<>uid://vpy38kvl0qsd::::res://Sprites/Menu/Text/Minecraft.ttf<>uid://fg7dva5ufoat::::res://Themes/Pixel_Theme.tres<>uid://ccic8k3fbwsfm::::res://Resources/Tile_Set.tres<>uid://croy1xhacb6we::::res://Sprites/Menu/Buttons/Back.png
 Play_Menu.tscn::PackedScene::7054640914117525535::1715163331::0::1::::<><>::res://Levels/Levels.gd<>uid://dtajtyl1bbh6e::::res://Game_Manager/Game_Manger.tscn<>uid://vpy38kvl0qsd::::res://Sprites/Menu/Text/Minecraft.ttf<>uid://fg7dva5ufoat::::res://Themes/Pixel_Theme.tres<>uid://di6umekw71tm0::::res://Sprites/Menu/Buttons/Single_Player.png<>uid://dbjr5htuv70ef::::res://Sprites/Menu/Buttons/Test.png<>uid://dtymrrhwo7bsq::::res://Sprites/Menu/Buttons/Two_Player.png<>uid://ifrm7dmj1y3::::res://Sprites/Menu/Buttons/Save.png<>res://UI/Focused_Button.gd<>uid://croy1xhacb6we::::res://Sprites/Menu/Buttons/Back.png
-TEST.tscn::PackedScene::4509124187812499420::1715417430::0::1::::<><>::uid://ccic8k3fbwsfm::::res://Resources/Tile_Set.tres<>uid://dpgyn2a3buml0::::res://Props/Box.tscn<>uid://drl6q0tnh0apb::::res://Enemies/Spikes/Spike.tscn<>uid://dyi8g30o5iifp::::res://Props/Iron_Box.tscn<>uid://lqeurs1jy57v::::res://Camera/camera_2p.tscn<>uid://ckkcr3nhr8ynj::::res://Props/Strong_Box.tscn<>uid://bq8l8hs3fwqug::::res://Character/Both_Players.tscn<>uid://beigb0st4a5t3::::res://Traps/Buttons/Red_Holdable_Button.tscn<>uid://dmq7ud743lqol::::res://Traps/Buttons/Blue_Toggleable_Button.tscn<>uid://cp716sja4mvxb::::res://Traps/Buttons/Red_Toggleable_Button.tscn<>uid://b3isqaxx5s8el::::res://Traps/Buttons/Lever.tscn<>uid://cbmrycadcw6fr::::res://Traps/Buttons/Blue_Holdable_Button.tscn<>uid://c4f31fc42beji::::res://Traps/Buttons and Doors/Door_And_Buttons.tscn<>uid://3nkp7822ab7c::::res://Traps/Mace/Mace_Ball(HOLLOW).tscn<>uid://cehwcvpmrjcof::::res://Enemies/Turrent/Turrent_Auto.tscn<>uid://dapnjpxitpf15::::res://Enemies/Bee/Bee.tscn<>uid://drvnwu1l0gsdq::::res://Character/Ghost.tscn
+TEST.tscn::PackedScene::4509124187812499420::1715417653::0::1::::<><>::uid://ccic8k3fbwsfm::::res://Resources/Tile_Set.tres<>uid://dpgyn2a3buml0::::res://Props/Box.tscn<>uid://drl6q0tnh0apb::::res://Enemies/Spikes/Spike.tscn<>uid://dyi8g30o5iifp::::res://Props/Iron_Box.tscn<>uid://lqeurs1jy57v::::res://Camera/camera_2p.tscn<>uid://ckkcr3nhr8ynj::::res://Props/Strong_Box.tscn<>uid://bq8l8hs3fwqug::::res://Character/Both_Players.tscn<>uid://beigb0st4a5t3::::res://Traps/Buttons/Red_Holdable_Button.tscn<>uid://dmq7ud743lqol::::res://Traps/Buttons/Blue_Toggleable_Button.tscn<>uid://cp716sja4mvxb::::res://Traps/Buttons/Red_Toggleable_Button.tscn<>uid://b3isqaxx5s8el::::res://Traps/Buttons/Lever.tscn<>uid://cbmrycadcw6fr::::res://Traps/Buttons/Blue_Holdable_Button.tscn<>uid://c4f31fc42beji::::res://Traps/Buttons and Doors/Door_And_Buttons.tscn<>uid://3nkp7822ab7c::::res://Traps/Mace/Mace_Ball(HOLLOW).tscn<>uid://cehwcvpmrjcof::::res://Enemies/Turrent/Turrent_Auto.tscn<>uid://dapnjpxitpf15::::res://Enemies/Bee/Bee.tscn<>uid://drvnwu1l0gsdq::::res://Character/Ghost.tscn
 ::res://Levels/Single_Player_Levels/::1715163961
 Sp_Level_1.tscn::PackedScene::754325062140470558::1714730867::0::1::::<><>::res://Levels/Levels.gd<>uid://bdlua5a7mavuv::::res://Sprites/Background/Brown.png<>uid://blknjycqdvppw::::res://Collectables/Check_Point.tscn<>uid://b82c3pa3l3b6r::::res://Levels/Single_Player_Levels/Sp_Level_2.tscn<>uid://lqeurs1jy57v::::res://Camera/camera_2p.tscn<>uid://dqgm4rmmi5c3j::::res://Sprites/Terrain/Terrain (16x16).png<>uid://cfj2cbuh0vbwb::::res://Character/Sp_Players.tscn<>uid://kxusrwxus326::::res://Collectables/Fruits.tscn
 Sp_Level_2.tscn::PackedScene::4758562948460900163::1715163331::0::1::::<><>::uid://e8qk3dt180th::::res://Sprites/Background/Green.png<>uid://blknjycqdvppw::::res://Collectables/Check_Point.tscn<>uid://bo2qi87o0cpal::::res://Levels/Single_Player_Levels/Sp_Level_3.tscn<>uid://dqgm4rmmi5c3j::::res://Sprites/Terrain/Terrain (16x16).png<>uid://kxusrwxus326::::res://Collectables/Fruits.tscn<>uid://lqeurs1jy57v::::res://Camera/camera_2p.tscn<>uid://drl6q0tnh0apb::::res://Enemies/Spikes/Spike.tscn<>uid://pa8e0cvnbkvd::::res://Enemies/Spikes/Death_Spike.tscn<>uid://cfj2cbuh0vbwb::::res://Character/Sp_Players.tscn
@@ -265,13 +267,13 @@ Strong_Box.tscn::PackedScene::5495526864867392219::1713254794::0::1::::<><>::uid
 ::res://Resources/::1715414765
 Style_Box_Flat.tres::StyleBoxFlat::2325408421080595906::1714648315::0::1::::<><>::
 Theme.tres::Theme::4775751602354225106::1714046571::0::1::::<><>::uid://vpy38kvl0qsd::::res://Sprites/Menu/Text/Minecraft.ttf
-Tile_Set.tres::TileSet::4929915010596563806::1715414765::0::1::::<><>::uid://dqgm4rmmi5c3j::::res://Sprites/Terrain/Terrain (16x16).png
+Tile_Set.tres::TileSet::4929915010596563806::1715417652::0::1::::<><>::uid://dqgm4rmmi5c3j::::res://Sprites/Terrain/Terrain (16x16).png
 user_preferences.gd::GDScript::-1::1714990381::0::1::::User_Preferences<>Resource<>::
 ::res://Resources/Environment/::1714560685
 Pixel_Environment.tres::Environment::7936241036822263045::1714560685::0::1::::<><>::
 ::res://Resources/Shaders/::1715417430
-Character Silhouette Shader(Show dark body if behind wall).gdshader::Shader::-1::1715417430::0::1::::<><>::
-Character Silhouette Shader(Show dark body if behind wall).tres::ShaderMaterial::4939316044202760060::1715414765::0::1::::<><>::res://Resources/Shaders/Character Silhouette Shader(Show dark body if behind wall).gdshader
+Character Silhouette Shader(Show dark body if behind wall).gdshader::Shader::-1::1715417653::0::1::::<><>::
+Character Silhouette Shader(Show dark body if behind wall).tres::ShaderMaterial::4939316044202760060::1715417652::0::1::::<><>::res://Resources/Shaders/Character Silhouette Shader(Show dark body if behind wall).gdshader
 ::res://Resources/Themes/::1714648782
 Tab_Heading_Style_Box_Flat.tres::StyleBoxFlat::8622900284251306034::1714648782::0::1::::<><>::
 Tab_Style_Box_Flat.tres::StyleBoxFlat::563577940197457449::1714393081::0::1::::<><>::
@@ -2918,7 +2920,7 @@ Idle.png::CompressedTexture2D::4642492097058708582::1711717724::1711717724::1:::
 Jump (28x28).png::CompressedTexture2D::6746984828410350441::1711717724::1711717724::1::::<><>::
 ::res://Themes/::1715414765
 Pixel_Style_Box.tres::StyleBoxFlat::2927436013103161169::1712399762::0::1::::<><>::
-Pixel_Theme.tres::Theme::365279890245117299::1715414765::0::1::::<><>::uid://vpy38kvl0qsd::::res://Sprites/Menu/Text/Minecraft.ttf<>uid://ibabttfrkh7n::::res://Resources/Themes/Tab_Style_Box_Flat.tres<>uid://du3854qsfr0bu::::res://Resources/Themes/Tab_Heading_Style_Box_Flat.tres
+Pixel_Theme.tres::Theme::365279890245117299::1715417652::0::1::::<><>::uid://vpy38kvl0qsd::::res://Sprites/Menu/Text/Minecraft.ttf<>uid://ibabttfrkh7n::::res://Resources/Themes/Tab_Style_Box_Flat.tres<>uid://du3854qsfr0bu::::res://Resources/Themes/Tab_Heading_Style_Box_Flat.tres
 ::res://Transitions/::1713252483
 Transitioner.gd::GDScript::-1::1713084800::0::1::::<>CanvasLayer<>::
 Transitioner.tscn::PackedScene::3196491567444744437::1713252483::0::1::::<><>::res://Transitions/Transitioner.gd
@@ -2955,8 +2957,8 @@ death_screen.tscn::PackedScene::3307718488792129300::1714391677::0::1::::<><>::r
 Focused_Button.gd::GDScript::-1::1713862260::0::1::::Auto_Focus_Button<>Button<>::
 hud.tscn::PackedScene::5882903493522527485::1714906053::0::1::::<><>::uid://vpy38kvl0qsd::::res://Sprites/Menu/Text/Minecraft.ttf<>uid://dj48bttltoec2::::res://Sprites/Main Characters/Ninja Frog/Fall (32x32).png<>uid://d32bxk1j63fcb::::res://Sprites/Items/Fruits/Logo.png<>uid://dy3iatg1pcke::::res://Sprites/Main Characters/Pink Man/Fall (32x32).png
 pause_menu.gd::GDScript::-1::1714647851::0::1::::<>CanvasLayer<>::
-pause_menu.gdshader::Shader::-1::1715417430::0::1::::<><>::
+pause_menu.gdshader::Shader::-1::1715417653::0::1::::<><>::
 pause_menu.tscn::PackedScene::2400930180037325165::1714730866::0::1::::<><>::res://UI/pause_menu.gd<>res://UI/pause_menu.gdshader<>uid://vpy38kvl0qsd::::res://Sprites/Menu/Text/Minecraft.ttf<>uid://chhiw8tnjskvp::::res://Sprites/Menu/Buttons/Next.png<>uid://croy1xhacb6we::::res://Sprites/Menu/Buttons/Back.png<>res://UI/Focused_Button.gd<>uid://fg7dva5ufoat::::res://Themes/Pixel_Theme.tres<>uid://dhdm857cg406g::::res://Sprites/Menu/Buttons/Restart.png<>uid://ibabttfrkh7n::::res://Resources/Themes/Tab_Style_Box_Flat.tres<>uid://du3854qsfr0bu::::res://Resources/Themes/Tab_Heading_Style_Box_Flat.tres
 Remapable_Buttons.gd::GDScript::-1::1713357894::0::1::::Remap_Button<>Button<>::
-Settings_Menu.gd::GDScript::-1::1715414765::0::1::::<>Node2D<>::
+Settings_Menu.gd::GDScript::-1::1715417652::0::1::::<>Node2D<>::
 Settings_Menu.tscn::PackedScene::6683176825222154636::1714906053::0::1::::<><>::uid://dtajtyl1bbh6e::::res://Game_Manager/Game_Manger.tscn<>res://UI/Settings_Menu.gd<>res://UI/Focused_Button.gd<>uid://vpy38kvl0qsd::::res://Sprites/Menu/Text/Minecraft.ttf<>uid://croy1xhacb6we::::res://Sprites/Menu/Buttons/Back.png<>res://UI/Remapable_Buttons.gd<>uid://fg7dva5ufoat::::res://Themes/Pixel_Theme.tres<>uid://cabn6wnyhy80m::::res://Resources/Theme.tres<>uid://d1ah7ypodov3y::::res://Sounds/Audio_Player/Audio_Slider.tscn
