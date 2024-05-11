@@ -34,6 +34,7 @@ var mouse_pos = Vector2()
 @onready var pause_menu:CanvasLayer = $Pause_Menu
 @onready var death_screen:CanvasLayer = $Death_Screen
 @onready var hud = $Hud
+#@onready var discord_manager = $Discord_Manager
 
 #Player Refs <----------------------------------------------------------------------------------------->
 var player_1:Player
@@ -77,9 +78,12 @@ func _process(delta):
 		return
 	if player_2 == null:
 		if player_1:
+			#iscord_manager.is_single_player = true
 			get_input()
 			check_if_dead()
 	elif player_1 && player_2:
+		#discord_manager.is_single_player = false
+		
 		get_input()
 		check_if_dead()
 		

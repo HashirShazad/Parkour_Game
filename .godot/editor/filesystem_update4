@@ -16,3 +16,4 @@ res://Enemies/Bee/Bee_Bullet.tscn
 res://Character/Players.tscn
 res://Enemies/Bee/Bee.tscn
 res://Character/Both_Players.tscn
+res://Game_Manager/Game_Manger.gd
