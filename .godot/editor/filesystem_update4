@@ -1,4 +1,3 @@
-res://Character/Multiplayer_Player.tscn
 res://UI/pause_menu.gdshader
 res://Themes/Pixel_Theme.tres
 res://Game_Manager/CRT.gdshader
@@ -7,12 +6,3 @@ res://UI/Settings_Menu.gd
 res://Resources/Shaders/Character Silhouette Shader(Show dark body if behind wall).gdshader
 res://Resources/Shaders/Character Silhouette Shader(Show dark body if behind wall).tres
 res://Resources/Tile_Set.tres
-res://Enemies/Bullet.tscn
-res://Enemies/Bee/Bee_Bullet.tscn
-res://Character/Players.tscn
-res://Levels/TEST.tscn
-res://Enemies/Bee/Bee.tscn
-res://Character/Both_Players.tscn
-res://Game_Manager/Game_Manger.tscn
-res://Discord_Configurer/discord_manger.gd
-res://addons/discord-rpc-gd/restart_window.tscn
