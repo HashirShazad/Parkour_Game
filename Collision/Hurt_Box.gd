@@ -10,6 +10,7 @@ func area_entered(area):
 	_on_area_entered(area)
 	
 func _on_area_entered(hitbox: Hit_Box) -> void:
+	print(hitbox, hitbox.has_method("destroy"))
 	if hitbox == null:
 		return
 	#for to_ignore in hitbox.to_ignore:

@@ -1,3 +1,6 @@
+Timer
+RayCast2D
+Projectile_Hit_Box
 Label
 HBoxContainer
 Button
@@ -10,5 +13,3 @@ TileMap
 MultiplayerSpawner
 CanvasLayer
 Node
-Control
-Node2D

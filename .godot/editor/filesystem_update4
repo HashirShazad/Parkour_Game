@@ -1,4 +1,4 @@
-res://Levels/Multiplayer_Menu.tscn
+res://Enemies/Bee/Bee.tscn
 res://UI/pause_menu.gdshader
 res://Themes/Pixel_Theme.tres
 res://Game_Manager/CRT.gdshader
@@ -7,5 +7,12 @@ res://UI/Settings_Menu.gd
 res://Resources/Shaders/Character Silhouette Shader(Show dark body if behind wall).gdshader
 res://Resources/Shaders/Character Silhouette Shader(Show dark body if behind wall).tres
 res://Resources/Tile_Set.tres
-res://Levels/Multiplayer_Menu.gd
+res://Entity/Entity.gd
+res://Levels/Multiplayer_Menu.tscn
 res://Character/Multiplayer_Player.tscn
+res://Enemies/Bullet.tscn
+res://Enemies/Bee/Bee_Bullet.tscn
+res://Character/Players.tscn
+res://Levels/TEST.tscn
+res://Character/Both_Players.tscn
+res://Enemies/Bee/Bee.gd

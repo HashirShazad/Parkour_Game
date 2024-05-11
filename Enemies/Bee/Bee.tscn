@@ -1,0 +1,211 @@
+[gd_scene load_steps=29 format=3 uid="uid://dapnjpxitpf15"]
+
+[ext_resource type="Script" path="res://Enemies/Bee/Bee.gd" id="1_7bx8l"]
+[ext_resource type="Texture2D" uid="uid://brow6i43cve1h" path="res://Sprites/Enemies/Bee/Attack (36x34).png" id="2_oik15"]
+[ext_resource type="Texture2D" uid="uid://cp0nelbffrdgk" path="res://Sprites/Enemies/Bee/Hit (36x34).png" id="2_qgrl1"]
+[ext_resource type="Texture2D" uid="uid://ck2eypnnjibw0" path="res://Sprites/Enemies/Bee/Idle (36x34).png" id="3_r0sam"]
+[ext_resource type="Texture2D" uid="uid://5kd1fml7oru8" path="res://Sprites/Other/Dust Particle.png" id="5_ieib0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yv64b"]
+atlas = ExtResource("2_oik15")
+region = Rect2(0, 0, 36, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ryv1d"]
+atlas = ExtResource("2_oik15")
+region = Rect2(36, 0, 36, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u3tqn"]
+atlas = ExtResource("2_oik15")
+region = Rect2(108, 0, 36, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u2nar"]
+atlas = ExtResource("2_oik15")
+region = Rect2(180, 0, 36, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ynfjy"]
+atlas = ExtResource("2_oik15")
+region = Rect2(216, 0, 36, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1yfkr"]
+atlas = ExtResource("2_oik15")
+region = Rect2(252, 0, 36, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wfcnv"]
+atlas = ExtResource("2_qgrl1")
+region = Rect2(0, 0, 36, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6fva2"]
+atlas = ExtResource("2_qgrl1")
+region = Rect2(36, 0, 36, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ff8ng"]
+atlas = ExtResource("2_qgrl1")
+region = Rect2(72, 0, 36, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xuari"]
+atlas = ExtResource("2_qgrl1")
+region = Rect2(108, 0, 36, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ayhq8"]
+atlas = ExtResource("2_qgrl1")
+region = Rect2(144, 0, 36, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fr4c5"]
+atlas = ExtResource("3_r0sam")
+region = Rect2(0, 0, 36, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lx8lu"]
+atlas = ExtResource("3_r0sam")
+region = Rect2(36, 0, 36, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qav65"]
+atlas = ExtResource("3_r0sam")
+region = Rect2(72, 0, 36, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t7nc2"]
+atlas = ExtResource("3_r0sam")
+region = Rect2(108, 0, 36, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rql8a"]
+atlas = ExtResource("3_r0sam")
+region = Rect2(144, 0, 36, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jv0wy"]
+atlas = ExtResource("3_r0sam")
+region = Rect2(180, 0, 36, 34)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_idhum"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yv64b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ryv1d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u3tqn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u2nar")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ynfjy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1yfkr")
+}],
+"loop": true,
+"name": &"Attack",
+"speed": 25.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wfcnv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6fva2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ff8ng")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xuari")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ayhq8")
+}],
+"loop": true,
+"name": &"Damaged",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fr4c5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lx8lu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qav65")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t7nc2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rql8a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jv0wy")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 15.0
+}]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_3ld2l"]
+particles_animation = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Curve" id="Curve_nmddb"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.13242, 1), 0.0, 0.0, 0, 0, Vector2(0.315068, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_qnfyl"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_kn7vb"]
+offsets = PackedFloat32Array(0, 0.691099, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yidtu"]
+height = 26.0
+
+[node name="Enemy" type="CharacterBody2D" groups=["Enemy"]]
+scale = Vector2(3, 3)
+platform_floor_layers = 4278190081
+script = ExtResource("1_7bx8l")
+animations = {
+"Damaged": "Frog_Damaged",
+"Dead": "Dead",
+"Double_Jump": "Frog_Double_Jump",
+"Falling": "Frog_Falling",
+"Idle": "    ",
+"Jumping": "Frog_Jumping",
+"Walking": "Frog_Walking"
+}
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_idhum")
+animation = &"Attack"
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_3ld2l")
+position = Vector2(0, 15.6667)
+emitting = false
+amount = 2
+one_shot = true
+explosiveness = 1.0
+texture = ExtResource("5_ieib0")
+gravity = Vector2(100, 0)
+initial_velocity_max = 200.0
+scale_amount_max = 3.0
+scale_amount_curve = SubResource("Curve_nmddb")
+color_ramp = SubResource("Gradient_qnfyl")
+color_initial_ramp = SubResource("Gradient_kn7vb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+show_behind_parent = true
+position = Vector2(0, 0.333333)
+shape = SubResource("CapsuleShape2D_yidtu")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
