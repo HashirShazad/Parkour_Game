@@ -14,8 +14,8 @@
 [ext_resource type="PackedScene" uid="uid://cbmrycadcw6fr" path="res://Traps/Buttons/Blue_Holdable_Button.tscn" id="11_waq7q"]
 [ext_resource type="PackedScene" uid="uid://c4f31fc42beji" path="res://Traps/Buttons and Doors/Door_And_Buttons.tscn" id="14_ptien"]
 [ext_resource type="PackedScene" uid="uid://3nkp7822ab7c" path="res://Traps/Mace/Mace_Ball(HOLLOW).tscn" id="15_mp5cc"]
-[ext_resource type="PackedScene" uid="uid://cq6ietvk7s8j4" path="res://Enemies/Turrent/Turrent.tscn" id="15_pmsco"]
 [ext_resource type="PackedScene" uid="uid://cehwcvpmrjcof" path="res://Enemies/Turrent/Turrent_Auto.tscn" id="16_tgq2o"]
+[ext_resource type="PackedScene" uid="uid://dapnjpxitpf15" path="res://Enemies/Bee/Bee.tscn" id="18_okx86"]
 [ext_resource type="PackedScene" uid="uid://drvnwu1l0gsdq" path="res://Character/Ghost.tscn" id="18_qnu7d"]
 
 [node name="Level1" type="Node2D"]
@@ -43,12 +43,12 @@ layer_0/tile_data = PackedInt32Array(7274652, 131072, 2, 7209116, 131072, 1, 714
 
 [node name="PhantomCamera2D" parent="Scene_Objects/Camera" index="0"]
 position = Vector2(1188, 848)
-zoom = Vector2(0.3, 0.3)
+zoom = Vector2(0.8, 0.8)
 follow_group = Array[NodePath]([NodePath("../../Players/Player1"), NodePath("../../Players/Player2")])
 
 [node name="Camera2D" parent="Scene_Objects/Camera" index="1"]
 position = Vector2(1188, 848)
-zoom = Vector2(0.3, 0.3)
+zoom = Vector2(0.8, 0.8)
 
 [node name="Players" parent="Scene_Objects" instance=ExtResource("9_8g1e6")]
 position = Vector2(1188, 848)
@@ -111,14 +111,14 @@ position = Vector2(187, 40)
 [node name="MaceBall(360)" parent="." instance=ExtResource("15_mp5cc")]
 position = Vector2(708, 767)
 
-[node name="Turrent" parent="." instance=ExtResource("15_pmsco")]
-position = Vector2(1685, 961)
-
 [node name="Turrent2" parent="." instance=ExtResource("16_tgq2o")]
 position = Vector2(2235, 918)
 
 [node name="Sprite2D" parent="." instance=ExtResource("18_qnu7d")]
 position = Vector2(80, -80)
+
+[node name="Enemy" parent="." instance=ExtResource("18_okx86")]
+position = Vector2(1550, 843)
 
 [editable path="Scene_Objects/Camera"]
 [editable path="Scene_Objects/Players"]

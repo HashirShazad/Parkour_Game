@@ -1,17 +1,8 @@
-res://Levels/Single_Player_Levels/Sp_Level_3.tscn
+res://Game_Manager/Game_Manger.tscn
 res://UI/pause_menu.gdshader
 res://Themes/Pixel_Theme.tres
 res://Game_Manager/CRT.gdshader
 res://Enemies/Pig/Pig.gd
 res://UI/Settings_Menu.gd
 res://Resources/Shaders/Character Silhouette Shader(Show dark body if behind wall).gdshader
-res://Resources/Shaders/Character Silhouette Shader(Show dark body if behind wall).tres
-res://Resources/Tile_Set.tres
-res://Entity/Entity.gd
-res://Levels/Play_Menu.tscn
-res://Levels/Multiplayer_Menu.tscn
-res://Character/Multiplayer_Player.tscn
-res://Levels/Single_Player_Levels/Sp_Level_2.tscn
-res://Character/Sp_Players.tscn
-res://Enemies/Chicken/Chicken.tscn
-res://Levels/Multiplayer_Menu.gd
+res://addons/discord-rpc-gd/restart_window.tscn

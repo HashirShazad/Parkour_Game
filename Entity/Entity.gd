@@ -82,6 +82,8 @@ func _physics_process(delta):
 	
 # Update animations based on conditions
 func update_animation():
+	if silhouette_sprite == null or sprite_2d == null:
+		return
 	if is_dead:
 		sprite_2d.play(animations.Dead)
 		silhouette_sprite.play(animations.Dead)

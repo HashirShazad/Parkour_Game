@@ -6,8 +6,8 @@ var ghost_scene = preload("res://Character/Ghost.tscn")
 var jump_sound = preload("res://Sounds/Sound/Jump.wav")
 
 # Edge Checks <----------------------------------------------------------------------------------------->
-@onready var edge_check_right = $Edge_Check_Right
-@onready var edge_check_left = $Edge_Check_Left
+@onready var edge_check_right:RayCast2D = $Edge_Check_Right
+@onready var edge_check_left:RayCast2D = $Edge_Check_Left
 
 
 # Actual Code <===============================================================================================>
@@ -22,9 +22,10 @@ func _physics_process(delta):
 	flip_sprite()
 	update_animation()
 	var found_wall = is_on_wall()
-	var found_edge = not edge_check_right.is_colliding() or not  edge_check_left.is_colliding()
-	if found_wall or found_edge:
-		direction *= -1
+	if edge_check_left and edge_check_right:
+		var found_edge = not edge_check_right.is_colliding() or not  edge_check_left.is_colliding()
+		if found_wall or found_edge:
+			direction *= -1
 
 	if is_dead:
 		return

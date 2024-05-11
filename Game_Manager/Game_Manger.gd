@@ -1,5 +1,4 @@
 extends Node
-class_name Game_Manager
 # Variables <===========================================================================================>
 # Levels <----------------------------------------------------------------------------------------->
 var levels_UI = {
@@ -35,6 +34,7 @@ var mouse_pos = Vector2()
 @onready var pause_menu:CanvasLayer = $Pause_Menu
 @onready var death_screen:CanvasLayer = $Death_Screen
 @onready var hud = $Hud
+#@onready var discord_manager = $Discord_Manager
 
 #Player Refs <----------------------------------------------------------------------------------------->
 var player_1:Player
@@ -57,7 +57,7 @@ var time:float
 var time_sec:int
 var time_msec:int
 var time_min:int
-
+var timer_stopped:bool
 # Miscellanous <----------------------------------------------------------------------------------------->
 var points:int = 0
 var paused:bool = false
@@ -78,9 +78,12 @@ func _process(delta):
 		return
 	if player_2 == null:
 		if player_1:
+			#iscord_manager.is_single_player = true
 			get_input()
 			check_if_dead()
 	elif player_1 && player_2:
+		#discord_manager.is_single_player = false
+		
 		get_input()
 		check_if_dead()
 		
@@ -142,6 +145,8 @@ func update_health():
 			tween.tween_property(hp_bar_P2, "value", player_2.health, .1).set_trans(Tween.TRANS_QUAD)
 # Update the timer
 func update_time(delta):
+	if timer_stopped:
+		return
 	if player_1 == null:
 		return
 	time += delta
@@ -218,7 +223,9 @@ func set_saved_level(level):
 		user_prefs.saved_level = level
 		user_prefs.save()
 
-
+# Called by the multiplayer player to disable the UI
+func disable_ui():
+	hud.visible = false
 
 # Transparent UI <----------------------------------------------------------------------------------------->
 # Buttons <----------------------------------------------------------------------------------------->
