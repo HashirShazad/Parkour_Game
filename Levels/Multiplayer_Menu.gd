@@ -2,7 +2,7 @@ extends Node2D
 
 var peer = ENetMultiplayerPeer.new()
 var connected_peer_ids = []
-#var player_numbers = 1
+var player_numbers = 1
 
 @export var player_scene:PackedScene
 
