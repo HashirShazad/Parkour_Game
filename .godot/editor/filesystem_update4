@@ -15,3 +15,4 @@ res://Enemies/Bee/Bee.tscn
 res://Character/Both_Players.tscn
 res://Game_Manager/Game_Manger.tscn
 res://Discord_Configurer/discord_manger.gd
+res://addons/discord-rpc-gd/restart_window.tscn
