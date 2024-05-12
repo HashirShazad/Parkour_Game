@@ -53,6 +53,14 @@ zoom = Vector2(0.8, 0.8)
 [node name="Players" parent="Scene_Objects" instance=ExtResource("9_8g1e6")]
 position = Vector2(1188, 848)
 
+[node name="Player1" parent="Scene_Objects/Players" index="0"]
+btns = null
+health = null
+animations = null
+
+[node name="Player2" parent="Scene_Objects/Players" index="1"]
+health = null
+
 [node name="Spikes" type="Node" parent="."]
 
 [node name="Spike" parent="Spikes" instance=ExtResource("6_e85dq")]
@@ -118,7 +126,7 @@ position = Vector2(2235, 918)
 position = Vector2(80, -80)
 
 [node name="Enemy" parent="." instance=ExtResource("18_okx86")]
-position = Vector2(1550, 843)
+position = Vector2(1338, 1337)
 
 [editable path="Scene_Objects/Camera"]
 [editable path="Scene_Objects/Players"]

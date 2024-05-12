@@ -207,5 +207,7 @@ debug_color = Color(0, 0.6, 0.701961, 0.419608)
 [node name="RayCast2D" type="RayCast2D" parent="."]
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 0.8
+autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

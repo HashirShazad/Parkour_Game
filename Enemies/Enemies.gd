@@ -20,7 +20,10 @@ func _ready():
 		
 func _physics_process(delta):
 	flip_sprite()
-	update_animation()
+	if sprite_2d:
+		update_animation(sprite_2d)
+	if silhouette_sprite:
+		update_animation(silhouette_sprite)
 	var found_wall = is_on_wall()
 	if edge_check_left and edge_check_right:
 		var found_edge = not edge_check_right.is_colliding() or not  edge_check_left.is_colliding()

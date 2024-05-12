@@ -1,5 +1,5 @@
 fc8a56933c4b1c8d796fdb8f7a9f9475
-::res://::1715431876
+::res://::1715483870
 default_bus_layout.tres::AudioBusLayout::5495428649889114858::1714649025::0::1::::<><>::
 export_presets.cfg::TextFile::-1::1715429403::0::1::::<><>::
 icon.svg::CompressedTexture2D::8286680479429612557::1711717724::1711717724::1::::<><>::
@@ -20,7 +20,7 @@ DockedDefault2.png::CompressedTexture2D::1601365326812199361::1714192810::171419
 DockedDefault.png::CompressedTexture2D::1013415091427198849::1714192810::1714192853::1::::<><>::
 FloatingWindow.png::CompressedTexture2D::2512257122649837221::1714192810::1714192853::1::::<><>::
 Tool.png::CompressedTexture2D::1968009520999862145::1714192811::1714192853::1::::<><>::
-::res://addons/discord-rpc-gd/::1715429029
+::res://addons/discord-rpc-gd/::1715431884
 Debug.svg::CompressedTexture2D::1414570589633831756::1715423356::1715423356::1::::<><>::
 example.gd::GDScript::-1::1715423356::0::1::::DiscordRPCTutorial<>Node<>::
 logo.png::CompressedTexture2D::6060475218541271158::1715423356::1715423356::1::::<><>::
@@ -28,12 +28,12 @@ Logo_V2_No_Bg.png::CompressedTexture2D::6060475218541271158::1715423356::1715423
 plugin.cfg::TextFile::-1::1715423356::0::1::::<><>::
 plugin.gd::GDScript::-1::1715423356::0::1::::<>EditorPlugin<>::
 READ_ME_PLEASE.txt::TextFile::-1::1715423356::0::1::::<><>::
-restart_window.tscn::PackedScene::1435148156816135285::1715429029::0::1::::<><>::uid://csl0e2px0cwc1::::res://addons/discord-rpc-gd/Logo_V2_No_Bg.png
+restart_window.tscn::PackedScene::1435148156816135285::1715431884::0::1::::<><>::uid://csl0e2px0cwc1::::res://addons/discord-rpc-gd/Logo_V2_No_Bg.png
 ::res://addons/discord-rpc-gd/bin/::1715423356
 discord-rpc-gd.gdextension::GDExtension::-1::1715423356::0::1::::<><>::
 ::res://addons/discord-rpc-gd/bin/linux/::1715423356
 ::res://addons/discord-rpc-gd/bin/macos/::1715423356
-::res://addons/discord-rpc-gd/bin/windows/::1715431863
+::res://addons/discord-rpc-gd/bin/windows/::1715483862
 ::res://addons/discord-rpc-gd/nodes/::1715423356
 debug.gd::GDScript::-1::1715423356::0::1::::<>Node<>::
 Debug.tscn::PackedScene::6635590667203094151::1715423356::0::1::::<><>::uid://dnfq6kug4x6o2::::res://addons/discord-rpc-gd/nodes/assets/Checked.svg<>uid://compmm3kviqqe::::res://addons/discord-rpc-gd/nodes/assets/Unchecked.svg<>uid://dtc6ckladq0td::::res://addons/discord-rpc-gd/nodes/assets/circle.svg
@@ -213,8 +213,8 @@ Bee_Bullet.tscn::PackedScene::5867627078168897354::1715423356::0::1::::<><>::res
 Chicken.tscn::PackedScene::7226884378450420080::1715163389::0::1::::<><>::res://Enemies/Enemies.gd<>uid://16bj1yhsvyja::::res://Sprites/Enemies/Chicken/Hit (32x34).png<>uid://5io4gfwbuoip::::res://Sprites/Enemies/Chicken/Idle (32x34).png<>uid://rgqx7mey51pw::::res://Sprites/Enemies/Chicken/Run (32x34).png<>uid://5kd1fml7oru8::::res://Sprites/Other/Dust Particle.png<>res://Collision/Hit_Box.gd
 ::res://Enemies/Kill_Zone/::1712137069
 Kill_Zone.tscn::PackedScene::5895502806752422379::1712137069::0::1::::<><>::uid://pa8e0cvnbkvd::::res://Enemies/Spikes/Death_Spike.tscn
-::res://Enemies/Pig/::1715429435
-Pig.gd::GDScript::-1::1715429435::0::1::::Pig<>Enemy<>::
+::res://Enemies/Pig/::1715431884
+Pig.gd::GDScript::-1::1715431884::0::1::::Pig<>Enemy<>::
 Pig.tscn::PackedScene::136522317025370782::1713963571::0::1::::<><>::uid://epx00bhsg0tb::::res://Sprites/Enemies/AngryPig/Idle (36x30).png<>uid://bnlbykhuv65y5::::res://Sprites/Enemies/AngryPig/Hit 1 (36x30).png<>res://Enemies/Enemies.gd<>uid://dcevp3018aoxm::::res://Sprites/Enemies/AngryPig/Run (36x30).png<>uid://5kd1fml7oru8::::res://Sprites/Other/Dust Particle.png<>uid://d4cw0jne78h8w::::res://Sprites/Enemies/AngryPig/Walk (36x30).png<>res://Collision/Hit_Box.gd
 ::res://Enemies/Plant/::1713963572
 Plant.gd::GDScript::-1::1713946890::0::1::::Plant<>Enemy<>::
@@ -231,10 +231,10 @@ Turrent_Auto.tscn::PackedScene::5069387858376140673::1713963572::0::1::::<><>::r
 Turrent_Bullet.tscn::PackedScene::3830846577661708720::1713963572::0::1::::<><>::
 ::res://Entity/::1715423356
 Entity.gd::GDScript::-1::1715423356::0::1::::Entity<>CharacterBody2D<>::
-::res://Game_Manager/::1715429436
-CRT.gdshader::Shader::-1::1715429436::0::1::::<><>::
+::res://Game_Manager/::1715432110
+CRT.gdshader::Shader::-1::1715432110::0::1::::<><>::
 Game_Manger.gd::GDScript::-1::1715423356::0::1::::<>Node<>::
-Game_Manger.tscn::PackedScene::8493431741956967510::1715429092::0::1::::<><>::res://Game_Manager/Game_Manger.gd<>uid://baha77q1ltfnx::::res://UI/pause_menu.tscn<>res://Game_Manager/CRT.gdshader<>uid://cp2ytcs60oa2h::::res://UI/hud.tscn<>uid://bnejv1eixxtt1::::res://UI/death_screen.tscn<>uid://dy30a236e6egq::::res://Sprites/Other/Timer_Logo.png<>res://Discord_Configurer/discord_manger.gd
+Game_Manger.tscn::PackedScene::8493431741956967510::1715431884::0::1::::<><>::res://Game_Manager/Game_Manger.gd<>uid://baha77q1ltfnx::::res://UI/pause_menu.tscn<>res://Game_Manager/CRT.gdshader<>uid://cp2ytcs60oa2h::::res://UI/hud.tscn<>uid://bnejv1eixxtt1::::res://UI/death_screen.tscn<>uid://dy30a236e6egq::::res://Sprites/Other/Timer_Logo.png<>res://Discord_Configurer/discord_manger.gd
 ::res://Levels/::1715423356
 2p_Level_5.tscn::PackedScene::5102583900817619642::1714906053::0::1::::<><>::uid://dmb1teg81dqy3::::res://Sprites/Background/Purple.png<>uid://blknjycqdvppw::::res://Collectables/Check_Point.tscn<>uid://bekqq4egn6odn::::res://Levels/Main_Menu.tscn<>uid://ccic8k3fbwsfm::::res://Resources/Tile_Set.tres<>uid://lqeurs1jy57v::::res://Camera/camera_2p.tscn<>uid://bq8l8hs3fwqug::::res://Character/Both_Players.tscn<>uid://c4f31fc42beji::::res://Traps/Buttons and Doors/Door_And_Buttons.tscn<>uid://cbmrycadcw6fr::::res://Traps/Buttons/Blue_Holdable_Button.tscn<>uid://b3isqaxx5s8el::::res://Traps/Buttons/Lever.tscn<>uid://cp716sja4mvxb::::res://Traps/Buttons/Red_Toggleable_Button.tscn<>uid://beigb0st4a5t3::::res://Traps/Buttons/Red_Holdable_Button.tscn
 Intro.gd::GDScript::-1::1714656844::0::1::::<>Node2D<>::
@@ -271,8 +271,8 @@ Tile_Set.tres::TileSet::4929915010596563806::1715429435::0::1::::<><>::uid://dqg
 user_preferences.gd::GDScript::-1::1714990381::0::1::::User_Preferences<>Resource<>::
 ::res://Resources/Environment/::1714560685
 Pixel_Environment.tres::Environment::7936241036822263045::1714560685::0::1::::<><>::
-::res://Resources/Shaders/::1715429436
-Character Silhouette Shader(Show dark body if behind wall).gdshader::Shader::-1::1715429436::0::1::::<><>::
+::res://Resources/Shaders/::1715432110
+Character Silhouette Shader(Show dark body if behind wall).gdshader::Shader::-1::1715432110::0::1::::<><>::
 Character Silhouette Shader(Show dark body if behind wall).tres::ShaderMaterial::4939316044202760060::1715429435::0::1::::<><>::res://Resources/Shaders/Character Silhouette Shader(Show dark body if behind wall).gdshader
 ::res://Resources/Themes/::1714648782
 Tab_Heading_Style_Box_Flat.tres::StyleBoxFlat::8622900284251306034::1714648782::0::1::::<><>::
@@ -2922,9 +2922,9 @@ Idle.png::CompressedTexture2D::8086318077181504830::1711717724::1711717724::1:::
 ::res://Sprites/Traps/Trampoline/::1711717724
 Idle.png::CompressedTexture2D::4642492097058708582::1711717724::1711717724::1::::<><>::
 Jump (28x28).png::CompressedTexture2D::6746984828410350441::1711717724::1711717724::1::::<><>::
-::res://Themes/::1715429435
+::res://Themes/::1715431884
 Pixel_Style_Box.tres::StyleBoxFlat::2927436013103161169::1712399762::0::1::::<><>::
-Pixel_Theme.tres::Theme::365279890245117299::1715429435::0::1::::<><>::uid://vpy38kvl0qsd::::res://Sprites/Menu/Text/Minecraft.ttf<>uid://ibabttfrkh7n::::res://Resources/Themes/Tab_Style_Box_Flat.tres<>uid://du3854qsfr0bu::::res://Resources/Themes/Tab_Heading_Style_Box_Flat.tres
+Pixel_Theme.tres::Theme::365279890245117299::1715431884::0::1::::<><>::uid://vpy38kvl0qsd::::res://Sprites/Menu/Text/Minecraft.ttf<>uid://ibabttfrkh7n::::res://Resources/Themes/Tab_Style_Box_Flat.tres<>uid://du3854qsfr0bu::::res://Resources/Themes/Tab_Heading_Style_Box_Flat.tres
 ::res://Transitions/::1713252483
 Transitioner.gd::GDScript::-1::1713084800::0::1::::<>CanvasLayer<>::
 Transitioner.tscn::PackedScene::3196491567444744437::1713252483::0::1::::<><>::res://Transitions/Transitioner.gd
@@ -2955,14 +2955,14 @@ Spike_Ball.tscn::PackedScene::2826522654385392136::1713761102::0::1::::<><>::uid
 ::res://Traps/Saw/::1713761101
 Saw.gd::GDScript::-1::1712315227::0::1::::<>Node2D<>::
 Saw.tscn::PackedScene::4848002775939642491::1713761101::0::1::::<><>::res://Collision/Hit_Box.gd<>res://Traps/Saw/Saw.gd<>uid://cwi25rh4so4hw::::res://Sprites/Traps/Saw/On (38x38).png
-::res://UI/::1715429436
+::res://UI/::1715432110
 death_screen.gd::GDScript::-1::1713932002::0::1::::<>CanvasLayer<>::
 death_screen.tscn::PackedScene::3307718488792129300::1714391677::0::1::::<><>::res://UI/death_screen.gd<>res://UI/pause_menu.gdshader<>uid://vpy38kvl0qsd::::res://Sprites/Menu/Text/Minecraft.ttf<>uid://fg7dva5ufoat::::res://Themes/Pixel_Theme.tres<>uid://croy1xhacb6we::::res://Sprites/Menu/Buttons/Back.png<>res://UI/Focused_Button.gd<>uid://dhdm857cg406g::::res://Sprites/Menu/Buttons/Restart.png
 Focused_Button.gd::GDScript::-1::1713862260::0::1::::Auto_Focus_Button<>Button<>::
 hud.tscn::PackedScene::5882903493522527485::1714906053::0::1::::<><>::uid://vpy38kvl0qsd::::res://Sprites/Menu/Text/Minecraft.ttf<>uid://dj48bttltoec2::::res://Sprites/Main Characters/Ninja Frog/Fall (32x32).png<>uid://d32bxk1j63fcb::::res://Sprites/Items/Fruits/Logo.png<>uid://dy3iatg1pcke::::res://Sprites/Main Characters/Pink Man/Fall (32x32).png
 pause_menu.gd::GDScript::-1::1714647851::0::1::::<>CanvasLayer<>::
-pause_menu.gdshader::Shader::-1::1715429436::0::1::::<><>::
+pause_menu.gdshader::Shader::-1::1715432110::0::1::::<><>::
 pause_menu.tscn::PackedScene::2400930180037325165::1714730866::0::1::::<><>::res://UI/pause_menu.gd<>res://UI/pause_menu.gdshader<>uid://vpy38kvl0qsd::::res://Sprites/Menu/Text/Minecraft.ttf<>uid://chhiw8tnjskvp::::res://Sprites/Menu/Buttons/Next.png<>uid://croy1xhacb6we::::res://Sprites/Menu/Buttons/Back.png<>res://UI/Focused_Button.gd<>uid://fg7dva5ufoat::::res://Themes/Pixel_Theme.tres<>uid://dhdm857cg406g::::res://Sprites/Menu/Buttons/Restart.png<>uid://ibabttfrkh7n::::res://Resources/Themes/Tab_Style_Box_Flat.tres<>uid://du3854qsfr0bu::::res://Resources/Themes/Tab_Heading_Style_Box_Flat.tres
 Remapable_Buttons.gd::GDScript::-1::1713357894::0::1::::Remap_Button<>Button<>::
-Settings_Menu.gd::GDScript::-1::1715429435::0::1::::<>Node2D<>::
+Settings_Menu.gd::GDScript::-1::1715431884::0::1::::<>Node2D<>::
 Settings_Menu.tscn::PackedScene::6683176825222154636::1714906053::0::1::::<><>::uid://dtajtyl1bbh6e::::res://Game_Manager/Game_Manger.tscn<>res://UI/Settings_Menu.gd<>res://UI/Focused_Button.gd<>uid://vpy38kvl0qsd::::res://Sprites/Menu/Text/Minecraft.ttf<>uid://croy1xhacb6we::::res://Sprites/Menu/Buttons/Back.png<>res://UI/Remapable_Buttons.gd<>uid://fg7dva5ufoat::::res://Themes/Pixel_Theme.tres<>uid://cabn6wnyhy80m::::res://Resources/Theme.tres<>uid://d1ah7ypodov3y::::res://Sounds/Audio_Player/Audio_Slider.tscn
