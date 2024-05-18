@@ -180,4 +180,13 @@ func push_off_ledges():
 		and !right_inner.is_colliding() and !right_outer.is_colliding():
 			self.global_position.x += 5
 
-
+func revive():
+	health = max_health
+	if is_dead:
+		is_dead = false
+		update_game_manager()
+		hurt_box.set_deferred("disabled", false)
+		collision_shape_2d.set_deferred("disabled", false)
+		await get_tree().create_timer(.25).timeout
+		velocity = Vector2(0, 0)
+		sprite_2d.show()

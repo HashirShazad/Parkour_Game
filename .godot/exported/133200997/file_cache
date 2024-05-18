@@ -41,19 +41,19 @@ res://Enemies/Spikes/Mace.tscn::d819580e302abcd9ccaaac0afb4c81f9::1711793288::re
 res://Enemies/Spikes/Spear_Spike.tscn::c72e75d1a7cfc489b149a8bc4079118f::1711794195::res://.godot/exported/133200997/export-8e9d11386d49b83a0df3289b04e876c3-Spear_Spike.scn
 res://Enemies/Spikes/Spike.tscn::7c8cefbf47a2cd194fd8a379b7365e67::1713963571::res://.godot/exported/133200997/export-eb0e49c1ad1f36804208b6e94a0fccb7-Spike.scn
 res://Enemies/Enemies.tscn::478acc538f85d9042bdbec8982bfa691::1712575171::res://.godot/exported/133200997/export-a7e8f57bc5db4f0fd4c6634bbe378393-Enemies.scn
-res://Game_Manager/Game_Manger.tscn::858d50cc2e0507d31f11283118c41756::1715692968::res://.godot/exported/133200997/export-9df07fa200d8c3f0c9285b88e128f8d7-Game_Manger.scn
+res://Game_Manager/Game_Manger.tscn::62c8729660b7489eacb40b07c3f0958d::1716023467::res://.godot/exported/133200997/export-9df07fa200d8c3f0c9285b88e128f8d7-Game_Manger.scn
 res://Levels/Level_1.tscn::2e9290c94cf3d98515a4cab5e5dfaad7::1715423356::res://.godot/exported/133200997/export-cdee61c0fbd58917a0b951358539dac2-Level_1.scn
-res://Levels/Level_2.tscn::bcf8ec54d6e3300ac68116930585536b::1715082169::res://.godot/exported/133200997/export-ad93ed32bbfd3737968415e46b46b62e-Level_2.scn
+res://Levels/Level_2.tscn::bcf8ec54d6e3300ac68116930585536b::1716023468::res://.godot/exported/133200997/export-ad93ed32bbfd3737968415e46b46b62e-Level_2.scn
 res://Levels/Level_3.tscn::69072857bee79bb070a5b6096a4c7061::1714730867::res://.godot/exported/133200997/export-d890e82ec7f39bfeeb8f16d6b7df04f4-Level_3.scn
 res://Levels/Level_4.tscn::ff5d35b93ec2e7ca492c82055b658b08::1714906053::res://.godot/exported/133200997/export-1eb8180fe58372e03f70e02523e7f5cf-Level_4.scn
 res://Levels/Main_Menu.tscn::0080b67e6e51da93e5e4e506470c908e::1714656145::res://.godot/exported/133200997/export-145d164fd0844de0dc95b9a89265aa7f-Main_Menu.scn
-res://Levels/TEST.tscn::b474358210b60b8f4671a6afba76e756::1715692015::res://.godot/exported/133200997/export-eb2f064c3d1cee98d0ccdd414cf55dd8-TEST.scn
+res://Levels/TEST.tscn::5206e586616e0f80b0c9b88c9fc32f82::1716023467::res://.godot/exported/133200997/export-eb2f064c3d1cee98d0ccdd414cf55dd8-TEST.scn
 res://Props/Box.tscn::df76f462809092c8b6660ab7f8c636bd::1713254780::res://.godot/exported/133200997/export-b13c8ac41735699670a2badac5d5ab9f-Box.scn
 res://Props/Iron_Box.tscn::dbc0c09ef9f6efb714a38c7af9f10062::1713254786::res://.godot/exported/133200997/export-f3f494bd8c41f4ff8a73f111db59d9ff-Iron_Box.scn
 res://Props/Strong_Box.tscn::aed891005219d7143d79069ef1070ef1::1713254794::res://.godot/exported/133200997/export-b3bb97d45ece6d2c942102f015d72c98-Strong_Box.scn
 res://Sounds/Audio_Player/Audio_Player.tscn::87b2900e2d31274d160c7f44cb64af75::1714656146::res://.godot/exported/133200997/export-5c95601d4e720b2cfc9a9a2ad0a6466d-Audio_Player.scn
 res://Themes/Pixel_Style_Box.tres::8d984a27dfe3082f87cadd9adcee1ef2::1712399762::res://.godot/exported/133200997/export-b5988b716f1c6501a5ed4fbe15e2edb9-Pixel_Style_Box.res
-res://Themes/Pixel_Theme.tres::a821eacdc409cec43dadc727961e3bb8::1715692968::res://.godot/exported/133200997/export-202593d90c35fe3519ba983b015c7f94-Pixel_Theme.res
+res://Themes/Pixel_Theme.tres::a821eacdc409cec43dadc727961e3bb8::1716023444::res://.godot/exported/133200997/export-202593d90c35fe3519ba983b015c7f94-Pixel_Theme.res
 res://Transitions/Transitioner.tscn::200f6fd4b23dc5aeeb29a7f1cf10fa49::1713252483::res://.godot/exported/133200997/export-d92c4fd4a566cd9d776f7e82db352e80-Transitioner.scn
 res://Traps/Mace/Chain.tscn::0e2969beedd7cf7c1c1eaa9f79ff54a0::1712232837::res://.godot/exported/133200997/export-c93dcd10ecbcf8c0752ecf4253ba6072-Chain.scn
 res://Traps/Mace/Chain_Container.tscn::d710234bd388ee822bc368d44b69fd83::1712232837::res://.godot/exported/133200997/export-f4b1643001cf0450017dfb1c11c0a164-Chain_Container.scn
@@ -86,12 +86,12 @@ res://Enemies/Turrent/Turrent.tscn::feb059285e4f6af03352c543d63202f8::1714391577
 res://Enemies/Turrent/Turrent_Auto.tscn::ddf5df56dbff60f5fc55fae27cca148f::1713963572::res://.godot/exported/133200997/export-adac3e981509ad7a5ddaf2a6231d7f18-Turrent_Auto.scn
 res://Enemies/Turrent/Turrent_Bullet.tscn::c0b272b5335bf0b8cb35df2b18bf3260::1713963572::res://.godot/exported/133200997/export-154985e9adfb1fe25352fb145ca1a2d4-Turrent_Bullet.scn
 res://Enemies/Bullet.tscn::5cf2c5da27bfe3bfe710c96ba6ae133a::1715423329::res://.godot/exported/133200997/export-a6e76d58abf05fa5ed182bb875cf5faf-Bullet.scn
-res://Resources/Tile_Set.tres::4a920cff8df4c1c3998b96b604b2fb94::1715692968::res://.godot/exported/133200997/export-bd44d8a22305e6e4e35a0de2664ba68b-Tile_Set.res
+res://Resources/Tile_Set.tres::4a920cff8df4c1c3998b96b604b2fb94::1716023444::res://.godot/exported/133200997/export-bd44d8a22305e6e4e35a0de2664ba68b-Tile_Set.res
 res://Traps/Buttons and Doors/Door_And_Buttons.tscn::2504f9448b9d51169867fd6036eb43b4::1713762449::res://.godot/exported/133200997/export-6b0b0ed753baa9014955ff37b828da6d-Door_And_Buttons.scn
 res://Traps/Mace/Mace_Ball(HOLLOW).tscn::bff1e28ee0d96bd85712c21c598df38c::1713761102::res://.godot/exported/133200997/export-f38a3d24f679aca7f79e41128805ded1-Mace_Ball(HOLLOW).scn
 res://Levels/2p_Level_5.tscn::24551c3b0b0cf64eb2a2baf333e8c2a5::1714906053::res://.godot/exported/133200997/export-26cf8612f5dc300648f840cef67f0caa-2p_Level_5.scn
 res://Resources/Environment/Pixel_Environment.tres::ac780d08e959436d4e764063f39a2754::1714560685::res://.godot/exported/133200997/export-f9d16cbfc5e9dab90ed4828c8a4da7ad-Pixel_Environment.res
-res://Resources/Shaders/Character Silhouette Shader(Show dark body if behind wall).tres::7edb215f5f5a785890f72f84f89f357c::1715692968::res://.godot/exported/133200997/export-11933a79dfb7ddf30fcb60d2f771b873-Character Silhouette Shader(Show dark body if behind wall).res
+res://Resources/Shaders/Character Silhouette Shader(Show dark body if behind wall).tres::7edb215f5f5a785890f72f84f89f357c::1716023445::res://.godot/exported/133200997/export-11933a79dfb7ddf30fcb60d2f771b873-Character Silhouette Shader(Show dark body if behind wall).res
 res://Resources/Themes/Tab_Heading_Style_Box_Flat.tres::4085596a5935c70c26a96fa48f47d961::1714648782::res://.godot/exported/133200997/export-bdbbc31ccbd560c3a06d305c4920211a-Tab_Heading_Style_Box_Flat.res
 res://Resources/Themes/Tab_Style_Box_Flat.tres::ef08f3fac42d36f186012714f363f36f::1714393081::res://.godot/exported/133200997/export-f34a50d638aa888e5d0fe3f082b122a9-Tab_Style_Box_Flat.res
 res://Resources/Style_Box_Flat.tres::1979798823418b1aabb7ec3eeefc45ee::1714648315::res://.godot/exported/133200997/export-5e9ded768b7fd0e07088277954a54066-Style_Box_Flat.res
@@ -105,5 +105,5 @@ res://Multiplayer_Server/Player_Character_Handeler.tscn::1a1eece43d03855533330b5
 res://Multiplayer_Server/Server.tscn::86b80a64b86d48f2e0270a3237ff8984::1715423356::res://.godot/exported/133200997/export-e10db8300a101152790abd777439629e-Server.scn
 res://addons/discord-rpc-gd/nodes/Debug.tscn::2f55f1c3f5d835f31fa4437032cd4dad::1715423356::res://.godot/exported/133200997/export-d928f068a1bafec7d86411894a66c6a8-Debug.scn
 res://addons/discord-rpc-gd/restart_window.tscn::52d8a61b141fef48dc113266204a2d6f::1715431884::res://.godot/exported/133200997/export-a83ca32fd2b1f993c75747100575ce7a-restart_window.scn
-res://Enemies/Bee/Bee.tscn::a20ad0e816b5f84627936004dfd8f0d8::1715692015::res://.godot/exported/133200997/export-06c2164d2e62c049a2f078d2542a547b-Bee.scn
+res://Enemies/Bee/Bee.tscn::a20ad0e816b5f84627936004dfd8f0d8::1716023468::res://.godot/exported/133200997/export-06c2164d2e62c049a2f078d2542a547b-Bee.scn
 res://Enemies/Bee/Bee_Bullet.tscn::3cfac7955ebee0857272b08b9791dc4e::1715423356::res://.godot/exported/133200997/export-61d0abdd3af3a2ede756cfd9479182e6-Bee_Bullet.scn

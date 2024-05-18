@@ -7,4 +7,16 @@ res://UI/Settings_Menu.gd
 res://Resources/Tile_Set.tres
 res://Resources/Shaders/Character Silhouette Shader(Show dark body if behind wall).gdshader
 res://Resources/Shaders/Character Silhouette Shader(Show dark body if behind wall).tres
-res://Enemies/Bee/Bee.gd
+res://Levels/TEST.tscn
+res://Enemies/Bee/Bee.tscn
+res://Character/Both_Players.tscn
+res://Collectables/Check_Point.tscn
+res://Collectables/Respawn_Point/Respawn_Point.tscn
+res://Character/Players.tscn
+res://Levels/Level_2.tscn
+res://Levels/Level_1.tscn
+res://Collectables/Fruits.tscn
+res://Collectables/Respawn_Point/Respawn_Point.gd
+res://Character/Players_Code.gd
+res://Collision/Hurt_Box.gd
+res://Entity/Entity.gd

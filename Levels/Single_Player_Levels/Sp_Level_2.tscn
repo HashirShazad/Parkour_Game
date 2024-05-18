@@ -1,11 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://b82c3pa3l3b6r"]
+[gd_scene load_steps=13 format=3 uid="uid://b82c3pa3l3b6r"]
 
 [ext_resource type="Texture2D" uid="uid://e8qk3dt180th" path="res://Sprites/Background/Green.png" id="1_mf4y2"]
 [ext_resource type="PackedScene" uid="uid://blknjycqdvppw" path="res://Collectables/Check_Point.tscn" id="2_80n7v"]
 [ext_resource type="PackedScene" uid="uid://bo2qi87o0cpal" path="res://Levels/Single_Player_Levels/Sp_Level_3.tscn" id="3_2y0vg"]
 [ext_resource type="Texture2D" uid="uid://dqgm4rmmi5c3j" path="res://Sprites/Terrain/Terrain (16x16).png" id="4_1wn76"]
 [ext_resource type="PackedScene" uid="uid://kxusrwxus326" path="res://Collectables/Fruits.tscn" id="5_t74nq"]
-[ext_resource type="PackedScene" uid="uid://lqeurs1jy57v" path="res://Camera/camera_2p.tscn" id="6_hjw3g"]
 [ext_resource type="PackedScene" uid="uid://drl6q0tnh0apb" path="res://Enemies/Spikes/Spike.tscn" id="8_7818h"]
 [ext_resource type="PackedScene" uid="uid://pa8e0cvnbkvd" path="res://Enemies/Spikes/Death_Spike.tscn" id="9_2l34f"]
 [ext_resource type="PackedScene" uid="uid://cfj2cbuh0vbwb" path="res://Character/Sp_Players.tscn" id="9_hahug"]
@@ -900,6 +899,12 @@ layer_0/tile_data = PackedInt32Array(2555933, 131072, 10, 2490397, 131072, 9, 24
 [node name="Players" parent="Scene_Objects" instance=ExtResource("9_hahug")]
 position = Vector2(709, 905)
 
+[node name="PhantomCamera2D" parent="Scene_Objects/Players/Camera_Sp" index="0"]
+position = Vector2(0, 0)
+
+[node name="Camera2D" parent="Scene_Objects/Players/Camera_Sp" index="1"]
+position = Vector2(0, 0)
+
 [node name="Fruits" type="Node2D" parent="Scene_Objects"]
 
 [node name="Pineapple" parent="Scene_Objects/Fruits" instance=ExtResource("5_t74nq")]
@@ -930,19 +935,6 @@ fruit_name = &"Orange"
 [node name="Melon" parent="Scene_Objects/Fruits" instance=ExtResource("5_t74nq")]
 position = Vector2(2825, 769)
 fruit_name = &"Melon"
-
-[node name="Camera" parent="Scene_Objects" instance=ExtResource("6_hjw3g")]
-position = Vector2(-166, -51)
-
-[node name="PhantomCamera2D" parent="Scene_Objects/Camera" index="0"]
-position = Vector2(875, 956)
-zoom = Vector2(0.7975, 0.7975)
-follow_mode = 2
-follow_target = NodePath("../../Players/Player1")
-
-[node name="Camera2D" parent="Scene_Objects/Camera" index="1"]
-position = Vector2(875, 956)
-zoom = Vector2(0.7975, 0.7975)
 
 [node name="Spikes" type="Node2D" parent="Scene_Objects"]
 
@@ -1018,4 +1010,4 @@ scale = Vector2(100, 100)
 
 [editable path="Scene_Objects/Players"]
 [editable path="Scene_Objects/Players/Player1"]
-[editable path="Scene_Objects/Camera"]
+[editable path="Scene_Objects/Players/Camera_Sp"]

@@ -1,10 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://k0nvg3uup6kw"]
+[gd_scene load_steps=12 format=3 uid="uid://k0nvg3uup6kw"]
 
 [ext_resource type="Script" path="res://Levels/Levels.gd" id="1_yw60k"]
 [ext_resource type="Texture2D" uid="uid://bdlua5a7mavuv" path="res://Sprites/Background/Brown.png" id="2_5gxbl"]
 [ext_resource type="PackedScene" uid="uid://blknjycqdvppw" path="res://Collectables/Check_Point.tscn" id="3_bbbua"]
 [ext_resource type="PackedScene" uid="uid://b82c3pa3l3b6r" path="res://Levels/Single_Player_Levels/Sp_Level_2.tscn" id="4_o5vlj"]
-[ext_resource type="PackedScene" uid="uid://lqeurs1jy57v" path="res://Camera/camera_2p.tscn" id="5_35git"]
 [ext_resource type="Texture2D" uid="uid://dqgm4rmmi5c3j" path="res://Sprites/Terrain/Terrain (16x16).png" id="7_xa0if"]
 [ext_resource type="PackedScene" uid="uid://cfj2cbuh0vbwb" path="res://Character/Sp_Players.tscn" id="8_axbpo"]
 [ext_resource type="PackedScene" uid="uid://kxusrwxus326" path="res://Collectables/Fruits.tscn" id="8_njaq6"]
@@ -661,18 +660,6 @@ position = Vector2(7262, 194)
 scale = Vector2(3, 3)
 target_scene = ExtResource("4_o5vlj")
 
-[node name="Camera" parent="Scene_Objects" instance=ExtResource("5_35git")]
-
-[node name="PhantomCamera2D" parent="Scene_Objects/Camera" index="0"]
-position = Vector2(579, 988)
-zoom = Vector2(0.7975, 0.7975)
-follow_mode = 2
-follow_target = NodePath("../../Players/Player1")
-
-[node name="Camera2D" parent="Scene_Objects/Camera" index="1"]
-position = Vector2(579, 988)
-zoom = Vector2(0.7975, 0.7975)
-
 [node name="Tile_Map" type="TileMap" parent="Scene_Objects"]
 texture_filter = 1
 position = Vector2(1, 0)
@@ -685,38 +672,35 @@ layer_0/tile_data = PackedInt32Array(1441795, 393216, 1, 1507331, 393216, 1, 157
 
 [node name="Pineapple" parent="Scene_Objects/Fruits" instance=ExtResource("8_njaq6")]
 position = Vector2(3230, 256)
-scale = Vector2(3, 3)
 fruit_name = "Pineapple"
 value = 3
 
 [node name="Strawberry" parent="Scene_Objects/Fruits" instance=ExtResource("8_njaq6")]
 position = Vector2(976, 842)
-scale = Vector2(3, 3)
 fruit_name = "Strawberry"
 
 [node name="Banana" parent="Scene_Objects/Fruits" instance=ExtResource("8_njaq6")]
 position = Vector2(3907, 791)
-scale = Vector2(3, 3)
 fruit_name = &"Banana"
 
 [node name="Kiwi" parent="Scene_Objects/Fruits" instance=ExtResource("8_njaq6")]
 position = Vector2(5213, 972)
-scale = Vector2(3, 3)
 fruit_name = &"Kiwi"
 
 [node name="Cherry" parent="Scene_Objects/Fruits" instance=ExtResource("8_njaq6")]
 position = Vector2(1744, 943)
-scale = Vector2(3, 3)
 fruit_name = &"Cherry"
 
 [node name="Melon" parent="Scene_Objects/Fruits" instance=ExtResource("8_njaq6")]
 position = Vector2(2825, 769)
-scale = Vector2(3, 3)
 fruit_name = &"Melon"
 
 [node name="Players" parent="Scene_Objects" instance=ExtResource("8_axbpo")]
 position = Vector2(579, 988)
 
-[editable path="Scene_Objects/Camera"]
+[node name="PhantomCamera2D" parent="Scene_Objects/Players/Camera_Sp" index="0"]
+position = Vector2(0, 0)
+
 [editable path="Scene_Objects/Players"]
 [editable path="Scene_Objects/Players/Player1"]
+[editable path="Scene_Objects/Players/Camera_Sp"]

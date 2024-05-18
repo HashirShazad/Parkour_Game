@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://b2ip34x13hcrf"]
+[gd_scene load_steps=21 format=3 uid="uid://b2ip34x13hcrf"]
 
 [ext_resource type="Texture2D" uid="uid://dmb1teg81dqy3" path="res://Sprites/Background/Purple.png" id="1_osb3g"]
 [ext_resource type="PackedScene" uid="uid://blknjycqdvppw" path="res://Collectables/Check_Point.tscn" id="3_u1r5m"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://dqgm4rmmi5c3j" path="res://Sprites/Terrain/Terrain (16x16).png" id="5_7sqg0"]
 [ext_resource type="Texture2D" uid="uid://bbrcmwtrfyap2" path="res://Sprites/Additional/Treasure Hunters/Pirate Ship/Sprites/Tilesets/Terrain and Back Wall (32x32).png" id="6_oj8yd"]
 [ext_resource type="Texture2D" uid="uid://b0qlu341sr3x4" path="res://Sprites/Additional/Treasure Hunters/Pirate Ship/Sprites/Tilesets/Platforms (32x32).png" id="7_1q6ir"]
-[ext_resource type="PackedScene" uid="uid://lqeurs1jy57v" path="res://Camera/camera_2p.tscn" id="8_6h01q"]
 [ext_resource type="PackedScene" uid="uid://cbcn5rodrx5r0" path="res://Traps/Saw/Saw.tscn" id="9_qmu3k"]
 [ext_resource type="PackedScene" uid="uid://bq8l8hs3fwqug" path="res://Character/Both_Players.tscn" id="9_qrw0p"]
 [ext_resource type="PackedScene" uid="uid://da70y2ydtwdiu" path="res://Enemies/Chicken/Chicken.tscn" id="10_7hy80"]
@@ -2130,18 +2129,6 @@ position = Vector2(8115, 2868)
 [node name="MaceBall(360)2" parent="Scene_Objects/Traps" instance=ExtResource("12_tid66")]
 position = Vector2(8400, 3324)
 
-[node name="Camera" parent="Scene_Objects" instance=ExtResource("8_6h01q")]
-position = Vector2(-166, -51)
-
-[node name="PhantomCamera2D" parent="Scene_Objects/Camera" index="0"]
-position = Vector2(1292, 3217)
-zoom = Vector2(0.8, 0.8)
-follow_group = Array[NodePath]([NodePath("../../Players/Player1"), NodePath("../../Players/Player2")])
-
-[node name="Camera2D" parent="Scene_Objects/Camera" index="1"]
-position = Vector2(1292, 3217)
-zoom = Vector2(0.8, 0.8)
-
 [node name="Players" parent="Scene_Objects" instance=ExtResource("9_qrw0p")]
 position = Vector2(1126, 3166)
 
@@ -2150,7 +2137,7 @@ position = Vector2(8994, 2850)
 
 [editable path="Scene_Objects/Enemies/Turrent"]
 [editable path="Scene_Objects/Traps/Saw"]
-[editable path="Scene_Objects/Camera"]
 [editable path="Scene_Objects/Players"]
 [editable path="Scene_Objects/Players/Player1"]
 [editable path="Scene_Objects/Players/Player2"]
+[editable path="Scene_Objects/Players/Camera_2p"]

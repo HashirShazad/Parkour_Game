@@ -1,5 +1,5 @@
 extends Area2D
-
+ 
 @export var target_scene:PackedScene
 @onready var animated_sprite_2d = $AnimatedSprite2D
 	

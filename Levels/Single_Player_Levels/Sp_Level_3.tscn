@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bo2qi87o0cpal"]
+[gd_scene load_steps=18 format=3 uid="uid://bo2qi87o0cpal"]
 
 [ext_resource type="Texture2D" uid="uid://bh07d18uqp68w" path="res://Sprites/Background/Yellow.png" id="1_7co57"]
 [ext_resource type="PackedScene" uid="uid://drl6q0tnh0apb" path="res://Enemies/Spikes/Spike.tscn" id="2_0mubc"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://dqgm4rmmi5c3j" path="res://Sprites/Terrain/Terrain (16x16).png" id="5_587w8"]
 [ext_resource type="Texture2D" uid="uid://bbrcmwtrfyap2" path="res://Sprites/Additional/Treasure Hunters/Pirate Ship/Sprites/Tilesets/Terrain and Back Wall (32x32).png" id="6_83stt"]
 [ext_resource type="Texture2D" uid="uid://b0qlu341sr3x4" path="res://Sprites/Additional/Treasure Hunters/Pirate Ship/Sprites/Tilesets/Platforms (32x32).png" id="7_cdg6h"]
-[ext_resource type="PackedScene" uid="uid://lqeurs1jy57v" path="res://Camera/camera_2p.tscn" id="8_cbidq"]
 [ext_resource type="PackedScene" uid="uid://da70y2ydtwdiu" path="res://Enemies/Chicken/Chicken.tscn" id="10_gg6cq"]
 [ext_resource type="PackedScene" uid="uid://cp83cm1x2hdep" path="res://Enemies/Kill_Zone/Kill_Zone.tscn" id="11_qcbw6"]
 [ext_resource type="PackedScene" uid="uid://cfj2cbuh0vbwb" path="res://Character/Sp_Players.tscn" id="12_dtw8d"]
@@ -2103,18 +2102,11 @@ layer_0/tile_data = PackedInt32Array(983229, 524288, 10, 917693, 524288, 9, 8521
 [node name="Players" parent="Scene_Objects" instance=ExtResource("12_dtw8d")]
 position = Vector2(8935, 329)
 
-[node name="Camera" parent="Scene_Objects" instance=ExtResource("8_cbidq")]
-position = Vector2(-166, -51)
+[node name="PhantomCamera2D" parent="Scene_Objects/Players/Camera_Sp" index="0"]
+position = Vector2(0, 0)
 
-[node name="PhantomCamera2D" parent="Scene_Objects/Camera" index="0"]
-position = Vector2(9101, 380)
-zoom = Vector2(0.7975, 0.7975)
-follow_mode = 2
-follow_target = NodePath("../../Players/Player1")
-
-[node name="Camera2D" parent="Scene_Objects/Camera" index="1"]
-position = Vector2(9101, 380)
-zoom = Vector2(0.7975, 0.7975)
+[node name="Camera2D" parent="Scene_Objects/Players/Camera_Sp" index="1"]
+position = Vector2(0, 0)
 
 [node name="Enemies" type="Node2D" parent="Scene_Objects"]
 
@@ -2147,4 +2139,4 @@ value = 2
 
 [editable path="Scene_Objects/Players"]
 [editable path="Scene_Objects/Players/Player1"]
-[editable path="Scene_Objects/Camera"]
+[editable path="Scene_Objects/Players/Camera_Sp"]
