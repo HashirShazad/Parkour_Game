@@ -20,23 +20,24 @@ var jump_buffer_timer:float = 0
 var coyote_timer:float = 0
 var carried_player_ref:Player = null
 # Ray Cast references <--------------------------------------------------------------------------->
-@onready var right_outer = $Right_Outer
-@onready var left_outer = $Left_Outer
-@onready var right_inner = $Right_Inner
-@onready var left_inner = $Left_Inner
+@export_group("Ray Casts")
+@export var right_outer:RayCast2D 
+@export var left_outer:RayCast2D
+@export var right_inner:RayCast2D
+@export var left_inner:RayCast2D
 
 
 
 # Buttons <----------------------------------------------------------------------------------------->
 
 ## Buttons to be pressed
+@export_group("Buttons")
 @export var btns = {
 	 Right = "P1_Right",
 	 Left = "P1_Left",
 	 Jump = "P1_Jump",
 	 Sprint = "P1_Sprint",
 }
-
 
 # Actual Code <=====================================================================>
 
@@ -180,13 +181,17 @@ func push_off_ledges():
 		and !right_inner.is_colliding() and !right_outer.is_colliding():
 			self.global_position.x += 5
 
-func revive():
+func revive(rev_pos:Vector2):
 	health = max_health
 	if is_dead:
 		is_dead = false
 		update_game_manager()
 		hurt_box.set_deferred("disabled", false)
 		collision_shape_2d.set_deferred("disabled", false)
-		await get_tree().create_timer(.25).timeout
+		self.global_position = rev_pos
+		is_respawning = true
 		velocity = Vector2(0, 0)
 		sprite_2d.show()
+		await get_tree().create_timer(.1).timeout
+		is_respawning = false
+		

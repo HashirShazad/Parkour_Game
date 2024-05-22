@@ -280,17 +280,18 @@ animations = {
 "Damaged": "Chicken_Damaged",
 "Dead": "Dead",
 "Double_Jump": "Frog_Double_Jump",
-"Falling": "Frog_Falling",
+"Falling": "",
 "Idle": "Chicken_Idle",
-"Jumping": "Frog_Jumping",
+"Jumping": "",
 "Walking": "Chicken_Run"
 }
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_idhum")
-animation = &"Chicken_Idle"
-frame_progress = 0.168538
+animation = &"Chicken_Run"
+autoplay = "Chicken_Idle"
+frame_progress = 0.62698
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 texture_filter = 1

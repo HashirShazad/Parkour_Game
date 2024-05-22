@@ -9,7 +9,6 @@ var jump_sound = preload("res://Sounds/Sound/Jump.wav")
 @onready var edge_check_right:RayCast2D = $Edge_Check_Right
 @onready var edge_check_left:RayCast2D = $Edge_Check_Left
 
-
 # Actual Code <===============================================================================================>
 func _ready():
 	health = max_health
@@ -56,6 +55,8 @@ func add_ghost():
 	ghost.sprite_2d.frame = sprite_2d.frame
 
 func flip_sprite():
+	if sprite_2d == null:
+		return
 	if is_stunned || is_dead:
 		return
 	if velocity.x != 0:

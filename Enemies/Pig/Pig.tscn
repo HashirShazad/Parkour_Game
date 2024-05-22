@@ -341,7 +341,7 @@ animations = [{
 "speed": 25.0
 }]
 
-[node name="Pig" type="CharacterBody2D"]
+[node name="Pig" type="CharacterBody2D" node_paths=PackedStringArray("sprite_2d", "collision_shape_2d")]
 scale = Vector2(3, 3)
 script = ExtResource("2_slas3")
 animations = {
@@ -353,6 +353,8 @@ animations = {
 "Jumping": "Jumping",
 "Walking": "Walking"
 }
+sprite_2d = NodePath("AnimatedSprite2D")
+collision_shape_2d = NodePath("CollisionShape2D")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 texture_filter = 1

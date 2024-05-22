@@ -43,6 +43,18 @@ target_scene = ExtResource("4_puv6c")
 [node name="Players" parent="Scene_Objects" instance=ExtResource("12_toesn")]
 position = Vector2(480, 1005)
 
+[node name="Player1" parent="Scene_Objects/Players" index="0"]
+animations = {
+"Damaged": "Frog_Damaged",
+"Dead": "Dead",
+"Double_Jump": "Frog_Double_Jump",
+"Falling": "Frog_Falling",
+"Idle": "Frog_Idle",
+"Jumping": "Frog_Jumping",
+"Spawn": "Spawn",
+"Walking": "Frog_Walking"
+}
+
 [node name="Fruits" type="Node2D" parent="Scene_Objects"]
 
 [node name="Pineapple" parent="Scene_Objects/Fruits" instance=ExtResource("5_4ou61")]

@@ -84,11 +84,12 @@ animations = [{
 "speed": 25.0
 }]
 
-[node name="RespawnPoint" type="Area2D"]
+[node name="RespawnPoint" type="Area2D" node_paths=PackedStringArray("marker_2d")]
 scale = Vector2(3, 3)
 collision_layer = 4
 collision_mask = 4
 script = ExtResource("1_vexl5")
+marker_2d = NodePath("Marker2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, -23)
@@ -99,5 +100,8 @@ position = Vector2(9, -32)
 sprite_frames = SubResource("SpriteFrames_qha0r")
 autoplay = "default"
 frame_progress = 0.122333
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(0, -100)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

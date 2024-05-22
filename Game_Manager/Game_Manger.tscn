@@ -32,8 +32,23 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 0.5
 
-[node name="Game_Manager" type="Node"]
+[node name="Game_Manager" type="Node" node_paths=PackedStringArray("discord_manager", "sec_label", "min_label", "msec_label", "points_label", "fps_label", "pause_menu", "death_screen", "hud", "crt", "player1_info_box", "player2_info_box", "coin_info_box", "hp_bar_P1", "hp_bar_P2")]
 script = ExtResource("1_tb1wt")
+discord_manager = NodePath("Discord_Manager")
+sec_label = NodePath("Hud/Node/Timer_Info_Box/HBoxContainer/SecLabel")
+min_label = NodePath("Hud/Node/Timer_Info_Box/HBoxContainer/MinLabel")
+msec_label = NodePath("Hud/Node/Timer_Info_Box/HBoxContainer/MsecLabel")
+points_label = NodePath("Hud/Node/Coin_Info_Box/PointsLabel")
+fps_label = NodePath("Hud/Node/FPS_Info_Box/FPSLabel")
+pause_menu = NodePath("Pause_Menu")
+death_screen = NodePath("Death_Screen")
+hud = NodePath("Hud")
+crt = NodePath("CRT")
+player1_info_box = NodePath("Hud/Node/Player_Info_Box")
+player2_info_box = NodePath("Hud/Node/Player2_Info_Box")
+coin_info_box = NodePath("Hud/Node/Coin_Info_Box")
+hp_bar_P1 = NodePath("Hud/Node/Player_Info_Box/Panel/ProgressBar")
+hp_bar_P2 = NodePath("Hud/Node/Player2_Info_Box/Panel/ProgressBar")
 
 [node name="CRT" type="CanvasLayer" parent="."]
 visible = false

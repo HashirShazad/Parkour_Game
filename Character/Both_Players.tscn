@@ -22,15 +22,20 @@ animations = {
 "Falling": "Pink_Falling",
 "Idle": "Pink_Idle",
 "Jumping": "Pink_Jumping",
+"Spawn": "Spawn",
 "Walking": "Pink_Walking"
 }
 
 [node name="AnimatedSprite2D" parent="Player2" index="1"]
 animation = &"Pink_Idle"
+frame = 0
+frame_progress = 0.0
 
 [node name="Silhouette_Sprite" parent="Player2/AnimatedSprite2D" index="0"]
 animation = &"Pink_Idle"
 autoplay = "Pink_Idle"
+frame = 0
+frame_progress = 0.0
 
 [node name="CollisionShape2D" parent="Player2/Hurt_Box" index="0"]
 position = Vector2(0, 3.33333)
