@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cp2ytcs60oa2h" path="res://UI/hud.tscn" id="3_aux3r"]
 [ext_resource type="PackedScene" uid="uid://bnejv1eixxtt1" path="res://UI/death_screen.tscn" id="4_eq1kn"]
 [ext_resource type="Texture2D" uid="uid://dy30a236e6egq" path="res://Sprites/Other/Timer_Logo.png" id="5_5e2og"]
-[ext_resource type="Script" path="res://Discord_Configurer/discord_manger.gd" id="7_j2g8f"]
+[ext_resource type="Script" path="res://Discord_Configurer/discord_manger.gd" id="7_rjlpl"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kt3ep"]
 shader = ExtResource("2_vegdo")
@@ -32,8 +32,23 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 0.5
 
-[node name="Game_Manager" type="Node"]
+[node name="Game_Manager" type="Node" node_paths=PackedStringArray("discord_manager", "sec_label", "min_label", "msec_label", "points_label", "fps_label", "pause_menu", "death_screen", "hud", "crt", "player1_info_box", "player2_info_box", "coin_info_box", "hp_bar_P1", "hp_bar_P2")]
 script = ExtResource("1_tb1wt")
+discord_manager = NodePath("Discord_Manager")
+sec_label = NodePath("Hud/Node/Timer_Info_Box/HBoxContainer/SecLabel")
+min_label = NodePath("Hud/Node/Timer_Info_Box/HBoxContainer/MinLabel")
+msec_label = NodePath("Hud/Node/Timer_Info_Box/HBoxContainer/MsecLabel")
+points_label = NodePath("Hud/Node/Coin_Info_Box/PointsLabel")
+fps_label = NodePath("Hud/Node/FPS_Info_Box/FPSLabel")
+pause_menu = NodePath("Pause_Menu")
+death_screen = NodePath("Death_Screen")
+hud = NodePath("Hud")
+crt = NodePath("CRT")
+player1_info_box = NodePath("Hud/Node/Player_Info_Box")
+player2_info_box = NodePath("Hud/Node/Player2_Info_Box")
+coin_info_box = NodePath("Hud/Node/Coin_Info_Box")
+hp_bar_P1 = NodePath("Hud/Node/Player_Info_Box/Panel/ProgressBar")
+hp_bar_P2 = NodePath("Hud/Node/Player2_Info_Box/Panel/ProgressBar")
 
 [node name="CRT" type="CanvasLayer" parent="."]
 visible = false
@@ -59,7 +74,7 @@ process_priority = 10
 visible = false
 
 [node name="Discord_Manager" type="Node" parent="."]
-script = ExtResource("7_j2g8f")
+script = ExtResource("7_rjlpl")
 
 [connection signal="pressed" from="Pause_Menu/Panel/Buttons/Play_Panel/Play/Resume_Button" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="Pause_Menu/Panel/Buttons/Close_Panel/Back/Back_Button" to="." method="_on_back_button_pressed"]

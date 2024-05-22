@@ -737,12 +737,21 @@ height = 25.3333
 [sub_resource type="Gradient" id="Gradient_rtqv4"]
 colors = PackedColorArray(1, 0, 0, 1, 1, 1, 1, 0)
 
-[node name="EntityBody2D" type="CharacterBody2D" groups=["Players"]]
+[node name="EntityBody2D" type="CharacterBody2D" node_paths=PackedStringArray("right_outer", "left_outer", "right_inner", "left_inner", "sprite_2d", "silhouette_sprite", "hurt_box", "collision_shape_2d", "dust_particles") groups=["Players"]]
 scale = Vector2(3, 3)
 collision_layer = 13
 collision_mask = 13
 platform_floor_layers = 4278190081
 script = ExtResource("1_kpwhk")
+right_outer = NodePath("Right_Outer")
+left_outer = NodePath("Left_Outer")
+right_inner = NodePath("Right_Inner")
+left_inner = NodePath("Left_Inner")
+sprite_2d = NodePath("AnimatedSprite2D")
+silhouette_sprite = NodePath("AnimatedSprite2D/Silhouette_Sprite")
+hurt_box = NodePath("Hurt_Box/CollisionShape2D")
+collision_shape_2d = NodePath("CollisionShape2D")
+dust_particles = NodePath("Dust_Particles")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 show_behind_parent = true
@@ -752,8 +761,10 @@ shape = SubResource("CapsuleShape2D_yidtu")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_idra0")
-animation = &"Frog_Idle"
+animation = &"Spawn"
 autoplay = "Frog_Idle"
+frame = 5
+frame_progress = 0.915265
 script = ExtResource("17_raq7k")
 
 [node name="Silhouette_Sprite" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
@@ -761,7 +772,9 @@ z_index = 4096
 texture_filter = 1
 material = ExtResource("2_yuhxg")
 sprite_frames = SubResource("SpriteFrames_idra0")
-animation = &"Frog_Idle"
+animation = &"Spawn"
+frame = 1
+frame_progress = 0.466867
 
 [node name="Dust_Particles" type="CPUParticles2D" parent="."]
 show_behind_parent = true

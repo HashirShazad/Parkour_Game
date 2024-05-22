@@ -1,4 +1,11 @@
-DiscordRPCDebug
+Marker2D
+Sprite2D
+AnimatedSprite2D
+CollisionShape2D
+Area2D
+Discord_Manager
+AnimationPlayer
+Hit_Box
 Node
 Timer
 RayCast2D
@@ -6,10 +13,3 @@ Projectile_Hit_Box
 Label
 HBoxContainer
 Button
-VBoxContainer
-SubViewport
-LineEdit
-Camera2D
-MultiplayerSynchronizer
-TileMap
-MultiplayerSpawner

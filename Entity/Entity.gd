@@ -18,6 +18,7 @@ var is_pushing:bool = 0
 var is_dead:bool = 0
 var is_stunned:bool = 0
 var on_ground:bool = 0
+var is_respawning:bool = 0
 
 # Default Speed <----------------------------------------------------------------------------------------->
 var def_speed:int = 400
@@ -43,7 +44,8 @@ var stretched_size:Vector2 = Vector2(0.8, 1.1)
 	 Walking = "Frog_Walking",
 	 Double_Jump = "Frog_Double_Jump",
 	 Damaged = "Frog_Damaged",
-	 Dead = "Dead"
+	 Dead = "Dead",
+	 Spawn = "Spawn"
 }
 
 # Used Speed Variables <--------------------------------------------------------------------------------->
@@ -52,11 +54,14 @@ var minimum_speed = 8
 var jump_velocity = -800.0
 
 # References <----------------------------------------------------------------------------------------->
-@onready var sprite_2d:AnimatedSprite2D = $AnimatedSprite2D
-@onready var silhouette_sprite:AnimatedSprite2D = $AnimatedSprite2D/Silhouette_Sprite
-@onready var hurt_box = $Hurt_Box/CollisionShape2D
-@onready var collision_shape_2d = $CollisionShape2D
-@onready var dust_particles = $Dust_Particles
+@export_group("Sprites")
+@export var sprite_2d:AnimatedSprite2D
+@export var silhouette_sprite:AnimatedSprite2D
+@export_group("Collision Shapes")
+@export var hurt_box:CollisionShape2D
+@export var collision_shape_2d:CollisionShape2D
+@export_group("Particles")
+@export var dust_particles:CPUParticles2D
 
 # Gravity <----------------------------------------------------------------------------------------->
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -65,8 +70,10 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 # Actual Code <=====================================================================================>
 func _physics_process(delta):
 	flip_sprite()
-	if silhouette_sprite && sprite_2d:
-		update_animation()
+	if silhouette_sprite:
+		update_animation(silhouette_sprite)
+	if sprite_2d:
+		update_animation(sprite_2d)
 	if is_dead:
 		return
 	# Add the gravity.
@@ -81,40 +88,35 @@ func _physics_process(delta):
 	check_collisions()
 	
 # Update animations based on conditions
-func update_animation():
-	if silhouette_sprite == null or sprite_2d == null:
-		return
-	if is_dead:
-		sprite_2d.play(animations.Dead)
-		silhouette_sprite.play(animations.Dead)
-	elif is_stunned:
-		sprite_2d.play(animations.Damaged)
-		silhouette_sprite.play(animations.Damaged)
-	elif velocity.y < 0:
-		kb_direction.y = -1
-		if jump_count < 2:
-			sprite_2d.play(animations.Jumping)
-			silhouette_sprite.play(animations.Jumping)
-		else:
-			sprite_2d.play(animations.Double_Jump)
-			silhouette_sprite.play(animations.Double_Jump)
-	elif velocity.y > 0:
-		kb_direction.y = 1
-		if jump_count < 2:
-			sprite_2d.play(animations.Falling)
-			silhouette_sprite.play(animations.Falling)
-		else:
-			sprite_2d.play(animations.Double_Jump)
-			silhouette_sprite.play(animations.Double_Jump)
-	elif velocity.x != 0 || is_pushing:
-		sprite_2d.play(animations.Walking)
-		silhouette_sprite.play(animations.Walking)
-	elif velocity.x == 0:
-		sprite_2d.play(animations.Idle)
-		silhouette_sprite.play(animations.Idle)
+func update_animation(sprite:AnimatedSprite2D):
+	if sprite != null:
+		if is_respawning:
+			sprite.play(animations.Spawn)
+		if is_dead:
+			sprite.play(animations.Dead)
+		elif is_stunned:
+			sprite.play(animations.Damaged)
+		elif velocity.y < 0:
+			kb_direction.y = -1
+			if jump_count < 2:
+				sprite.play(animations.Jumping)
+			else:
+				sprite.play(animations.Double_Jump)
+		elif velocity.y > 0:
+			kb_direction.y = 1
+			if jump_count < 2:
+				sprite.play(animations.Falling)
+			else:
+				sprite.play(animations.Double_Jump)
+		elif velocity.x != 0 || is_pushing:
+			sprite.play(animations.Walking)
+		elif velocity.x == 0:
+			sprite.play(animations.Idle)
 	
 # Flip the sprite horizontally
 func flip_sprite():
+	if sprite_2d == null:
+		return
 	if is_stunned || is_dead:
 		return
 	if velocity.x != 0:

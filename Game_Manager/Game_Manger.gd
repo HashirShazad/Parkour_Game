@@ -23,34 +23,40 @@ var levels_1P = {
 # Mouse
 var mouse_speed = 3
 var mouse_pos = Vector2()
+@export var discord_manager:Discord_Manager
 # Labels <----------------------------------------------------------------------------------------->
-@onready var sec_label:Label = $Hud/Node/Timer_Info_Box/HBoxContainer/SecLabel
-@onready var min_label:Label = $Hud/Node/Timer_Info_Box/HBoxContainer/MinLabel
-@onready var msec_label:Label = $Hud/Node/Timer_Info_Box/HBoxContainer/MsecLabel
-@onready var points_label:Label = $Hud/Node/Coin_Info_Box/PointsLabel
-@onready var fps_label:Label = $Hud/Node/FPS_Info_Box/FPSLabel
+@export_group("Labels")
+@export var sec_label:Label
+@export var min_label:Label
+@export var msec_label:Label
+@export var points_label:Label
+@export var fps_label:Label
 
 # Menus <----------------------------------------------------------------------------------------->
-@onready var pause_menu:CanvasLayer = $Pause_Menu
-@onready var death_screen:CanvasLayer = $Death_Screen
-@onready var hud = $Hud
-#@onready var discord_manager = $Discord_Manager
+@export_group("Canvas Layers")
+@export var pause_menu:CanvasLayer 
+@export var death_screen:CanvasLayer 
+@export var hud:CanvasLayer
+@export var crt:CanvasLayer
+
 
 #Player Refs <----------------------------------------------------------------------------------------->
 var player_1:Player
 var player_2:Player
 
-@onready var crt:CanvasLayer = $CRT
+
 
 # Info Boxes <----------------------------------------------------------------------------------------->
-@onready var player1_info_box:Panel = $Hud/Node/Player_Info_Box
-@onready var player2_info_box:Panel = $Hud/Node/Player2_Info_Box
-@onready var coin_info_box:Panel = $Hud/Node/Coin_Info_Box
+@export_group("Info Boxes")
+@export var player1_info_box:Panel
+@export var player2_info_box:Panel
+@export var coin_info_box:Panel
 
 
 # Health Bars <----------------------------------------------------------------------------------------->
-@onready var hp_bar_P1:ProgressBar = $Hud/Node/Player_Info_Box/Panel/ProgressBar
-@onready var hp_bar_P2:ProgressBar = $Hud/Node/Player2_Info_Box/Panel/ProgressBar
+@export_group("Health Bars")
+@export var hp_bar_P1:ProgressBar
+@export var hp_bar_P2:ProgressBar
 
 # Timer <----------------------------------------------------------------------------------------->
 var time:float
@@ -78,11 +84,11 @@ func _process(delta):
 		return
 	if player_2 == null:
 		if player_1:
-			#iscord_manager.is_single_player = true
+			discord_manager.is_single_player = true
 			get_input()
 			check_if_dead()
 	elif player_1 && player_2:
-		#discord_manager.is_single_player = false
+		discord_manager.is_single_player = false
 		
 		get_input()
 		check_if_dead()

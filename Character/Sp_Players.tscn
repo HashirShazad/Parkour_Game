@@ -1,9 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://cfj2cbuh0vbwb"]
+[gd_scene load_steps=3 format=3 uid="uid://cfj2cbuh0vbwb"]
 
 [ext_resource type="PackedScene" uid="uid://cjmv5s0f1p6hx" path="res://Character/Players.tscn" id="1_ut7lb"]
+[ext_resource type="PackedScene" uid="uid://c4khbvomo2txs" path="res://Camera/camera_sp.tscn" id="2_5jwcs"]
 
 [node name="Players" type="Node2D"]
 
 [node name="Player1" parent="." instance=ExtResource("1_ut7lb")]
 
+[node name="Camera_Sp" parent="." instance=ExtResource("2_5jwcs")]
+
+[node name="PhantomCamera2D" parent="Camera_Sp" index="0"]
+position = Vector2(-2.8026e-45, -2.8026e-45)
+follow_target = NodePath("../../Player1")
+
+[node name="Camera2D" parent="Camera_Sp" index="1"]
+position = Vector2(-2.8026e-45, -2.8026e-45)
+
 [editable path="Player1"]
+[editable path="Camera_Sp"]

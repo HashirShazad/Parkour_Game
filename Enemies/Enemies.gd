@@ -9,7 +9,6 @@ var jump_sound = preload("res://Sounds/Sound/Jump.wav")
 @onready var edge_check_right:RayCast2D = $Edge_Check_Right
 @onready var edge_check_left:RayCast2D = $Edge_Check_Left
 
-
 # Actual Code <===============================================================================================>
 func _ready():
 	health = max_health
@@ -20,7 +19,10 @@ func _ready():
 		
 func _physics_process(delta):
 	flip_sprite()
-	update_animation()
+	if sprite_2d:
+		update_animation(sprite_2d)
+	if silhouette_sprite:
+		update_animation(silhouette_sprite)
 	var found_wall = is_on_wall()
 	if edge_check_left and edge_check_right:
 		var found_edge = not edge_check_right.is_colliding() or not  edge_check_left.is_colliding()
@@ -53,6 +55,8 @@ func add_ghost():
 	ghost.sprite_2d.frame = sprite_2d.frame
 
 func flip_sprite():
+	if sprite_2d == null:
+		return
 	if is_stunned || is_dead:
 		return
 	if velocity.x != 0:

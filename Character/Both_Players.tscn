@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bq8l8hs3fwqug"]
+[gd_scene load_steps=3 format=3 uid="uid://bq8l8hs3fwqug"]
 
 [ext_resource type="PackedScene" uid="uid://cjmv5s0f1p6hx" path="res://Character/Players.tscn" id="1_1sgb2"]
+[ext_resource type="PackedScene" uid="uid://lqeurs1jy57v" path="res://Camera/camera_2p.tscn" id="2_lcde8"]
 
 [node name="Players" type="Node2D"]
 
@@ -21,18 +22,34 @@ animations = {
 "Falling": "Pink_Falling",
 "Idle": "Pink_Idle",
 "Jumping": "Pink_Jumping",
+"Spawn": "Spawn",
 "Walking": "Pink_Walking"
 }
 
 [node name="AnimatedSprite2D" parent="Player2" index="1"]
 animation = &"Pink_Idle"
+frame = 0
+frame_progress = 0.0
 
 [node name="Silhouette_Sprite" parent="Player2/AnimatedSprite2D" index="0"]
 animation = &"Pink_Idle"
 autoplay = "Pink_Idle"
+frame = 0
+frame_progress = 0.0
 
 [node name="CollisionShape2D" parent="Player2/Hurt_Box" index="0"]
 position = Vector2(0, 3.33333)
 
+[node name="Camera_2p" parent="." instance=ExtResource("2_lcde8")]
+
+[node name="PhantomCamera2D" parent="Camera_2p" index="0"]
+position = Vector2(0, 0)
+zoom = Vector2(0.8, 0.8)
+
+[node name="Camera2D" parent="Camera_2p" index="1"]
+position = Vector2(0, 0)
+zoom = Vector2(0.8, 0.8)
+
 [editable path="Player1"]
 [editable path="Player2"]
+[editable path="Camera_2p"]
