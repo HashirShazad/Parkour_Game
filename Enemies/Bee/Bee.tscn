@@ -167,22 +167,15 @@ height = 26.0
 scale = Vector2(3, 3)
 platform_floor_layers = 4278190081
 script = ExtResource("1_7bx8l")
-animations = {
-"Damaged": "Frog_Damaged",
-"Dead": "Dead",
-"Double_Jump": "Frog_Double_Jump",
-"Falling": "Frog_Falling",
-"Idle": "    ",
-"Jumping": "Frog_Jumping",
-"Walking": "Frog_Walking"
-}
+ani_idle = "Idle"
 sprite_2d = NodePath("AnimatedSprite2D")
 collision_shape_2d = NodePath("CollisionShape2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_idhum")
-animation = &"Attack"
+animation = &"Idle"
+frame_progress = 0.149758
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 texture_filter = 1

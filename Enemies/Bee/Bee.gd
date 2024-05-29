@@ -1,20 +1,18 @@
-extends Enemy
+extends Entity
 class_name  Flying_Enemy
 
 var diretion : Vector2
 
 var is_bat_chasing : bool = false
 
+func _ready():
+	gravity = 0
+	
 func _physics_process(delta):
-	flip_sprite()
+	
 	if sprite_2d:
 		update_animation(sprite_2d)
-	var found_wall = is_on_wall()
-	if edge_check_left and edge_check_right:
-		var found_edge = not edge_check_right.is_colliding() or not  edge_check_left.is_colliding()
-		if found_wall or found_edge:
-			direction *= -1
-
+		flip_sprite(sprite_2d)
 	if is_dead:
 		return
 	# Add the gravity.

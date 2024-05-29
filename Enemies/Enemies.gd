@@ -18,11 +18,16 @@ func _ready():
 		direction = -1
 		
 func _physics_process(delta):
-	flip_sprite()
-	if sprite_2d:
-		update_animation(sprite_2d)
+		# Add the gravity.
+	if not is_on_floor():
+		velocity.y += gravity  * delta
+		
 	if silhouette_sprite:
 		update_animation(silhouette_sprite)
+		flip_sprite(silhouette_sprite)
+	if sprite_2d:
+		update_animation(sprite_2d)
+		flip_sprite(sprite_2d)
 	var found_wall = is_on_wall()
 	if edge_check_left and edge_check_right:
 		var found_edge = not edge_check_right.is_colliding() or not  edge_check_left.is_colliding()
@@ -54,13 +59,4 @@ func add_ghost():
 	ghost.flip_h = sprite_2d.flip_h
 	ghost.sprite_2d.frame = sprite_2d.frame
 
-func flip_sprite():
-	if sprite_2d == null:
-		return
-	if is_stunned || is_dead:
-		return
-	if velocity.x != 0:
-		if velocity.x > 1:
-			sprite_2d.flip_h = 1
-		if velocity.x < -1:
-			sprite_2d.flip_h = 0
+

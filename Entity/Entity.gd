@@ -37,16 +37,16 @@ var squashed_size:Vector2 = Vector2(1.1, 0.8)
 var stretched_size:Vector2 = Vector2(0.8, 1.1)
 
 ## Animations to be played
-@export var animations = {
-	 Idle = "Frog_Idle",
-	 Jumping = "Frog_Jumping",
-	 Falling = "Frog_Falling",
-	 Walking = "Frog_Walking",
-	 Double_Jump = "Frog_Double_Jump",
-	 Damaged = "Frog_Damaged",
-	 Dead = "Dead",
-	 Spawn = "Spawn"
-}
+@export_group("Animations", "ani_")
+@export var ani_idle := "Frog_Idle"
+@export var ani_jumping := "Frog_Jumping"
+@export var ani_falling := "Frog_Falling"
+@export var ani_walking := "Frog_Walking"
+@export var ani_double_jump := "Frog_Double_Jump"
+@export var ani_damaged := "Frog_Damaged"
+@export var ani_dead := "Dead"
+@export var ani_spawn := "Spawn"
+
 
 # Used Speed Variables <--------------------------------------------------------------------------------->
 var speed = 400.0
@@ -69,16 +69,16 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 # Actual Code <=====================================================================================>
 func _physics_process(delta):
-	flip_sprite()
+	
 	if silhouette_sprite:
 		update_animation(silhouette_sprite)
+		flip_sprite(silhouette_sprite)
 	if sprite_2d:
 		update_animation(sprite_2d)
+		flip_sprite(sprite_2d)
 	if is_dead:
 		return
-	# Add the gravity.
-	if not is_on_floor():
-		velocity.y += gravity  * delta
+
 		
 	elif jump_count != 0:
 		jump_count = 0
@@ -91,41 +91,39 @@ func _physics_process(delta):
 func update_animation(sprite:AnimatedSprite2D):
 	if sprite != null:
 		if is_respawning:
-			sprite.play(animations.Spawn)
+			sprite.play(ani_spawn)
 		if is_dead:
-			sprite.play(animations.Dead)
+			sprite.play(ani_dead)
 		elif is_stunned:
-			sprite.play(animations.Damaged)
+			sprite.play(ani_damaged)
 		elif velocity.y < 0:
 			kb_direction.y = -1
 			if jump_count < 2:
-				sprite.play(animations.Jumping)
+				sprite.play(ani_jumping)
 			else:
-				sprite.play(animations.Double_Jump)
+				sprite.play(ani_double_jump)
 		elif velocity.y > 0:
 			kb_direction.y = 1
 			if jump_count < 2:
-				sprite.play(animations.Falling)
+				sprite.play(ani_falling)
 			else:
-				sprite.play(animations.Double_Jump)
+				sprite.play(ani_double_jump)
 		elif velocity.x != 0 || is_pushing:
-			sprite.play(animations.Walking)
+			sprite.play(ani_walking)
 		elif velocity.x == 0:
-			sprite.play(animations.Idle)
+			sprite.play(ani_idle)
 	
 # Flip the sprite horizontally
-func flip_sprite():
-	if sprite_2d == null:
+func flip_sprite(sprite):
+	if sprite == null:
 		return
 	if is_stunned || is_dead:
 		return
 	if velocity.x != 0:
 		if velocity.x > 1:
-			sprite_2d.flip_h = 0
-			silhouette_sprite.flip_h = 0
+			sprite.flip_h = 0
 		if velocity.x < -1:
-			sprite_2d.flip_h = 1
-			silhouette_sprite.flip_h = 1
+			sprite.flip_h = 1
 
 # Take Damage and stun
 func take_damage(damage:int, stun_duration:float):
