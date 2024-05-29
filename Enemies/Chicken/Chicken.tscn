@@ -154,7 +154,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_2tayg")
 }],
 "loop": true,
-"name": &"Chicken_Damaged",
+"name": &"Damaged",
 "speed": 25.0
 }, {
 "frames": [{
@@ -198,7 +198,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_y5trd")
 }],
 "loop": true,
-"name": &"Chicken_Idle",
+"name": &"Idle",
 "speed": 25.0
 }, {
 "frames": [{
@@ -245,7 +245,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_tml1y")
 }],
 "loop": true,
-"name": &"Chicken_Run",
+"name": &"Run",
 "speed": 25.0
 }]
 
@@ -276,22 +276,14 @@ radius = 12.1712
 scale = Vector2(3, 3)
 platform_floor_layers = 4278190081
 script = ExtResource("1_g0gco")
-animations = {
-"Damaged": "Chicken_Damaged",
-"Dead": "Dead",
-"Double_Jump": "Frog_Double_Jump",
-"Falling": "",
-"Idle": "Chicken_Idle",
-"Jumping": "",
-"Walking": "Chicken_Run"
-}
+ani_idle = "Idle"
+ani_walking = "Run"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_idhum")
-animation = &"Chicken_Run"
-autoplay = "Chicken_Idle"
-frame_progress = 0.62698
+animation = &"Damaged"
+autoplay = "Idle"
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 texture_filter = 1

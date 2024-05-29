@@ -934,10 +934,10 @@ fruit_name = &"Melon"
 position = Vector2(408, 909)
 
 [node name="PhantomCamera2D" parent="Scene_Objects/Players/Camera_2p" index="0"]
-zoom = Vector2(0.8, 0.8)
+zoom = Vector2(0.3, 0.3)
 
 [node name="Camera2D" parent="Scene_Objects/Players/Camera_2p" index="1"]
-zoom = Vector2(0.8, 0.8)
+zoom = Vector2(0.3, 0.3)
 
 [node name="Spikes" type="Node2D" parent="Scene_Objects"]
 

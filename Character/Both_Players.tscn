@@ -15,16 +15,12 @@ btns = {
 "Right": "P2_Right",
 "Sprint": "P2_Sprint"
 }
-animations = {
-"Damaged": "Pink_Damaged",
-"Dead": "Dead",
-"Double_Jump": "Pink_Double_Jump",
-"Falling": "Pink_Falling",
-"Idle": "Pink_Idle",
-"Jumping": "Pink_Jumping",
-"Spawn": "Spawn",
-"Walking": "Pink_Walking"
-}
+ani_idle = "Pink_Idle"
+ani_jumping = "Pink_Jumping"
+ani_falling = "Pink_Falling"
+ani_walking = "Pink_Walking"
+ani_double_jump = "Pink_Double_Jump"
+ani_damaged = "Pink_Damaged"
 
 [node name="AnimatedSprite2D" parent="Player2" index="1"]
 animation = &"Pink_Idle"
@@ -44,11 +40,11 @@ position = Vector2(0, 3.33333)
 
 [node name="PhantomCamera2D" parent="Camera_2p" index="0"]
 position = Vector2(0, 0)
-zoom = Vector2(0.8, 0.8)
+zoom = Vector2(0.3, 0.3)
 
 [node name="Camera2D" parent="Camera_2p" index="1"]
 position = Vector2(0, 0)
-zoom = Vector2(0.8, 0.8)
+zoom = Vector2(0.3, 0.3)
 
 [editable path="Player1"]
 [editable path="Player2"]

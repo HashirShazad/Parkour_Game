@@ -104,10 +104,16 @@ position = Vector2(2235, 918)
 position = Vector2(80, -80)
 
 [node name="Enemy" parent="." instance=ExtResource("18_okx86")]
-position = Vector2(5678, 1124)
+position = Vector2(5337, 1515)
 
 [node name="Players" parent="." instance=ExtResource("9_8g1e6")]
 position = Vector2(5262, 1397)
+
+[node name="PhantomCamera2D" parent="Players/Camera_2p" index="0"]
+zoom = Vector2(0.8, 0.8)
+
+[node name="Camera2D" parent="Players/Camera_2p" index="1"]
+zoom = Vector2(0.8, 0.8)
 
 [node name="Chicken" parent="." instance=ExtResource("17_ihtjm")]
 position = Vector2(1555, 1157)

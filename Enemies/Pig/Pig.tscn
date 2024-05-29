@@ -344,15 +344,8 @@ animations = [{
 [node name="Pig" type="CharacterBody2D" node_paths=PackedStringArray("sprite_2d", "collision_shape_2d")]
 scale = Vector2(3, 3)
 script = ExtResource("2_slas3")
-animations = {
-"Damaged": "Damaged",
-"Dead": "Dead",
-"Double_Jump": "Double_Jump",
-"Falling": "Falling",
-"Idle": "Idle",
-"Jumping": "Jumping",
-"Walking": "Walking"
-}
+ani_idle = "Idle"
+ani_walking = "Run "
 sprite_2d = NodePath("AnimatedSprite2D")
 collision_shape_2d = NodePath("CollisionShape2D")
 

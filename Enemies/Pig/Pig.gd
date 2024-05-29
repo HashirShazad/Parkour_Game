@@ -9,9 +9,10 @@ func _ready():
 		direction = -1
 		
 func _physics_process(delta):
-	flip_sprite()
+	
 	if sprite_2d:
 		update_animation(sprite_2d)
+		flip_sprite(sprite_2d)
 	var found_wall = is_on_wall()
 	if found_wall:
 		direction *= -1

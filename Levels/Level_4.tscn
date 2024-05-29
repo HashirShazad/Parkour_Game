@@ -2132,6 +2132,12 @@ position = Vector2(8400, 3324)
 [node name="Players" parent="Scene_Objects" instance=ExtResource("9_qrw0p")]
 position = Vector2(1126, 3166)
 
+[node name="PhantomCamera2D" parent="Scene_Objects/Players/Camera_2p" index="0"]
+zoom = Vector2(0.8, 0.8)
+
+[node name="Camera2D" parent="Scene_Objects/Players/Camera_2p" index="1"]
+zoom = Vector2(0.800751, 0.800751)
+
 [node name="MaceBall(360)" parent="." instance=ExtResource("12_tid66")]
 position = Vector2(8994, 2850)
 
