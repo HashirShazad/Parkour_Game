@@ -35,10 +35,11 @@ func _ready():
 
 # Called every frame idk the dif between _process() and _phyiscs_process()
 func _physics_process(delta):
-	flip_sprite()
 	if silhouette_sprite:
 		update_animation(silhouette_sprite)
+		flip_sprite(silhouette_sprite)
 	if sprite_2d:
+		flip_sprite(sprite_2d)
 		update_animation(sprite_2d)
 	
 	if is_on_floor():
@@ -64,6 +65,7 @@ func _physics_process(delta):
 	if is_dead:
 		return
 	push_off_ledges()
+	
 	if is_multiplayer_authority():
 		handle_input()
 	move_and_slide()

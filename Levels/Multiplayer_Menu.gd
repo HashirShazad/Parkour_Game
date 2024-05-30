@@ -1,6 +1,6 @@
 extends Node2D
 
-var peer = ENetMultiplayerPeer.new()
+var peer:ENetMultiplayerPeer = ENetMultiplayerPeer.new()
 var connected_peer_ids = []
 var player_numbers = 1
 

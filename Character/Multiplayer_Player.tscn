@@ -755,12 +755,21 @@ properties/4/path = NodePath(".:health")
 properties/4/spawn = true
 properties/4/replication_mode = 1
 
-[node name="EntityBody2D" type="CharacterBody2D" groups=["Players"]]
+[node name="EntityBody2D" type="CharacterBody2D" node_paths=PackedStringArray("right_outer", "left_outer", "right_inner", "left_inner", "sprite_2d", "silhouette_sprite", "hurt_box", "collision_shape_2d", "dust_particles") groups=["Players"]]
 scale = Vector2(3, 3)
 collision_layer = 13
 collision_mask = 13
 platform_floor_layers = 4278190081
 script = ExtResource("1_f6vgq")
+right_outer = NodePath("Right_Outer")
+left_outer = NodePath("Left_Outer")
+right_inner = NodePath("Right_Inner")
+left_inner = NodePath("Left_Inner")
+sprite_2d = NodePath("AnimatedSprite2D")
+silhouette_sprite = NodePath("AnimatedSprite2D/Silhouette_Sprite")
+hurt_box = NodePath("Hurt_Box/CollisionShape2D")
+collision_shape_2d = NodePath("CollisionShape2D")
+dust_particles = NodePath("Dust_Particles")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 show_behind_parent = true

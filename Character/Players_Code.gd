@@ -174,6 +174,10 @@ func update_game_manager():
 
 # Push the character if its slightly touching a ledge from underneath so that he can jump
 func push_off_ledges():
+	if !is_instance_valid(right_outer) or  !is_instance_valid(left_outer):
+		return
+	elif !is_instance_valid(right_inner) or !is_instance_valid(left_inner):
+		return
 	 # Arbitrary offset, adjust as needed, or even use the raycasts to determine exactly how much to move
 	if right_outer.is_colliding() and !right_inner.is_colliding() \
 		and left_inner.is_colliding() and !left_outer.is_colliding():
